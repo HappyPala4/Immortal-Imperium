@@ -29,7 +29,7 @@ LEGACY_RECORD_STRUCTURE(all_waypoints, waypoint)
 			R.fields["x"] = S.x
 			R.fields["y"] = S.y
 			known_sectors[S.name] = R
-	..()
+	// No parent proc to call
 
 /obj/machinery/computer/helm/Process()
 	..()

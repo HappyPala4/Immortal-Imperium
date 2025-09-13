@@ -162,7 +162,9 @@
 		playsound(src.loc, 'sound/effects/bang.ogg', 75, 1)
 		damage = round(damage * 0.5)
 		if(damage)
-			..()
+			health -= damage
+			if(health <= 0)
+				qdel(src)
 
 /obj/structure/defensive_barrier/proc/check_cover(obj/item/projectile/P, turf/from)
 	var/turf/cover = get_turf(src)

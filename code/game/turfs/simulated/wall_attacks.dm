@@ -72,7 +72,7 @@
 			dismantle_wall()
 			return 1
 
-	if(..()) return 1
+	// No parent proc to call
 
 	if(can_open)
 		toggle_open(user)
@@ -192,7 +192,7 @@
 			if(prob(95))
 				visible_message("[user] cuts way at the wall, it will take a few more passes until we're done!")
 				playsound(src, 'sound/effects/lasercutter.ogg', 100, 1, 1)
-				return			
+				return
 			if(!WT.isOn())
 				return
 			if(!WT.remove_fuel(0,user))
