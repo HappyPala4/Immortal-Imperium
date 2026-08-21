@@ -1,11 +1,11 @@
 .git
 !.git/HEAD
 !.git/logs/HEAD
-baystation12.dmb
-baystation12.rsc
-baystation12.dyn.rsc
-baystation12.dyn.rsc.lk
-baystation12.int
+IS12Warfare.dmb
+IS12Warfare.rsc
+IS12Warfare.dyn.rsc
+IS12Warfare.dyn.rsc.lk
+IS12Warfare.int
 libmysql.dll
 .dockerignore
 Dockerfile

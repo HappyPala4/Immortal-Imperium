@@ -3,6 +3,8 @@
 set -o pipefail
 
 dmepath=""
+modified_dme=""
+modified_base=""
 retval=1
 
 for var; do
@@ -17,11 +19,14 @@ if [[ $dmepath == "" ]]; then
     exit 1
 fi
 
-if [[ -a $dmepath.mdme ]]; then
-    rm $dmepath.mdme
+modified_base="${dmepath}.modified"
+modified_dme="${modified_base}.dme"
+
+if [[ -e "$modified_dme" ]]; then
+    rm -- "$modified_dme"
 fi
 
-cp $dmepath.dme $dmepath.mdme
+cp -- "${dmepath}.dme" "$modified_dme"
 if [[ $? != 0 ]]; then
     echo "Failed to make modified dme, aborting."
     exit 2
@@ -30,12 +35,12 @@ fi
 for var; do
     arg=$(echo $var | sed -r 's/^.{2}//')
     if [[ $var == -D* ]]; then
-        sed -i '1s!^!#define '$arg'\n!' $dmepath.mdme
+        sed -i '1s!^!#define '$arg'\n!' "$modified_dme"
     elif [[ $var == -I* ]]; then
-        sed -i 's!// BEGIN_INCLUDE!// BEGIN_INCLUDE\n#include "'$arg'"!' $dmepath.mdme
+        sed -i 's!// BEGIN_INCLUDE!// BEGIN_INCLUDE\n#include "'$arg'"!' "$modified_dme"
     elif [[ $var == -M* ]]; then
-        sed -i '1s/^/#define MAP_OVERRIDE\n/' $dmepath.mdme
-        sed -i 's!#include "maps\\_map_include.dm"!#include "maps\\'$arg'\\'$arg'.dm"!' $dmepath.mdme
+        sed -i '1s/^/#define MAP_OVERRIDE\n/' "$modified_dme"
+        sed -i 's!#include "maps\\_map_include.dm"!#include "maps\\'$arg'\\'$arg'.dm"!' "$modified_dme"
     fi
 done
 
@@ -46,12 +51,12 @@ if [[ $DM == "" ]]; then
     exit 3
 fi
 
-"$DM" $dmepath.mdme | tee build_log.txt
+"$DM" "$modified_dme" | tee build_log.txt
 retval=$?
 
-[[ -e $dmepath.mdme.dmb ]] && mv $dmepath.mdme.dmb $dmepath.dmb
-[[ -e $dmepath.mdme.rsc ]] && mv $dmepath.mdme.rsc $dmepath.rsc
+[[ -e "${modified_base}.dmb" ]] && mv -- "${modified_base}.dmb" "${dmepath}.dmb"
+[[ -e "${modified_base}.rsc" ]] && mv -- "${modified_base}.rsc" "${dmepath}.rsc"
 
-rm $dmepath.mdme
+rm -- "$modified_dme"
 
 exit $retval

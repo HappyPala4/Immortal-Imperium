@@ -222,20 +222,19 @@ SUBSYSTEM_DEF(jobs)
 				if(age < job.minimum_character_age) // Nope.
 					continue
 
-				switch(age)
-					if(job.minimum_character_age to (job.minimum_character_age+10))
-						weightedCandidates[V] = 3 // Still a bit young.
-					if((job.minimum_character_age+10) to (job.ideal_character_age-10))
-						weightedCandidates[V] = 6 // Better.
-					if((job.ideal_character_age-10) to (job.ideal_character_age+10))
-						weightedCandidates[V] = 10 // Great.
-					if((job.ideal_character_age+10) to (job.ideal_character_age+20))
-						weightedCandidates[V] = 6 // Still good.
-					if((job.ideal_character_age+20) to INFINITY)
-						weightedCandidates[V] = 3 // Geezer.
-					else
-						// If there's ABSOLUTELY NOBODY ELSE
-						if(candidates.len == 1) weightedCandidates[V] = 1
+				if(age >= job.minimum_character_age && age <= (job.minimum_character_age+10))
+					weightedCandidates[V] = 3 // Still a bit young.
+				else if(age > (job.minimum_character_age+10) && age < (job.ideal_character_age-10))
+					weightedCandidates[V] = 6 // Better.
+				else if(age >= (job.ideal_character_age-10) && age <= (job.ideal_character_age+10))
+					weightedCandidates[V] = 10 // Great.
+				else if(age > (job.ideal_character_age+10) && age <= (job.ideal_character_age+20))
+					weightedCandidates[V] = 6 // Still good.
+				else if(age > (job.ideal_character_age+20))
+					weightedCandidates[V] = 3 // Geezer.
+				else
+					// If there's ABSOLUTELY NOBODY ELSE
+					if(candidates.len == 1) weightedCandidates[V] = 1
 
 
 			var/mob/new_player/candidate = pickweight(weightedCandidates)
@@ -471,7 +470,7 @@ SUBSYSTEM_DEF(jobs)
 		else
 			var/datum/computer_file/data/email_account/EA = new/datum/computer_file/data/email_account()
 			EA.password = GenerateKey()
-			EA.login = 	complete_login
+			EA.login = complete_login
 			to_chat(H, "Your email account address is <b>[EA.login]</b> and the password is <b>[EA.password]</b>. This information has also been placed into your notes.")
 			H.mind.store_memory("Your email account address is [EA.login] and the password is [EA.password].")
 		// END EMAIL GENERATION
@@ -485,9 +484,9 @@ SUBSYSTEM_DEF(jobs)
 	if(H.client.prefs.cult != "None" && SSgods.cultist_count <= MAX_CULTISTS)
 		if(!job.cultist_chance)
 			to_chat(H, "<span class='warning'>Your job was unable to play as a cultist.</span>")
-		if(prob(job.cultist_chance) || job.cultist_chance == 100)
-			var/datum/heretic_deity/deity = GOD(H.client.prefs.cult)
-				deity.add_cultist(H)
+		else if(prob(job.cultist_chance) || job.cultist_chance == 100)
+			var/datum/heretic_deity/deity = SSgods.get_god_by_name(H.client.prefs.cult)
+			deity.add_cultist(H)
 		else if(job.cultist_chance)
 			to_chat(H, "<span class='warning'>Cultist roll failed. Chance [job.cultist_chance]%.</span>")
 	else if(H.client.prefs.cult != "None" && SSgods.cultist_count >= MAX_CULTISTS)

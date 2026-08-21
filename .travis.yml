@@ -1,11 +1,11 @@
 language: generic
 sudo: false
-dist: precise
+dist: jammy
 
 env:
     global:
-    - BYOND_MAJOR="514"
-    - BYOND_MINOR="1561"
+    - BYOND_MAJOR="516"
+    - BYOND_MINOR="1687"
     - DM_BUILDFILE="IS12Warfare.dme"
     - SPACEMAN_DMM_VERSION=suite-1.4
 
@@ -16,8 +16,8 @@ matrix:
         apt:
           packages:
             - libc6-i386
-            - libgcc1:i386
-            - libstdc++6:i386
+            - lib32gcc-s1
+            - lib32stdc++6
       cache:
         directories:
             - $HOME/BYOND-${BYOND_MAJOR}.${BYOND_MINOR}
@@ -27,4 +27,4 @@ matrix:
       script:
         - (! grep -rn 'step_[xy]' maps)
         - source $HOME/BYOND-${BYOND_MAJOR}.${BYOND_MINOR}/byond/bin/byondsetup
-        - bash dm.sh ${DM_BUILDFILE}
+        - bash scripts/dm.sh ${DM_BUILDFILE}

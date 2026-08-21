@@ -452,6 +452,7 @@
 	forceMove(starting)
 	trajectory = new(starting.x, starting.y, starting.z, 0, 0, Angle, pixel_speed)
 	last_projectile_move = world.time
+	last_process = world.time
 	fired = TRUE
 	if(hitscan)
 		return process_hitscan()
@@ -633,14 +634,15 @@
 		store_hitscan_collision(pcache)
 
 /obj/item/projectile/Process()
-	last_process = world.time
-
 	if(!loc || !fired || !trajectory)
 		fired = FALSE
 		return PROCESS_KILL
+	var/current_process_time = world.time
 	if(paused || !isturf(loc))
-		last_projectile_move += world.time - last_process		//Compensates for pausing, so it doesn't become a hitscan projectile when unpaused from charged up ticks.
+		last_projectile_move += current_process_time - last_process	//Compensates for pausing, so it doesn't become a hitscan projectile when unpaused from charged up ticks.
+		last_process = current_process_time
 		return
+	last_process = current_process_time
 	var/elapsed_time_deciseconds = (world.time - last_projectile_move) + time_offset
 	time_offset = 0
 	var/required_moves = 0
@@ -656,7 +658,9 @@
 	if(!required_moves)
 		return
 	for(var/i in 1 to required_moves)
-		pixel_move(required_moves)
+		if(QDELETED(src) || !loc)
+			break
+		pixel_move(1)
 
 /obj/item/projectile/proc/setAngle(new_angle)	//wrapper for overrides.
 	Angle = new_angle

@@ -31,177 +31,22 @@ em						{font-style: normal;font-weight: bold;}
 
 .goodmood 				{color: #635fcf; font-weight: bold; font-size: 101%;}
 
-.ogrynconfused			{color: #fd5b5b; font-weight: bold; font-size: 111%; animation: confused 4500ms infinite; filter: blur(4px); }
-@keyframes confused {
-	0% { color: #fd5b5b; }
-	25% { color: #f08080; }
-	50% { color: #f09e9e; }
-	75% { color: #f08080; }
-	100% { color: #fd5b5b; }
-}
+.ogrynconfused			{color: #fd5b5b; font-weight: bold; font-size: 111%;}
 
 .ogrynspeak		{color: #572525; font-weight: bold; font-size: 111%;}
-
-
-@keyframes flickerAnimation {
-  0%, 100% {
-    opacity: 0.6;
-    transform: translateY(0) translateX(0);
-  }
-  25% {
-    opacity: 0.8;
-    transform: translateY(-2px) translateX(2px);
-  }
-  50% {
-    opacity: 0.5;
-    transform: translateY(1px) translateX(-1px);
-  }
-  75% {
-    opacity: 0.7;
-    transform: translateY(0) translateX(0);
-  }
-}
 
 .flick-holy {
   font-family: 'Courier New', monospace;
   font-size: 22px;
   color: white;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  animation: flickerAnimation 2s linear infinite;
 }
 
 .horror-text {
-  animation-duration: 1.5s;
-  animation-iteration-count: infinite;
-  animation-name: flickering;
-  animation-timing-function: step-start;
   color: #912914;
   font-family: "monospace";
   font-size: 22px;
 }
-
-@keyframes flickering {
-  0% {
-    color: #912914;
-    text-shadow: none;
-    transform: skewX(0);
-  }
-  5% {
-    color: #912914;
-    text-shadow: none;
-    transform: skewX(0);
-  }
-  10% {
-    color: #912914;
-    text-shadow: 1px 1px #eee;
-    transform: skewX(-15deg);
-  }
-  15% {
-    color: #ccc;
-    text-shadow: none;
-    transform: skewX(-15deg);
-  }
-  20% {
-    color: #912914;
-    text-shadow: none;
-    transform: skewX(0);
-  }
-  25% {
-    color: #ccc;
-    text-shadow: 2px 2px #912914;
-    transform: skewX(0);
-  }
-  30% {
-    color: #ccc;
-    text-shadow: 2px 2px #912914;
-    transform: skewX(0);
-  }
-  35% {
-    color: #ccc;
-    text-shadow: 2px 2px #912914;
-    transform: skewX(0);
-  }
-  37% {
-    color: #ccc;
-    text-shadow: 1px 1px #eee;
-    transform: skewX(0);
-  }
-  40% {
-    color: #912914;
-    text-shadow: 1px 1px #eee;
-    transform: skewX(0);
-  }
-  45% {
-    color: #912914;
-    text-shadow: 1px 1px #eee;
-    transform: skewX(0);
-  }
-  50% {
-    color: #912914;
-    text-shadow: none;
-    transform: skewX(0);
-  }
-  55% {
-    color: #912914;
-    text-shadow: none;
-    transform: skewX(0);
-  }
-  60% {
-    color: #912914;
-    text-shadow: none;
-    transform: skewX(0);
-  }
-  65% {
-    color: #912914;
-    text-shadow: none;
-    transform: skewX(0);
-  }
-  68% {
-    color: #912914;
-    text-shadow: 1px 1px #eee;
-    transform: skewX(0);
-  }
-  70% {
-    color: #912914;
-    text-shadow: 1px 1px #eee;
-    transform: skewX(0);
-  }
-  75% {
-    color: #912914;
-    text-shadow: 1px 1px #eee;
-    transform: skewX(10deg);
-  }
-  80% {
-    color: #912914;
-    text-shadow: 1px 1px #eee;
-    transform: skewX(10deg);
-  }
-  85% {
-    color: #912914;
-    text-shadow: 1px 1px #eee;
-    transform: skewX(10deg);
-  }
-  90% {
-    color: #912914;
-    text-shadow: none;
-    transform: skewX(0);
-  }
-  95% {
-    color: #912914;
-    text-shadow: 1px 1px #eee;
-    transform: skewX(0);
-  }
-  100% {
-    color: #912914;
-    text-shadow: none;
-    transform: skewX(0);
-  }
-}
-
-
-
-
-
 .staffwarn				{color: #ff0000; font-weight:bold; font-size: 150%;}
 /* Admin: Private Messages */
 .pm  .howto				{color: #ff0000;	font-weight: bold;		font-size: 200%;}

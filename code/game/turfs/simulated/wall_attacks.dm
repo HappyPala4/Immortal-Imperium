@@ -72,7 +72,7 @@
 			dismantle_wall()
 			return 1
 
-	if(..()) return 1
+	// No parent proc to call
 
 	if(can_open)
 		toggle_open(user)

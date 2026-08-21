@@ -26,7 +26,7 @@
 			. += M
 
 /mob/living/simple_animal/hostile/retaliate/proc/Retaliate()
-	..()
+	// No parent proc to call
 	var/list/around = view(src, 7)
 
 	for(var/atom/movable/A in around)

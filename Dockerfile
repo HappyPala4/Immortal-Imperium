@@ -1,30 +1,32 @@
-FROM ubuntu:latest
+FROM ubuntu:24.04
 
-RUN mkdir /bs12
+ARG BYOND_MAJOR=516
+ARG BYOND_MINOR=1687
 
-RUN dpkg --add-architecture i386
+RUN dpkg --add-architecture i386 \
+    && apt-get update \
+    && apt-get install -y --no-install-recommends \
+        ca-certificates \
+        libc6:i386 \
+        libmariadb3:i386 \
+        libstdc++6:i386 \
+        make \
+        unzip \
+        wget \
+    && rm -rf /var/lib/apt/lists/*
 
-RUN apt-get update
+WORKDIR /opt
 
-RUN apt-get install -y unzip make wget libmariadb2:i386
+RUN wget -q "https://www.byond.com/download/build/${BYOND_MAJOR}/${BYOND_MAJOR}.${BYOND_MINOR}_byond_linux.zip" \
+    && unzip -q "${BYOND_MAJOR}.${BYOND_MINOR}_byond_linux.zip" \
+    && rm "${BYOND_MAJOR}.${BYOND_MINOR}_byond_linux.zip" \
+    && cd /opt/byond \
+    && make here >/dev/null
 
-RUN apt-get install -y libc6:i386 libstdc++6:i386
+WORKDIR /opt/immortal-imperium
+COPY . .
 
-# we are not using ADD here to download it because this file should never change
-# and thus, strictly caching it is okay
-RUN cd /bs12/ && wget -q https://www.byond.com/download/build/511/511.1385_byond_linux.zip
+RUN ln -s /usr/lib/i386-linux-gnu/libmariadb.so.3 libmariadb.so \
+    && /bin/bash -c 'source /opt/byond/bin/byondsetup && DreamMaker IS12Warfare.dme'
 
-RUN cd /bs12/ && unzip -q 511.1385_byond_linux.zip
-
-COPY . /bs12/Baystation12
-
-RUN /bin/bash -c '\
-cd /bs12/byond; \
-make here >/dev/null; \
-source bin/byondsetup; \
-cd ../Baystation12; \
-ln -s /usr/lib/i386-linux-gnu/libmariadb.so.2 libmariadb.so; \
-DreamMaker baystation12.dme; \
-'
-
-ENTRYPOINT cd /bs12/Baystation12 && . /bs12/byond/bin/byondsetup && DreamDaemon baystation12.dmb 8000 -invisible -trusted
+ENTRYPOINT ["/bin/bash", "-c", "source /opt/byond/bin/byondsetup && exec DreamDaemon IS12Warfare.dmb 8000 -invisible -trusted"]

@@ -12,6 +12,16 @@
 
 **Discord:**  https://discord.gg/FVRctMD
 
+## Building
+
+The project targets BYOND 516.1687. Compile it with:
+
+```sh
+scripts/dm.sh IS12Warfare.dme
+```
+
+The Docker image downloads the same BYOND release and compiles `IS12Warfare.dme` during the image build.
+
 ## Terms of service
 
 **Please carefully read the following statement:**

@@ -11,10 +11,8 @@
 # - WEB: Run tgui tests
 # - MAP: Run map tests (notably, only this one compiles!)
 #
-# Additionally, the MAP group requires an additional environent variable,
-# MAP_PATH, to be set. This variable is passed to the compiler to indicate which
-# map to test. You will want to configure CI to run each of these passes, and
-# run MAP several times with MAP_PATH set to each map that should be tested.
+# The MAP group compiles the map configured in IS12Warfare.dme. This project no
+# longer uses Baystation's per-map override matrix.
 #
 # The general structure of the test execution is as follows:
 # - find_code:              Look for the project root directory and fail fast if
@@ -229,21 +227,18 @@ function run_web_tests {
 function run_byond_tests {
     msg "*** running map tests ***"
     find_byond_deps
-    if [[ -z "${MAP_PATH+x}" ]]
-    then exit 1
-    else msg "configured map is '$MAP_PATH'"
-    fi
+	msg "using the map configured in IS12Warfare.dme"
     cp config/example/* config/
     if [[ "$CI" == "true" ]]; then
         msg "installing BYOND"
         ./install-byond.sh || exit 1
         source $HOME/BYOND-${BYOND_MAJOR}.${BYOND_MINOR}/byond/bin/byondsetup
     fi
-    run_test_ci "check globals build" "python tools/GenerateGlobalVarAccess/gen_globals.py baystation12.dme code/_helpers/global_access.dm"
+    run_test_ci "check globals build" "python tools/GenerateGlobalVarAccess/gen_globals.py IS12Warfare.dme code/_helpers/global_access.dm"
     run_test "check globals unchanged" "md5sum -c - <<< 'af208a182ec750fa53ed5ccccd5505ff *code/_helpers/global_access.dm'"
-    run_test "build map unit tests" "scripts/dm.sh -DUNIT_TEST -M$MAP_PATH baystation12.dme"
+	run_test "build map unit tests" "scripts/dm.sh -DUNIT_TEST IS12Warfare.dme"
     run_test "check no warnings in build" "grep ', 0 warnings' build_log.txt"
-    run_test "run unit tests" "DreamDaemon baystation12.dmb -invisible -trusted -core 2>&1 | tee log.txt"
+    run_test "run unit tests" "DreamDaemon IS12Warfare.dmb -invisible -trusted -core 2>&1 | tee log.txt"
     run_test "check tests passed" "grep 'All Unit Tests Passed' log.txt"
     run_test "check no runtimes" "grep 'Caught 0 Runtimes' log.txt"
     run_test_fail "check no runtimes 2" "grep 'runtime error:' log.txt"
@@ -261,7 +256,7 @@ function run_all_tests {
 function run_configured_tests {
     if [[ -z ${TEST+z} ]]; then
         msg_bad "You must provide TEST in environment; valid options ALL,MAP,WEB,CODE"
-        msg_meh "Note: map tests require MAP_PATH set"
+		msg_meh "MAP tests use the map configured in IS12Warfare.dme"
         exit 1
     fi
     case $TEST in
