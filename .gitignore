@@ -62,3 +62,5 @@ icons/map_project/port/doors/
 icons/map_project/port/unused/
 
 icons/map_project/port/turf/
+config/config.txt
+config/dbconfig.txt
