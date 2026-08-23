@@ -90,8 +90,12 @@
 	if(display_message)
 		visible_message("[src] shatters!")
 
-	cast_new(shardtype, is_fulltile() ? 4 : 1, loc)
-	if(reinf) cast_new(/obj/item/stack/rods, is_fulltile() ? 4 : 1, loc)
+	var/amount = is_fulltile() ? 4 : 1
+	for(var/i = 1 to amount)
+		new shardtype(loc)
+	if(reinf)
+		for(var/i = 1 to amount)
+			new /obj/item/stack/rods(loc)
 	qdel(src)
 	return
 

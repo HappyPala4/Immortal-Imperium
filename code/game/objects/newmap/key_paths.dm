@@ -300,7 +300,7 @@ KEYS HERE
 	desc = "A key for one of the Hab apartaments. Designed for the poor and for the poor."
 	access = list(access_hab1_7)
 
-	/obj/item/card/id/key/super/newmap/hab1/room8
+/obj/item/card/id/key/super/newmap/hab1/room8
 	name = "Hab 1 - Room 8 Key"
 	desc = "A key for one of the Hab apartaments. Designed for the poor and for the poor."
 	access = list(access_hab1_8)

@@ -277,7 +277,6 @@
 	stunforce = 0
 	agonyforce = 120
 	status = 0		//whether the thing is on or not
-	/obj/item/cell/bcell
 	hitcost = 0
 	block_chance = 30
 	sharpness = 0

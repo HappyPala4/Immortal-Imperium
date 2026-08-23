@@ -50,8 +50,8 @@
 	if(display_message)
 		visible_message("[src] shatters!")
 
-	cast_new(/obj/item/material/shard, 1, loc)
-	cast_new(/obj/item/stack/rods, 1, loc)
+	new /obj/item/material/shard(loc)
+	new /obj/item/stack/rods(loc)
 	glass = FALSE
 	shattered = TRUE
 	update_icon()

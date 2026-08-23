@@ -149,7 +149,7 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 				equip_to_slot_or_store_or_drop(new /obj/item/reagent_containers/hypospray/autoinjector/tau, slot_in_backpack)
 				equip_to_slot_or_store_or_drop(new /obj/item/gun/projectile/bolter_pistol, slot_wear_suit)
 				var/datum/heretic_deity/deity = GOD(U.client.prefs.cult)
-					deity.add_cultist(U)
+				deity.add_cultist(U)
 				if(prob(10))
 					equip_to_slot_or_store_or_drop(new /obj/item/device/radio/headset/headset_eng, slot_in_backpack)
 				if(prob(4))
@@ -304,7 +304,7 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 					equip_to_slot_or_store_or_drop(new /obj/item/device/radio/headset/blue_team/all, slot_in_backpack)
 				equip_to_slot_or_store_or_drop(new /obj/item/reagent_containers/hypospray/autoinjector/death, slot_in_backpack)
 				var/datum/heretic_deity/deity = GOD(U.client.prefs.cult)
-					deity.add_cultist(U)
+				deity.add_cultist(U)
 
 // Seneschal/steward removed until we need it due to pop
 /*

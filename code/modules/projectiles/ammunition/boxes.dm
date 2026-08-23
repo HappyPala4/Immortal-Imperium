@@ -473,7 +473,7 @@
 /obj/item/ammo_magazine/bolt_pistol_magazine/kp/empty
 	initial_ammo = 0
 
- /obj/item/ammo_magazine/melta  //Not being used at the moemnt //CHECK IF IT'S BEEN MAPPED IN BEFORE DELETING THINGS.
+/obj/item/ammo_magazine/melta  //Not being used at the moemnt //CHECK IF IT'S BEEN MAPPED IN BEFORE DELETING THINGS.
 	name = "Melta Canister"
 	icon_state = "flamer"
 	origin_tech = list(TECH_COMBAT = 2)
@@ -484,7 +484,7 @@
 	max_ammo = 100
 	multiple_sprites = 0
 
- /obj/item/ammo_magazine/melta/empty
+/obj/item/ammo_magazine/melta/empty
 	initial_ammo = 0
 
 /obj/item/ammo_magazine/catapult_magazine

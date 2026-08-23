@@ -673,7 +673,7 @@
 					new /obj/item/device/radio/headset/blue_team/all(src.loc)
 				new /obj/item/reagent_containers/hypospray/autoinjector/tau(src.loc)
 				var/datum/heretic_deity/deity = GOD(U.client.prefs.cult)
-					deity.add_cultist(U)
+				deity.add_cultist(U)
 				if(prob(8))
 					new /obj/item/device/radio/headset/headset_eng(src.loc)
 				if(prob(2))
@@ -716,7 +716,7 @@
 				to_chat(U,"<span class='danger'><b><font size=4>THE CORRUPTED</font></b></span>")
 				to_chat(U,"<span class='goodmood'><b><font size=3>You are a traitor to the Imperium and for reasons known only to you now, shall bring corruption to it's fiefdoms. Praise the hivemind/cult/cogitae! </font></b></span>")
 				var/datum/heretic_deity/deity = GOD(U.client.prefs.cult)
-					deity.add_cultist(U)
+				deity.add_cultist(U)
 
 /mob/living/carbon/human/proc/faithclass()
 	set name = "Select your faith"
@@ -753,7 +753,7 @@
 				to_chat(U,"<span class='danger'><b><font size=4>THE CORRUPTED</font></b></span>")
 				to_chat(U,"<span class='goodmood'><b><font size=3>You are a traitor to the Imperium and for reasons known only to you now, shall bring corruption to it's fiefdoms. Praise the hivemind/cult/cogitae! </font></b></span>")
 				var/datum/heretic_deity/deity = GOD(U.client.prefs.cult)
-					deity.add_cultist(U)
+				deity.add_cultist(U)
 
 // sob outfits
 
