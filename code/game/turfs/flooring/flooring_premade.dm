@@ -622,16 +622,31 @@
 	name = "ancient stone floor"
 	icon = 'icons/turf/flooring/plating.dmi'
 	icon_state = "stoney"
+	initial_flooring = null
+
+/turf/simulated/floor/stone/ancient_stone_floor/New()
+	..()
+	icon_state = initial(icon_state)
 
 /turf/simulated/floor/stone/ancient_stone_old
 	name = "ancient stone floor"
 	icon = 'icons/turf/flooring/plating.dmi'
-	icon_state = "stone_old"
+	icon_state = "stoning"
+	initial_flooring = null
+
+/turf/simulated/floor/stone/ancient_stone_old/New()
+	..()
+	icon_state = initial(icon_state)
 
 /turf/simulated/floor/stone/ancient_stone_floor3
 	name = "ancient stone floor"
 	icon = 'icons/turf/flooring/plating.dmi'
-	icon_state = "stoning"
+	icon_state = "stone_old"
+	initial_flooring = null
+
+/turf/simulated/floor/stone/ancient_stone_floor3/New()
+	..()
+	icon_state = initial(icon_state)
 
 /turf/simulated/floor/stone/seabed
 	name = "seabed"

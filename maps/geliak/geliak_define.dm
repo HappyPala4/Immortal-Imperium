@@ -45,7 +45,30 @@
 		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "None5",/datum/event/no_event,25),
 		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "None6",/datum/event/no_event,25),
 		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "None7",/datum/event/no_event,25)
-		)
+	)
+
+//Turbolift
+/obj/machinery/door/airlock/lift/imperium
+	name = "Lift Doorway"
+	desc = "A solemn archway of gothic stone and copper mechanisms. The ancient platform beyond rumbles as it moves."
+	icon = 'icons/obj/doors/imperiumdoor.dmi'
+	glass = 0
+	opacity = 1
+
+/area/turbolift/geliak/lower
+	name = "\improper Geliak-IV Lift"
+	lift_floor_label = "\improper Lift - Lower"
+	lift_floor_name = "lower-hive level"
+
+/area/turbolift/geliak/middle
+	name = "\improper Geliak-IV Lift"
+	lift_floor_label = "\improper Lift - Middle"
+	lift_floor_name = "middle-hive level"
+
+/area/turbolift/geliak/upper
+	name = "\improper Geliak-IV Lift"
+	lift_floor_label = "\improper Lift - Upper"
+	lift_floor_name = "upper-hive level"
 
 /datum/event_container/moderate
 	available_events = list(
