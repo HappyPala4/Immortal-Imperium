@@ -1,4 +1,3 @@
-//Terribly sorry for the code doubling, but things go derpy otherwise.
 /obj/machinery/door/airlock/multi_tile
 	width = 2
 	appearance_flags = 0
@@ -7,10 +6,20 @@
 	..()
 	SetBounds()
 
+/obj/machinery/door/airlock/multi_tile/Initialize()
+	. = ..()
+	SetBounds()
+	if(!glass)
+		create_fillers()
+
+/obj/machinery/door/airlock/multi_tile/Destroy()
+	QDEL_NULL(f5)
+	QDEL_NULL(f6)
+	return ..()
+
 /obj/machinery/door/airlock/multi_tile/Move()
 	. = ..()
 	SetBounds()
-
 
 /obj/machinery/door/airlock/multi_tile/proc/SetBounds()
 	if(dir in list(EAST, WEST))
@@ -20,6 +29,35 @@
 		bound_width = world.icon_size
 		bound_height = width * world.icon_size
 
+/obj/machinery/door/airlock/multi_tile/proc/create_fillers()
+	var/turf/extra
+	if(dir in list(EAST, WEST))
+		extra = get_step(src, EAST)
+	else
+		extra = get_step(src, NORTH)
+	f5 = new /obj/machinery/filler_object(loc)
+	if(extra)
+		f6 = new /obj/machinery/filler_object(extra)
+	update_filler_opacity()
+
+/obj/machinery/door/airlock/multi_tile/proc/update_filler_opacity()
+	if(f5)
+		f5.set_opacity(opacity)
+	if(f6)
+		f6.set_opacity(opacity)
+
+/obj/machinery/door/airlock/multi_tile/set_opacity(new_opacity)
+	. = ..()
+	update_filler_opacity()
+
+/obj/machinery/filler_object
+	name = ""
+	icon = 'icons/obj/doors/rapid_pdoor.dmi'
+	icon_state = ""
+	density = FALSE
+	anchored = TRUE
+	invisibility = 101
+
 /obj/machinery/door/airlock/multi_tile/glass
 	name = "Glass Airlock"
 	icon = 'icons/obj/doors/Door2x1glass.dmi'
@@ -27,132 +65,17 @@
 	glass = 1
 	assembly_type = /obj/structure/door_assembly/multi_tile
 
-//Shit that isn't glass.
-/obj/machinery/door/airlock/multi_tile/metal/maintenance
+/obj/machinery/door/airlock/multi_tile/metal
 	name = "Airlock"
-	icon = 'icons/obj/doors/Door2x1maint.dmi'
 	opacity = 1
 	glass = 0
-	assembly_type = /obj/structure/door_assembly/multi_tile/maintenance
-
-/obj/machinery/door/airlock/multi_tile/metal/New()
-	..()
-	if(src.dir > 3)
-		f5 = new/obj/machinery/filler_object(src.loc)
-		f6 = new/obj/machinery/filler_object(get_step(src,EAST))
-	else
-		f5 = new/obj/machinery/filler_object(src.loc)
-		f6 = new/obj/machinery/filler_object(get_step(src,NORTH))
-	f5.density = FALSE
-	f6.density = FALSE
-	f5.set_opacity(opacity)
-	f6.set_opacity(opacity)
-
-/obj/machinery/door/airlock/multi_tile/metal/Destroy()
-	qdel(f5)
-	qdel(f6)
-	. = ..()
-
-/obj/machinery/filler_object
-	name = ""
-	icon = 'icons/obj/doors/rapid_pdoor.dmi'
-	icon_state = ""
-	density = FALSE
-	anchored = TRUE
 
 /obj/machinery/door/airlock/multi_tile/metal/maintenance
 	name = "Airlock"
 	icon = 'icons/obj/doors/Door2x1maint.dmi'
-	opacity = 1
-	glass = 0
 	assembly_type = /obj/structure/door_assembly/multi_tile/maintenance
 
-/obj/machinery/door/airlock/multi_tile/metal/New()
-	..()
-	if(src.dir > 3)
-		f5 = new/obj/machinery/filler_object(src.loc)
-		f6 = new/obj/machinery/filler_object(get_step(src,EAST))
-	else
-		f5 = new/obj/machinery/filler_object(src.loc)
-		f6 = new/obj/machinery/filler_object(get_step(src,NORTH))
-	f5.density = FALSE
-	f6.density = FALSE
-	f5.set_opacity(opacity)
-	f6.set_opacity(opacity)
-
-/obj/machinery/door/airlock/multi_tile/metal/Destroy()
-	qdel(f5)
-	qdel(f6)
-	. = ..()
-
-/obj/machinery/filler_object
-	name = ""
-	icon = 'icons/obj/doors/rapid_pdoor.dmi'
-	icon_state = ""
-	density = FALSE
-	anchored = TRUE
-
-//This one looks good.
 /obj/machinery/door/airlock/multi_tile/metal/imperium
 	name = "Airlock"
 	icon = 'icons/obj/doors/Door2x1imperium.dmi'
-	opacity = 1
-	glass = 0
 	assembly_type = /obj/structure/door_assembly/multi_tile/imperium
-
-/obj/machinery/door/airlock/multi_tile/metal/New()
-	..()
-	if(src.dir > 3)
-		f5 = new/obj/machinery/filler_object(src.loc)
-		f6 = new/obj/machinery/filler_object(get_step(src,EAST))
-	else
-		f5 = new/obj/machinery/filler_object(src.loc)
-		f6 = new/obj/machinery/filler_object(get_step(src,NORTH))
-	f5.density = FALSE
-	f6.density = FALSE
-	f5.set_opacity(opacity)
-	f6.set_opacity(opacity)
-
-/obj/machinery/door/airlock/multi_tile/metal/Destroy()
-	qdel(f5)
-	qdel(f6)
-	. = ..()
-
-/obj/machinery/filler_object
-	name = ""
-	icon = 'icons/obj/doors/rapid_pdoor.dmi'
-	icon_state = ""
-	density = FALSE
-	anchored = TRUE
-
-/obj/machinery/door/airlock/multi_tile/metal/imperium
-	name = "Airlock"
-	icon = 'icons/obj/doors/Door2x1imperium.dmi'
-	opacity = 1
-	glass = 0
-	assembly_type = /obj/structure/door_assembly/multi_tile/imperium
-
-/obj/machinery/door/airlock/multi_tile/metal/New()
-	..()
-	if(src.dir > 3)
-		f5 = new/obj/machinery/filler_object(src.loc)
-		f6 = new/obj/machinery/filler_object(get_step(src,EAST))
-	else
-		f5 = new/obj/machinery/filler_object(src.loc)
-		f6 = new/obj/machinery/filler_object(get_step(src,NORTH))
-	f5.density = FALSE
-	f6.density = FALSE
-	f5.set_opacity(opacity)
-	f6.set_opacity(opacity)
-
-/obj/machinery/door/airlock/multi_tile/metal/Destroy()
-	qdel(f5)
-	qdel(f6)
-	. = ..()
-
-/obj/machinery/filler_object
-	name = ""
-	icon = 'icons/obj/doors/rapid_pdoor.dmi'
-	icon_state = ""
-	density = FALSE
-	anchored = TRUE

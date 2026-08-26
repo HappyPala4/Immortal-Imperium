@@ -427,8 +427,9 @@
 	do_animate("opening")
 	icon_state = "door0"
 	set_opacity(0)
-	if(istype(src, /obj/machinery/door/airlock/multi_tile/metal))
+	if(f5)
 		f5.set_opacity(0)
+	if(f6)
 		f6.set_opacity(0)
 	sleep(3)
 	src.set_density(0)
@@ -462,9 +463,12 @@
 	update_icon()
 	if(visible && !glass)
 		set_opacity(1)	//caaaaarn!
-	if(istype(src, /obj/machinery/door/airlock/multi_tile/metal))
-		f5.set_opacity(1)
-		f6.set_opacity(1)
+	else
+		set_opacity(0)
+	if(f5)
+		f5.set_opacity(opacity)
+	if(f6)
+		f6.set_opacity(opacity)
 	operating = 0
 
 	//I shall not add a check every x ticks if a door has closed over some fire.
