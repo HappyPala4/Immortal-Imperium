@@ -74,7 +74,10 @@
 		return 100
 */
 
-	if(armor > armour_pen + 25 && !istype(usr, /mob/living/carbon)) //No point calculating this, it'll be 100%  block anyway.
+	var/ap_gap = armor - armour_pen
+	// Full stop only when armour massively outclasses the attack (power armour vs a stub round).
+	// Old /20 scale made flak fully eat pistol/autogun fire, so bodies soaked magazines.
+	if(ap_gap >= 40)
 		if(absorb_text)
 			show_message("<span class='warning'>[absorb_text]</span>")
 		else
@@ -82,16 +85,13 @@
 		playsound(src, "sound/weapons/armorblockheavy[rand(1,3)].ogg", 50, 1, 1)
 		return 100
 
-	if(armour_pen > armor && !istype(usr, /mob/living/carbon)) //No point calculating this, it'll be 100%  pen anyway.
-		return 0
-
-	var/damage_breakthrough = ((((armor - armour_pen) / 20) * 100)) //This takes the armour, subtracts armour pen, and gets a percentage between 0 and 100, depending on the difference between them, with 20 points of armour above AP being 100% block.
+	var/damage_breakthrough = min((ap_gap / 35) * 100, 80)
+	if(damage_breakthrough < 0)
+		damage_breakthrough = 0
 	if(soften_text)
 		show_message("<span class='warning'>[soften_text]</span>")
 	else
 		show_message("<span class='warning'>Your armor softens the blow!</span>")
-	if(damage_breakthrough < 0)
-		damage_breakthrough = 0
 	playsound(src, "sound/weapons/armorblock[rand(1,4)].ogg", 50, 1, 1)
 	return damage_breakthrough
 

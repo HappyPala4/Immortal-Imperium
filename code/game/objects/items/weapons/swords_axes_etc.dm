@@ -524,7 +524,7 @@
 	force_wielded = 52 //warpsword
 	armor_penetration = 9 // It's still a sharpened metal stick. Should not be superior to Astartes Melee EVER.
 	block_chance = 30
-	sharpness = TRUE
+	sharpness = 25
 	grab_sound_is_loud = TRUE
 	weapon_speed_delay = 8
 	sales_price = 100
@@ -718,7 +718,7 @@
 	grab_sound_is_loud = TRUE
 	grab_sound = 'sound/items/unholster_knife.ogg'
 	equipsound = 'sound/items/holster_knife.ogg'
-	sharpness = TRUE//No cutting peoples heads off with a knife please.
+	sharpness = 8 // Arteries/tendons only. Limb sever needs sharpness 15+.
 	weapon_speed_delay = 6
 	drop_sound = 'sound/items/knife_drop.ogg'
 	swing_sound = "blunt_swing"
@@ -793,6 +793,7 @@
 	armor_penetration = 6 // 65% vs SM Chestpiece
 	block_chance = 35
 	str_requirement = 12 //i don't want to hear it, anyone below 12 str is supposed to be a child or a old man.
+	sharpness = 16
 	weapon_speed_delay = 7
 	armor = list(melee = 1, bullet = 2, laser = 2, energy = 2, bomb = 2, bio = 0, rad = 0)
 

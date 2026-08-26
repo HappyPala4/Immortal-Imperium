@@ -89,7 +89,7 @@
 	grab_sound_is_loud = TRUE
 	grab_sound = 'sound/items/unholster_knife.ogg'
 	equipsound = 'sound/items/holster_knife.ogg'
-	sharpness = TRUE//No cutting peoples heads off with a knife please.
+	sharpness = 8
 	weapon_speed_delay = 5
 	drop_sound = 'sound/items/knife_drop.ogg'
 	swing_sound = "blunt_swing"
@@ -112,7 +112,7 @@
 	grab_sound_is_loud = TRUE
 	grab_sound = 'sound/items/unholster_knife.ogg'
 	equipsound = 'sound/items/holster_knife.ogg'
-	sharpness = TRUE//No cutting peoples heads off with a knife please.
+	sharpness = 8
 	drop_sound = 'sound/items/knife_drop.ogg'
 	swing_sound = "blunt_swing"
 
@@ -203,7 +203,7 @@
 	force_wielded = 48 //warpsword
 	armor_penetration = 8
 	block_chance = 40 //may the warp guide your hand
-	sharpness = TRUE
+	sharpness = 25
 	grab_sound_is_loud = TRUE
 	weapon_speed_delay = 10
 	sales_price = 300
@@ -249,7 +249,7 @@
 	grab_sound_is_loud = TRUE
 	grab_sound = 'sound/items/unholster_knife.ogg'
 	equipsound = 'sound/items/holster_knife.ogg'
-	sharpness = TRUE//No cutting peoples heads off with a knife please.
+	sharpness = 8
 	drop_sound = 'sound/items/knife_drop.ogg'
 	swing_sound = "blunt_swing"
 	var/skinning = 0
@@ -307,7 +307,7 @@
 	grab_sound_is_loud = TRUE
 	grab_sound = 'sound/items/unholster_knife.ogg'
 	equipsound = 'sound/items/holster_knife.ogg'
-	sharpness = TRUE//No cutting peoples heads off with a knife please.
+	sharpness = 8
 	drop_sound = 'sound/items/knife_drop.ogg'
 	swing_sound = "blunt_swing"
 

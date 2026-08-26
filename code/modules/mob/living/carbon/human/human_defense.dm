@@ -48,24 +48,28 @@ meteor_act
 
 	var/obj/item/organ/external/organ = get_organ(def_zone)
 	var/armor = getarmor_organ(organ, P.check_armour)
-	var/armor_dam = run_armor_check(def_zone, "melee", P.armor_penetration)
-	var/armor_damage_multiplier = armor_dam != 0 ? armor_dam/100 : 0
-	var/penetrating_damage = P.damage - (armor_damage_multiplier = 0 ? 0 : armor - run_armor_check(def_zone, "melee", P.armor_penetration)/100)
+	var/ap_gap = max(armor - P.armor_penetration, 0)
+	var/armor_block = 0
+	if(ap_gap >= 40)
+		armor_block = 100
+	else
+		armor_block = min((ap_gap / 35) * 100, 80)
+	var/penetrating_damage = P.damage * max(1 - (armor_block / 100), 0)
 
-	//Organ damage
-	if(organ.internal_organs.len && prob(35 + max(penetrating_damage, -12.5)))
-		var/damage_amt = min((P.damage * P.penetration_modifier), penetrating_damage) //So we don't factor in armor_penetration as additional damage
+	//Organ damage — headshots always try for the brain so they actually drop people.
+	if(penetrating_damage > 0 && organ.internal_organs.len && (def_zone == BP_HEAD || prob(40 + min(penetrating_damage, 40))))
+		var/damage_amt = penetrating_damage * P.penetration_modifier
 		if(damage_amt > 0)
-		// Damage an internal organ
 			var/list/victims = list()
 			var/list/possible_victims = shuffle(organ.internal_organs.Copy())
 			for(var/obj/item/organ/internal/I in possible_victims)
 				if(I.damage < I.max_damage && (prob((I.relative_size) * (1 / max(1, victims.len)))))
 					victims += I
-			if(victims.len)
-				for(var/obj/item/organ/victim in victims)
-					damage_amt /= 2
-					victim.take_damage(damage_amt)
+			if(!victims.len)
+				victims += pick(organ.internal_organs)
+			for(var/obj/item/organ/victim in victims)
+				damage_amt /= 2
+				victim.take_damage(damage_amt)
 
 
 	//Embed or sever artery
@@ -309,24 +313,29 @@ meteor_act
 	if(effective_force > 10 || effective_force >= 5 && prob(33))
 		forcesay(GLOB.hit_appends)	//forcesay checks stat already
 
-	//Ok this block of text handles cutting arteries, tendons, and limbs off.
-	//First we cut an artery, the reason for that, is that arteries are funninly enough, not that lethal, and don't have the biggest impact. They'll still make you bleed out, but they're less immediately lethal.
-	if(I.sharp && prob(I.sharpness * 2) && !(affecting.status & ORGAN_ARTERY_CUT))
-		affecting.sever_artery()
-		if(affecting.artery_name == "carotid artery")
-			src.visible_message("<span class='danger'>[user] slices [src]'s throat!</span>")
-		else
-			src.visible_message("<span class='danger'>[user] slices open [src]'s [affecting.artery_name] artery!</span>")
-
-	//Next tendon, which disables the limb, but does not remove it, making it easier to fix, and less lethal, than losing it.
-	else if(I.sharp && (I.sharpness * 2) && !(affecting.status & ORGAN_TENDON_CUT) && affecting.has_tendon)//Yes this is the same exactly probability again. But I'm running it seperate because I don't want the two to be exclusive.
-		affecting.sever_tendon()
-		src.visible_message("<span class='danger'>[user] slices open [src]'s [affecting.tendon_name] tendon!</span>")
-
-	//Finally if we pass all that, we cut the limb off. This should reduce the number of one hit sword kills.
-	else if(I.sharp && I.edge)
-		if(prob(I.sharpness * strToDamageModifier(user.my_stats[STAT(str)].level)))
-			affecting.droplimb(0, DROPLIMB_EDGE)
+	// Cutting: arteries first, then tendons, then (rarely) the limb. Respects armour and existing damage.
+	var/cut_mult = blocked_mult(blocked)
+	if(I.sharp && I.sharpness && blocked < 100)
+		if(prob(I.sharpness * 2 * cut_mult) && !(affecting.status & ORGAN_ARTERY_CUT))
+			affecting.sever_artery()
+			if(affecting.artery_name == "carotid artery")
+				src.visible_message("<span class='danger'>[user] slices [src]'s throat!</span>")
+			else
+				src.visible_message("<span class='danger'>[user] slices open [src]'s [affecting.artery_name] artery!</span>")
+		else if(affecting.has_tendon && !(affecting.status & ORGAN_TENDON_CUT) && prob(I.sharpness * 2 * cut_mult))
+			affecting.sever_tendon()
+			src.visible_message("<span class='danger'>[user] slices open [src]'s [affecting.tendon_name] tendon!</span>")
+		else if(I.edge && I.sharpness >= 15)
+			var/str_level = user.STAT_LEVEL(str)
+			if(!str_level)
+				str_level = 10
+			var/sever_chance = I.sharpness * strToDamageModifier(str_level) * cut_mult
+			if((affecting.brute_dam + affecting.burn_dam) < (affecting.max_damage * 0.4))
+				sever_chance *= 0.15
+			if(affecting.vital)
+				sever_chance *= 0.5
+			if(prob(sever_chance))
+				affecting.droplimb(0, DROPLIMB_EDGE)
 
 	var/obj/item/organ/external/head/O = locate(/obj/item/organ/external/head) in src.organs
 
