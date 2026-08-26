@@ -219,7 +219,7 @@
 			if("nostats")
 				option = "NOSTATS"
 			if("later")
-				usr << browse(null,"window=privacypoll")
+				show_browser(usr, null,"window=privacypoll")
 				return
 			if("abstain")
 				option = "ABSTAIN"
@@ -232,7 +232,7 @@
 			var/DBQuery/query_insert = dbcon.NewQuery(sql)
 			query_insert.Execute()
 			to_chat(usr, "<b>Thank you for your vote!</b>")
-			usr << browse(null,"window=privacypoll")
+			show_browser(usr, null,"window=privacypoll")
 
 	if(!ready && href_list["preference"])
 		if(client)
@@ -583,8 +583,8 @@
 	return 0
 
 /mob/new_player/proc/close_spawn_windows()
-	src << browse(null, "window=latechoices") //closes late choices window
-	src <<browse(null, "window=player_panel")
+	show_browser(src, null, "window=latechoices") //closes late choices window
+	show_browser(src, null, "window=player_panel")
 
 /mob/new_player/proc/has_admin_rights()
 	return check_rights(R_ADMIN, 0, src)
@@ -655,4 +655,4 @@ Forge-World Eipharius is a Warhammer 40k SS13 server running a modified version 
 <h3>Some Notes</h3>
 Controls are ingame under the \"view controls\" button in OOC.
 <h3>Enjoy your stay!</h3>"}
-	src << browse(dat, "window=welcome")
+	show_browser(src, dat, "window=welcome")

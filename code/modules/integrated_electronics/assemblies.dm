@@ -101,7 +101,7 @@
 	HTML += "</table>"
 
 	HTML += "</body></html>"
-	user << browse(jointext(HTML,null), "window=open-assembly-\ref[src];size=600x350;border=1;can_resize=1;can_close=1;can_minimize=1")
+	show_browser(user, jointext(HTML,null), "window=open-assembly-\ref[src];size=600x350;border=1;can_resize=1;can_close=1;can_minimize=1")
 
 /obj/item/device/electronic_assembly/proc/closed_interact(mob/user)
 	if(!CanInteract(user, GLOB.physical_state))
@@ -131,7 +131,7 @@
 	HTML += "</body></html>"
 
 	if(listed_components)
-		user << browse(jointext(HTML,null), "window=closed-assembly-\ref[src];size=600x350;border=1;can_resize=1;can_close=1;can_minimize=1")
+		show_browser(user, jointext(HTML,null), "window=closed-assembly-\ref[src];size=600x350;border=1;can_resize=1;can_close=1;can_minimize=1")
 
 /obj/item/device/electronic_assembly/Topic(href, href_list[])
 	if(..())

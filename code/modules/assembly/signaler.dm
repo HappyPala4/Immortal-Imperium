@@ -64,7 +64,7 @@
 		<A href='byond://?src=\ref[src];code=5'>+</A><BR>
 		[t1]
 		</TT>"}
-	user << browse(dat, "window=radio")
+	show_browser(user, dat, "window=radio")
 	onclose(user, "radio")
 	return
 
@@ -73,7 +73,7 @@
 	if(..()) return 1
 
 	if(!usr.canmove || usr.stat || usr.restrained() || !in_range(loc, usr))
-		usr << browse(null, "window=radio")
+		show_browser(usr, null, "window=radio")
 		onclose(usr, "radio")
 		return
 

@@ -261,7 +261,7 @@
 	dat += "<B>Set the tax rate:</B></BR>"
 	dat += "<A href='byond://?src=\ref[src];tax=1'>Set tax rate (default is 15%)</A><BR>"
 	dat += "May the Emperor guide and protect all trade. Praise the Immortal Emperor for his unending rule!<HR>"
-	user << browse(dat, "window=scroll")
+	show_browser(user, dat, "window=scroll")
 	onclose(user, "scroll")
 	return
 
@@ -359,7 +359,7 @@
 	dat += "Kroot Tags (50/5):</BR>"
 	dat += "Ork Tags (50/5):</BR>"
 	dat += "May the Emperor guide and protect all trade. Praise the Immortal Emperor for his unending rule!<HR>"
-	user << browse(dat, "window=scroll")
+	show_browser(user, dat, "window=scroll")
 	onclose(user, "scroll")
 	return
 
@@ -439,7 +439,7 @@
 	dat += "<A href='byond://?src=\ref[src];unavailable=1'>Purchase a Eldar Corsair (UNAVAILABLE) (850)</A><BR>"
 	dat += "<A href='byond://?src=\ref[src];unavailable=1'>Purchase a (REDACTED) (UNAVAILABLE) (1000)</A><BR>" // Someone cool and very usefull. Like Jokaero
 	dat += "May the Emperor guide and protect all trade. Praise the Immortal Emperor for his unending rule!<HR>"
-	user << browse(dat, "window=scroll")
+	show_browser(user, dat, "window=scroll")
 	onclose(user, "scroll")
 	return
 

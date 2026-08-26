@@ -96,7 +96,7 @@ datum/preferences
 	dat += "<br>"
 	dat += player_setup.content(user)
 	dat += "</html></body>"
-	user <<browse(dat,"window=player_panel;size=600x600;can_close=0;can_resize=0;border=[is_bordered];titlebar=[is_bordered]")
+	show_browser(user, dat,"window=player_panel;size=600x600;can_close=0;can_resize=0;border=[is_bordered];titlebar=[is_bordered]")
 
 /datum/preferences/proc/process_link(mob/user, list/href_list)
 
@@ -137,7 +137,7 @@ datum/preferences
 		load_character(SAVE_RESET)
 		sanitize_preferences()
 	else if(href_list["toggletitle"])
-		usr <<browse(null, "window=player_panel")
+		show_browser(usr, null, "window=player_panel")
 		is_bordered = !is_bordered
 	else
 		return 0
@@ -302,5 +302,5 @@ datum/preferences
 	panel.open()
 
 /datum/preferences/proc/close_load_dialog(mob/user)
-	user << browse(null, "window=saves")
+	show_browser(user, null, "window=saves")
 	panel.close()

@@ -44,7 +44,7 @@
 	dat += "<A href='byond://?src=\ref[src];evac=1'>Signal for evacuation</A><BR>"
 	dat += "<A href='byond://?src=\ref[src];leave=1'>Open the slipstream and escape! (Requires you to send a signal first!)</A><BR>"
 	dat += "Your orders, Lord-Trader?<HR>"
-	user << browse(dat, "window=scroll")
+	show_browser(user, dat, "window=scroll")
 	onclose(user, "scroll")
 	return
 

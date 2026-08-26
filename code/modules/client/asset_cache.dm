@@ -58,7 +58,7 @@ You can set verify to TRUE if you want send() to sleep until the client has the 
 	client.sending |= asset_name
 	var/job = ++client.last_asset_job
 
-	client << browse({"
+	show_browser(client, {"
 	<script>
 		window.location.href="?asset_cache_confirm_arrival=[job]"
 	</script>
@@ -109,7 +109,7 @@ You can set verify to TRUE if you want send() to sleep until the client has the 
 	client.sending |= unreceived
 	var/job = ++client.last_asset_job
 
-	client << browse({"
+	show_browser(client, {"
 	<script>
 		window.location.href="?asset_cache_confirm_arrival=[job]"
 	</script>

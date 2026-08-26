@@ -1,3 +1,16 @@
+// BYOND 516 switched browse() from IE to WebView2. Fragments that do not start as a
+// real HTML document (for example Game Panel's <center>...) are shown as source text.
+/proc/format_browser_html(content)
+	if(!istext(content) || !length(content))
+		return content
+	var/trimmed = trim_left(content)
+	if(findtext(trimmed, "<!DOCTYPE", 1, 16) || findtext(trimmed, "<html", 1, 10))
+		return content
+	return HTML_SKELETON(content)
+
+/proc/show_browser(target, content, options)
+	target << browse(format_browser_html(content), options)
+
 /datum/browser
 	var/mob/user
 	var/title
@@ -79,8 +92,8 @@
 
 	return {"<!DOCTYPE html>
 <html>
-	<meta charset=ISO-8859-1">
 	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		[head_content]
 	</head>
@@ -98,17 +111,13 @@
 </html>"}
 
 /datum/browser/proc/get_content()
-	return {"
-	[get_header()]
-	[content]
-	[get_footer()]
-	"}
+	return "[get_header()][content][get_footer()]"
 
 /datum/browser/proc/open(var/use_onclose = 1)
 	var/window_size = ""
 	if (width && height)
 		window_size = "size=[width]x[height];"
-	user << browse(get_content(), "window=[window_id];[window_size][window_options]")
+	show_browser(user, get_content(), "window=[window_id];[window_size][window_options]")
 	if (use_onclose)
 		onclose(user, window_id, ref)
 
@@ -119,7 +128,7 @@
 		send_output(user, get_content(), "[window_id].browser")
 
 /datum/browser/proc/close()
-	user << browse(null, "window=[window_id]")
+	close_browser(user, "window=[window_id]")
 
 // This will allow you to show an icon in the browse window
 // This is added to mob so that it can be used without a reference to the browser object

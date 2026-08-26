@@ -125,7 +125,7 @@
 	dat += "<BR><A href='?src=\ref[src];scanning=1'>[scanning?"Armed":"Unarmed"]</A> (Movement sensor active when armed!)"
 	dat += "<BR><BR><A href='?src=\ref[src];refresh=1'>Refresh</A>"
 	dat += "<BR><BR><A href='?src=\ref[src];close=1'>Close</A>"
-	user << browse(dat, "window=prox")
+	show_browser(user, dat, "window=prox")
 	onclose(user, "prox")
 	return
 
@@ -133,7 +133,7 @@
 /obj/item/device/assembly/prox_sensor/Topic(href, href_list, state = GLOB.physical_state)
 	if(..()) return 1
 	if(!usr.canmove || usr.stat || usr.restrained() || !in_range(loc, usr))
-		usr << browse(null, "window=prox")
+		show_browser(usr, null, "window=prox")
 		onclose(usr, "prox")
 		return
 
@@ -155,7 +155,7 @@
 		range = min(max(range, 1), 5)
 
 	if(href_list["close"])
-		usr << browse(null, "window=prox")
+		show_browser(usr, null, "window=prox")
 		return
 
 	if(usr)

@@ -60,8 +60,8 @@ proc/show_skill_window(var/mob/user, var/mob/living/carbon/human/M)
 			HTML += "</tr>"
 	HTML += "</table>"
 
-	user << browse(null, "window=preferences")
-	user << browse(HTML, "window=show_skills;size=600x800")
+	show_browser(user, null, "window=preferences")
+	show_browser(user, HTML, "window=show_skills;size=600x800")
 	return
 
 mob/living/carbon/human/verb/show_skills()

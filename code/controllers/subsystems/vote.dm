@@ -42,12 +42,12 @@ SUBSYSTEM_DEF(vote)
 		result()
 		for(var/client/C in voting)
 			if(C)
-				C << browse(null,"window=vote;size=450x740")
+				show_browser(C, null,"window=vote;size=450x740")
 		reset()
 	else
 		for(var/client/C in voting)
 			if(C)
-				C << browse(SSvote.interface(C),"window=vote;size=450x740")
+				show_browser(C, SSvote.interface(C),"window=vote;size=450x740")
 
 		voting.Cut()
 
@@ -494,7 +494,7 @@ SUBSYSTEM_DEF(vote)
 		switch(href_list["vote"])
 			if("close")
 				voting -= usr.client
-				usr << browse(null, "window=vote;size=450x740")
+				show_browser(usr, null, "window=vote;size=450x740")
 				return
 			if("cancel")
 				if(usr.client.holder)
@@ -556,4 +556,4 @@ SUBSYSTEM_DEF(vote)
 	set category = "OOC"
 	set name = "Vote"
 
-	src << browse(SSvote.interface(client),"window=vote;size=450x740")
+	show_browser(src, SSvote.interface(client),"window=vote;size=450x740")

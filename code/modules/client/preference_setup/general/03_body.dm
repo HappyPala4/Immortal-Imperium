@@ -350,7 +350,7 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 		return TOPIC_HANDLED
 
 	else if(href_list["set_species"])
-		user << browse(null, "window=species")
+		show_browser(user, null, "window=species")
 		if(!pref.species_preview || !(pref.species_preview in all_species))
 			return TOPIC_NOACTION
 
@@ -714,7 +714,7 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 		dat += "\[<a href='?src=\ref[src];set_species=[pref.species_preview]'>select</a>\]"
 	dat += "</center></body>"
 
-	user << browse(dat, "window=species;size=700x400")
+	show_browser(user, dat, "window=species;size=700x400")
 
 /datum/category_item/player_setup_item/proc/ResetAllHair()
 	ResetHair()

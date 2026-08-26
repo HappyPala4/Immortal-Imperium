@@ -152,7 +152,7 @@
 	dat += "<A href='byond://?src=\ref[src];range=1'>Move into low orbit.</A><BR>"
 	dat += "<A href='byond://?src=\ref[src];fire=1'>Exterminatus</A><BR>"
 	dat += "The will of the Emperor comes before all else. <br>May he have mercy upon their souls.<HR>"
-	user << browse(dat, "window=scroll")
+	show_browser(user, dat, "window=scroll")
 	onclose(user, "scroll")
 	return
 

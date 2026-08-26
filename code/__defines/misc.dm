@@ -24,6 +24,10 @@
 
 #define text_starts_with(text, start) (copytext(text, 1, length(start) + 1) == start)
 
+// Full HTML document wrapper for browse() on BYOND 516 WebView2.
+#define HTML_SKELETON(body) "<!DOCTYPE html><html><head><meta http-equiv='Content-Type' content='text/html; charset=UTF-8'><meta http-equiv='X-UA-Compatible' content='IE=edge'></head><body>[body]</body></html>"
+#define HTML_SKELETON_TITLE(title, body) "<!DOCTYPE html><html><head><meta http-equiv='Content-Type' content='text/html; charset=UTF-8'><meta http-equiv='X-UA-Compatible' content='IE=edge'><title>[title]</title></head><body>[body]</body></html>"
+
 //Misc text define. Does 4 spaces. Used as a makeshift tabulator.
 #define FOURSPACES "&nbsp;&nbsp;&nbsp;&nbsp;"
 

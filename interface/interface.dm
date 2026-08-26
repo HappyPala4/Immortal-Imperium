@@ -28,7 +28,7 @@
 	set name = "Rules"
 	set category = "OOC"
 	set desc = "Show Server Rules."
-	src << browse(file(RULES_FILE), "window=rules;size=480x320")
+	show_browser(src, file(RULES_FILE), "window=rules;size=480x320")
 #undef RULES_FILE
 
 #define LORE_FILE "config/lore.html"
@@ -195,4 +195,4 @@
 		dat += gun_controls
 	if(holder)
 		dat += admin
-	src << browse(dat, "window=controls")
+	show_browser(src, dat, "window=controls")
