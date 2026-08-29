@@ -14,7 +14,7 @@ window.onerror = function(msg, url, line, col, error) {
 		extra += !error ? '' : ' | error: ' + error;
 		extra += !navigator.userAgent ? '' : ' | user agent: ' + navigator.userAgent;
 		var debugLine = 'Error: ' + msg + ' | url: ' + url + ' | line: ' + line + extra;
-		window.location = '?_src_=chat&proc=debug&param[error]='+escaper(debugLine);
+		runByond('?_src_=chat&proc=debug&param[error]='+escaper(debugLine));
 	}
 	return true;
 };
@@ -257,9 +257,22 @@ function output(message, flag) {
 	if (typeof message === 'undefined') {
 		return;
 	}
+	if (!$messages || !$messages.length) {
+		return;
+	}
 	if (typeof flag === 'undefined') {
 		flag = '';
 	}
+	try {
+		outputInner(message, flag);
+	} catch (err) {
+		if (window.console && console.error) {
+			console.error(err);
+		}
+	}
+}
+
+function outputInner(message, flag) {
 
 	if (flag !== 'internal')
 		opts.lastPang = Date.now();
@@ -439,8 +452,16 @@ function internalOutput(message, flag)
 }
 
 //Runs a route within byond, client or server side. Consider this "ehjax" for byond.
+// BYOND 516 WebView2 treats a bare "?foo" location change as a real navigation and
+// unloads the chat page. Always use the byond:// protocol so the topic is intercepted.
 function runByond(uri) {
-	window.location = uri;
+	if (!uri) {
+		return;
+	}
+	if (uri.charAt(0) === '?') {
+		uri = 'byond://' + uri;
+	}
+	window.location.href = uri;
 }
 
 function setCookie(cname, cvalue, exdays) {
@@ -699,8 +720,10 @@ function handleToggleClick($sub, $toggle) {
 ******************************************/
 
 if (typeof $ === 'undefined') {
-	var div = document.getElementById('loading').childNodes[1];
-	div += '<br><br>ERROR: Jquery did not load.';
+	var loading = document.getElementById('loading');
+	if (loading) {
+		loading.innerHTML = 'ERROR: jQuery did not load. Use OOC -> Fix chat, or reconnect.';
+	}
 }
 
 $(function() {

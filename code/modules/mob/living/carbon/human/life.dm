@@ -97,6 +97,8 @@
 		handle_diagonostic_signs()
 
 		update_aim_icon()
+		if(recoil > 0 || dispersion_mouse_display_number > 0)
+			start_recoil_recovery()
 
 		handle_warfare_life()
 
@@ -593,6 +595,7 @@
 		handle_smelly_things()
 
 		handle_happiness()
+		handle_hunger()
 
 		if(get_shock() >= species.total_health)
 			if(!stat)
@@ -661,8 +664,8 @@
 			adjustToxLoss(total_phoronloss)
 
 		// nutrition decrease
-		if (nutrition > 0)
-			nutrition = max (0, nutrition - species.hunger_factor)
+		if(nutrition > 0 && nutrition < INFINITY)
+			nutrition = max(0, nutrition - species.hunger_factor)
 
 		if(stasis_value > 1 && drowsyness < stasis_value * 5)
 			drowsyness += min(stasis_value, 3)
@@ -804,7 +807,7 @@
 				else							nutrition_icon.icon_state = "nutrition4"
 		if(hydration_icon)
 			switch(thirst)
-				if(THIRST_LEVEL_FILLED to THIRST_LEVEL_MAX)				hydration_icon.icon_state = "hydration0"
+				if(THIRST_LEVEL_FILLED to INFINITY)				hydration_icon.icon_state = "hydration0"
 				if(THIRST_LEVEL_MEDIUM to THIRST_LEVEL_FILLED)			hydration_icon.icon_state = "hydration1"
 				if(THIRST_LEVEL_THIRSTY to THIRST_LEVEL_MEDIUM)			hydration_icon.icon_state = "hydration2"
 				if(THIRST_LEVEL_DEHYDRATED to THIRST_LEVEL_THIRSTY)		hydration_icon.icon_state = "hydration3"
@@ -954,11 +957,11 @@
 		//When you're starving, the rate at which oxygen damage is healed is reduced by 80% (you only restore 1 oxygen damage per life tick, instead of 5)
 
 		switch(nutrition)
-			if(STARVATION_NOTICE to STARVATION_MIN) //60-80
+			if(STARVATION_NOTICE to STARVATION_MIN) //45-60
 				if(sleeping) return
 
-				//if(prob(2))
-				//	to_chat(src, "<span class='notice'>[pick("You're very hungry.","You really could use a meal right now.")]</span>")
+				if(prob(2))
+					to_chat(src, "<span class='warning'>[pick("You're very hungry.","You really could use a meal right now.")]</span>")
 
 			if(STARVATION_WEAKNESS to STARVATION_NOTICE) //30-60
 				if(sleeping) return

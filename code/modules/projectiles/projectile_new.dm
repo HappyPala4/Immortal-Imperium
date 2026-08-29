@@ -242,7 +242,7 @@
 						to_chat(target_mob, "<span class='danger'>BULLETS WHIZZ PAST MY HEAD!</span>")
 						target_mob.overlay_fullscreen("supress",/obj/screen/fullscreen/oxy, 5)
 						shake_camera(target_mob, 3, 2)//More supression effects.
-						target_mob.recoil += 15 //Make them innacurate for a tick when being supressed.
+						target_mob.add_recoil(15) //Make them innacurate for a tick when being supressed.
 						spawn(5)
 							target_mob.clear_fullscreen("supress", 5)
 
@@ -253,7 +253,7 @@
 							to_chat(target_mob, "<span class='danger'>BULLETS WHIZZ PAST MY HEAD!</span>")
 							target_mob.overlay_fullscreen("supress",/obj/screen/fullscreen/oxy, 5)
 							shake_camera(target_mob, 3, 2)//More supression effects.
-							target_mob.recoil += 15 //Make them innacurate for a tick when being supressed.
+							target_mob.add_recoil(15) //Make them innacurate for a tick when being supressed.
 							spawn(5)
 								target_mob.clear_fullscreen("supress", 5)
 						else if(prob(rand(1,15)))//Chance to miss, minmum of 1, max of 15.
@@ -277,7 +277,7 @@
 			playsound(target_mob, missound, 60, 1)
 			target_mob.overlay_fullscreen("supress",/obj/screen/fullscreen/oxy, 5)
 			shake_camera(target_mob, 3, 2)//More supression effects.
-			target_mob.recoil += 15 //Make them innacurate for a tick when being supressed.
+			target_mob.add_recoil(15) //Make them innacurate for a tick when being supressed.
 			spawn(5)
 				target_mob.clear_fullscreen("supress", 5)
 		return 0

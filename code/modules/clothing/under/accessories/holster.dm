@@ -26,7 +26,7 @@
 		user.stop_aiming(no_message=1)
 	holstered = I
 	user.drop_from_inventory(holstered)
-	holstered.loc = src
+	holstered.forceMove(src)
 	holstered.add_fingerprint(user)
 	w_class = max(w_class, holstered.w_class)
 	user.visible_message("<span class='notice'>[user] holsters \the [holstered].</span>", "<span class='notice'>You holster \the [holstered].</span>")
@@ -40,23 +40,38 @@
 	if(!holstered)
 		return
 
-	if(istype(user.get_active_hand(),/obj) && istype(user.get_inactive_hand(),/obj))
+	if(istype(user.get_active_hand(), /obj) && istype(user.get_inactive_hand(), /obj))
 		to_chat(user, "<span class='warning'>You need an empty hand to draw \the [holstered]!</span>")
+		return
+
+	if(user.a_intent == I_HURT)
+		user.visible_message(
+			"<span class='danger'>[user] draws \the [holstered], ready to go!</span>",
+			"<span class='warning'>You draw \the [holstered], ready to go!</span>"
+			)
 	else
-		if(user.a_intent == I_HURT)
-			usr.visible_message(
-				"<span class='danger'>[user] draws \the [holstered], ready to go!</span>",
-				"<span class='warning'>You draw \the [holstered], ready to go!</span>"
-				)
-		else
-			user.visible_message(
-				"<span class='notice'>[user] draws \the [holstered], pointing it at the ground.</span>",
-				"<span class='notice'>You draw \the [holstered], pointing it at the ground.</span>"
-				)
-		user.put_in_hands(holstered)
-		holstered.add_fingerprint(user)
-		w_class = initial(w_class)
-		clear_holster()
+		user.visible_message(
+			"<span class='notice'>[user] draws \the [holstered], pointing it at the ground.</span>",
+			"<span class='notice'>You draw \the [holstered], pointing it at the ground.</span>"
+			)
+	var/obj/item/drawing = holstered
+	if(!user.put_in_hands(drawing))
+		return
+	drawing.add_fingerprint(user)
+	w_class = initial(w_class)
+	clear_holster()
+
+/obj/item/clothing/accessory/holster/attack_hand(mob/user as mob)
+	if(has_suit)
+		unholster(user)
+		return
+	..()
+
+/obj/item/clothing/accessory/holster/attack_self(mob/user as mob)
+	if(holstered)
+		unholster(user)
+		return
+	..()
 
 /obj/item/clothing/accessory/holster/attackby(obj/item/W as obj, mob/user as mob)
 	holster(W, user)
@@ -73,7 +88,7 @@
 	else
 		to_chat(user, "It is empty.")
 
-/obj/item/clothing/accessory/holster/on_attached(obj/item/clothing/under/S, mob/user as mob)
+/obj/item/clothing/accessory/holster/on_attached(obj/item/clothing/S, mob/user as mob)
 	..()
 	has_suit.verbs += /obj/item/clothing/accessory/holster/verb/holster_verb
 
@@ -90,17 +105,17 @@
 	if(!istype(usr, /mob/living)) return
 	if(usr.stat) return
 
-	//can't we just use src here?
 	var/obj/item/clothing/accessory/holster/H = null
 	if (istype(src, /obj/item/clothing/accessory/holster))
 		H = src
-	else if (istype(src, /obj/item/clothing/under))
-		var/obj/item/clothing/under/S = src
+	else if (istype(src, /obj/item/clothing))
+		var/obj/item/clothing/S = src
 		if (S.accessories.len)
 			H = locate() in S.accessories
 
 	if (!H)
 		to_chat(usr, "<span class='warning'>Something is very wrong.</span>")
+		return
 
 	if(!H.holstered)
 		var/obj/item/W = usr.get_active_hand()

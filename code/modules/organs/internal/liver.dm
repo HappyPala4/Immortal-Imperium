@@ -76,9 +76,11 @@
 
 
 /obj/item/organ/internal/liver/proc/handle_thirst()
+	if(!owner || owner.thirst >= INFINITY)
+		return
 	owner.adjust_thirst(-THIRST_FACTOR)
 	switch(owner.thirst)
-		if(THIRST_LEVEL_THIRSTY to INFINITY)
+		if(THIRST_LEVEL_MEDIUM to INFINITY)
 			owner.clear_event("thirst")
 		if(THIRST_LEVEL_THIRSTY to THIRST_LEVEL_MEDIUM)
 			if(prob(1))
@@ -87,7 +89,7 @@
 			owner.add_event("thirst", /datum/happiness_event/thirst/thirsty)
 			if(prob(2))
 				to_chat(owner, "<span class='warning'>Your throat is dry and your lips feel cracked.</span>")
-		if(0 to THIRST_LEVEL_DEHYDRATED)
+		if(-INFINITY to THIRST_LEVEL_DEHYDRATED)
 			owner.add_event("thirst", /datum/happiness_event/thirst/dehydrated)
 			if(prob(1))
 				to_chat(owner, "<span class='warning'>You faint from dehydration.</span>")

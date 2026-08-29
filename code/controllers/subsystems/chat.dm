@@ -1,6 +1,6 @@
 SUBSYSTEM_DEF(chat)
 	name = "Chat"
-	flags = SS_TICKER | SS_NO_INIT //This is still buggy
+	flags = SS_TICKER | SS_NO_INIT
 	wait = 1
 	priority = SS_PRIORITY_CHAT
 	init_order = INIT_ORDER_CHAT
@@ -11,8 +11,13 @@ SUBSYSTEM_DEF(chat)
 /datum/controller/subsystem/chat/fire()
 	for(var/i in payload)
 		var/client/C = i
-		C << output(payload[C], "browseroutput:output")
+		var/list/messages = payload[C]
 		payload -= C
+		if(istype(messages))
+			for(var/message in messages)
+				C << output(message, "browseroutput:output")
+		else if(messages)
+			C << output(messages, "browseroutput:output")
 
 		if(MC_TICK_CHECK)
 			return
@@ -44,25 +49,25 @@ SUBSYSTEM_DEF(chat)
 
 	if(islist(target))
 		for(var/I in target)
-			var/client/C = CLIENT_FROM_VAR(I) //Grab us a client if possible
-
-			if(!C?.chatOutput || C.chatOutput.broken) //A player who hasn't updated his skin file.
-				continue
-
-			if(!C.chatOutput.loaded) //Client still loading, put their messages in a queue
-				C.chatOutput.messageQueue += message
-				continue
-
-			payload[C] += twiceEncoded
+			queue_client(CLIENT_FROM_VAR(I), message, twiceEncoded)
 
 	else
-		var/client/C = CLIENT_FROM_VAR(target) //Grab us a client if possible
+		queue_client(CLIENT_FROM_VAR(target), message, twiceEncoded)
 
-		if(!C?.chatOutput || C.chatOutput.broken) //A player who hasn't updated his skin file.
-			return
+/datum/controller/subsystem/chat/proc/queue_client(client/C, message, twiceEncoded)
+	if(!C)
+		return
 
-		if(!C.chatOutput.loaded) //Client still loading, put their messages in a queue
+	// Always write to the legacy output so a goonchat failure still shows text.
+	C << message
+
+	if(!C.chatOutput || C.chatOutput.broken)
+		return
+
+	if(!C.chatOutput.loaded)
+		if(C.chatOutput.messageQueue)
 			C.chatOutput.messageQueue += message
-			return
+		return
 
-		payload[C] += twiceEncoded
+	LAZYINITLIST(payload[C])
+	payload[C] += twiceEncoded

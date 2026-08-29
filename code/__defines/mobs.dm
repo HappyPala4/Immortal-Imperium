@@ -335,7 +335,7 @@
 #define THIRST_LEVEL_MEDIUM 300
 #define THIRST_LEVEL_THIRSTY 200
 #define THIRST_LEVEL_DEHYDRATED 50
-#define THIRST_FACTOR 0.25
+#define THIRST_FACTOR 0.4 // ~12 thirst/min; thirsty in ~25-35 minutes from a full spawn
 
 //Disgust levels for humans
 #define DISGUST_LEVEL_MAXEDOUT 150

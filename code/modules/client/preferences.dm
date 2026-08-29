@@ -273,7 +273,7 @@ datum/preferences
 		return
 
 	if(!character.isSynthetic())
-		character.nutrition = rand(140,360)
+		character.nutrition = rand(NUTRITION_LEVEL_FED, NUTRITION_LEVEL_WELL_FED)
 
 	return
 

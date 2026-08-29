@@ -11,14 +11,14 @@ var/list/floating_chat_colors = list()
 	var/fontsize = 6
 	if(small)
 		fontsize = 5
-	var/limit = 50
-	if(copytext(message, length(message) - 1) == "!!")
+	var/limit = 120
+	if(copytext_char(message, -2) == "!!")
 		fontsize = 8
-		limit = 30
+		limit = 60
 		style += "font-weight: bold;"
 
-	if(length(message) > limit)
-		message = "[copytext(message, 1, limit)]..."
+	if(length_char(message) > limit)
+		message = "[copytext_char(message, 1, limit)]..."
 
 	if(!floating_chat_colors[name])
 		floating_chat_colors[name] = get_random_colour(0,160,230)
@@ -39,8 +39,8 @@ var/list/floating_chat_colors = list()
 	I.plane = HUD_PLANE//Want to show this above the vision cone.
 	I.layer = 10
 	I.alpha = 0
-	I.maptext_width = 80
-	I.maptext_height = 64
+	I.maptext_width = 224
+	I.maptext_height = 96
 	I.appearance_flags = APPEARANCE_UI_IGNORE_ALPHA
 	I.pixel_x = -round(I.maptext_width/2) + 16
 
@@ -48,8 +48,9 @@ var/list/floating_chat_colors = list()
 	I.maptext = "<center><span style=\"[style]\">[message]</span></center>"
 	animate(I, 1, alpha = 255, pixel_y = 16)
 
+	var/lines = max(1, round((length_char(message) + 35) / 36))
 	for(var/image/old in holder.stored_chat_text)
-		animate(old, 2, pixel_y = old.pixel_y + 8)
+		animate(old, 2, pixel_y = old.pixel_y + lines * (size + 4))
 	LAZYADD(holder.stored_chat_text, I)
 
 	addtimer(CALLBACK(GLOBAL_PROC, .proc/remove_floating_text, holder, I), duration)

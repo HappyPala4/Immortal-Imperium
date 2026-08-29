@@ -1,4 +1,4 @@
-#define DEFAULT_HUNGER_FACTOR 0.07 // Factor of how fast mob nutrition decreases
+#define DEFAULT_HUNGER_FACTOR 0.15 // ~6 nutrition/min; hungry in ~25-35 minutes from a fed spawn
 
 #define REM 0.2 // Means 'Reagent Effect Multiplier'. This is how many units of reagent are consumed per tick
 

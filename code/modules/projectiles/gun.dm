@@ -6,6 +6,11 @@
 #define GUN_SMG "smg"
 #define GUN_PISTOL "pistol"
 
+#define GUN_RECOIL_MAX 20
+#define GUN_RECOIL_RECOVERY_WAIT 2
+#define GUN_RECOIL_RECOVERY_RATE 2
+#define GUN_RECOIL_RECOVERY_DELAY 3
+
 /*
 	Defines a firing mode for a gun.
 
@@ -266,10 +271,10 @@
 	//update timing
 	if(!automatic)
 		user.setClickCooldown(DEFAULT_QUICK_COOLDOWN)
-		user.recoil += 0.5 //So you can click pretty quick for a bit before it starts getting innacurate.
+		user.add_recoil(0.5) //So you can click pretty quick for a bit before it starts getting innacurate.
 	if(automatic)
 		user.setClickCooldown(automatic)
-		user.recoil += 0.01
+		user.add_recoil(0.01)
 	user.setMoveCooldown(move_delay)
 	next_fire_time = world.time + fire_delay
 	update_icon()
@@ -444,20 +449,10 @@
 	if(user.staminaloss >= (user.staminaexhaust/1))
 		P.dispersion += mod
 
-	user.dispersion_mouse_display_number = P.dispersion
-	//to_chat(world, "[P.dispersion]") //Debug.
-	if(user.dispersion_mouse_display_number > 0 && user.dispersion_mouse_display_number < 2)// else
-		user.client.mouse_pointer_icon = 'icons/effects/standard/standard2.dmi'//'icons/misc/aim.dmi'
-	else if(user.dispersion_mouse_display_number >= 2 && user.dispersion_mouse_display_number < 4)
-		user.client.mouse_pointer_icon = 'icons/effects/standard/standard3.dmi'
-	else if(user.dispersion_mouse_display_number >= 4 && user.dispersion_mouse_display_number < 6)
-		user.client.mouse_pointer_icon = 'icons/effects/standard/standard4.dmi'
-	else if(user.dispersion_mouse_display_number >= 6 && user.dispersion_mouse_display_number < 10)
-		user.client.mouse_pointer_icon = 'icons/effects/standard/standard5.dmi'
-	else if(user.dispersion_mouse_display_number >= 10)
-		user.client.mouse_pointer_icon = 'icons/effects/standard/standard6.dmi'
-	else
-		user.client.mouse_pointer_icon = 'icons/effects/standard/standard1.dmi'
+	user.dispersion_mouse_display_number = CLAMP(P.dispersion, 0, GUN_RECOIL_MAX)
+	user.last_recoil_time = world.time
+	user.update_aim_icon()
+	user.start_recoil_recovery()
 
 
 
@@ -665,7 +660,45 @@
 /mob
 	var/dispersion_mouse_display_number = 0
 	var/recoil = 0
+	var/recoil_recovery_active = FALSE
+	var/last_recoil_time = 0
 
+/mob/proc/add_recoil(amount)
+	if(amount <= 0)
+		return
+	recoil = min(GUN_RECOIL_MAX, recoil + amount)
+	last_recoil_time = world.time
+	update_aim_icon()
+	start_recoil_recovery()
+
+/mob/proc/start_recoil_recovery()
+	if(recoil_recovery_active)
+		return
+	recoil_recovery_active = TRUE
+	addtimer(CALLBACK(src, .proc/recoil_recovery_tick), GUN_RECOIL_RECOVERY_WAIT)
+
+/mob/proc/recoil_recovery_tick()
+	if(QDELETED(src))
+		recoil_recovery_active = FALSE
+		return
+
+	// Let spread accumulate while firing; only decay after the last shot.
+	if(world.time < last_recoil_time + GUN_RECOIL_RECOVERY_DELAY)
+		update_aim_icon()
+		addtimer(CALLBACK(src, .proc/recoil_recovery_tick), GUN_RECOIL_RECOVERY_WAIT)
+		return
+
+	recoil = max(0, recoil - GUN_RECOIL_RECOVERY_RATE)
+	dispersion_mouse_display_number = max(0, dispersion_mouse_display_number - GUN_RECOIL_RECOVERY_RATE)
+	update_aim_icon()
+
+	if(recoil > 0 || dispersion_mouse_display_number > 0)
+		addtimer(CALLBACK(src, .proc/recoil_recovery_tick), GUN_RECOIL_RECOVERY_WAIT)
+	else
+		recoil = 0
+		dispersion_mouse_display_number = 0
+		recoil_recovery_active = FALSE
+		update_aim_icon()
 
 /client
 	var/list/selected_target[2]
@@ -676,11 +709,11 @@
 		selected_target[1] = object
 		selected_target[2] = params
 		while(selected_target[1])
-			usr.recoil += 1
+			usr.add_recoil(1)
 			Click(selected_target[1], location, control, selected_target[2])
 			sleep(delay)
-		usr.dispersion_mouse_display_number = 0
-		usr.recoil = 0
+		usr.start_recoil_recovery()
+		usr.update_aim_icon()
 
 /client/MouseUp(object, location, control, params)
 	selected_target[1] = null
@@ -715,23 +748,22 @@
 
 //A cool pointer for your gun.
 /obj/item/gun/pickup(mob/user)
-	if(user.client)
-		user.client.mouse_pointer_icon = 'icons/effects/standard/standard1.dmi'
-	//	user.update_aim_icon()
-	//	user.client.mouse_pointer_icon = 'icons/misc/aim.dmi'
 	update_icon()
 	..()
+	if(user)
+		user.update_aim_icon()
+
 /obj/item/gun/dropped(mob/user)
 	..()
-	if(user.client)
-		user.client.mouse_pointer_icon = null
 	update_icon()
+	if(user)
+		user.update_aim_icon()
 
 /obj/item/gun/equipped(mob/user)
 	..()
-	if(user.client)
-		user.client.mouse_pointer_icon = null
 	update_icon()
+	if(user)
+		user.update_aim_icon()
 
 
 /obj/item/gun/proc/add_bayonet()

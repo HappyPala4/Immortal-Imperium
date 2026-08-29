@@ -171,30 +171,22 @@
 	if(!client)
 		return
 
-	if(istype(get_active_hand(),/obj/item/gun))
-		if(dispersion_mouse_display_number > 0 && dispersion_mouse_display_number < 2)// else
-			client.mouse_pointer_icon = 'icons/effects/standard/standard2.dmi'//'icons/misc/aim.dmi'
-		else if(dispersion_mouse_display_number >= 2 && dispersion_mouse_display_number < 4)
+	if(istype(get_active_hand(), /obj/item/gun))
+		var/spread = max(recoil, dispersion_mouse_display_number)
+		if(spread > 0 && spread < 2)
+			client.mouse_pointer_icon = 'icons/effects/standard/standard2.dmi'
+		else if(spread >= 2 && spread < 4)
 			client.mouse_pointer_icon = 'icons/effects/standard/standard3.dmi'
-		else if(dispersion_mouse_display_number >= 4 && dispersion_mouse_display_number < 6)
+		else if(spread >= 4 && spread < 6)
 			client.mouse_pointer_icon = 'icons/effects/standard/standard4.dmi'
-		else if(dispersion_mouse_display_number >= 6 && dispersion_mouse_display_number < 10)
+		else if(spread >= 6 && spread < 10)
 			client.mouse_pointer_icon = 'icons/effects/standard/standard5.dmi'
-		else if(dispersion_mouse_display_number >= 10)
+		else if(spread >= 10)
 			client.mouse_pointer_icon = 'icons/effects/standard/standard6.dmi'
 		else
 			client.mouse_pointer_icon = 'icons/effects/standard/standard1.dmi'
-		if(dispersion_mouse_display_number > 20)
-			dispersion_mouse_display_number = 20
-			recoil = 20
-		if(dispersion_mouse_display_number <= 0)
-			dispersion_mouse_display_number = 0
-			recoil = 0
-		dispersion_mouse_display_number -= 10
-
 	else
-		if(client)
-			client.mouse_pointer_icon = null
+		client.mouse_pointer_icon = null
 
 
 /mob/living/carbon/proc/activate_hand(var/selhand) //0 or "r" or "right" for right hand; 1 or "l" or "left" for left hand.

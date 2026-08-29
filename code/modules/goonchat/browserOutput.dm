@@ -6,6 +6,9 @@ For the main html chat area
 GLOBAL_DATUM_INIT(iconCache, /savefile, new("tmp/iconCache.sav")) //Cache of icons for the browser output
 
 //On client, created on login
+#define CHAT_LOAD_MAX_ATTEMPTS 5
+#define CHAT_LOAD_RETRY_DELAY 20 SECONDS
+
 /datum/chatOutput
 	var/client/owner	 //client ref
 	var/loaded       = FALSE // Has the client loaded the browser output area?
@@ -14,6 +17,8 @@ GLOBAL_DATUM_INIT(iconCache, /savefile, new("tmp/iconCache.sav")) //Cache of ico
 	var/broken       = FALSE
 	var/list/connectionHistory //Contains the connection history passed from chat cookie
 	var/adminMusicVolume = 25 //This is for the Play Global Sound verb
+	var/loadAttempts = 0
+	var/load_id = 0
 
 /datum/chatOutput/New(client/C)
 	owner = C
@@ -33,23 +38,41 @@ GLOBAL_DATUM_INIT(iconCache, /savefile, new("tmp/iconCache.sav")) //Cache of ico
 		alert(owner.mob, "Updated chat window does not exist. If you are using a custom skin file please allow the game to update.")
 		return
 
-	if(winget(owner, "browseroutput", "is-visible") == "true") //Already setup
-		doneLoading()
-
-	else //Not setup
-		load()
+	// Always reload. Assuming an already-visible browser is working is how
+	// reconnects and "Fix chat" left people with a blank pane and no messages.
+	loaded = FALSE
+	broken = FALSE
+	loadAttempts = 0
+	if(!messageQueue)
+		messageQueue = list()
+	showLegacyChat()
+	load()
 
 	return TRUE
 
 /datum/chatOutput/proc/load()
 	set waitfor = FALSE
-	if(!owner)
+	if(!owner || broken)
 		return
 
 	var/datum/asset/stuff = get_asset_datum(/datum/asset/group/goonchat)
 	stuff.send(owner)
 
+	// Keep the legacy output on top while loading, but the browser must be
+	// enabled and visible or WebView2 (BYOND 516) will not run chat JS.
+	winset(owner, "output", "is-visible=true;is-disabled=false")
+	winset(owner, "browseroutput", "is-disabled=false;is-visible=true")
 	show_browser(owner, file('code/modules/goonchat/browserassets/html/browserOutput.html'), "window=browseroutput")
+
+	var/this_id = ++load_id
+	spawn(CHAT_LOAD_RETRY_DELAY)
+		if(this_id != load_id || QDELETED(owner) || loaded || broken)
+			return
+		loadAttempts++
+		if(loadAttempts >= CHAT_LOAD_MAX_ATTEMPTS)
+			failChat()
+			return
+		load()
 
 /datum/chatOutput/Topic(href, list/href_list)
 	if(usr.client != owner)
@@ -81,6 +104,14 @@ GLOBAL_DATUM_INIT(iconCache, /savefile, new("tmp/iconCache.sav")) //Cache of ico
 
 		if("setMusicVolume")
 			data = setMusicVolume(arglist(params))
+
+		if("reload")
+			loaded = FALSE
+			broken = FALSE
+			loadAttempts = 0
+			if(!messageQueue)
+				messageQueue = list()
+			load()
 	if(data)
 		ehjax_send(data = data)
 
@@ -102,12 +133,28 @@ GLOBAL_DATUM_INIT(iconCache, /savefile, new("tmp/iconCache.sav")) //Cache of ico
 	messageQueue = null
 	sendClientData()
 
+	// Goes to the hidden legacy output so it is there if we have to fall back.
 	//do not convert to to_chat()
 	owner << "<span class=\"userdanger\">Failed to load fancy chat, reverting to old chat. Certain features won't work.</span>"
 
 /datum/chatOutput/proc/showChat()
 	winset(owner, "output", "is-visible=false")
 	winset(owner, "browseroutput", "is-disabled=false;is-visible=true")
+
+/datum/chatOutput/proc/showLegacyChat()
+	if(!owner)
+		return
+	winset(owner, "output", "is-visible=true;is-disabled=false")
+	winset(owner, "browseroutput", "is-visible=false")
+
+/datum/chatOutput/proc/failChat()
+	if(!owner || broken)
+		return
+	broken = TRUE
+	loaded = FALSE
+	showLegacyChat()
+	messageQueue = list()
+	owner << "<span class='userdanger'>Failed to load fancy chat, using fallback output. Use OOC -> Fix chat to retry.</span>"
 
 /datum/chatOutput/proc/ehjax_send(client/C = owner, window = "browseroutput", data)
 	if(islist(data))
@@ -220,7 +267,8 @@ GLOBAL_DATUM_INIT(iconCache, /savefile, new("tmp/iconCache.sav")) //Cache of ico
 
 			if(!C.chatOutput.loaded)
 				//Client still loading, put their messages in a queue
-				C.chatOutput.messageQueue += message
+				if(C.chatOutput.messageQueue)
+					C.chatOutput.messageQueue += message
 				continue
 
 			C << output(twiceEncoded, "browseroutput:output")
@@ -238,7 +286,8 @@ GLOBAL_DATUM_INIT(iconCache, /savefile, new("tmp/iconCache.sav")) //Cache of ico
 
 		if(!C.chatOutput.loaded)
 			//Client still loading, put their messages in a queue
-			C.chatOutput.messageQueue += message
+			if(C.chatOutput.messageQueue)
+				C.chatOutput.messageQueue += message
 			return
 
 		// url_encode it TWICE, this way any UTF-8 characters are able to be decoded by the Javascript.
@@ -250,3 +299,6 @@ GLOBAL_DATUM_INIT(iconCache, /savefile, new("tmp/iconCache.sav")) //Cache of ico
 		to_chat_immediate(target, message, handle_whitespace)
 		return
 	SSchat.queue(target, message, handle_whitespace)
+
+#undef CHAT_LOAD_MAX_ATTEMPTS
+#undef CHAT_LOAD_RETRY_DELAY

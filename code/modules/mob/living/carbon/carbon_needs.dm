@@ -183,7 +183,31 @@
 	qdel(event)
 	update_happiness()
 
+/mob/living/carbon/proc/handle_hunger()
+	if(nutrition >= INFINITY)
+		return
+
+	switch(nutrition)
+		if(NUTRITION_LEVEL_FAT to INFINITY)
+			add_event("nutrition", /datum/happiness_event/nutrition/fat)
+		if(NUTRITION_LEVEL_WELL_FED to NUTRITION_LEVEL_FAT)
+			add_event("nutrition", /datum/happiness_event/nutrition/wellfed)
+		if(NUTRITION_LEVEL_FED to NUTRITION_LEVEL_WELL_FED)
+			add_event("nutrition", /datum/happiness_event/nutrition/fed)
+		if(NUTRITION_LEVEL_HUNGRY to NUTRITION_LEVEL_FED)
+			clear_event("nutrition")
+		if(NUTRITION_LEVEL_STARVING to NUTRITION_LEVEL_HUNGRY)
+			add_event("nutrition", /datum/happiness_event/nutrition/hungry)
+			if(prob(2))
+				to_chat(src, "<span class='warning'>You feel hungry.</span>")
+		if(-INFINITY to NUTRITION_LEVEL_STARVING)
+			add_event("nutrition", /datum/happiness_event/nutrition/starving)
+			if(prob(3))
+				to_chat(src, "<span class='danger'>You're starving! You need to eat something.</span>")
+
 /mob/living/carbon/proc/adjust_thirst(var/amount)
+	if(thirst >= INFINITY)
+		return
 	var/old_thirst = thirst
 	if(amount>0)
 		thirst = min(thirst+amount, THIRST_LEVEL_MAX)
@@ -192,5 +216,7 @@
 		thirst = max(thirst+amount, 0)
 
 /mob/living/carbon/proc/set_thirst(var/amount)
+	if(thirst >= INFINITY)
+		return
 	if(amount >= 0)
 		thirst = min(THIRST_LEVEL_MAX, amount)
