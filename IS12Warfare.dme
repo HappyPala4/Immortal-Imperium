@@ -1571,6 +1571,8 @@
 #include "code\modules\hydroponics\trays\tray_soil.dm"
 #include "code\modules\hydroponics\trays\tray_tools.dm"
 #include "code\modules\hydroponics\trays\tray_update_icons.dm"
+#include "code\modules\immortal_module\debugger\debugger.dm"
+#include "code\modules\immortal_module\debugger\spaceman_dmm.dm"
 #include "code\modules\integrated_electronics\_defines.dm"
 #include "code\modules\integrated_electronics\arithmetic.dm"
 #include "code\modules\integrated_electronics\assemblies.dm"

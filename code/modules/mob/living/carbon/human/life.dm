@@ -530,31 +530,35 @@
 
 /mob/living/carbon/human/handle_chemicals_in_body()
 
-	chem_effects.Cut()
+    chem_effects.Cut()
 
-	if(status_flags & GODMODE)
-		return 0
+    if(status_flags & GODMODE)
+        return 0
 
-	if(isSynthetic())
-		return
+    if(isSynthetic())
+        return
 
-	if(reagents)
-		if(touching) touching.metabolize()
-		if(ingested) ingested.metabolize()
-		if(bloodstr) bloodstr.metabolize()
+    if(reagents)
+        if(touching) touching.metabolize()
+        if(ingested) ingested.metabolize()
+        if(bloodstr) bloodstr.metabolize()
 
-	// Trace chemicals
-	for(var/T in chem_doses)
-		if(bloodstr.has_reagent(T) || ingested.has_reagent(T) || touching.has_reagent(T))
-			continue
-		var/datum/reagent/R = T
-		chem_doses[T] -= initial(R.metabolism)*2
-		if(chem_doses[T] <= 0)
-			chem_doses -= T
+    // Trace chemicals
+    var/list/to_remove = list()
+    for(var/T in chem_doses)
+        if(bloodstr.has_reagent(T) || ingested.has_reagent(T) || touching.has_reagent(T))
+            continue
+        var/datum/reagent/R = T
+        chem_doses[T] -= initial(R.metabolism)*2
+        if(chem_doses[T] <= 0)
+            to_remove += T
 
-	updatehealth()
+    if(to_remove.len)
+        chem_doses -= to_remove
 
-	return //TODO: DEFERRED
+    updatehealth()
+
+    return //TODO: DEFERRED
 
 // Check if we should die.
 /mob/living/carbon/human/proc/handle_death_check()

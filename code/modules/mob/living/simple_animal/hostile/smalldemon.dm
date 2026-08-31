@@ -28,7 +28,8 @@
 	max_gas = null
 	minbodytemp = 0
 	faction = "Demon"
-	var/stance_step = 0
+	stance_step = 0
+	armor_penetration = 3
 
 /mob/living/simple_animal/hostile/smalldemon/Life()
 	. =..()
@@ -103,24 +104,6 @@
 /mob/living/simple_animal/hostile/smalldemon/LoseTarget()
 	..(2)
 
-/mob/living/simple_animal/hostile/smalldemon/AttackingTarget()
-	if(!Adjacent(target_mob))
-		return
-	custom_emote(1, pick( list("slashes at [target_mob]", "bites [target_mob]") ) )
-
-	var/damage = rand(25,45)
-
-	if(ishuman(target_mob))
-		var/mob/living/carbon/human/H = target_mob
-		var/dam_zone = pick(BP_HEAD, BP_CHEST, BP_L_HAND, BP_R_HAND, BP_L_LEG, BP_R_LEG)
-		var/obj/item/organ/external/affecting = H.get_organ(ran_zone(dam_zone))
-		H.apply_damage(damage, BRUTE, affecting, H.run_armor_check(affecting, "melee"), DAM_SHARP)
-		return H
-	else if(isliving(target_mob))
-		var/mob/living/L = target_mob
-		L.adjustBruteLoss(damage)
-		return L
-
 /mob/living/simple_animal/hostile/smalldemon/zygote
 	name = "Zygote" // Slow speed. Low HP and medium burn damage.
 	real_name = "Zygote"
@@ -141,24 +124,6 @@
 	see_in_dark = 6
 
 	speed = 1.7
-
-/mob/living/simple_animal/hostile/smalldemon/zygote/AttackingTarget()
-	if(!Adjacent(target_mob))
-		return
-	custom_emote(1, pick( list("sloshes at [target_mob]", "pulls [target_mob]") ) ) // attack emotes
-
-	var/damage = rand(25,45) // Damage Value
-
-	if(ishuman(target_mob))
-		var/mob/living/carbon/human/H = target_mob
-		var/dam_zone = pick(BP_CHEST, BP_L_HAND, BP_R_HAND, BP_L_LEG, BP_R_LEG)
-		var/obj/item/organ/external/affecting = H.get_organ(ran_zone(dam_zone))
-		H.apply_damage(damage, BRUTE, affecting, H.run_armor_check(affecting, "melee"), DAM_SHARP|DAM_EDGE) // damage type
-		return H
-	else if(isliving(target_mob))
-		var/mob/living/L = target_mob
-		L.adjustBruteLoss(damage)
-		return L
 
 /mob/living/simple_animal/hostile/smalldemon/bubblingmass
 	name = "Grotesque Horror" // Slow speed. High damage and HP.
@@ -465,6 +430,7 @@
 	attacktext = "pierces"
 	attack_sound = 'sound/weapons/bladeslice.ogg'
 	speed = 1.2
+	armor_penetration = 8
 
 /mob/living/simple_animal/hostile/minionhorror
 	name = "???"
@@ -482,6 +448,7 @@
 	attack_sound = 'sound/weapons/bite.ogg'
 	speed = 1.4
 	faction = "Demon"
+	armor_penetration = 4
 
 /mob/living/simple_animal/hostile/flesh
 	name = "Headcrab"
@@ -499,6 +466,7 @@
 	attack_sound = 'sound/weapons/bite.ogg'
 	speed = 1.6
 	faction = "Demon"
+	armor_penetration = 3
 
 /mob/living/simple_animal/hostile/giant_spider/flesh
 	name = "Infestor"
@@ -517,6 +485,7 @@
 	speed = 1.6
 	poison_per_bite = 3
 	poison_type = /datum/reagent/soporific // Makes you sleepy
+	armor_penetration = 5
 
 /mob/living/simple_animal/hostile/flesh/stalker
 	name = "Lurker"
@@ -534,6 +503,7 @@
 	attack_sound = 'sound/weapons/bite.ogg'
 	speed = 1.5
 	faction = "Demon"
+	armor_penetration = 6
 
 /mob/living/simple_animal/hostile/flesh/stalker2
 	name = "Lurker"
@@ -551,6 +521,7 @@
 	attack_sound = 'sound/weapons/bite.ogg'
 	speed = 1.5
 	faction = "Demon"
+	armor_penetration = 6
 
 /mob/living/simple_animal/hostile/flesh/abomination/tzee
 	name = "Abomination"
@@ -568,6 +539,7 @@
 	attack_sound = 'sound/weapons/bite.ogg'
 	speed = 1.7
 	faction = "Chaos"
+	armor_penetration = 7
 
 /mob/living/simple_animal/hostile/flesh/abomination/tzee/Initialize()
 	. =..()
@@ -593,6 +565,7 @@
 	attack_sound = 'sound/weapons/bite.ogg'
 	speed = 1.7
 	faction = "Demon"
+	armor_penetration = 5
 
 /mob/living/simple_animal/hostile/flesh/advanced
 	name = "Guardian"
@@ -609,13 +582,14 @@
 	response_help  = "gnashes"
 	response_disarm = "shoves"
 	response_harm   = "mauls"
-	melee_damage_lower = 45 // This only effects if controlled by a player.
+	melee_damage_lower = 45
 	melee_damage_upper = 75
 	attacktext = "claws"
 	maxbodytemp = 1000
 	see_in_dark = 8
 	wander = 1
 	turns_per_move = 25
+	armor_penetration = 10
 
 	speed = 1.6 // Higher number means slower.
 
@@ -623,7 +597,7 @@
 	max_gas = null
 	minbodytemp = 0
 	faction = "Demon"
-	var/stance_step = 0
+	stance_step = 0
 
 /mob/living/simple_animal/hostile/flesh/advanced/Life()
 	. =..()
@@ -674,7 +648,6 @@
 				return
 
 
-
 /mob/living/simple_animal/hostile/smalldemon/attackby(var/obj/item/O as obj, var/mob/user as mob)
 	if(stance != HOSTILE_STANCE_ATTACK && stance != HOSTILE_STANCE_ATTACKING)
 		stance = HOSTILE_STANCE_ALERT
@@ -697,24 +670,5 @@
 
 /mob/living/simple_animal/hostile/smalldemon/LoseTarget()
 	..(2)
-
-/mob/living/simple_animal/hostile/smalldemon/AttackingTarget()
-	if(!Adjacent(target_mob))
-		return
-	custom_emote(1, pick( list("slashes at [target_mob]", "bites [target_mob]") ) )
-
-	var/damage = rand(20,60)
-
-	if(ishuman(target_mob))
-		var/mob/living/carbon/human/H = target_mob
-		var/dam_zone = pick(BP_CHEST, BP_L_HAND, BP_R_HAND, BP_L_LEG, BP_R_LEG)
-		var/obj/item/organ/external/affecting = H.get_organ(ran_zone(dam_zone))
-		H.apply_damage(damage, BRUTE, affecting, H.run_armor_check(affecting, "melee"), DAM_SHARP)
-		return H
-	else if(isliving(target_mob))
-		var/mob/living/L = target_mob
-		L.adjustBruteLoss(damage)
-		return L
-
 
 // Missing Ubermorph and have yet to make variants of necromorphs using smalldemon code. Alongside simplemob variants of the Ubermorph, Bloodletter and Guardian. Same required for Tyranid Bioforms.

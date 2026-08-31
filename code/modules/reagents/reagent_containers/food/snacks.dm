@@ -3480,7 +3480,7 @@
 /obj/item/reagent_containers/food/snacks/corpsestarch
 	name = "\improper corpse starch bar"
 	desc = "A synthetic food source created from the recycled human corpses in depths of the hive cities on many of the countless Hive Worlds of the Imperium of Man."
-	icon_state = "proteinbar"
+	icon_state = "corpse_starch"
 	trash = /obj/item/trash/corpsestarch
 
 	New()

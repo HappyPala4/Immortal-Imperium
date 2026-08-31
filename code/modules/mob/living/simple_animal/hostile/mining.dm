@@ -27,7 +27,7 @@
 	delete_after_harvest = FALSE //Also don't delete them after you harvest them.
 	meat_type = /obj/item/circuitboard
 
-	var/alert_icon = null
+	alert_icon = null
 	var/list/alert_callout = list()
 
 
@@ -35,7 +35,7 @@
 	min_gas = null
 	max_gas = null
 	minbodytemp = 0
-	var/stance_step = 0
+	stance_step = 0
 
 	faction = "mining"
 

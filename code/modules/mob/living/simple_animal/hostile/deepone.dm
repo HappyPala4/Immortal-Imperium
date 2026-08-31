@@ -27,7 +27,7 @@
 	min_gas = null
 	max_gas = null
 	minbodytemp = 0
-	var/stance_step = 0
+	stance_step = 0
 
 	faction = "russian"
 

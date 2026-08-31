@@ -34,7 +34,7 @@
 	min_gas = null
 	max_gas = null
 	minbodytemp = 0
-	var/stance_step = 0
+	stance_step = 0
 
 	faction = "Chaos"
 
@@ -43,7 +43,7 @@
 	if(!.)
 		return
 
-
+	UpdateStance()
 	switch(stance)
 
 		if(HOSTILE_STANCE_TIRED)

@@ -601,6 +601,7 @@ This file contains most of the code for the dungeons to work, structures, some i
 	rapid = 1
 	projectilesound = 'sound/weapons/gunshot/gunshot3.ogg'
 	projectiletype = /obj/item/projectile/bullet/rifle
+	armor_penetration = 3
 
 /mob/living/simple_animal/hostile/syndicate/mercenary/death()
 	..(null, "body beeps before it explodes!")

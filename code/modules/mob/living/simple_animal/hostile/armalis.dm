@@ -29,7 +29,7 @@
 	max_gas = null
 	minbodytemp = 0
 	faction = "Tyranids"
-	var/stance_step = 0
+	stance_step = 0
 
 /mob/living/simple_animal/hostile/tyranid/Life()
 	. =..()

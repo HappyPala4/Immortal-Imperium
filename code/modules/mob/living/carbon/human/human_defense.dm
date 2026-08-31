@@ -764,3 +764,95 @@ meteor_act
 	..()
 	if(fire_stacks)
 		agony_scream(fire = TRUE)
+
+/mob/living/carbon/human/resolve_generic_attack(var/mob/living/attacker, var/damage, var/damtype = BRUTE, var/def_zone = null, var/armor_type = "melee", var/armor_penetration = 0, var/attack_text = "attacks", attack_sound)
+	if(!attacker || !damage)
+		return FALSE
+
+	def_zone = check_zone(def_zone)
+	if(!has_organ(def_zone))
+		return FALSE
+
+	if(shielded_melee >= 1)
+		visible_message("<b><big>[src.name]'s shield deflects the attack!!</big></b>")
+		var/datum/effect/effect/system/spark_spread/spark_system = new /datum/effect/effect/system/spark_spread()
+		spark_system.set_up(5, 0, src.loc)
+		spark_system.start()
+		playsound(src.loc, "sparks", 50, 1)
+		return FALSE
+
+	if((can_melee_dodge >= 1) && prob(melee_dodge_probability))
+		visible_message("<b><big>[src.name] dodges out of the way!!</big></b>")
+		return FALSE
+
+	if((can_melee_block >= 1) && prob(melee_block_probability))
+		visible_message("<b><big>[src.name] parries the attack!!</big></b>")
+		return FALSE
+
+	var/accuracy_penalty = 0
+	if(istype(attacker, /mob/living/carbon/human))
+		var/mob/living/carbon/human/H = attacker
+		accuracy_penalty = H.melee_accuracy_mods()
+
+	var/hit_zone = get_zone_with_miss_chance(def_zone, src, accuracy_penalty)
+
+	if(attempt_dodge())
+		return FALSE
+
+	if(!hit_zone)
+		visible_message("<span class='danger'>\The [attacker] misses [src]!</span>")
+		return FALSE
+
+	if(check_shields(damage, attacker, attacker, hit_zone, "the attack"))
+		return FALSE
+
+	var/obj/item/organ/external/affecting = get_organ(hit_zone)
+	if(!affecting || affecting.is_stump())
+		return FALSE
+
+	var/blocked = run_armor_check(hit_zone, armor_type, armor_penetration, "Your armor has protected your [affecting.name].", "Your armor has softened the blow to your [affecting.name].")
+
+	if(blocked == 100)
+		visible_message("<span class='danger'>\The [attacker] [attack_text] [src]'s [affecting.name], but it does no damage!</span>")
+		return FALSE
+
+	visible_message("<span class='danger'>\The [attacker] [attack_text] [src]'s [affecting.name]!</span>")
+
+	if(!stat && (damtype == BRUTE || damtype == PAIN) && prob(25 + damage * 2))
+		if(headcheck(hit_zone))
+			if(prob(damage))
+				visible_message("<span class='danger'>[src] [species.knockout_message]</span>")
+				apply_effect(20, PARALYZE, blocked)
+		else if(prob(damage + 10))
+			visible_message("<span class='danger'>[src] has been knocked down!</span>")
+			apply_effect(6, WEAKEN, blocked)
+
+	apply_damage(damage, damtype, hit_zone, blocked, used_weapon = attacker)
+
+	if(damage > 10 || (damage >= 5 && prob(33)))
+		forcesay(GLOB.hit_appends)
+
+	if(damtype == BRUTE && prob(damage * 4))
+		var/turf/location = loc
+		if(istype(location, /turf/simulated))
+			location.add_blood(src)
+		switch(hit_zone)
+			if(BP_HEAD)
+				if(wear_mask)
+					wear_mask.add_blood(src)
+					update_inv_wear_mask(0)
+				if(head)
+					head.add_blood(src)
+					update_inv_head(0)
+				if(glasses && prob(33))
+					glasses.add_blood(src)
+					update_inv_glasses(0)
+			if(BP_CHEST)
+				bloody_body(src)
+
+	receive_damage()
+	if(attack_sound)
+		playsound(src, attack_sound, 75)
+	aggro_npc()
+
+	return TRUE
