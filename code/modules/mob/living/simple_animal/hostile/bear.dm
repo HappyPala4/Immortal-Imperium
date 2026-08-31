@@ -28,7 +28,9 @@
 	min_gas = null
 	max_gas = null
 	minbodytemp = 0
-	var/stance_step = 0
+	stance_step = 0
+	armor_penetration = 7
+	attack_sound = 'sound/weapons/bite.ogg'
 
 	faction = "russian"
 
@@ -111,24 +113,6 @@
 
 /mob/living/simple_animal/hostile/bear/LoseTarget()
 	..(5)
-
-/mob/living/simple_animal/hostile/bear/AttackingTarget()
-	if(!Adjacent(target_mob))
-		return
-	custom_emote(1, pick( list("slashes at [target_mob]", "bites [target_mob]") ) )
-
-	var/damage = rand(20,30)
-
-	if(ishuman(target_mob))
-		var/mob/living/carbon/human/H = target_mob
-		var/dam_zone = pick(BP_CHEST, BP_L_HAND, BP_R_HAND, BP_L_LEG, BP_R_LEG)
-		var/obj/item/organ/external/affecting = H.get_organ(ran_zone(dam_zone))
-		H.apply_damage(damage, BRUTE, affecting, H.run_armor_check(affecting, "melee"), DAM_SHARP|DAM_EDGE)
-		return H
-	else if(isliving(target_mob))
-		var/mob/living/L = target_mob
-		L.adjustBruteLoss(damage)
-		return L
 
 
 

@@ -110,7 +110,7 @@
 
 /obj/item/trash/corpsestarch
 	name = "protein bar"
-	icon_state = "proteinbar"
+	icon_state = "corpse_starch"
 
 /obj/item/trash/attack(mob/M as mob, mob/living/user as mob)
 	return

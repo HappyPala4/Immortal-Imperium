@@ -25,7 +25,7 @@
 		if(M in see)
 			. += M
 
-/mob/living/simple_animal/hostile/retaliate/proc/Retaliate()
+/mob/living/simple_animal/hostile/retaliate/Retaliate()
 	// No parent proc to call
 	var/list/around = view(src, 7)
 

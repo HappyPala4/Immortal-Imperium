@@ -474,3 +474,10 @@
 			hud_used.hide_actions_toggle.screen_loc = hud_used.ButtonNumberToScreenCoords(button_number+1)
 			//hud_used.SetButtonCoords(hud_used.hide_actions_toggle,button_number+1)
 		client.screen += hud_used.hide_actions_toggle
+
+/mob/living/proc/resolve_generic_attack(var/mob/living/attacker, var/damage, var/damtype = BRUTE, var/def_zone = null, var/armor_type = "melee", var/armor_penetration = 0, var/attack_text = "attacks", attack_sound)
+	if(!attacker || !damage)
+		return FALSE
+	if(attack_sound)
+		playsound(src, attack_sound, 75)
+	return apply_damage(damage, damtype, def_zone, 0, used_weapon = attacker)
