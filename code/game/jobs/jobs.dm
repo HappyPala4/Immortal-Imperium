@@ -49,7 +49,7 @@ GLOBAL_LIST_EMPTY(pilgrim_positions) //pilgrims to the outpost, non-guard, non R
 
 
 /proc/guest_jobbans(var/job)
-	return ((job in GLOB.command_positions))
+	return 0
 
 /proc/get_job_datums()
 	var/list/occupations = list()

@@ -12,9 +12,7 @@ var/list/whitelist = list()
 	if(!whitelist.len)	whitelist = null
 
 /proc/check_whitelist(mob/M /*, var/rank*/)
-	if(!whitelist)
-		return 0
-	return ("[M.ckey]" in whitelist)
+	return 1
 
 /var/list/alien_whitelist = list()
 
@@ -53,28 +51,8 @@ var/list/whitelist = list()
 	var/datum/species/S = all_species[species_name]
 	return is_alien_whitelisted(M, S)
 
-//todo: admin aliens
 /proc/is_alien_whitelisted(mob/M, var/species)
-	if(!M || !species)
-		return 0
-	if(!config.usealienwhitelist)
-		return 1
-	if(check_rights(R_ADMIN, 0, M))
-		return 1
-
-	if(istype(species,/datum/language))
-		var/datum/language/L = species
-		if(!(L.flags & (WHITELISTED|RESTRICTED)))
-			return 1
-		return whitelist_lookup(L.name, M.ckey)
-
-	if(istype(species,/datum/species))
-		var/datum/species/S = species
-		if(!(S.spawn_flags & (SPECIES_IS_WHITELISTED|SPECIES_IS_RESTRICTED)))
-			return 1
-		return whitelist_lookup(S.get_bodytype(S), M.ckey)
-
-	return 0
+	return 1
 
 /proc/whitelist_lookup(var/item, var/ckey)
 	if(!alien_whitelist)

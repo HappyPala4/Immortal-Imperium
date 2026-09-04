@@ -645,7 +645,7 @@ mob/new_player/MayRespawn()
 	var/dat = {"<h2>Forge-World Eipharius</h2>
 Hello! It appears you are new here! Thanks for joining Forge-World Eipharius. We recommend that if you are new to the Grimdark setting of 40k to read on the Lexicanum (lore wiki) or find some lore video on Youtube.
 <h3>Discord Link</h3>
-<font size='4'><a href=\"https://discord.gg/xthVK85W3M\">Discord</a></font>
+<font size='4'><a href=\"https://discord.gg/WSSRRA862a\">Discord</a></font>
 <h3>Wiki Link</h3>
 <font size='4'><a href=\"https://wiki-40k.herokuapp.com/index.php?title=Main_Page\">Wiki</a></font>
 <h3>Lexicanum</h3>
