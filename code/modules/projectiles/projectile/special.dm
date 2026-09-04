@@ -278,7 +278,8 @@
 	if(burn_lvl) burnlevel = burn_lvl
 	if(BlockedDirs)
 		canSpreadDir &= ~BlockedDirs
-	START_PROCESSING(SSobj,src)
+	START_PROCESSING(SSobj, src)
+	QDEL_IN(src, Clamp((firelevel / 2) + 3, 5, 20) SECONDS)
 
 	if(fire_spread_amount > 0)
 		var/turf/T
@@ -301,7 +302,7 @@
 
 /obj/flamer_fire/Destroy()
 	set_light(0)
-	STOP_PROCESSING(SSobj,src)
+	STOP_PROCESSING(SSobj, src)
 	. = ..()
 
 /obj/flamer_fire/Crossed(mob/living/M) //Only way to get it to reliable do it when you walk into it.
@@ -336,17 +337,16 @@
 			set_light(6, l_color = "#E38F46")
 
 /obj/flamer_fire/Process()
-	var/turf/T = loc
-	firelevel = max(0, firelevel)
-	if(!istype(T)) //Is it a valid turf? Has to be on a floor
+	if(!isturf(loc))
 		qdel(src)
-		return
+		return PROCESS_KILL
+
+	firelevel -= 2
+	if(firelevel <= 0)
+		qdel(src)
+		return PROCESS_KILL
 
 	updateicon()
-
-	if(!firelevel)
-		qdel(src)
-		return
 
 	for(var/mob/living/I in loc)
 		if(istype(I,/mob/living/carbon/human))
@@ -361,10 +361,6 @@
 		I.adjust_fire_stacks(burnlevel) //If i stand in the fire i deserve all of this. Also Napalm stacks quickly.
 		if(prob(firelevel)) I.IgniteMob()
 		I.show_message(text("<span class='warning'>You are burned!</span>"),1)
-
-	//This has been made a simple loop, for the most part flamer_fire_act() just does return, but for specific items it'll cause other effects.
-	firelevel -= 2 //reduce the intensity by 2 per tick
-	return
 
 
 //WARPFIRE (And potentially other warp based effects later on)
@@ -392,7 +388,8 @@
 	if(burn_lvl) burnlevel = burn_lvl
 	if(BlockedDirs)
 		canSpreadDir &= ~BlockedDirs
-	START_PROCESSING(SSobj,src)
+	START_PROCESSING(SSobj, src)
+	QDEL_IN(src, Clamp((firelevel / 2) + 3, 5, 20) SECONDS)
 
 	if(fire_spread_amount > 0)
 		var/turf/T
@@ -415,7 +412,7 @@
 
 /obj/warpfire/Destroy()
 	set_light(0)
-	STOP_PROCESSING(SSobj,src)
+	STOP_PROCESSING(SSobj, src)
 	. = ..()
 
 /obj/warpfire/Crossed(mob/living/M) //Only way to get it to reliable do it when you walk into it.
@@ -450,34 +447,30 @@
 			set_light(6, l_color = "#E38F46")
 
 /obj/warpfire/Process()
-	var/turf/T = loc
-	firelevel = max(0, firelevel)
-	if(!istype(T)) //Is it a valid turf? Has to be on a floor
+	if(!isturf(loc))
 		qdel(src)
-		return
+		return PROCESS_KILL
+
+	firelevel -= 2
+	if(firelevel <= 0)
+		qdel(src)
+		return PROCESS_KILL
 
 	updateicon()
-
-	if(!firelevel)
-		qdel(src)
-		return
 
 	for(var/mob/living/I in loc)
 		if(istype(I,/mob/living/carbon/human))
 			var/mob/living/carbon/human/M = I
 			if(istype(M.wear_suit, /obj/item/clothing/suit/wizrobe/psypurple))
 				M.show_message(text("Your Psyker powers protect you from the flames."),1)
-				return
+				continue
 			if(istype(M.wear_suit, /obj/item/clothing/suit/storage/hooded/archeotech) || istype(M.wear_suit, /obj/item/clothing/suit/storage/hooded/inquisitor/chronos))
 				M.show_message(text("Your suit protects you from the flames."), 1)
 				M.adjustFireLoss(0) //Does no burn damage
+				continue
 		I.adjust_fire_stacks(burnlevel) //If i stand in the fire I deserve all of this. Also warpfire stacks quickly.
 		if(prob(firelevel)) I.IgniteMob()
 		I.show_message(text("<span class='warning'>You are burned!</span>"),1)
-
-	//This has been made a simple loop, for the most part flamer_fire_act() just does return, but for specific items it'll cause other effects.
-	firelevel -= 2 //reduce the intensity by 2 per tick
-	return
 
 /obj/warpfire/warp/Crossed(mob/living/M) //Only way to get it to reliable do it when you walk into it.
 	if(istype(M))
