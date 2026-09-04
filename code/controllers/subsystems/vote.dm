@@ -358,12 +358,19 @@ SUBSYSTEM_DEF(vote)
 				for(var/name in GLOB.all_maps)
 					choices.Add(name)
 			if("custom")
-				question = sanitizeSafe(input(usr,"What is the vote for?") as text|null)
-				if(!question)	return 0
-				for(var/i=1,i<=10,i++)
-					var/option = capitalize(sanitize(usr,"Please enter an option or hit cancel to finish"))
-					if(!option || mode || !usr.client)	break
+				question = sanitizeSafe(input(usr, "What is the vote for?") as text|null)
+				if(!question)
+					return 0
+				for(var/i = 1, i <= 10, i++)
+					var/raw_option = input(usr, "Please enter an option or hit cancel to finish") as text|null
+					if(!raw_option || mode || !usr.client)
+						break
+					var/option = capitalize(sanitize(raw_option))
+					if(!option)
+						break
 					choices.Add(option)
+				if(!choices.len)
+					return 0
 			else
 				return 0
 		mode = vote_type
@@ -397,7 +404,7 @@ SUBSYSTEM_DEF(vote)
 			trialmin = 1 // don't know why we use both of these it's really weird, but I'm 2 lasy to refactor this all to use just admin.
 	voting |= C
 
-	. = "<html><head><title>Voting Panel</title></head><body>"
+	. = ""
 	if(mode)
 		if(question)	. += "<h2>Vote: '[question]'</h2>"
 		else			. += "<h2>Vote: [capitalize(mode)]</h2>"
@@ -484,7 +491,8 @@ SUBSYSTEM_DEF(vote)
 		if(trialmin)
 			. += "<li><a href='?src=\ref[src];vote=custom'>Custom</a></li>"
 		. += "</ul><hr>"
-	. += "<a href='?src=\ref[src];vote=close' style='position:absolute;right:50px'>Close</a></body></html>"
+	. += "<a href='?src=\ref[src];vote=close' style='position:absolute;right:50px'>Close</a>"
+	. = HTML_SKELETON_TITLE("Voting Panel", .)
 
 /datum/controller/subsystem/vote/Topic(href,href_list[],hsrc)
 	if(!usr || !usr.client)
