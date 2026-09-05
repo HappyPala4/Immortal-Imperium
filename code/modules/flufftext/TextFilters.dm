@@ -179,14 +179,14 @@ proc/ogrynSpeech(original_msg)
 		if(currentWord in OGRYN_HEAR_EXCEPTIONS) //if this word exists in hearing exceptions we move on to the next
 			finishedSentence = addtext(finishedSentence, " ", word)
 			continue
-		if(length(word) > 5 ) //Ogryns don't speak properly.
-			var/list/splitWord = splittext(word, "") //splits our word up
+		if(length_char(word) > 5 ) //Ogryns don't speak properly.
+			var/list/splitWord = splittext_chars(word) //splits our word up by characters, not UTF-8 bytes
 			if("&" in splitWord) //Handles annoying ascii code exceptiosn for words like I've
 				word = jointext(splitWord, "") //rejoins it
 				finishedSentence = addtext(finishedSentence, " ", word)
 				continue
 			splitWord.Insert(4,"\'") //inserts a ' at the 4th index
-			if(length(word) > 8 )
+			if(length_char(word) > 8 )
 				splitWord.Insert(8,"\'") //inserts a ' at the 8th index
 
 

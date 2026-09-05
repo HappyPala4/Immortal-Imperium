@@ -229,6 +229,14 @@
 /proc/capitalize(var/t as text)
 	return uppertext(copytext_char(t, 1, 2)) + copytext_char(t, 2)
 
+// splittext("", "") splits UTF-8 into bytes; this splits into Unicode characters.
+/proc/splittext_chars(text)
+	var/list/chars = list()
+	var/len = length_char(text)
+	for(var/i = 1, i <= len, i++)
+		chars += copytext_char(text, i, i + 1)
+	return chars
+
 //Bolds "shouted" messages.
 /proc/add_shout_append(text)
 	if (copytext(text,-1) == "!")
@@ -257,8 +265,8 @@
 			if(currentWord in OGRYN_HEAR_EXCEPTIONS) //if this word exists in hearing exceptions we move on to the next
 				text = addtext(text, " ", word)
 				continue
-			if(length(word) > 6 ) //Ogryns can't understand long words
-				var/list/splitWord = splittext(word, "") //splits our word up
+			if(length_char(word) > 6 ) //Ogryns can't understand long words
+				var/list/splitWord = splittext_chars(word) //splits our word up by characters, not UTF-8 bytes
 				if("&" in splitWord) //Handles annoying ascii code exceptiosn for words like I've
 					word = jointext(splitWord, "") //rejoins it
 					text = addtext(text, " ", word)
