@@ -9646,7 +9646,7 @@
 "Vf" = (
 /obj/effect/floor_decal/spline/fancy/wood,
 /obj/effect/landmark/map_data{
-	height = 9
+	height = 8
 	},
 /turf/simulated/floor/ship_floor/engines{
 	dir = 1

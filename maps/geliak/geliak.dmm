@@ -6,7 +6,7 @@
 "af" = (/obj/random/loot/badweaponlas,/turf/simulated/floor/stone,/area/cadiaoutpost/oa/caves)
 "ag" = (/obj/structure/closet/crate/plastic,/obj/item/clothing/head/heretichood,/obj/item/clothing/head/heretichood,/obj/item/clothing/head/heretichood,/obj/item/clothing/head/heretichood,/obj/item/clothing/head/heretichood,/obj/item/gun/launcher/crossbow,/obj/item/arrow/rod,/obj/item/arrow/rod,/obj/item/arrow/rod,/obj/item/arrow/rod,/turf/simulated/floor/stone/ancient_stone_floor3,/area/cadiaoutpost/new_hive/caves)
 "ah" = (/obj/effect/floor_decal/newcorner/stone{dir = 8},/obj/effect/floor_decal/newcorner/stone{dir = 8; pixel_y = 6},/turf/simulated/floor/snow,/area/cadiaoutpost/oa/theforest)
-"ai" = (/obj/effect/floor_decal/turf/big_cables1{dir = 4},/obj/effect/floor_decal/turf/metal/six,/obj/effect/decal/cleanable/blood,/turf/simulated/floor/plating/reinforced,/area/cadiaoutpost/oa/engineering)
+"ai" = (/obj/effect/landmark/map_data{height = 3},/obj/effect/floor_decal/turf/big_cables1{dir = 4},/obj/effect/floor_decal/turf/metal/six,/obj/effect/decal/cleanable/blood,/turf/simulated/floor/plating/reinforced,/area/cadiaoutpost/oa/engineering)
 "aj" = (/obj/machinery/door/airlock/multi_tile/metal/maintenance,/turf/simulated/floor/factory_floor{dir = 4},/area/cadiaoutpost/oa/engineering)
 "ak" = (/obj/structure/sign/magistrate{pixel_y = -32},/obj/effect/floor_decal/turf/metal/five,/turf/simulated/floor/stone/ancient_stone_floor3,/area/cadiaoutpost/oa/bridge/hallway)
 "al" = (/turf/simulated/shuttle/wall/necron{icon_state = "lawall1"},/area/cadiaoutpost/oa/dungeon1)

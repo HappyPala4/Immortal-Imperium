@@ -5,7 +5,16 @@ var/list/z_levels = list()// Each bit re... haha just kidding this is a list of 
 /obj/effect/landmark/map_data/New()
 	..()
 
-	for(var/i = (z - height + 1) to (z-1))
+	if(height < 1)
+		log_error("Map data landmark at ([x], [y], [z]) has invalid height [height]; this map will be treated as a single Z-level.")
+		return
+
+	var/lowest_connected_z = z - height + 1
+	if(lowest_connected_z < 1)
+		log_error("Map data landmark at ([x], [y], [z]) has height [height], which extends below Z-level 1; clamping its multi-Z range.")
+		lowest_connected_z = 1
+
+	for(var/i = lowest_connected_z to (z-1))
 		if (z_levels.len <i)
 			z_levels.len = i
 		z_levels[i] = TRUE
