@@ -1179,8 +1179,8 @@ Pilgrim Fate System
 	title = "Bouncer"
 	department_flag = PIL
 	social_class = SOCIAL_CLASS_MIN //these boys are gross
-	total_positions = 0
-	spawn_positions = 0
+	total_positions = 1
+	spawn_positions = 1
 	supervisors = "The Underboss"
 	selection_color = "#530606"
 	outfit_type = /decl/hierarchy/outfit/job/bouncer

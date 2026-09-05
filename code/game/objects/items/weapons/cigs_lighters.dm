@@ -122,15 +122,23 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 		STOP_PROCESSING(SSobj, src)
 
 /obj/item/clothing/mask/smokable/proc/smoke(amount, manual)
-	smoketime -= amount
 	var/smoke_loc = get_turf(src)
-	if(reagents && reagents.total_volume) // check if it has any reagents at all
+	if(reagents && reagents.total_volume && smoketime > 0)
+		// Spread remaining reagents over remaining smoketime so a puff always
+		// transfers at least MINIMUM_CHEMICAL_VOLUME (needed for taste + nicotine).
+		var/transfer_amt = reagents.total_volume * (amount / (smoketime * 1.0))
+		if(transfer_amt < MINIMUM_CHEMICAL_VOLUME)
+			transfer_amt = min(MINIMUM_CHEMICAL_VOLUME, reagents.total_volume)
 		if(ishuman(loc))
 			var/mob/living/carbon/human/C = loc
-			if (src == C.wear_mask && C.check_has_mouth()) // if it's in the human/monkey mouth, transfer reagents to the mob
-				reagents.trans_to_mob(C, REM, CHEM_INGEST, 0.2) // Most of it is not inhaled... balance reasons.
-		else // else just remove some of the reagents
-			reagents.remove_any(REM)
+			// Ingest when worn or when taking a drag from the hand.
+			if(C.check_has_mouth() && (src == C.wear_mask || manual))
+				reagents.trans_to_mob(C, transfer_amt, CHEM_INGEST)
+			else if(src != C.l_hand && src != C.r_hand)
+				reagents.remove_any(transfer_amt)
+		else
+			reagents.remove_any(transfer_amt)
+	smoketime -= amount
 
 	if(ishuman(loc))
 		smoke_effect++
@@ -229,7 +237,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	slot_flags = SLOT_EARS | SLOT_MASK
 	attack_verb = list("burnt", "singed")
 	type_butt = /obj/item/cigbutt
-	chem_volume = 10
+	chem_volume = 15
 	smoketime = 300
 	matchmes = "<span class='notice'>USER lights their NAME with their FLAME.</span>"
 	lightermes = "<span class='notice'>USER manages to light their NAME with FLAME.</span>"
@@ -237,7 +245,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	weldermes = "<span class='notice'>USER casually lights the NAME with FLAME.</span>"
 	ignitermes = "<span class='notice'>USER fiddles with FLAME, and manages to light their NAME.</span>"
 	brand = "\improper FrozenNova"
-	var/list/filling = list(/datum/reagent/tobacco = 1)
+	var/list/filling = list(/datum/reagent/tobacco = 5)
 
 /obj/item/clothing/mask/smokable/cigarette/New()
 	..()
@@ -278,7 +286,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	brand = "\improper Temperamento Menthol"
 	color = "#ddffe8"
 	type_butt = /obj/item/cigbutt/menthol
-	filling = list(/datum/reagent/tobacco = 1, /datum/reagent/menthol = 1)
+	filling = list(/datum/reagent/tobacco = 4, /datum/reagent/menthol = 1)
 
 /obj/item/cigbutt/menthol
 	icon_state = "cigbuttmentol"
@@ -297,7 +305,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	icon_state = "cigjer"
 	color = "#dcdcdc"
 	type_butt = /obj/item/cigbutt/jerichos
-	filling = list(/datum/reagent/tobacco/bad = 1.5)
+	filling = list(/datum/reagent/tobacco/bad = 5)
 
 /obj/item/cigbutt/jerichos
 	icon_state = "cigbuttjer"
@@ -317,7 +325,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	brand = "\improper Professional"
 	icon_state = "cigpro"
 	type_butt = /obj/item/cigbutt/professionals
-	filling = list(/datum/reagent/tobacco/bad = 1)
+	filling = list(/datum/reagent/tobacco/bad = 4)
 
 /obj/item/cigbutt/professionals
 	icon_state = "cigbuttpro"
@@ -335,33 +343,33 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	icon_state = "cigarello"
 	item_state = "cigaroff"
 	smoketime = 600
-	chem_volume = 10
+	chem_volume = 15
 	type_butt = /obj/item/cigbutt/woodbutt
-	filling = list(/datum/reagent/tobacco/fine = 2)
+	filling = list(/datum/reagent/tobacco/fine = 8)
 
 /obj/item/clothing/mask/smokable/cigarette/trident/mint
 	icon_state = "cigarelloMi"
-	filling = list(/datum/reagent/tobacco/fine = 2, /datum/reagent/menthol = 2)
+	filling = list(/datum/reagent/tobacco/fine = 6, /datum/reagent/menthol = 2)
 
 /obj/item/clothing/mask/smokable/cigarette/trident/berry
 	icon_state = "cigarelloBe"
-	filling = list(/datum/reagent/tobacco/fine = 2, /datum/reagent/drink/juice/berry = 2)
+	filling = list(/datum/reagent/tobacco/fine = 6, /datum/reagent/drink/juice/berry = 2)
 
 /obj/item/clothing/mask/smokable/cigarette/trident/cherry
 	icon_state = "cigarelloCh"
-	filling = list(/datum/reagent/tobacco/fine = 2, /datum/reagent/nutriment/cherryjelly = 2)
+	filling = list(/datum/reagent/tobacco/fine = 6, /datum/reagent/nutriment/cherryjelly = 2)
 
 /obj/item/clothing/mask/smokable/cigarette/trident/grape
 	icon_state = "cigarelloGr"
-	filling = list(/datum/reagent/tobacco/fine = 2, /datum/reagent/drink/juice/grape = 2)
+	filling = list(/datum/reagent/tobacco/fine = 6, /datum/reagent/drink/juice/grape = 2)
 
 /obj/item/clothing/mask/smokable/cigarette/trident/watermelon
 	icon_state = "cigarelloWm"
-	filling = list(/datum/reagent/tobacco/fine = 2, /datum/reagent/drink/juice/watermelon = 2)
+	filling = list(/datum/reagent/tobacco/fine = 6, /datum/reagent/drink/juice/watermelon = 2)
 
 /obj/item/clothing/mask/smokable/cigarette/trident/orange
 	icon_state = "cigarelloOr"
-	filling = list(/datum/reagent/tobacco/fine = 2, /datum/reagent/drink/juice/orange = 2)
+	filling = list(/datum/reagent/tobacco/fine = 6, /datum/reagent/drink/juice/orange = 2)
 
 /obj/item/cigbutt/woodbutt
 	name = "wooden tip"
@@ -439,13 +447,13 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	throw_speed = 0.5
 	item_state = "cigaroff"
 	smoketime = 1500
-	chem_volume = 15
+	chem_volume = 20
 	matchmes = "<span class='notice'>USER lights their NAME with their FLAME.</span>"
 	lightermes = "<span class='notice'>USER manages to offend their NAME by lighting it with FLAME.</span>"
 	zippomes = "<span class='rose'>With a flick of their wrist, USER lights their NAME with their FLAME.</span>"
 	weldermes = "<span class='notice'>USER insults NAME by lighting it with FLAME.</span>"
 	ignitermes = "<span class='notice'>USER fiddles with FLAME, and manages to light their NAME with the power of science.</span>"
-	filling = list(/datum/reagent/tobacco/fine = 5)
+	filling = list(/datum/reagent/tobacco/fine = 15)
 
 /obj/item/clothing/mask/smokable/cigarette/cigar/cohiba
 	name = "\improper Cohiba Robusto cigar"
@@ -459,8 +467,8 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	icon_state = "cigar2off"
 	icon_on = "cigar2on"
 	smoketime = 3000
-	chem_volume = 20
-	filling = list(/datum/reagent/tobacco/fine = 10)
+	chem_volume = 30
+	filling = list(/datum/reagent/tobacco/fine = 20)
 
 /obj/item/cigbutt
 	name = "lho butt"

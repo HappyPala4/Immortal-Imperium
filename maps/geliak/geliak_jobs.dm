@@ -5,9 +5,9 @@
 	/datum/job/governor,
 	/datum/job/heir,
 	/datum/job/servant,
-	/datum/job/inquisitor,
+	/*/datum/job/inquisitor,*/
 	/datum/job/ordinate,
-	/datum/job/acolyte,
+	/*/datum/job/acolyte,*/
 	/datum/job/royalguard,
 	/datum/job/ig/commissar,
 	/datum/job/ig/sergeant,
@@ -18,7 +18,7 @@
 	/datum/job/ig/guardsman,
 	/datum/job/ig/bullgryn,
 	/datum/job/ig/whiteshield,
-	/datum/job/skitarii,
+	/*/datum/job/skitarii,*/
 	/datum/job/explorer,
 	/datum/job/biologis,
 	/datum/job/engineer,
@@ -34,8 +34,8 @@
 	/datum/job/arbitrator,
 	/datum/job/scavenger,
 	/datum/job/progena,
-	/datum/job/roguetrader,
-	/datum/job/xenomerc,
+	/*/datum/job/roguetrader,*/
+	/*/datum/job/xenomerc,*/
 	/datum/job/bouncer,
 	/datum/job/gangboy,
 	/datum/job/pathfinder,

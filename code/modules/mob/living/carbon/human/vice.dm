@@ -30,7 +30,7 @@
 						src.happiness -= 0.2
 			return
 
-		if(src.vice == "Alcohol" || src.vice == "Obscura")
+		if(src.vice == "Alcohol" || src.vice == "Obscura" || src.vice == "Lho")
 			if(sleeping) return
 
 			for(var/drug in src.chem_doses)
@@ -46,6 +46,11 @@
 						src.viceneed -= rand(6,9)
 						if(prob(2))
 							to_chat(src, "<span class='goodmood'>+ I finally feel human again... +</span>\n")
+				if(src.vice == "Lho")
+					if(ispath(drug, /datum/reagent/tobacco) || ispath(drug, /datum/reagent/nicotine))
+						src.viceneed -= rand(6,9)
+						if(prob(2))
+							to_chat(src, "<span class='goodmood'>+ The lho eases the itch... +</span>\n")
 
 
 

@@ -4,8 +4,8 @@
 	title = "Interrogator" // PLAN: Servant of another. Loyalist. Usurper.
 	department_flag = INQ
 	social_class = SOCIAL_CLASS_MIN
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 0 // Disabled.
+	spawn_positions = 0
 	latejoin_at_spawnpoints = TRUE
 	open_when_dead = 0
 	supervisors = "The Golden Throne, and Your Lord Inquisitor"
@@ -57,7 +57,7 @@
 	title = "Inquisitor" // PLAN: Renegade. Cult. Loyalist.
 	department_flag = INQ
 	social_class = SOCIAL_CLASS_MIN
-	total_positions = 0
+	total_positions = 0 // Disabled.
 	spawn_positions = 0
 	head_position = 1
 	supervisors = "The Golden Throne and the Inquisition"

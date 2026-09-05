@@ -244,8 +244,8 @@
 	title = "Skitarii"
 	department = "Science"
 	department_flag = SCI|ENG
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 0 // Disabled.
+	spawn_positions = 0
 	minimal_player_age = 7
 	open_when_dead = 0
 	supervisors = "the Adeptus Mechanicus and Magos Biologis."

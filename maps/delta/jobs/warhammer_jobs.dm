@@ -5,9 +5,9 @@
 	/datum/job/governor,
 	/datum/job/heir,
 	/datum/job/servant,
-	/datum/job/inquisitor,
+	/*/datum/job/inquisitor,*/
 	/datum/job/ordinate,
-	/datum/job/acolyte,
+	/*/datum/job/acolyte,*/
 	/*/datum/job/cadet,*/
 	/datum/job/royalguard,
 	/datum/job/ig/commissar,
@@ -20,7 +20,7 @@
 	/datum/job/ig/bullgryn,
 	/datum/job/ig/whiteshield,
 	/*/datum/job/janissary,*/
-	/datum/job/skitarii,
+	/*/datum/job/skitarii,*/
 	/datum/job/explorer,
 	/datum/job/biologis,
 	/datum/job/engineer,
@@ -39,8 +39,8 @@
 	/datum/job/scavenger,
 	/datum/job/progena,/*
 	/datum/job/preacher, turn preacher into pilgrim fate */
-	/datum/job/roguetrader,
-	/datum/job/xenomerc,
+	/*/datum/job/roguetrader,*/
+	/*/datum/job/xenomerc,*/
 	/datum/job/bouncer,
 	/datum/job/gangboy,
 	/datum/job/pathfinder,

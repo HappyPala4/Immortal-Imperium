@@ -148,8 +148,8 @@
 
 /datum/job/ig/guardsman/sharpshooter // can i be fucked renaming every /sharpshooter into /spec? no. remember to just call /sharpshooter/[regiment] instead
 	title = "Imperial Guard Specialist"
-	total_positions = 0
-	spawn_positions = 0
+	total_positions = 1
+	spawn_positions = 1
 	supervisors = "The Captain or Commissar"
 	open_when_dead = FALSE
 	outfit_type = /decl/hierarchy/outfit/job/sharpshooter
@@ -212,8 +212,8 @@ datum/job/ig/bullgryn
 	title = "Bullgryn"
 	social_class = SOCIAL_CLASS_MED //is it lore accurate? no, does it make sense to have a bullgryn here? also no
 	selection_color = "#33813A"
-	total_positions = 0
-	spawn_positions = 0
+	total_positions = 1
+	spawn_positions = 1
 	supervisors = "Da Emprah. Da Commesar, and da little on's!"
 	outfit_type = /decl/hierarchy/outfit/job/bullgryn
 	latejoin_at_spawnpoints = TRUE
@@ -484,8 +484,8 @@ datum/job/ig/bullgryn
 
 /datum/job/ig/commissar
 	title = "Commissar"
-	total_positions = 0
-	spawn_positions = 0
+	total_positions = 1
+	spawn_positions = 1
 	head_position = 1
 	selection_color = "#23742a"
 	department_flag = SEC

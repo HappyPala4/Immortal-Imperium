@@ -714,6 +714,7 @@
 	name = "Tobacco"
 	description = "Cut and processed tobacco leaves."
 	taste_description = "tobacco"
+	taste_mult = 2
 	reagent_state = REAGENT_SOLID
 	color = "#684b3c"
 	scannable = 1

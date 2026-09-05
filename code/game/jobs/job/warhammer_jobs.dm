@@ -6,8 +6,8 @@
 	/datum/job/heir,
 	/datum/job/servant,
 	/datum/job/hydro,
-	/datum/job/inquisitor,
-	/datum/job/acolyte,
+	/*/datum/job/inquisitor,*/
+	/*/datum/job/acolyte,*/
 	/datum/job/arbitrator,
 	/datum/job/enforcer,
 	/*/datum/job/cadet,*/
@@ -19,9 +19,9 @@
 	/datum/job/ig/guardsman,
 	/datum/job/ig/bullgryn,
 	/datum/job/ig/whiteshield,
-	/datum/job/roguetrader,
+	/*/datum/job/roguetrader,*/
 	/*/datum/job/janissary,*/
-	/datum/job/xenomerc,
+	/*/datum/job/xenomerc,*/
 	/datum/job/explorer,
 	/datum/job/biologis,
 	/datum/job/engineer,
