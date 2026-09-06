@@ -36,9 +36,6 @@
 		var/current_name = H.real_name
 		..()
 		H.fully_replace_character_name("Rogue Trader [current_name] Vane") // No title testing. 
-		H.verbs += list(
-			/mob/living/carbon/human/proc/ideology,
-		)
 		H.get_idcard()?.access = list(access_village, access_ganger,access_bar)
 		H.voice_in_head(pick(GLOB.lone_thoughts))
 		H.add_stats(rand(14,18), rand(14,18), rand(14,18), rand(14,18))
@@ -91,9 +88,6 @@
 		H.add_stats(rand(16,18), rand(16,18), rand(18,19), rand(10,13)) // Vessorine are the strongest, most formidable warriors in The Imperium. On the same level as Cadian Kasrkin.
 		H.add_skills(rand(13,14),rand(9,10),rand(3,5),5,rand(2,4)) //melee, ranged, med, eng, surgery
 		H.assign_random_quirk()
-		H.verbs += list(
-			/mob/living/carbon/human/proc/ideology,
-		)
 		H.warfare_language_shit(LANGUAGE_LOW_GOTHIC)
 		H.warfare_language_shit(LANGUAGE_HIGH_GOTHIC)
 		H.set_trait(new/datum/trait/death_tolerant())

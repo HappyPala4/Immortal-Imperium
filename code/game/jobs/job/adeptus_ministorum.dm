@@ -36,9 +36,6 @@
 		H.warfare_language_shit(LANGUAGE_LOW_GOTHIC)
 		H.adjustStaminaLoss(-INFINITY)
 		H.set_trait(new/datum/trait/death_tolerant())
-		H.verbs += list(
-			/mob/living/carbon/human/proc/ideology,
-		)
 		H.warfare_faction = IMPERIUM
 		to_chat(H, "<span class='notice'><b><font size=3>You were formely a lowly slummer, your freedom being granted by the wisdom of The Deacon who gave you settling rights upon Messina. After a a grueling journey, you are able to finally settle down.. in the ass end of the frontier. </font></b></span>")
 
@@ -132,7 +129,6 @@
 		H.warfare_faction = IMPERIUM
 		H.verbs += list(
 			/mob/living/carbon/human/proc/deaconclass,
-			/mob/living/carbon/human/proc/ideology,
 		)
 		to_chat(H, "<span class='notice'><b><font size=3>You are the Ecclesiarch Deacon. You are one of the Imperial Cult's priesthood, your oratory skills can stir entire crowds of the faithful and turn a coward into a zealot. You often work on worlds where faith is lacking, and people are rebellious. It is your job to spread the Imperial Cult to this new colony and it's ignorant masses, bringing their backwards beliefs in line with the faith of the God Emperor, as well as guiding the already faithful.</font></b></span>")
 
@@ -400,7 +396,6 @@
 		H.vice = null
 		H.verbs += list(
 			/mob/living/carbon/human/proc/faithleaderclass,
-			/mob/living/carbon/human/proc/ideology,
 		)
 		to_chat(H, "<span class='notice'><b><font size=3>You are the pinnacle of knowledge and piety within The Monastery -- a former sister of battle, organize your sisters and ensure they are doing their duty to both The Deacon and the Codex Sororitas. Ensure your pupils within the Schola are carefully selected for their roles in serving either the military or medical wings of the Sororitas.</font></b></span>")
 
@@ -469,7 +464,6 @@
 		H.vice = null
 		H.verbs += list(
 			/mob/living/carbon/human/proc/faithleaderclass,
-			/mob/living/carbon/human/proc/ideology,
 		)
 		to_chat(H, "<span class='notice'><b><font size=3>You are a Sister-Superior of the Adepta Sororitas, charged with the sacred duty of purging alien, mutant, and heretic threats while safeguarding the sanctity of the holy monastery and the revered Deacon. Your formidable arsenal includes a consecrated bolter, a full set of power armor, and the radiant blessing of the Emperor's light. Unyielding in your devotion, you are bound by the orders of the Emperor, the High Lords of Terra, the Deacon, Canoness (if present), and the Holy Inquisition. In the absence of a Canoness, the mantle of leadership falls upon you, requiring you to oversee the training and proficiency of the Novitiates in both the arts of combat and the compassionate care of the faithful. Your vigilant watch extends beyond the battlefield, ensuring the unwavering dedication of your sisters to the righteous cause. May your faith shine as a beacon against the encroaching darkness, and may the Emperor guide your bolter and bless your endeavors in His holy name..</font></b></span>")
 		to_chat(H, "<span class='notice'><b><font size=3>You will be role-banned if you shoot the faithful for entering the Church. Assist the Deacon and Inquisitor in their ultimate goals. Be the symbol of the Sororitas. The blade in the dark. Inspire the pilgrims.</font></b></span>")
@@ -524,7 +518,6 @@
 		H.vice = null
 		H.verbs += list(
 			/mob/living/carbon/human/proc/faithclass,
-			/mob/living/carbon/human/proc/ideology,
 		)
 
 		to_chat(H, "<span class='notice'><b><font size=3>http://is12wiki.xyz/index.php/Guide_to_Medicine</font></b></span>")

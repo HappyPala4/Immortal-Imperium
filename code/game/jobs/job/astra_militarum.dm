@@ -96,7 +96,6 @@
 		H.witchblood()
 		H.verbs += list(
 			/mob/living/carbon/human/proc/guardclass,
-			/mob/living/carbon/human/proc/ideology,
 		)
 		H.get_idcard()?.access = list(access_security, access_all_personal_lockers, access_village)
 		to_chat(H, "<span class='notice'><b><font size=3>   You are an Imperial Guardsmen selected personally by the Lord Trader to serve as the primary source of manpower and security within their retinue, your services go beyond the wielding of your lasgun and may involve tasks varying from hard labour, exploration and peacekeeping -- up until the point in which it is decided you must lay down your life to protect the citizens of The Imperium. </font></b></span>")
@@ -186,7 +185,6 @@
 		H.get_idcard()?.access = list(access_security, access_guard_common, access_all_personal_lockers, access_village)
 		H.verbs += list(
 			/mob/living/carbon/human/proc/veteranclass,
-			/mob/living/carbon/human/proc/ideology,
 		)
 		if(title == "Krieg Grenadier")
 			H.set_quirk(new/datum/quirk/brave())
@@ -271,7 +269,6 @@ datum/job/ig/bullgryn
 		H.get_idcard()?.access = list(access_security, access_guard_common, access_all_personal_lockers, access_village)
 		H.verbs += list(
 			/mob/living/carbon/human/proc/veteranclass,
-			/mob/living/carbon/human/proc/ideology,
 		)
 		to_chat(H, "<span class='notice'><b><font size=3>   You are an Imperial Guardsmen selected personally to serve the Lord Governor as an instructor for PDF in Marksmanship, to serve as the primary source of manpower and security within their personal retinue, your services go beyond the wielding of your lasgun and may involve tasks varying from scouting, exploration and assassination -- up until the point in which it is decided you must lay down your life to protect the citizens of The Imperium. </font></b></span>")
 		to_chat(H, "<span class='notice'><b><font size=3>   The Astra Militarum, also known as the Imperial Guard in colloquial Low Gothic, is the largest coherent fighting force in the galaxy. They serve as the Imperium of Man's primary combat force and first line of defence from the myriad threats which endanger the existence of the Human race in the 41st Millennium. </font></b></span>")
@@ -338,7 +335,6 @@ datum/job/ig/bullgryn
 		H.voice_in_head(pick(GLOB.lone_thoughts))
 		H.verbs += list(
 			/mob/living/carbon/human/proc/veteranclass,
-			/mob/living/carbon/human/proc/ideology,
 		)
 		H.set_quirk(new/datum/quirk/tough())
 		H.vice = null
@@ -415,7 +411,6 @@ datum/job/ig/bullgryn
 		H.vice = null
 		H.verbs += list(
 			/mob/living/carbon/human/proc/medicclass,
-			/mob/living/carbon/human/proc/ideology,
 		)
 		if(title == "Krieg Quartermaster")
 			H.implant_loyalty(src)
@@ -549,9 +544,6 @@ datum/job/ig/bullgryn
 		/mob/living/carbon/human/proc/comsyoucannotstand,
 		/mob/living/carbon/human/proc/comsexecute,
 		/mob/living/carbon/human/proc/comsyouwereweak)
-		H.verbs += list(
-			/mob/living/carbon/human/proc/ideology,
-		)
 		to_chat(H, "<span class='notice'><b><font size=3>The commissar is empowered to use any means necessary to ensure the loyalty and moral purity of his or her charges, including overriding or even executing a regiment's commanding officer if necessary, and so is regarded with a mixture of fear and admiration by rank-and-file Guardsmen -- and not a few of their officers. Commissars provide the link between regimental officers and the Departmento Munitorum. They are tough, ruthless individuals whose primary responsibilities are to preserve the courage, discipline and loyalty of the regiment. Only a handful of commissars have ever obtained leadership over large Imperial forces as a lord commander, or even a governor militant, such as Yarrick at Armageddon, and only a handful are known to have even retained full command of an entire regiment, such as Colonel-Commissar Ibram Gaunt. All commissars are trained as excellent orators, and often deliver stirring speeches to their regiment or company prior to battle. During battle, the commissar is almost always amongst the front lines, and roars a litany of battle cries and prayers to the Emperor to inspire his troops to battle. </font></b></span>")
 		to_chat(H, "<span class='notice'><b><font size=3>(READ THIS) Your role like any others is to make the round more interesting, you will be rolebanned if you metagame lateparties, murder allied characters without good reason OR execute pilgrims for walking up to your trench system. Just because there's a trench don't mean people have to die for being near it. </font></b></span>")
 

@@ -47,7 +47,6 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 		H.get_idcard()?.access = list(20, 331, access_RC_announce, access_ai_upload, access_heads)
 		H.verbs += list(
 			/mob/living/carbon/human/proc/governorclass,
-			/mob/living/carbon/human/proc/ideology,
 			/mob/living/carbon/human/proc/objective,
 		)
 
@@ -85,9 +84,6 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 		H.warfare_language_shit(LANGUAGE_HIGH_GOTHIC )
 		H.adjustStaminaLoss(-INFINITY)
 		H.warfare_faction = IMPERIUM
-		H.verbs += list(
-			/mob/living/carbon/human/proc/ideology,
-		)
 		to_chat(H, "<span class='notice'><b><font size=3>You are still young. Orders probably won’t be taken seriously. The next in line to the throne of Messina. Waiting simply takes too long. Why not have the Governor simply… fall down some stairs? Make sure the Enforcers and Inquisition don’t get suspicious and have a stable rise to the throne.</font></b></span>")
 		H.verbs += list(
 			/mob/living/carbon/human/proc/servantclass)
@@ -407,9 +403,6 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 		H.warfare_language_shit(LANGUAGE_HIGH_GOTHIC)
 		H.adjustStaminaLoss(-INFINITY)
 		H.warfare_faction = IMPERIUM
-		H.verbs += list(
-			/mob/living/carbon/human/proc/ideology,
-		)
 		H.verbs += list(
 			/mob/living/carbon/human/proc/servantclass,)
 		to_chat(H, "<span class='notice'><b><font size=3>You are a servant in direct service to the Governorship, having been in service to their family for generations. They own yoH. Change that. If you want.</font></b></span>")
