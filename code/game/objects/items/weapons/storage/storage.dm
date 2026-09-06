@@ -346,8 +346,9 @@
 		for(var/item_path in startswith)
 			var/data = startswith[item_path]
 			if(islist(data))
-				var/qty = data[1]
-				var/list/argsl = data.Copy()
+				var/list/params = data
+				var/qty = params[1]
+				var/list/argsl = params.Copy()
 				argsl[1] = src
 				for(var/i in 1 to qty)
 					new item_path(arglist(argsl))
