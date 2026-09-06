@@ -60,6 +60,7 @@
 	..()
 	nano_printer = new/obj/item/computer_hardware/nano_printer(src)
 	card_slot = new/obj/item/computer_hardware/card_slot(src)
+	card_slot2 = new/obj/item/computer_hardware/card_slot/authorized(src)
 
 /obj/item/modular_computer/console/preset/command/install_default_programs()
 	..()

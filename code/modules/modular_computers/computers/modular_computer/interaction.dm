@@ -4,7 +4,7 @@
 		verbs |= /obj/item/modular_computer/verb/eject_ai
 	if(portable_drive)
 		verbs |= /obj/item/modular_computer/verb/eject_usb
-	if(card_slot)
+	if(card_slot || card_slot2)
 		verbs |= /obj/item/modular_computer/verb/eject_id
 	verbs |= /obj/item/modular_computer/verb/emergency_shutdown
 
@@ -79,15 +79,21 @@
 
 	proc_eject_ai(usr)
 
-/obj/item/modular_computer/proc/proc_eject_id(mob/user)
+/obj/item/modular_computer/proc/proc_eject_id(mob/user, var/obj/item/computer_hardware/card_slot/slot)
 	if(!user)
 		user = usr
 
-	if(!card_slot)
+	if(!slot)
+		if(card_slot && card_slot.stored_card)
+			slot = card_slot
+		else if(card_slot2 && card_slot2.stored_card)
+			slot = card_slot2
+
+	if(!slot)
 		to_chat(user, "\The [src] does not have an ID card slot")
 		return
 
-	if(!card_slot.stored_card)
+	if(!slot.stored_card)
 		to_chat(user, "There is no card in \the [src]")
 		return
 
@@ -97,10 +103,23 @@
 	for(var/datum/computer_file/program/P in idle_threads)
 		P.event_idremoved(1)
 
-	card_slot.stored_card.forceMove(get_turf(src))
-	card_slot.stored_card = null
+	slot.stored_card.forceMove(get_turf(src))
+	slot.stored_card = null
 	update_uis()
 	to_chat(user, "You remove the card from \the [src]")
+
+/obj/item/modular_computer/proc/insert_id_into_slot(obj/item/card/id/I, mob/user, var/obj/item/computer_hardware/card_slot/slot)
+	if(!istype(I) || !slot)
+		return 0
+	if(slot.stored_card)
+		to_chat(user, "You try to insert \the [I] into \the [src], but it's ID card slot is occupied.")
+		return 0
+	user.drop_from_inventory(I)
+	slot.stored_card = I
+	I.forceMove(src)
+	update_uis()
+	to_chat(user, "You insert \the [I] into \the [src]'s [slot.name].")
+	return 1
 
 
 /obj/item/modular_computer/proc/proc_eject_usb(mob/user)
@@ -153,18 +172,23 @@
 /obj/item/modular_computer/attackby(var/obj/item/W as obj, var/mob/user as mob)
 	if(istype(W, /obj/item/card/id)) // ID Card, try to insert it.
 		var/obj/item/card/id/I = W
-		if(!card_slot)
+		if(!card_slot && !card_slot2)
 			to_chat(user, "You try to insert \the [I] into \the [src], but it does not have an ID card slot installed.")
 			return
 
-		if(card_slot.stored_card)
+		var/obj/item/computer_hardware/card_slot/dest
+		// Prefer the authorization slot for IDs that can actually authorize modifications.
+		if(card_slot2 && !card_slot2.stored_card && (access_change_ids in I.access))
+			dest = card_slot2
+		else if(card_slot && !card_slot.stored_card)
+			dest = card_slot
+		else if(card_slot2 && !card_slot2.stored_card)
+			dest = card_slot2
+
+		if(!dest)
 			to_chat(user, "You try to insert \the [I] into \the [src], but it's ID card slot is occupied.")
 			return
-		user.drop_from_inventory(I)
-		card_slot.stored_card = I
-		I.forceMove(src)
-		update_uis()
-		to_chat(user, "You insert \the [I] into \the [src].")
+		insert_id_into_slot(I, user, dest)
 		return
 	if(istype(W, /obj/item/paper) || istype(W, /obj/item/paper_bundle))
 		if(!nano_printer)

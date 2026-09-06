@@ -1107,6 +1107,12 @@ other types of metals and chemistry for reagents).
 	build_path = /obj/item/computer_hardware/card_slot
 	sort_string = "VBADA"
 
+/datum/design/item/modularcomponent/accessory/cardslot/authorized
+	name = "RFID authorization slot"
+	id = "cardslot_auth"
+	build_path = /obj/item/computer_hardware/card_slot/authorized
+	sort_string = "VBADE"
+
 // inteliCard Slot
 /datum/design/item/modularcomponent/accessory/aislot
 	name = "inteliCard slot"

@@ -25,6 +25,12 @@
 			return
 		found = 1
 		nano_printer = H
+	else if(istype(H, /obj/item/computer_hardware/card_slot/authorized))
+		if(card_slot2)
+			to_chat(user, "This computer's authorization card slot is already occupied by \the [card_slot2].")
+			return
+		found = 1
+		card_slot2 = H
 	else if(istype(H, /obj/item/computer_hardware/card_slot))
 		if(card_slot)
 			to_chat(user, "This computer's card slot is already occupied by \the [card_slot].")
@@ -80,6 +86,9 @@
 	if(card_slot == H)
 		card_slot = null
 		found = 1
+	if(card_slot2 == H)
+		card_slot2 = null
+		found = 1
 	if(battery_module == H)
 		battery_module = null
 		found = 1
@@ -118,6 +127,8 @@
 		return nano_printer
 	if(card_slot && (card_slot.name == name))
 		return card_slot
+	if(card_slot2 && (card_slot2.name == name))
+		return card_slot2
 	if(battery_module && (battery_module.name == name))
 		return battery_module
 	if(processor_unit && (processor_unit.name == name))
@@ -141,6 +152,8 @@
 		all_components.Add(nano_printer)
 	if(card_slot)
 		all_components.Add(card_slot)
+	if(card_slot2)
+		all_components.Add(card_slot2)
 	if(battery_module)
 		all_components.Add(battery_module)
 	if(processor_unit)

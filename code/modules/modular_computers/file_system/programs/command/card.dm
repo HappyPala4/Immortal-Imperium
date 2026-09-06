@@ -25,16 +25,31 @@
 	data["assignments"] = show_assignments
 	if(program && program.computer)
 		data["have_id_slot"] = !!program.computer.card_slot
+		data["have_auth_slot"] = !!program.computer.card_slot2
 		data["have_printer"] = !!program.computer.nano_printer
-		data["authenticated"] = program.can_run(user)
+		var/datum/computer_file/program/card_mod/mod_program = program
+		data["authenticated"] = istype(mod_program) ? mod_program.is_authenticated(user) : 0
 		if(!program.computer.card_slot)
 			mod_mode = 0 //We can't modify IDs when there is no card reader
 	else
 		data["have_id_slot"] = 0
+		data["have_auth_slot"] = 0
 		data["have_printer"] = 0
 		data["authenticated"] = 0
 	data["mmode"] = mod_mode
 	data["centcom_access"] = is_centcom
+
+	data["has_id"] = 0
+	data["id_account_number"] = null
+	data["id_rank"] = "Unassigned"
+	data["id_owner"] = "-----"
+	data["id_name"] = "-----"
+	data["has_auth_id"] = 0
+	data["auth_id_name"] = "-----"
+	if(program && program.computer && program.computer.card_slot2)
+		var/obj/item/card/id/auth_card = program.computer.card_slot2.stored_card
+		data["has_auth_id"] = !!auth_card
+		data["auth_id_name"] = auth_card ? auth_card.name : "-----"
 
 	if(program && program.computer && program.computer.card_slot)
 		var/obj/item/card/id/id_card = program.computer.card_slot.stored_card
@@ -59,7 +74,7 @@
 	data["all_centcom_access"] = is_centcom ? get_accesses(1) : null
 	data["regions"] = get_accesses()
 
-	if(program.computer.card_slot && program.computer.card_slot.stored_card)
+	if(program && program.computer && program.computer.card_slot && program.computer.card_slot.stored_card)
 		var/obj/item/card/id/id_card = program.computer.card_slot.stored_card
 		if(is_centcom)
 			var/list/all_centcom_access = list()
@@ -112,7 +127,7 @@
 		return 1
 
 	var/mob/user = usr
-	var/obj/item/card/id/user_id_card = user.GetIdCard()
+	var/obj/item/card/id/user_id_card = get_authorized_card(user)
 	var/obj/item/card/id/id_card
 	if (computer.card_slot)
 		id_card = computer.card_slot.stored_card
@@ -132,9 +147,9 @@
 		if("print")
 			if(computer && computer.nano_printer) //This option should never be called if there is no printer
 				if(module.mod_mode)
-					if(can_run(user, 1))
+					if(is_authenticated(user))
 						var/contents = {"<h4>Access Report</h4>
-									<u>Prepared By:</u> [user_id_card.registered_name ? user_id_card.registered_name : "Unknown"]<br>
+									<u>Prepared By:</u> [user_id_card && user_id_card.registered_name ? user_id_card.registered_name : "Unknown"]<br>
 									<u>For:</u> [id_card.registered_name ? id_card.registered_name : "Unregistered"]<br>
 									<hr>
 									<u>Assignment:</u> [id_card.assignment]<br>
@@ -164,15 +179,29 @@
 					else
 						computer.visible_message("<span class='notice'>\The [computer] prints out paper.</span>")
 		if("eject")
-			if(computer && computer.card_slot)
-				computer.proc_eject_id(user)
+			if(computer)
+				var/obj/item/computer_hardware/card_slot/slot
+				if(href_list["id"] == "auth")
+					slot = computer.card_slot2
+				else
+					slot = computer.card_slot
+				if(!slot)
+					return
+				if(slot.stored_card)
+					computer.proc_eject_id(user, slot)
+				else
+					var/obj/item/held = user.get_active_hand()
+					if(istype(held, /obj/item/card/id))
+						computer.insert_id_into_slot(held, user, slot)
+					else
+						to_chat(user, "<span class='warning'>You need to hold an ID card to insert it.</span>")
 		if("terminate")
-			if(computer && can_run(user, 1))
+			if(computer && is_authenticated(user) && id_card)
 				id_card.assignment = "Terminated"
 				remove_nt_access(id_card)
 				callHook("terminate_employee", list(id_card))
 		if("edit")
-			if(computer && can_run(user, 1))
+			if(computer && is_authenticated(user) && id_card)
 				if(href_list["name"])
 					var/temp_name = sanitizeName(input("Enter name.", "Name", id_card.registered_name),allow_numbers=TRUE)
 					if(temp_name)
@@ -183,7 +212,7 @@
 					var/account_num = text2num(input("Enter account number.", "Account", id_card.associated_account_number))
 					id_card.associated_account_number = account_num
 		if("assign")
-			if(computer && can_run(user, 1) && id_card)
+			if(computer && is_authenticated(user) && id_card)
 				var/t1 = href_list["assign_target"]
 				if(t1 == "Custom")
 					var/temp_t = sanitize(input("Enter a custom job assignment.","Assignment", id_card.assignment), 45)
@@ -214,7 +243,7 @@
 
 				callHook("reassign_employee", list(id_card))
 		if("access")
-			if(href_list["allowed"] && computer && can_run(user, 1))
+			if(href_list["allowed"] && computer && is_authenticated(user) && id_card)
 				var/access_type = text2num(href_list["access_target"])
 				var/access_allowed = text2num(href_list["allowed"])
 				if(access_type in get_access_ids(ACCESS_TYPE_STATION|ACCESS_TYPE_CENTCOM))
@@ -226,6 +255,21 @@
 
 	SSnanoui.update_uis(NM)
 	return 1
+
+/datum/computer_file/program/card_mod/proc/get_authorized_card(var/mob/user)
+	if(computer && computer.card_slot2 && computer.card_slot2.stored_card)
+		return computer.card_slot2.stored_card
+	if(user)
+		return user.GetIdCard()
+	return null
+
+/datum/computer_file/program/card_mod/proc/is_authenticated(var/mob/user)
+	var/obj/item/card/id/id = get_authorized_card(user)
+	if(!id)
+		return 0
+	if(required_access in id.access)
+		return 1
+	return 0
 
 /datum/computer_file/program/card_mod/proc/remove_nt_access(var/obj/item/card/id/id_card)
 	id_card.access -= get_access_ids(ACCESS_TYPE_STATION|ACCESS_TYPE_CENTCOM)

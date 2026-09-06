@@ -47,7 +47,8 @@
 
 	// Optional hardware (improves functionality, but is not critical for computer to work in most cases)
 	var/obj/item/computer_hardware/battery_module/battery_module				// An internal power source for this computer. Can be recharged.
-	var/obj/item/computer_hardware/card_slot/card_slot						// ID Card slot component of this computer. Mostly for HoP modification console that needs ID slot for modification.
+	var/obj/item/computer_hardware/card_slot/card_slot						// ID Card slot component of this computer. Target card for ID modification.
+	var/obj/item/computer_hardware/card_slot/card_slot2					// Authorized ID slot. Used by ID modification consoles together with card_slot.
 	var/obj/item/computer_hardware/nano_printer/nano_printer					// Nano Printer component of this computer, for your everyday paperwork needs.
 	var/obj/item/computer_hardware/hard_drive/portable/portable_drive		// Portable data storage
 	var/obj/item/computer_hardware/ai_slot/ai_slot							// AI slot, an intellicard housing that allows modifications of AIs.

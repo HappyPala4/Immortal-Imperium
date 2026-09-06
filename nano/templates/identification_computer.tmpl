@@ -14,6 +14,17 @@
   <h2>Access Modification</h2>
 </div>
 
+{{if data.have_auth_slot}}
+<div class='item'>
+  <div class='itemLabel'>
+	Authorized Identity:
+  </div>
+  <div class='itemContent'>
+	{{:helper.link(data.auth_id_name, 'eject', {'action' : 'eject', 'id' : 'auth'})}}
+  </div>
+</div>
+{{/if}}
+
 {{if !data.has_id}}
   <span class='alert'><i>Please insert the ID into the terminal to proceed.</i></span><br>
 {{/if}}
@@ -23,10 +34,14 @@
 	Target Identity:
   </div>
   <div class='itemContent'>
-	{{:helper.link(data.id_name, 'eject', {'action' : 'eject'})}}
+	{{:helper.link(data.id_name, 'eject', {'action' : 'eject', 'id' : 'target'})}}
   </div>
 </div>
 <hr>
+
+{{if !data.authenticated}}
+  <span class='alert'><i>Insert an authorized ID with ID Computer access, or wear one, to authenticate.</i></span>
+{{/if}}
 
 {{if data.authenticated}}
   {{if data.has_id}}
