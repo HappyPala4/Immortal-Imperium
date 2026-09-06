@@ -115,10 +115,9 @@
 	desc = "Contains tools for surgery. Has precise foam fitting for safe transport and automatically sterilizes the content between uses."
 	icon_state = "surgerykit"
 	item_state = "firstaid-surgery"
-
-	storage_slots = 14
+	w_class = ITEM_SIZE_LARGE
 	max_w_class = ITEM_SIZE_NORMAL
-	max_storage_space = null
+	max_storage_space = DEFAULT_BACKPACK_STORAGE
 
 	can_hold = list(
 		/obj/item/bonesetter,
@@ -136,17 +135,29 @@
 		)
 
 	startswith = list(
-		/obj/item/bonesetter,
-		/obj/item/cautery,
-		/obj/item/circular_saw,
-		/obj/item/hemostat,
-		/obj/item/retractor,
-		/obj/item/scalpel,
-		/obj/item/surgicaldrill,
-		/obj/item/bonegel,
-		/obj/item/suture,
-		/obj/item/stack/medical/advanced/bruise_pack
+		/obj/item/bonesetter = 1,
+		/obj/item/cautery = 1,
+		/obj/item/circular_saw = 1,
+		/obj/item/hemostat = 1,
+		/obj/item/retractor = 1,
+		/obj/item/scalpel = 1,
+		/obj/item/surgicaldrill = 1,
+		/obj/item/bonegel = 1,
+		/obj/item/suture = 1,
+		/obj/item/FixOVein = 1,
+		/obj/item/stack/medical/advanced/bruise_pack = 1
 		)
+
+/obj/item/storage/firstaid/surgery/Initialize()
+	. = ..()
+	if(!length(contents))
+		for(var/item_path in startswith)
+			var/qty = startswith[item_path]
+			if(isnull(qty) || !isnum(qty))
+				qty = 1
+			for(var/i = 1 to qty)
+				new item_path(src)
+	prepare_ui()
 
 /*
  * Pill Bottles

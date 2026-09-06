@@ -341,11 +341,10 @@
 		max_storage_space = storage_slots*base_storage_cost(max_w_class)
 
 	storage_ui = new storage_ui(src)
-	prepare_ui()
 
 	if(startswith)
 		for(var/item_path in startswith)
-			var/list/data = startswith[item_path]
+			var/data = startswith[item_path]
 			if(islist(data))
 				var/qty = data[1]
 				var/list/argsl = data.Copy()
@@ -353,9 +352,14 @@
 				for(var/i in 1 to qty)
 					new item_path(arglist(argsl))
 			else
-				for(var/i in 1 to (isnull(data)? 1 : data))
+				var/qty = 1
+				if(isnum(data) && data > 0)
+					qty = data
+				for(var/i in 1 to qty)
 					new item_path(src)
 		update_icon()
+
+	prepare_ui()
 
 /obj/item/storage/emp_act(severity)
 	if(!istype(src.loc, /mob/living))
