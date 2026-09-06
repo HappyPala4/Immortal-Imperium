@@ -139,6 +139,9 @@ var/global/datum/controller/occupations/SSjobs
 		if(job.minimum_character_age && (player.client.prefs.age < job.minimum_character_age))
 			Debug("FOC character not old enough, Player: [player]")
 			continue
+		if(job.is_restricted(player.client.prefs))
+			Debug("FOC is_restricted failed, Player: [player]")
+			continue
 		if(flag && !(flag in player.client.prefs.be_special_role))
 			Debug("FOC flag failed, Player: [player], Flag: [flag], ")
 			continue

@@ -120,6 +120,9 @@
 		if(!job.is_species_allowed(S))
 			. += "<del><span class='job_class'>[rank]</span></del></td><td><b> \[SPECIES RESTRICTED]</b></td></tr>"
 			continue
+		if(job.allowed_gender && pref.gender != job.allowed_gender)
+			. += "<del><span class='job_class'>[rank]</span></del></td><td><b> \[[uppertext(gender2text(job.allowed_gender))]S ONLY]</b></td></tr>"
+			continue
 
 		if(job.allowed_branches)
 			if(!player_branch)
