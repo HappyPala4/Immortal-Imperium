@@ -305,6 +305,7 @@
 	if(jobban_isbanned(src, job.title))	return 0
 	if(!job.player_old_enough(src.client))	return 0
 	if(job.no_late_join) return 0
+	if(job.is_restricted(client.prefs)) return 0
 	if(iswarfare())
 		if(job.is_red_team)//Can't join the team if they have more people on their side.
 			if(client?.warfare_faction != RED_TEAM)

@@ -314,6 +314,7 @@
 	lmg_skill = 10
 	smg_skill = 10
 	cultist_chance = 4
+	allowed_gender = FEMALE
 
 	equip(var/mob/living/carbon/human/H)
 		var/current_name = H.real_name
@@ -341,8 +342,8 @@
 	title = "Canoness"
 	department = "Ministorum"
 	department_flag = MED
-	total_positions = 0
-	spawn_positions = 0
+	total_positions = 1
+	spawn_positions = 1
 	open_when_dead = 0
 	social_class = SOCIAL_CLASS_HIGH
 	latejoin_at_spawnpoints = TRUE
@@ -362,6 +363,7 @@
 	lmg_skill = 10
 	smg_skill = 10
 	cultist_chance = 3
+	allowed_gender = FEMALE
 
 	equip(var/mob/living/carbon/human/H)
 		var/current_name = H.real_name
@@ -427,6 +429,7 @@
 	lmg_skill = 10
 	smg_skill = 10
 	cultist_chance = 4
+	allowed_gender = FEMALE
 
 	equip(var/mob/living/carbon/human/H)
 		var/current_name = H.real_name
@@ -496,6 +499,7 @@
 	lmg_skill = 7
 	smg_skill = 7
 	cultist_chance = 9
+	allowed_gender = FEMALE
 
 	equip(var/mob/living/carbon/human/H)
 		var/current_name = H.real_name
@@ -551,6 +555,7 @@
 	lmg_skill = 7
 	smg_skill = 7
 	cultist_chance = 15
+	allowed_gender = FEMALE
 
 	equip(var/mob/living/carbon/human/H)
 		var/current_name = H.real_name

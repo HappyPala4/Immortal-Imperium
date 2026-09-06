@@ -44,6 +44,7 @@ GLOBAL_LIST_EMPTY(family_blacklist)
 	var/has_email = FALSE 				 //Whether or not the job gets an email.
 
 	var/species_role = null				 //Determines what species this job will spawn as.
+	var/allowed_gender = null			 //If set, only this gender may take the job.
 	var/no_late_join = FALSE			 //If set to true, the job will no longer be in the late join list.
 	var/late_join_only = FALSE			 //Can only late join. Is not a roundstart role.
 	var/is_blue_team = FALSE			 //Warfare shit.
@@ -222,6 +223,10 @@ GLOBAL_LIST_EMPTY(family_blacklist)
 	var/datum/species/S = all_species[prefs.species]
 	if(!is_species_allowed(S))
 		to_chat(feedback, "<span class='boldannounce'>Restricted species, [S], for [title].</span>")
+		return TRUE
+
+	if(allowed_gender && prefs.gender != allowed_gender)
+		to_chat(feedback, "<span class='boldannounce'>[title] is restricted to [gender2text(allowed_gender)] characters.</span>")
 		return TRUE
 
 	return FALSE
