@@ -2,7 +2,7 @@
 
 /obj/structure/toilet
 	name = "toilet"
-	desc = "The HT-451, a torque rotation-based, waste disposal unit for small matter. This one seems remarkably clean."
+	desc = "The HT-451, a torque rotation-based, waste disposal unit for small matter. Open the lid, stand here, and use *poo or *pee."
 	icon = 'icons/obj/watercloset.dmi'
 	icon_state = "toilet00"
 	density = 0
@@ -36,18 +36,18 @@
 			to_chat(user, "<span class='notice'>You find \an [I] in the cistern.</span>")
 			w_items -= I.w_class
 			return
-	if(open == 1)
-		if(poopstorage > 0)
-			to_chat(user, "You've found what you were looking for!")
-			new /obj/item/reagent_containers/food/snacks/poo(user.loc)
-			poopstorage--
-			return
-		else
-			to_chat(user, "There's nothing here!")
-			return
+	if(open && poopstorage > 0)
+		to_chat(user, "You've found what you were looking for!")
+		new /obj/item/reagent_containers/food/snacks/poo(user.loc)
+		poopstorage--
+		return
 
 	open = !open
 	update_icon()
+	if(open)
+		to_chat(user, "<span class='notice'>You lift the lid. Stand here and use *poo or *pee.</span>")
+	else
+		to_chat(user, "<span class='notice'>You close the lid.</span>")
 
 /obj/structure/toilet/update_icon()
 	icon_state = "toilet[open][cistern]"
@@ -80,11 +80,20 @@
 
 /obj/structure/urinal
 	name = "urinal"
-	desc = "The HU-452, an experimental urinal."
+	desc = "The HU-452, an experimental urinal. Stand here and use *pee."
 	icon = 'icons/obj/watercloset.dmi'
 	icon_state = "urinal"
 	density = 0
 	anchored = 1
+
+/obj/structure/urinal/attack_hand(mob/user)
+	if(!ishuman(user))
+		return
+	if(user.loc != loc)
+		to_chat(user, "<span class='notice'>You need to stand closer.</span>")
+		return
+	var/mob/living/carbon/human/H = user
+	H.handle_piss()
 
 /obj/machinery/shower
 	name = "shower"

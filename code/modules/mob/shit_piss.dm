@@ -109,7 +109,7 @@
 /datum/reagent/poo/touch_turf(var/turf/T)
 	if(!istype(T, /turf/space))
 		new /obj/effect/decal/cleanable/poo(T)
-	qdel(src)
+	remove_self(volume)
 
 //URINE
 /datum/reagent/urine
@@ -122,7 +122,7 @@
 /datum/reagent/urine/touch_turf(var/turf/T)
 	if(!istype(T, /turf/space))
 		new /obj/effect/decal/cleanable/urine(T)
-	qdel(src)
+	remove_self(volume)
 
 
 /obj/item/reagent_containers/food/snacks/poo
@@ -164,111 +164,115 @@
 
 //poo and pee counters. This is called in human/handle_stomach.
 /mob/living/carbon/human/proc/handle_excrement()
-	if(bowels <= 0)
-		bowels = 0
-	if(bladder <= 0)
-		bladder = 0
-
 	if(has_quirk(/datum/quirk/no_bathroom))//You'll never have to use the restroom now.
 		bladder = 0
 		bowels = 0
+		return
 
-	if(bowels >= 250)
-		switch(bowels)
-			if(250 to 400)
-				if(prob(5))
-					to_chat(src, "<b>You need to use the bathroom.</b>")
-					bowels += 15
-			if(400 to 450)
-				if(prob(5))
-					to_chat(src, "<span class='danger'>You really need to use the restroom!</span>")
-					bowels += 15
-			if(450 to 500)
-				if(prob(2))
+	if(bowels != -INFINITY)
+		if(bowels < 0)
+			bowels = 0
+		if(bowels >= 250)
+			switch(bowels)
+				if(250 to 400)
+					if(prob(5))
+						to_chat(src, "<b>You need to use the bathroom.</b>")
+						bowels += 15
+				if(400 to 450)
+					if(prob(5))
+						to_chat(src, "<span class='danger'>You really need to use the restroom!</span>")
+						bowels += 15
+				if(450 to 500)
+					if(prob(2))
+						handle_shit()
+					else if(prob(10))
+						to_chat(src, "<span class='danger'>You're about to shit yourself!</span>")
+						bowels += 25
+				if(500 to 550)
+					if(prob(15))
+						handle_shit()
+					else if(prob(30))
+						to_chat(src, "<span class='danger'>OH MY GOD YOU HAVE TO SHIT!</span>")
+						bowels += 35
+				if(550 to INFINITY)
 					handle_shit()
-				else if(prob(10))
-					to_chat(src, "<span class='danger'>You're about to shit yourself!</span>")
-					bowels += 25
-			if(500 to 550)
-				if(prob(15))
-					handle_shit()
-				else if(prob(30))
-					to_chat(src, "<span class='danger'>OH MY GOD YOU HAVE TO SHIT!</span>")
-					bowels += 35
-			if(550 to INFINITY)
-				handle_shit()
 
-	if(bladder >= 100)//Your bladder is smaller than your colon
-		switch(bladder)
-			if(100 to 250)
-				if(prob(5))
-					to_chat(src, "<b>You need to use the bathroom.</b>")
-					bladder += 15
-			if(250 to 400)
-				if(prob(5))
-					to_chat(src, "<span class='danger'>You really need to use the restroom!</span>")
-					bladder += 15
-			if(400 to 500)
-				if(prob(2))
+	if(bladder != -INFINITY)//Your bladder is smaller than your colon
+		if(bladder < 0)
+			bladder = 0
+		if(bladder >= 100)
+			switch(bladder)
+				if(100 to 250)
+					if(prob(5))
+						to_chat(src, "<b>You need to use the bathroom.</b>")
+						bladder += 15
+				if(250 to 400)
+					if(prob(5))
+						to_chat(src, "<span class='danger'>You really need to use the restroom!</span>")
+						bladder += 15
+				if(400 to 500)
+					if(prob(2))
+						handle_piss()
+					else if(prob(10))
+						to_chat(src, "<span class='danger'>You're about to piss yourself!</span>")
+						bladder += 25
+				if(500 to 550)
+					if(prob(15))
+						handle_piss()
+					else if(prob(30))
+						to_chat(src, "<span class='danger'>OH MY GOD YOU HAVE TO PEE!</span>")
+						bladder += 35
+				if(550 to INFINITY)
 					handle_piss()
-				else if(prob(10))
-					to_chat(src, "<span class='danger'>You're about to piss yourself!</span>")
-					bladder += 25
-			if(500 to 550)
-				if(prob(15))
-					handle_piss()
-				else if(prob(30))
-					to_chat(src, "<span class='danger'>OH MY GOD YOU HAVE TO PEE!</span>")
-					bladder += 35
-			if(550 to INFINITY)
-				handle_piss()
 
 //Shitting
 /mob/living/carbon/human/proc/handle_shit()
 	var/message = null
-	if (src.bowels >= 30)
-
-		//Poo in the loo.
-		var/obj/structure/toilet/T = locate() in src.loc
-		var/mob/living/M = locate() in src.loc
-		if(T && T.open)
-			message = "<B>[src]</B> defecates into \the [T]."
-			T.poopstorage++
-
-		else if(w_uniform)
-			message = "<B>[src]</B> shits \his pants."
-			reagents.add_reagent(/datum/reagent/poo, 10)
-			add_event("shitself", /datum/happiness_event/hygiene/shit)
-			unlock_achievement(new/datum/achievement/shit_pants())
-
-		//Poo on the face.
-		else if(M != src && M.lying)//Can only shit on them if they're lying down.
-			message = "<span class='danger'><b>[src]</b> shits right on <b>[M]</b>'s face!</span>"
-			M.reagents.add_reagent(/datum/reagent/poo, 10)
-			M.unlock_achievement(new/datum/achievement/shit_on())
-			if(src.vice == "Neat Freak" && src.faction != "nurgle")
-				happiness = -15
-				to_chat(src, "<span class='phobia'<big>I will never be clean again!</big></span>")
-
-		//Poo on the floor.
-		else
-			message = "<B>[src]</B> [pick("shits", "craps", "poops")]."
-			var/obj/item/reagent_containers/food/snacks/poo/V = new/obj/item/reagent_containers/food/snacks/poo(src.loc)
-			if(reagents)
-				reagents.trans_to(V, rand(1,5))
-			GLOB.shit_left++//Add it to the shit on the floor counter.
-			for(var/mob/living/carbon/human/H in view(5, src))
-				if(H.vice == "Neat Freak" && H.faction != "nurgle")
-					to_chat(src, "<span class='badmood'>+ [src] is a disgusting animal... +</span>\n")
-					H.happiness -= 3
-
-		playsound(src.loc, 'sound/effects/poo2.ogg', 60, 1)
-		bowels -= rand(60,80)
-
-	else
+	if (src.bowels < 30)
 		to_chat(src, "You don't have to.")
 		return
 
+	//Poo in the loo.
+	var/obj/structure/toilet/T = locate() in src.loc
+	var/mob/living/M = locate() in src.loc
+	if(T)
+		if(!T.open)
+			to_chat(src, "<span class='notice'>The lid is closed.</span>")
+			return
+		message = "<B>[src]</B> defecates into \the [T]."
+		T.poopstorage++
+
+	else if(w_uniform)
+		message = "<B>[src]</B> shits \his pants."
+		if(reagents)
+			reagents.add_reagent(/datum/reagent/poo, 10)
+		add_event("shitself", /datum/happiness_event/hygiene/shit)
+		unlock_achievement(new/datum/achievement/shit_pants())
+
+	//Poo on the face.
+	else if(M && M != src && M.lying)//Can only shit on them if they're lying down.
+		message = "<span class='danger'><b>[src]</b> shits right on <b>[M]</b>'s face!</span>"
+		if(M.reagents)
+			M.reagents.add_reagent(/datum/reagent/poo, 10)
+		M.unlock_achievement(new/datum/achievement/shit_on())
+		if(src.vice == "Neat Freak" && src.faction != "nurgle")
+			happiness = -15
+			to_chat(src, "<span class='phobia'><big>I will never be clean again!</big></span>")
+
+	//Poo on the floor.
+	else
+		message = "<B>[src]</B> [pick("shits", "craps", "poops")]."
+		var/obj/item/reagent_containers/food/snacks/poo/V = new/obj/item/reagent_containers/food/snacks/poo(src.loc)
+		if(reagents)
+			reagents.trans_to(V, rand(1,5))
+		GLOB.shit_left++//Add it to the shit on the floor counter.
+		for(var/mob/living/carbon/human/H in view(5, src))
+			if(H.vice == "Neat Freak" && H.faction != "nurgle")
+				to_chat(H, "<span class='badmood'>+ [src] is a disgusting animal... +</span>\n")
+				H.happiness -= 3
+
+	playsound(src.loc, 'sound/effects/poo2.ogg', 60, 1)
+	bowels -= rand(60,80)
 	visible_message("[message]")
 
 //Peeing
@@ -282,22 +286,26 @@
 	var/obj/structure/toilet/T = locate() in src.loc
 	var/obj/structure/sink/S = locate() in src.loc
 	var/obj/item/reagent_containers/RC = locate() in src.loc
-	if((U || S) && gender != FEMALE)//In the urinal or sink.
+	if(U || S)//In the urinal or sink.
 		message = "<B>[src]</B> urinates into [U ? U : S]."
-		reagents.remove_any(rand(1,8))
+		if(reagents)
+			reagents.remove_any(rand(1,8))
 
-	else if(T && T.open)//In the toilet.
+	else if(T)//In the toilet.
+		if(!T.open)
+			to_chat(src, "<span class='notice'>The lid is closed.</span>")
+			return
 		message = "<B>[src]</B> urinates into [T]."
-		reagents.remove_any(rand(1,8))
+		if(reagents)
+			reagents.remove_any(rand(1,8))
 
-	else if(RC && (istype(RC,/obj/item/reagent_containers/food/drinks || istype(RC,/obj/item/reagent_containers/glass))))
-		if(RC.is_open_container())
-			//Inside a beaker, glass, drink, etc.
-			message = "<B>[src]</B> urinates into [RC]."
-			var/amount = rand(1,8)
-			RC.reagents.add_reagent(/datum/reagent/urine, amount)
-			if(reagents)
-				reagents.trans_to(RC, amount)
+	else if(RC && RC.is_open_container() && RC.reagents && (istype(RC, /obj/item/reagent_containers/food/drinks) || istype(RC, /obj/item/reagent_containers/glass)))
+		//Inside a beaker, glass, drink, etc.
+		message = "<B>[src]</B> urinates into [RC]."
+		var/amount = rand(1,8)
+		RC.reagents.add_reagent(/datum/reagent/urine, amount)
+		if(reagents)
+			reagents.trans_to(RC, amount)
 
 	else if(w_uniform)//In your pants.
 		message = "<B>[src]</B> pisses \his pants."
@@ -307,7 +315,6 @@
 		if(reagents)
 			reagents.trans_to(D, rand(1,8))
 		GLOB.piss_left++
-
 
 	else//On the floor.
 		var/turf/TT = src.loc
@@ -319,9 +326,10 @@
 		GLOB.piss_left++//Add it to the piss on the floor counter.
 		for(var/mob/living/carbon/human/H in view(5, src))
 			if(H.vice == "Neat Freak" && H.faction != "nurgle")
-				to_chat(src, "<span class='badmood'>+ NOT ON THE FLOOR... +</span>\n")
+				to_chat(H, "<span class='badmood'>+ NOT ON THE FLOOR... +</span>\n")
 				H.happiness -= 3
 
 	bladder -= rand(70,90)
-	visible_message("[message]")
+	if(message)
+		visible_message("[message]")
 

@@ -72,6 +72,7 @@
 	switch(alien)
 		if(IS_UNATHI) removed *= 2.25
 	M.nutrition += nutriment_factor * removed // For hunger and fatness
+	M.bowels += nutriment_factor * removed	//For pooping
 
 /datum/reagent/nutriment/protein/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	if(alien && alien == IS_SKRELL)
