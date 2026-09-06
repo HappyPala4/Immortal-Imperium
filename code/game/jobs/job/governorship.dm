@@ -84,6 +84,12 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 		H.warfare_language_shit(LANGUAGE_HIGH_GOTHIC )
 		H.adjustStaminaLoss(-INFINITY)
 		H.warfare_faction = IMPERIUM
+		H.get_idcard()?.access = list(20, 331, 333, 63, access_security, access_guard_common, access_magi,
+			            access_medical, access_mechanicus, access_change_ids, access_ai_upload, access_heads,
+			            access_all_personal_lockers, access_village, access_bar, access_janitor,
+			            access_kitchen, access_cargo, access_qm, access_hydroponics,
+			            access_library, access_mining, access_heads_vault, access_mining_station,
+			            access_hop, access_RC_announce, access_keycard_auth, access_gateway, access_treasury)
 		to_chat(H, "<span class='notice'><b><font size=3>You are still young. Orders probably won’t be taken seriously. The next in line to the throne of Messina. Waiting simply takes too long. Why not have the Governor simply… fall down some stairs? Make sure the Enforcers and Inquisition don’t get suspicious and have a stable rise to the throne.</font></b></span>")
 		H.verbs += list(
 			/mob/living/carbon/human/proc/servantclass)
