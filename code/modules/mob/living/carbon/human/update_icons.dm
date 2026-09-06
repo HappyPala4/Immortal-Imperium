@@ -649,7 +649,7 @@ var/global/list/damage_icon_parts = list()
 			standing.appearance_flags |= RESET_ALPHA
 		overlays_standing[R_HAND_LAYER] = standing
 
-		if (handcuffed) drop_r_hand() //this should be moved out of icon code
+		if (handcuffed) drop_from_inventory(r_hand, null, 1) //this should be moved out of icon code
 	else
 		overlays_standing[R_HAND_LAYER] = null
 
@@ -663,7 +663,7 @@ var/global/list/damage_icon_parts = list()
 			standing.appearance_flags |= RESET_ALPHA
 		overlays_standing[L_HAND_LAYER] = standing
 
-		if (handcuffed) drop_l_hand() //This probably should not be here
+		if (handcuffed) drop_from_inventory(l_hand, null, 1) //This probably should not be here
 	else
 		overlays_standing[L_HAND_LAYER] = null
 

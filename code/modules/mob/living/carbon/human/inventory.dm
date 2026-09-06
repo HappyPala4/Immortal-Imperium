@@ -83,7 +83,7 @@ This saves us from having to call add_fingerprint() any time something is put in
 		if(slot_wear_mask)
 			return has_organ(BP_HEAD)
 		if(slot_handcuffed)
-			return has_organ(BP_L_HAND) && has_organ(BP_R_HAND)
+			return has_cuffable_wrists()
 		if(slot_legcuffed)
 			return has_organ(BP_L_FOOT) && has_organ(BP_R_FOOT)
 		if(slot_l_hand)
@@ -121,6 +121,12 @@ This saves us from having to call add_fingerprint() any time something is put in
 			return 1
 		if(slot_tie)
 			return has_organ(BP_HEAD)
+
+// Organic hands, augmetic arms, or integrated Mechanicus palms all count as wrists.
+/mob/living/carbon/human/proc/has_cuffable_wrists()
+	if(istype(gloves, /obj/item/clothing/gloves/thick/techpriest))
+		return 1
+	return (has_organ(BP_L_HAND) || has_organ(BP_L_ARM)) && (has_organ(BP_R_HAND) || has_organ(BP_R_ARM))
 
 /mob/living/carbon/human/u_equip(obj/W as obj)
 	if(!W)	return 0
@@ -258,8 +264,11 @@ This saves us from having to call add_fingerprint() any time something is put in
 				playsound(src, W.equipsound, 50, 1)
 		if(slot_handcuffed)
 			src.handcuffed = W
-			drop_r_hand()
-			drop_l_hand()
+			// Force-drop held items, including NODROP augmetics, so restraints actually bind Mechanicus hands.
+			if(r_hand)
+				drop_from_inventory(r_hand, null, 1)
+			if(l_hand)
+				drop_from_inventory(l_hand, null, 1)
 			stop_pulling()
 			update_inv_handcuffed(redraw_mob)
 		if(slot_l_hand)
