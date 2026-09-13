@@ -12,7 +12,7 @@
 "al" = (/turf/simulated/shuttle/wall/necron{icon_state = "lawall1"},/area/cadiaoutpost/oa/dungeon1)
 "am" = (/turf/simulated/floor/stone,/area/cadiaoutpost/oa/caves/dark)
 "ao" = (/obj/effect/decal/cleanable/dirt,/obj/machinery/light/small{dir = 1; icon_state = "bulb1"},/turf/simulated/floor/tiled{color = "grey"},/area/cadiaoutpost/oa/supply)
-"aq" = (/obj/machinery/door/airlock/cone{maxhealth = 3000; name = "Commissar's Airlock"; req_one_access = list(67,331)},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/ship_floor/steel,/area/cadiaoutpost/new_hive/hive_city)
+"aq" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/dark,/area/cadiaoutpost/new_hive/hive_city)
 "ar" = (/obj/item/broken_bottle,/turf/simulated/floor/stone/ancient_stone_floor3,/area/cadiaoutpost/new_hive/caves)
 "as" = (/obj/effect/floor_decal/turf/metal/five,/obj/machinery/door/airlock/imperiumdoor{req_one_access = list(63,331)},/turf/simulated/floor/stone/ancient_stone_floor3,/area/cadiaoutpost/oa/bridge/hallway)
 "at" = (/turf/simulated/floor/fancyfloor/oldcobble,/area/cadiaoutpost/oa/engineering)
@@ -34,6 +34,7 @@
 "aL" = (/obj/effect/decal/cleanable/dirt,/obj/machinery/power/apc/high{pixel_y = 30},/obj/structure/cable/blue,/obj/effect/floor_decal/turf/big_cables1{dir = 1},/obj/machinery/light/small{dir = 8},/turf/simulated/floor/plating/reinforced,/area/cadiaoutpost/oa/engineering)
 "aM" = (/obj/structure/statue/column3{color = "#FFD700"; pixel_x = -6},/obj/item/flame/candle/church{pixel_y = -14; pixel_x = 14},/obj/item/flame/candle/small{pixel_y = 6; pixel_x = 12},/obj/item/flame/candle/small{pixel_y = -6; pixel_x = 4},/turf/simulated/floor/wood,/area/cadiaoutpost/oa/shuttle/roguet)
 "aN" = (/obj/structure/closet/hive/darkwood,/obj/random/loot/randomitemtown,/turf/simulated/floor/fancyfloor/oldcobble,/area/cadiaoutpost/new_hive/hive_city)
+"aP" = (/obj/structure/table/graf/reinf_table{icon_state = "reinf_table4"},/obj/item/reagent_containers/glass/jar/sulphuric_acid{pixel_x = -5},/obj/item/reagent_containers/glass/jar/sulphuric_acid{pixel_x = 5},/turf/simulated/floor/darkfloor{dir = 1},/area/cadiaoutpost/oa/engineering)
 "aQ" = (/obj/structure/disposalpipe/segment{dir = 4},/turf/simulated/floor/tiled{color = "grey"},/area/cadiaoutpost/oa/engineering)
 "aS" = (/obj/effect/floor_decal/newcorner/train/corner{dir = 1},/turf/simulated/floor/snow,/area/cadiaoutpost/oa/theforest)
 "aT" = (/obj/effect/floor_decal/newcorner/train/corner{dir = 10},/turf/simulated/floor/snow,/area/cadiaoutpost/oa/theforest)
@@ -42,6 +43,7 @@
 "aW" = (/turf/unsimulated/wall/fakeglass{dir = 5; icon = 'icons/map_project/windows.dmi'; icon_state = "r_window"},/area/cadiaoutpost/oa/engineering)
 "aX" = (/obj/machinery/conveyor/centcom_auto{dir = 5},/turf/simulated/floor/factory_floor{dir = 1},/area/cadiaoutpost/oa/engineering)
 "aY" = (/obj/structure/table/graf/reinf_table{icon_state = "table_horizontal2"},/turf/simulated/floor/ceramic,/area/cadiaoutpost/new_hive/hive_city)
+"aZ" = (/obj/structure/table/graf/reinf_table{icon_state = "reinf_table5"},/obj/item/reagent_containers/food/drinks/cans/waterbottle,/obj/item/reagent_containers/food/drinks/cans/waterbottle,/turf/simulated/floor/ship_floor/steel,/area/cadiaoutpost/new_hive/hive_city)
 "ba" = (/turf/unsimulated/wall/fakeglass{dir = 1; icon = 'icons/map_project/windows.dmi'; icon_state = "r_window3"},/area/cadiaoutpost/oa/caves/dark)
 "bb" = (/obj/random/loot/randomammo1,/obj/random/loot/randomammo1,/obj/random/loot/randomammo1,/obj/random/loot/randomammo1,/obj/structure/closet,/turf/simulated/floor/fancyfloor/oldcobble,/area/cadiaoutpost/new_hive/hive_city)
 "bc" = (/turf/simulated/floor/stone/ancient_stone_floor3,/area/cadiaoutpost/new_hive/hive_city)
@@ -75,7 +77,9 @@
 "bG" = (/obj/effect/decal/cleanable/generic,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/stone,/area/cadiaoutpost/oa/theforest)
 "bH" = (/turf/simulated/floor/fancyfloor/coralg,/area/cadiaoutpost/oa/service/chapel/chapeloffice)
 "bI" = (/obj/effect/floor_decal/industrial/warning{dir = 8},/obj/effect/floor_decal/industrial/warning{dir = 4},/turf/simulated/floor/darkfloor{dir = 1},/area/cadiaoutpost/oa/engineering)
+"bJ" = (/obj/structure/table/marble,/obj/item/towel,/turf/simulated/floor/tiled/white,/area/cadiaoutpost/new_hive/hive_city)
 "bK" = (/obj/effect/landmark/start/inqmagi/enforcercadet,/obj/structure/bed/barrack,/obj/structure/bed/barrack1,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/ship_floor,/area/cadiaoutpost/oa/service/enforcer)
+"bL" = (/obj/structure/table/graf/reinf_table{icon_state = "table_horizontal2"; dir = 1},/obj/machinery/light/small{dir = 1; icon_state = "bulb1"},/obj/item/pen,/obj/item/pen{pixel_x = 5},/obj/item/pen{pixel_x = -5},/obj/machinery/button/remote/blast_door{pixel_y = 27; id = "guardV"},/turf/simulated/floor/ship_floor/steel,/area/cadiaoutpost/new_hive/hive_city)
 "bM" = (/obj/effect/floor_decal/industrial/warning/corner{dir = 4},/turf/simulated/floor/darkfloor{dir = 1},/area/cadiaoutpost/oa/engineering)
 "bN" = (/obj/machinery/door/blast/shutters/open{id = "gate_vhod"},/turf/simulated/floor/stone/old2,/area/cadiaoutpost/new_hive/hive_city)
 "bO" = (/obj/effect/landmark/start/watchman/specialist,/turf/simulated/floor/stone/ancient_stone_floor3,/area/cadiaoutpost/new_hive/caves)
@@ -96,6 +100,7 @@
 "cd" = (/obj/structure/bed/barrack,/obj/structure/bed/barrack1,/obj/effect/landmark/start/village{name = "Imperial Citizen"},/turf/simulated/floor/stone/ancient_stone_old,/area/cadiaoutpost/new_hive/hive_city)
 "ce" = (/obj/machinery/seed_extractor,/turf/simulated/floor/snow,/area/cadiaoutpost/oa/farm)
 "cg" = (/obj/machinery/light/small{dir = 1; icon_state = "bulb1"},/turf/simulated/floor/tiled,/area/cadiaoutpost/new_hive/hive_city)
+"ch" = (/obj/effect/decal/cleanable/dirt,/obj/machinery/door/airlock/cone{name = "Bathroom"},/turf/simulated/floor/ship_floor/steel,/area/cadiaoutpost/new_hive/hive_city)
 "ci" = (/obj/machinery/door/airlock/multi_tile/metal/imperium{name = "Abandoned Store"; dir = 2},/obj/effect/floor_decal/turf/brick,/turf/simulated/floor/holofloor,/area/cadiaoutpost/new_hive/hive_city)
 "cj" = (/obj/effect/floor_decal/newcorner/stone/corner{dir = 1},/turf/simulated/floor/snow,/area/cadiaoutpost/oa/farm)
 "ck" = (/obj/machinery/light/small/red{dir = 8; icon_state = "bulb1"},/turf/simulated/floor/stone/ancient_stone_old,/area/cadiaoutpost/new_hive/hive_city)
@@ -127,7 +132,7 @@
 "cL" = (/obj/structure/table/steel_reinforced,/obj/item/bonegel/narthecium,/turf/unsimulated/floor/necron_floor,/area/cadiaoutpost/oa/dungeon1)
 "cM" = (/turf/simulated/wall/ancient{integrity = 250; color = "gray"},/area/cadiaoutpost/new_hive/hive_city)
 "cN" = (/obj/structure/table/graf/reinf_table,/obj/item/gun/energy/las/laspistol,/obj/item/cell/lasgun,/turf/simulated/floor/stone/crafted_floor,/area/cadiaoutpost/new_hive/caves)
-"cP" = (/obj/effect/decal/cleanable/dirt,/obj/machinery/light/small{dir = 1},/turf/simulated/floor/ship_floor/steel,/area/cadiaoutpost/new_hive/hive_city)
+"cP" = (/obj/effect/decal/cleanable/dirt,/obj/machinery/light/small{dir = 1},/turf/simulated/floor/tiled/dark,/area/cadiaoutpost/new_hive/hive_city)
 "cR" = (/obj/effect/floor_decal/newcorner/reinforced,/obj/structure/bed/chair{dir = 1},/turf/simulated/floor/tiled{color = "grey"},/area/cadiaoutpost/oa/engineering)
 "cS" = (/obj/effect/floor_decal/turf/brick/two,/obj/machinery/light/spot{dir = 8; icon_state = "tube1"},/turf/simulated/floor/plating,/area/cadiaoutpost/oa/bridge/hallway)
 "cT" = (/obj/structure/table/graf/butcher_table,/obj/effect/gibspawner/human,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled,/area/cadiaoutpost/oa/caves/dark)
@@ -136,17 +141,20 @@
 "cW" = (/obj/structure/bed/chair/office{dir = 4},/turf/simulated/floor/fancyfloor/oldcobble,/area/cadiaoutpost/new_hive/caves)
 "cX" = (/obj/effect/decal/remains,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled,/area/cadiaoutpost/oa/caves/dark)
 "cY" = (/turf/simulated/shuttle/wall/necron{icon_state = "lwall12"},/area/cadiaoutpost/oa/dungeon1)
+"cZ" = (/obj/machinery/light/small{dir = 8},/obj/effect/floor_decal/turf/metal/five,/turf/simulated/floor/darkfloor{dir = 1},/area/cadiaoutpost/oa/engineering)
 "da" = (/obj/effect/floor_decal/newcorner/plating/quarter{dir = 4},/turf/simulated/floor/darkfloor{dir = 1},/area/cadiaoutpost/oa/engineering)
 "db" = (/obj/item/gun/energy/pulse/plasma,/obj/item/cell/plasma,/obj/structure/table/rack/holorack,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled{color = "grey"},/area/cadiaoutpost/oa/engineering)
 "dc" = (/obj/structure/closet/crate,/obj/item/gun/energy/las/lasgun,/obj/item/cell/lasgun,/obj/item/cell/lasgun,/obj/item/melee/chain/inqcs,/turf/simulated/floor/stone,/area/cadiaoutpost/oa/caves/dark)
 "dd" = (/obj/effect/decal/dead,/turf/simulated/floor/wood,/area/cadiaoutpost/oa/farm)
 "de" = (/obj/machinery/light/small,/obj/structure/sign/imperial{pixel_y = -25},/turf/simulated/floor/stone/ancient_stone_floor3,/area/cadiaoutpost/new_hive/hive_city)
+"df" = (/obj/item/reagent_containers/food/snacks/corpsestarch{pixel_y = 3},/obj/item/reagent_containers/food/snacks/corpsestarch{pixel_y = -5},/obj/item/reagent_containers/food/snacks/corpsestarch{pixel_x = -10},/obj/item/reagent_containers/food/snacks/corpsestarch{pixel_x = 7},/obj/structure/table/rack,/turf/simulated/floor/ship_floor/steel,/area/cadiaoutpost/new_hive/hive_city)
 "dg" = (/obj/effect/floor_decal/turf/plating,/obj/structure/torchwall{dir = 8; icon_state = "torchwall0"},/turf/simulated/floor/holofloor,/area/cadiaoutpost/oa/caves/undercity)
 "dh" = (/obj/effect/floor_decal/newcorner/train2/corner,/turf/simulated/floor/snow,/area/cadiaoutpost/oa/theforest)
 "di" = (/obj/structure/closet/hive/metal,/obj/item/grenade/frag/plasma,/turf/simulated/floor/tiled,/area/cadiaoutpost/new_hive/hive_city)
 "dj" = (/obj/structure/cable{icon_state = "1-8"; color = "blue"},/turf/simulated/floor/darkfloor{dir = 1},/area/cadiaoutpost/oa/engineering)
 "dk" = (/turf/simulated/mineral/random/high_chance,/area/cadiaoutpost/oa/caves)
 "dl" = (/obj/structure/closet/hive/metal,/obj/random/smokes,/turf/simulated/floor/stone/ancient_stone_floor3,/area/cadiaoutpost/new_hive/caves)
+"dm" = (/obj/machinery/light/small{dir = 1; icon_state = "bulb1"},/turf/simulated/floor/wood,/area/cadiaoutpost/new_hive/hive_city)
 "dn" = (/obj/effect/floor_decal/turf/brick,/obj/structure/torchwall/service{dir = 8; icon_state = "torchwall0"},/turf/simulated/floor/holofloor,/area/cadiaoutpost/oa/bridge/offices/sisterhospitaller)
 "do" = (/obj/effect/floor_decal/turf/metal/five,/turf/simulated/floor/tiled/dark,/area/cadiaoutpost/oa/shuttle/roguet)
 "dp" = (/obj/effect/decal/cleanable/cobweb2,/turf/simulated/floor/stone/ancient_stone_floor3,/area/cadiaoutpost/new_hive/caves)
@@ -174,6 +182,7 @@
 "dM" = (/obj/effect/floor_decal/newcorner/stone/corner{dir = 4},/turf/simulated/floor/snow,/area/cadiaoutpost/oa/theforest)
 "dN" = (/obj/effect/floor_decal/turf/bar3{dir = 4},/obj/effect/floor_decal/turf/big_cables1{dir = 4},/turf/unsimulated/floor/necron_floor{icon_state = "lofloor"},/area/cadiaoutpost/oa/dungeon1)
 "dO" = (/obj/structure/table/rack,/obj/machinery/light/small/red{dir = 8; icon_state = "bulb1"},/obj/item/stack/material/mhydrogen/ten,/turf/simulated/floor/factory_floor{dir = 4},/area/cadiaoutpost/oa/engineering)
+"dP" = (/obj/effect/floor_decal/turf/metal/five,/obj/structure/closet,/turf/simulated/floor/darkfloor{dir = 1},/area/cadiaoutpost/oa/engineering)
 "dR" = (/turf/unsimulated/mineral,/area/space)
 "dS" = (/obj/structure/table/graf/reinf_table{icon_state = "reinf_table4"},/turf/simulated/floor/tiled,/area/cadiaoutpost/new_hive/hive_city)
 "dU" = (/obj/effect/floor_decal/turf/metal/five,/obj/effect/floor_decal/turf/metal/five,/turf/simulated/floor/holofloor,/area/cadiaoutpost/oa/service/chapel/graveyard)
@@ -208,6 +217,7 @@
 "eA" = (/turf/simulated/wall/castle,/area/cadiaoutpost/oa/service/chapel/graveyard)
 "eB" = (/obj/machinery/door/airlock/multi_tile/metal/imperium,/turf/simulated/floor/stone/ancient_stone_floor3,/area/cadiaoutpost/new_hive/caves)
 "eC" = (/obj/structure/table/graf/butcher_table,/obj/item/reagent_containers/food/snacks/meat/human,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled,/area/cadiaoutpost/oa/caves/dark)
+"eD" = (/obj/machinery/light/small{dir = 4},/turf/simulated/floor/tiled/white,/area/cadiaoutpost/new_hive/hive_city)
 "eE" = (/obj/machinery/light/small{dir = 4},/turf/simulated/floor/tiled,/area/cadiaoutpost/new_hive/hive_city)
 "eF" = (/obj/random/trash,/turf/simulated/floor/stone/ancient_stone_floor3,/area/cadiaoutpost/new_hive/caves)
 "eG" = (/obj/item/storage/firstaid,/obj/random/firstaid,/obj/random/firstaid,/obj/structure/table/rack,/turf/simulated/floor/ceramic/surgery2,/area/cadiaoutpost/oa/bridge/offices/sisterhospitaller)
@@ -226,6 +236,7 @@
 "eV" = (/obj/effect/floor_decal/newcorner/stone,/obj/structure/warfare/barricade/sandbag{dir = 8},/turf/simulated/floor/trench,/area/cadiaoutpost/oa/theforest)
 "eW" = (/obj/machinery/chem_master,/turf/simulated/floor/stone/ancient_stone_old,/area/cadiaoutpost/new_hive/hive_city)
 "eX" = (/obj/effect/floor_decal/newcorner/stone/corner{dir = 4},/obj/effect/floor_decal/newcorner/black{dir = 4},/turf/simulated/floor/ceramic,/area/cadiaoutpost/oa/service/chapel)
+"eY" = (/obj/structure/bed/padded,/obj/effect/landmark/start/imperialguard/commissar,/obj/item/bedsheet,/turf/simulated/floor/wood,/area/cadiaoutpost/new_hive/hive_city)
 "eZ" = (/obj/structure/table/steel_reinforced,/obj/random/loot/randomammo1,/obj/effect/floor_decal/newcorner/reinforced{dir = 4},/turf/simulated/floor/tiled{color = "grey"},/area/cadiaoutpost/oa/engineering)
 "fa" = (/obj/structure/warfare/barricade/sandbag,/turf/simulated/floor/trench,/area/cadiaoutpost/oa/theforest)
 "fb" = (/obj/structure/stairs/north{color = "gray"; dir = 4},/obj/effect/decal/cleanable/dirt,/obj/effect/bump_teleporter{id = "tech6"; id_target = "tech5"; pixel_x = -1},/turf/simulated/floor/plating/reinforced,/area/cadiaoutpost/oa/engineering)
@@ -234,6 +245,7 @@
 "fe" = (/obj/machinery/door/airlock/multi_tile/metal/imperium{name = "Transport Ship Cockpit"; dir = 1},/turf/simulated/floor/stone/ancient_stone_floor3,/area/cadiaoutpost/oa/caves/dark)
 "ff" = (/obj/effect/decal/cleanable/dirt,/obj/machinery/door/airlock/highsecurity/imperiumdoor{use_power = 0},/turf/simulated/floor/ship_floor/steel,/area/cadiaoutpost/new_hive/hive_city)
 "fg" = (/obj/effect/decal/cleanable/dirt,/obj/machinery/door/airlock/engineering,/turf/simulated/floor/plating/reinforced,/area/cadiaoutpost/oa/engineering)
+"fh" = (/obj/structure/bed/chair{dir = 4},/turf/simulated/floor/tiled/dark,/area/cadiaoutpost/new_hive/hive_city)
 "fi" = (/obj/structure/toilet{icon_state = "toilet00"; dir = 1},/obj/machinery/light/small{dir = 8},/turf/simulated/floor/ceramic/surgery2,/area/cadiaoutpost/new_hive/hive_city)
 "fj" = (/obj/effect/gibspawner/robot,/turf/simulated/floor/tiled{color = "grey"},/area/cadiaoutpost/oa/engineering)
 "fk" = (/obj/structure/bed{icon = "icons/map_project/furniture_and_decor.dmi"; icon_state = "migbed"},/turf/simulated/floor/stone/ancient_stone_floor3,/area/cadiaoutpost/oa/caves/dark)
@@ -243,6 +255,7 @@
 "fo" = (/obj/effect/floor_decal/newcorner/step{dir = 1},/turf/simulated/floor/stone/ancient_stone_floor3,/area/cadiaoutpost/new_hive/hive_city)
 "fp" = (/turf/simulated/floor/tiled,/area/cadiaoutpost/oa/caves/dark)
 "fq" = (/obj/machinery/door/airlock/highsecurity/imperiumdoor{name = "Governatorial Crypt"},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled{color = "grey"},/area/cadiaoutpost/oa/supply)
+"fr" = (/turf/simulated/floor/fancyfloor/carpet{dir = 10},/area/cadiaoutpost/new_hive/hive_city)
 "fs" = (/obj/structure/shipdecor/generator,/obj/structure/cable{icon_state = "0-4"},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled{color = "grey"},/area/cadiaoutpost/oa/engineering)
 "ft" = (/obj/structure/table/graf/dirty_table,/obj/machinery/microwave{pixel_y = 8},/turf/simulated/floor/stone/ancient_stone_floor3,/area/cadiaoutpost/oa/service/kitchen)
 "fu" = (/obj/structure/grille/metal_bars,/obj/effect/floor_decal/turf/plating,/turf/simulated/floor/holofloor,/area/cadiaoutpost/oa/caves/undercity)
@@ -291,6 +304,7 @@
 "gl" = (/turf/simulated/floor/fancyfloor/carpet{dir = 5},/area/cadiaoutpost/oa/service/chapel)
 "gm" = (/obj/effect/floor_decal/newcorner/plating/corner,/turf/simulated/floor/darkfloor{dir = 1},/area/cadiaoutpost/oa/engineering)
 "gn" = (/obj/structure/torchwall{pixel_y = 30},/turf/simulated/floor/fancyfloor/oldcobble,/area/cadiaoutpost/new_hive/caves)
+"go" = (/obj/machinery/door/airlock/highsecurity/imperiumdoor{use_power = 0},/turf/simulated/floor/wood,/area/cadiaoutpost/new_hive/hive_city)
 "gp" = (/obj/structure/closet/hive/narnia,/obj/item/device/radio,/turf/simulated/floor/ceramic,/area/cadiaoutpost/oa/security)
 "gq" = (/turf/unsimulated/wall/fakeglass{dir = 5; icon = 'icons/map_project/windows.dmi'; icon_state = "r_window"; color = "#1B8B14"},/area/cadiaoutpost/oa/dungeon1)
 "gr" = (/obj/effect/floor_decal/turf/plating,/obj/structure/grille/broken,/turf/simulated/floor/holofloor,/area/cadiaoutpost/oa/caves/undercity)
@@ -306,6 +320,7 @@
 "gB" = (/obj/item/flame/candle/church{pixel_y = 12; pixel_x = 5},/obj/item/flame/candle/church{pixel_y = 12; pixel_x = -10},/obj/item/flame/candle/church{pixel_y = 12; pixel_x = -2},/obj/item/flame/candle/church{pixel_y = 12; pixel_x = 12},/obj/item/flame/candle/small{pixel_x = 3; pixel_y = 2},/obj/item/flame/candle/small{pixel_x = -9},/turf/simulated/floor/fancyfloor/coralg,/area/cadiaoutpost/oa/service/chapel)
 "gC" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/wall/ancient,/area/cadiaoutpost/new_hive/hive_city)
 "gD" = (/obj/structure/toilet{dir = 8; icon_state = "toilet00"},/obj/structure/curtain/open/shower,/turf/simulated/floor/ceramic/surgery,/area/cadiaoutpost/oa/security)
+"gE" = (/turf/simulated/floor/wood,/area/cadiaoutpost/new_hive/hive_city)
 "gF" = (/obj/effect/decal/cleanable/dirt,/obj/structure/grille,/turf/simulated/floor/plating/reinforced,/area/cadiaoutpost/oa/engineering)
 "gG" = (/turf/simulated/floor/fancyfloor/carpet/middle,/area/cadiaoutpost/oa/service/chapel)
 "gH" = (/obj/structure/bed/chair/office{dir = 4},/obj/effect/landmark/start/village/ganger,/turf/simulated/floor/fancyfloor/oldcobble,/area/cadiaoutpost/new_hive/caves)
@@ -323,7 +338,7 @@
 "gV" = (/obj/machinery/light/spot{dir = 8; icon_state = "tube1"},/obj/structure/flora/pottedplant,/turf/simulated/floor/ship_floor/steel,/area/cadiaoutpost/oa/bridge/offices/planetarygovernor)
 "gW" = (/obj/effect/floor_decal/newcorner/plating,/obj/effect/floor_decal/turf/big_cables1{dir = 5},/obj/effect/floor_decal/turf/big_cables2{dir = 6},/obj/machinery/light/small,/turf/simulated/floor/darkfloor{dir = 1},/area/cadiaoutpost/oa/engineering)
 "gY" = (/obj/structure/hivedecor/xenos/barrel/green,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/darkfloor{dir = 1},/area/cadiaoutpost/oa/engineering)
-"ha" = (/obj/effect/decal/cleanable/dirt,/obj/structure/table/rack,/obj/machinery/light/small{dir = 8},/obj/item/reagent_containers/food/snacks/warfare/rat,/obj/item/reagent_containers/food/snacks/warfare/rat,/obj/item/reagent_containers/food/snacks/warfare/rat,/turf/simulated/floor/tiled{color = "grey"},/area/cadiaoutpost/oa/supply)
+"ha" = (/obj/effect/decal/cleanable/dirt,/obj/structure/table/rack,/obj/machinery/light/small{dir = 8},/obj/item/reagent_containers/food/snacks/warfare/rat{pixel_y = 5; pixel_x = -5},/obj/item/reagent_containers/food/snacks/warfare/rat{pixel_y = 5},/obj/item/reagent_containers/food/snacks/warfare/rat{pixel_y = 5; pixel_x = 5},/turf/simulated/floor/tiled{color = "grey"},/area/cadiaoutpost/oa/supply)
 "hb" = (/obj/effect/floor_decal/newcorner/reinforced{dir = 1},/turf/simulated/floor/tiled/dark{color = "grey"},/area/cadiaoutpost/oa/engineering)
 "hc" = (/obj/structure/table/rack/dark,/obj/random/loot/badweapon,/obj/random/loot/badweapon,/turf/simulated/floor/fancyfloor/oldcobble,/area/cadiaoutpost/new_hive/hive_city)
 "hd" = (/obj/effect/floor_decal/turf/metal/five,/obj/effect/floor_decal/turf/metal/five,/obj/effect/floor_decal/turf/metal/five,/obj/structure/table/graf/reinf_table,/obj/item/fluff_items/paperwork,/turf/simulated/floor/tiled/dark,/area/cadiaoutpost/oa/shuttle/roguet)
@@ -358,6 +373,7 @@
 "hI" = (/obj/structure/table/graf/reinf_table{icon_state = "table_horizontal2"},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/ship_floor/steel,/area/cadiaoutpost/new_hive/hive_city)
 "hJ" = (/obj/effect/floor_decal/turf/metal/five,/obj/effect/floor_decal/turf/metal/five,/obj/structure/bed/chair/comfy/captain,/obj/effect/floor_decal/turf/bloodbar,/turf/simulated/floor/tiled/dark,/area/cadiaoutpost/oa/shuttle/roguet)
 "hK" = (/obj/structure/stairs/north{color = "gray"},/turf/simulated/floor/stone/old2,/area/cadiaoutpost/new_hive/hive_city)
+"hL" = (/obj/structure/closet/cabinet,/turf/simulated/floor/wood,/area/cadiaoutpost/new_hive/hive_city)
 "hM" = (/turf/simulated/floor/tiled/dark{color = "grey"},/area/cadiaoutpost/oa/service/chapel)
 "hN" = (/obj/effect/floor_decal/newcorner/stone,/obj/effect/floor_decal/newcorner/stone{dir = 8; pixel_y = -6},/obj/structure/warfare/barricade/sandbag,/turf/simulated/floor/snow,/area/cadiaoutpost/oa/theforest)
 "hO" = (/obj/structure/bed/barrack,/obj/structure/bed/barrack1,/obj/effect/decal/cleanable/cobweb2{dir = 8},/turf/simulated/floor/stone/ancient_stone_floor3,/area/cadiaoutpost/new_hive/caves)
@@ -398,6 +414,7 @@
 "iz" = (/obj/effect/floor_decal/industrial/warning{dir = 5},/turf/simulated/floor/tiled{color = "grey"},/area/cadiaoutpost/oa/engineering)
 "iA" = (/obj/machinery/door/unpowered/wattle{name = "wooden gate"},/turf/simulated/floor/stone,/area/cadiaoutpost/oa/farm)
 "iB" = (/obj/effect/decal/dead/four{pixel_x = 32},/turf/simulated/floor/ceramic/surgery2,/area/cadiaoutpost/new_hive/caves)
+"iC" = (/obj/effect/floor_decal/turf/big_cables2{dir = 1},/turf/simulated/floor/darkfloor{dir = 1},/area/cadiaoutpost/oa/engineering)
 "iD" = (/obj/machinery/door/airlock/multi_tile/metal/imperium{name = "Abandoned Store"; dir = 2},/turf/simulated/floor/fancyfloor/oldcobble,/area/cadiaoutpost/new_hive/caves)
 "iE" = (/turf/simulated/floor/snow,/area/space)
 "iF" = (/obj/structure/flora/grass/brown,/turf/simulated/floor/snow,/area/cadiaoutpost/oa/theforest)
@@ -425,6 +442,7 @@
 "jg" = (/obj/effect/gibspawner/human,/turf/simulated/floor/wood,/area/cadiaoutpost/oa/farm)
 "jh" = (/obj/effect/decal/cleanable/dirt,/obj/effect/floor_decal/newcorner/crater_small,/turf/simulated/floor/stone,/area/cadiaoutpost/oa/theforest)
 "ji" = (/obj/machinery/light/small,/turf/simulated/floor/stone/ancient_stone_old,/area/cadiaoutpost/new_hive/hive_city)
+"jj" = (/obj/effect/decal/cleanable/dirt,/obj/structure/bed/chair/office/dark{dir = 8},/turf/simulated/floor/darkfloor{dir = 1},/area/cadiaoutpost/oa/engineering)
 "jk" = (/turf/unsimulated/wall/fakeglass{dir = 4; icon = 'icons/map_project/windows.dmi'; icon_state = "r_window"; color = "#1B8B14"},/area/cadiaoutpost/oa/dungeon1)
 "jl" = (/obj/effect/floor_decal/turf/plating,/obj/structure/sewers/pipeflow{pixel_y = 32},/obj/effect/water/top,/obj/effect/water/bottom,/turf/simulated/floor/holofloor,/area/cadiaoutpost/oa/caves/undercity)
 "jm" = (/obj/machinery/power/port_gen/pacman/super,/turf/simulated/floor/darkfloor{dir = 1},/area/cadiaoutpost/oa/engineering)
@@ -503,7 +521,7 @@
 "kR" = (/obj/structure/toilet,/obj/structure/warfare/barricade/concrete_barrier{dir = 4},/obj/structure/warfare/barricade/concrete_barrier{dir = 8},/turf/simulated/floor/ceramic/surgery2,/area/cadiaoutpost/new_hive/caves)
 "kS" = (/obj/effect/decal/cleanable/cobweb2{dir = 8},/turf/simulated/floor/stone/ancient_stone_floor3,/area/cadiaoutpost/new_hive/caves)
 "kT" = (/obj/effect/floor_decal/turf/metal/five,/turf/simulated/floor/stone/ancient_stone_floor3,/area/cadiaoutpost/new_hive/hive_city)
-"kU" = (/obj/machinery/conveyor{dir = 1; id = "C1"},/turf/simulated/floor/tiled{color = "grey"},/area/cadiaoutpost/oa/supply)
+"kU" = (/obj/machinery/conveyor{dir = 1; id = "C1"},/obj/structure/plasticflaps,/turf/simulated/floor/tiled{color = "grey"},/area/cadiaoutpost/oa/supply)
 "kV" = (/obj/structure/bed/barrack,/obj/structure/bed/barrack1,/obj/effect/decal/cleanable/cobweb2{dir = 8},/turf/simulated/floor/ceramic,/area/cadiaoutpost/oa/security)
 "kW" = (/obj/structure/torchwall{pixel_y = 30},/mob/living/simple_animal/hostile/syndicate/ranged,/turf/simulated/floor/stone,/area/cadiaoutpost/oa/caves)
 "kX" = (/obj/item/reagent_containers/glass/bucket,/turf/simulated/floor/snow,/area/cadiaoutpost/oa/farm)
@@ -516,6 +534,7 @@
 "le" = (/obj/effect/floor_decal/turf/metal/five,/obj/machinery/power/smes/buildable/max_cap_in_out,/turf/simulated/floor/tiled/dark,/area/cadiaoutpost/oa/shuttle/roguet)
 "lf" = (/obj/effect/floor_decal/spline/fancy/wood{dir = 8},/obj/structure/grille/iron_fence,/obj/structure/sign/aquilalong,/turf/simulated/floor/factory_floor,/area/cadiaoutpost/oa/service/chapel)
 "lg" = (/obj/structure/cable{icon_state = "1-2"},/turf/simulated/floor/darkfloor{dir = 1},/area/cadiaoutpost/oa/engineering)
+"lh" = (/obj/structure/bed/chair/wood/fancy{dir = 1},/turf/simulated/floor/fancyfloor/carpet,/area/cadiaoutpost/new_hive/hive_city)
 "lj" = (/obj/structure/table/graf/reinf_table,/obj/item/reagent_containers/food/drinks/bottle/distillery,/turf/simulated/floor/ceramic/surgery2,/area/cadiaoutpost/new_hive/caves)
 "lk" = (/obj/item/trash/warfare_can/sardine,/turf/simulated/floor/stone/ancient_stone_floor3,/area/cadiaoutpost/new_hive/caves)
 "ll" = (/obj/effect/decal/cleanable/generic,/turf/simulated/floor/stone/crafted_floor,/area/cadiaoutpost/new_hive/caves)
@@ -563,6 +582,7 @@
 "mi" = (/obj/effect/floor_decal/turf/metal/metal_wall,/obj/effect/floor_decal/turf/metal/metal_wall{dir = 4; icon_state = "04"},/turf/simulated/wall/ancient,/area/cadiaoutpost/new_hive/caves)
 "mj" = (/turf/simulated/wall/concrete,/area/cadiaoutpost/new_hive/caves)
 "ml" = (/obj/structure/closet,/obj/machinery/light/small{dir = 1; icon_state = "bulb1"},/obj/item/device/radio,/obj/item/device/radio,/obj/item/device/radio,/obj/effect/decal/cleanable/dirt,/obj/random/smokes,/turf/simulated/floor/ship_floor/steel,/area/cadiaoutpost/new_hive/hive_city)
+"mm" = (/obj/machinery/light/small{dir = 1},/turf/simulated/floor/tiled/dark,/area/cadiaoutpost/new_hive/hive_city)
 "mn" = (/obj/effect/decal/cleanable/generic,/obj/structure/torchwall{dir = 8; icon_state = "torchwall0"},/turf/simulated/floor/tiled{color = "grey"},/area/cadiaoutpost/oa/caves/undercity)
 "mo" = (/obj/effect/floor_decal/newcorner/reinforced{dir = 8},/obj/effect/floor_decal/newcorner/black{dir = 4},/turf/simulated/floor/ceramic,/area/cadiaoutpost/oa/service/chapel)
 "mp" = (/obj/structure/stairs/north{color = "gray"; dir = 8},/obj/effect/floor_decal/turf/brick,/turf/simulated/floor/holofloor,/area/cadiaoutpost/new_hive/hive_city)
@@ -577,12 +597,14 @@
 "mA" = (/obj/effect/floor_decal/newcorner/plating,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/darkfloor{dir = 1},/area/cadiaoutpost/oa/engineering)
 "mB" = (/obj/machinery/light/small,/turf/simulated/floor/stone/ancient_stone_floor3,/area/cadiaoutpost/new_hive/hive_city)
 "mC" = (/turf/simulated/open,/area/cadiaoutpost/oa/bridge/hallway)
+"mD" = (/turf/simulated/floor/fancyfloor/carpet/green,/area/cadiaoutpost/new_hive/hive_city)
 "mE" = (/obj/effect/floor_decal/turf/cafe2,/obj/effect/floor_decal/turf/cafe2,/turf/simulated/floor/stone/ancient_stone_floor3,/area/cadiaoutpost/oa/maintenance/department/service/bar)
 "mF" = (/obj/effect/floor_decal/turf/metal/five,/obj/structure/table/woodentable{color = "#36261B"},/obj/item/flame/candle/church{pixel_y = 4; pixel_x = 5},/turf/simulated/floor/holofloor,/area/cadiaoutpost/oa/bridge/hallway)
 "mG" = (/obj/effect/decal/cleanable/dirt,/obj/structure/torchwall{dir = 4; icon_state = "torchwall0"},/turf/simulated/floor/tiled,/area/cadiaoutpost/oa/caves/dark)
 "mH" = (/obj/structure/cable{icon_state = "1-8"},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled{color = "grey"},/area/cadiaoutpost/oa/engineering)
 "mI" = (/obj/structure/table/graf/big_wood_table{dir = 8},/turf/simulated/floor/stone/ancient_stone_floor3,/area/cadiaoutpost/oa/service/kitchen)
 "mJ" = (/obj/effect/floor_decal/turf/metal/five,/turf/space,/area/cadiaoutpost/oa/service/chapel/chapeloffice)
+"mK" = (/obj/structure/table/graf/old_table,/obj/item/storage/fancy/cigar,/obj/item/flame/lighter/zippo,/turf/simulated/floor/fancyfloor/carpet/green{dir = 5},/area/cadiaoutpost/new_hive/hive_city)
 "mL" = (/turf/unsimulated/floor/necron_floor{icon_state = "lofloor"},/area/cadiaoutpost/oa/dungeon1)
 "mM" = (/obj/structure/shipdecor/generator{icon_state = "gen1"},/obj/effect/floor_decal/industrial/outline/yellow,/turf/simulated/floor/factory_floor{dir = 8},/area/cadiaoutpost/oa/engineering)
 "mN" = (/obj/effect/floor_decal/newcorner/train{dir = 1},/turf/simulated/floor/surface_floor,/area/cadiaoutpost/oa/theforest)
@@ -597,6 +619,7 @@
 "mW" = (/obj/structure/hivedecor/watertreatment6,/turf/simulated/floor/tiled{color = "grey"},/area/cadiaoutpost/oa/engineering)
 "mX" = (/obj/structure/bed/chair/office{dir = 8},/obj/structure/bed/chair/office{dir = 8},/turf/simulated/floor/fancyfloor/oldcobble,/area/cadiaoutpost/new_hive/caves)
 "mY" = (/obj/machinery/light/small{dir = 1; icon_state = "bulb1"},/obj/structure/table/rack/holorack,/turf/simulated/floor/tiled,/area/cadiaoutpost/new_hive/hive_city)
+"na" = (/turf/simulated/floor/tiled/dark,/area/cadiaoutpost/new_hive/hive_city)
 "nb" = (/obj/item/remains/human,/turf/simulated/floor/stone/ancient_stone_floor3,/area/cadiaoutpost/oa/caves/dark)
 "nc" = (/obj/structure/hivedecor/statue8,/obj/structure/sign/banner_count/flag{pixel_x = -29},/turf/simulated/floor/stone/old2,/area/cadiaoutpost/new_hive/hive_city)
 "nd" = (/obj/effect/floor_decal/newcorner/stone{dir = 4},/obj/effect/floor_decal/newcorner/stone{dir = 4; pixel_y = 5},/obj/effect/floor_decal/newcorner/stone{dir = 4; pixel_y = -5},/turf/simulated/floor/snow,/area/cadiaoutpost/oa/farm)
@@ -626,6 +649,7 @@
 "nE" = (/obj/effect/floor_decal/newcorner/plating/quarter{dir = 8},/turf/simulated/floor/darkfloor{dir = 1},/area/cadiaoutpost/oa/engineering)
 "nF" = (/obj/structure/table/rack,/obj/random/loot/randomarmor,/obj/random/loot/randomarmor,/obj/random/loot/randomarmor,/turf/simulated/floor/fancyfloor/oldcobble,/area/cadiaoutpost/new_hive/caves)
 "nG" = (/obj/effect/floor_decal/newcorner/stone{dir = 5},/turf/simulated/floor/snow,/area/cadiaoutpost/oa/theforest)
+"nH" = (/obj/effect/floor_decal/turf/big_cables2{dir = 6},/turf/simulated/floor/darkfloor{dir = 1},/area/cadiaoutpost/oa/engineering)
 "nI" = (/obj/effect/landmark/start,/obj/effect/floor_decal/turf/brick,/turf/simulated/floor/holofloor,/area/cadiaoutpost/new_hive/hive_city)
 "nJ" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/dark{color = "grey"},/area/cadiaoutpost/oa/engineering)
 "nK" = (/turf/simulated/shuttle/wall/necron{icon_state = "lwall15"},/area/cadiaoutpost/oa/dungeon1)
@@ -654,6 +678,7 @@
 "oj" = (/obj/structure/bed/chair/wood/fancy,/obj/effect/floor_decal/turf/metal/five,/obj/effect/floor_decal/turf/bloodbar,/turf/simulated/floor/tiled/dark,/area/cadiaoutpost/oa/shuttle/roguet)
 "ok" = (/obj/machinery/light/small{dir = 8},/turf/simulated/floor/stone/ancient_stone_floor3,/area/cadiaoutpost/new_hive/hive_city)
 "ol" = (/obj/machinery/light/small{dir = 4},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/ship_floor,/area/cadiaoutpost/oa/service/enforcer)
+"om" = (/obj/structure/table/rack,/obj/machinery/light/small{dir = 8},/turf/simulated/floor/tiled/dark,/area/cadiaoutpost/new_hive/hive_city)
 "on" = (/obj/effect/floor_decal/newcorner/reinforced{dir = 1},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled{color = "grey"},/area/cadiaoutpost/oa/engineering)
 "oo" = (/obj/effect/decal/cleanable/dirt,/obj/machinery/light/small/red{dir = 4},/turf/simulated/floor/plating/reinforced,/area/cadiaoutpost/oa/engineering)
 "op" = (/obj/machinery/light/small{dir = 1; icon_state = "bulb1"},/obj/effect/water/top,/obj/effect/water/bottom,/turf/simulated/floor/exoplanet/water/shallow/lightless,/area/cadiaoutpost/new_hive/caves)
@@ -695,6 +720,7 @@
 "pf" = (/obj/effect/floor_decal/turf/grimy,/obj/effect/floor_decal/turf/big_cables1{dir = 4},/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/cobweb2,/turf/simulated/floor/darkfloor{dir = 1},/area/cadiaoutpost/oa/engineering)
 "pg" = (/obj/effect/floor_decal/newcorner/black/corner{dir = 8},/turf/simulated/floor/ceramic,/area/cadiaoutpost/oa/service/chapel)
 "ph" = (/obj/structure/bed/barrack,/obj/structure/bed/barrack1,/turf/simulated/floor/stone/ancient_stone_floor3,/area/cadiaoutpost/new_hive/hive_city)
+"pi" = (/obj/structure/table/graf/reinf_table,/turf/simulated/floor/tiled/dark,/area/cadiaoutpost/new_hive/hive_city)
 "pj" = (/obj/effect/decal/cleanable/dirt,/obj/effect/floor_decal/newcorner/train{dir = 8},/turf/simulated/floor/stone,/area/cadiaoutpost/oa/theforest)
 "pk" = (/obj/item/flame/candle/church{pixel_y = 4; pixel_x = -9},/obj/item/flame/candle/church{pixel_y = 4; pixel_x = 9},/obj/item/flame/candle/church{pixel_y = 4},/obj/effect/floor_decal/newcorner/black{dir = 1},/obj/structure/sign/stainedglass1{pixel_x = 32},/turf/simulated/floor/ceramic,/area/cadiaoutpost/oa/service/chapel)
 "pl" = (/obj/effect/floor_decal/newcorner/stone{dir = 4},/turf/simulated/floor/snow,/area/cadiaoutpost/oa/farm)
@@ -703,6 +729,7 @@
 "pp" = (/obj/machinery/door/airlock/multi_tile/metal/imperium{name = "Abandoned Store"; dir = 2},/turf/simulated/floor/stone/old2,/area/cadiaoutpost/new_hive/hive_city)
 "pq" = (/obj/effect/floor_decal/turf/plating,/obj/structure/sewers/pipeflow{pixel_y = 32},/turf/simulated/floor/holofloor,/area/cadiaoutpost/oa/caves/undercity)
 "pr" = (/obj/effect/decal/cleanable/dirt,/obj/effect/floor_decal/turf/big_cables1{dir = 4},/obj/structure/hivedecor/xenos/barrel/yellow,/turf/simulated/floor/plating/reinforced,/area/cadiaoutpost/oa/engineering)
+"ps" = (/obj/structure/bed/chair/office/dark{dir = 1},/turf/simulated/floor/darkfloor{dir = 1},/area/cadiaoutpost/oa/engineering)
 "pt" = (/obj/effect/floor_decal/newcorner/stone{dir = 5},/turf/simulated/floor/snow,/area/cadiaoutpost/oa/farm)
 "pu" = (/turf/simulated/floor/fancyfloor/carpet/blue/middle,/area/cadiaoutpost/oa/bridge/offices/planetarygovernor)
 "pv" = (/turf/simulated/shuttle/wall/necron{icon_state = "lawall0"},/area/cadiaoutpost/oa/dungeon1)
@@ -715,7 +742,9 @@
 "pC" = (/obj/structure/bed/chair/wood/fancy,/obj/structure/torchwall{pixel_y = 30},/turf/simulated/floor/fancyfloor/coralg,/area/cadiaoutpost/oa/service/chapel)
 "pD" = (/obj/structure/statue/verina/broken,/turf/simulated/floor/stone/ancient_stone_floor3,/area/cadiaoutpost/new_hive/hive_city)
 "pE" = (/obj/effect/floor_decal/turf/brick,/obj/machinery/door/airlock/highsecurity/imperiumdoor{name = "Imperialis Doorway - Monasterium"},/turf/simulated/floor/holofloor,/area/cadiaoutpost/oa/service/chapel/chapeloffice)
+"pF" = (/obj/structure/table/graf/reinf_table{icon_state = "reinf_table5"},/obj/item/reagent_containers/food/drinks/coffee,/turf/simulated/floor/ship_floor/steel,/area/cadiaoutpost/new_hive/hive_city)
 "pG" = (/obj/machinery/light/small/red{dir = 1},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/plating/reinforced,/area/cadiaoutpost/oa/engineering)
+"pI" = (/obj/structure/table/graf/reinf_table{icon_state = "reinf_table4"},/obj/machinery/light/small{dir = 8},/turf/simulated/floor/ship_floor/steel,/area/cadiaoutpost/new_hive/hive_city)
 "pJ" = (/obj/item/trash/warfare_can/rat,/turf/simulated/floor/stone/ancient_stone_floor3,/area/cadiaoutpost/new_hive/caves)
 "pK" = (/obj/structure/table/rack,/obj/random/loot/randomsupply,/turf/simulated/floor/stone/ancient_stone_floor3,/area/cadiaoutpost/oa/caves/dark)
 "pL" = (/obj/structure/table/graf/reinf_table{icon_state = "reinf_table5"},/obj/machinery/computer/downloadconsole,/obj/effect/floor_decal/turf/metal/six,/turf/simulated/floor/darkfloor{dir = 1},/area/cadiaoutpost/oa/engineering)
@@ -725,9 +754,10 @@
 "pP" = (/turf/simulated/mineral/random,/area/cadiaoutpost/new_hive/hive_city)
 "pQ" = (/obj/structure/hivedecor/vehicle/tau,/turf/simulated/floor/stone/ancient_stone_floor3,/area/cadiaoutpost/oa/caves/dark)
 "pR" = (/obj/effect/floor_decal/newcorner/reinforced{dir = 1},/turf/simulated/floor/tiled{color = "grey"},/area/cadiaoutpost/oa/engineering)
+"pS" = (/obj/machinery/conveyor{dir = 4; id = "C1"},/obj/effect/decal/cleanable/dirt,/obj/machinery/mineral/input,/turf/simulated/floor/tiled{color = "grey"},/area/cadiaoutpost/oa/supply)
 "pT" = (/obj/structure/hivedecor/chimera_wreck,/turf/simulated/floor/snow,/area/cadiaoutpost/oa/theforest)
 "pU" = (/obj/structure/shipdecor{icon_state = "off"; name = "Manufactorium Computer"},/turf/simulated/floor/tiled{color = "grey"},/area/cadiaoutpost/oa/engineering)
-"pV" = (/obj/machinery/r_n_d/circuit_imprinter,/obj/effect/floor_decal/turf/big_cables1{dir = 4},/obj/effect/floor_decal/turf/big_cables2{dir = 4},/obj/structure/railing{dir = 1},/turf/simulated/floor/darkfloor{dir = 1},/area/cadiaoutpost/oa/engineering)
+"pV" = (/obj/machinery/r_n_d/circuit_imprinter,/obj/effect/floor_decal/turf/big_cables1{dir = 4},/obj/effect/floor_decal/turf/big_cables2{dir = 4},/turf/simulated/floor/darkfloor{dir = 1},/area/cadiaoutpost/oa/engineering)
 "pW" = (/obj/machinery/light/small/red{dir = 4},/turf/simulated/floor/tiled{color = "grey"},/area/cadiaoutpost/oa/engineering)
 "pX" = (/obj/structure/lattice,/obj/structure/table/rack,/obj/random/loot/tech1,/obj/random/loot/tech1,/obj/machinery/light/small{dir = 4; icon_state = "bulb1"; light_color = "#234F1E"},/turf/simulated/floor,/area/cadiaoutpost/oa/caves)
 "pY" = (/obj/machinery/door/airlock/autoname,/obj/machinery/door/blast/shutters{id = "shop1"},/turf/simulated/floor/fancyfloor/oldcobble,/area/cadiaoutpost/new_hive/caves)
@@ -737,6 +767,7 @@
 "qc" = (/obj/effect/floor_decal/turf/plating,/obj/structure/anti_tank,/turf/simulated/floor/holofloor,/area/cadiaoutpost/oa/caves/undercity)
 "qd" = (/obj/effect/floor_decal/turf/grimy,/obj/structure/window/reinforced,/obj/machinery/light{dir = 4; icon_state = "tube1"},/obj/effect/floor_decal/turf/big_cables1{dir = 4},/turf/simulated/floor/darkfloor{dir = 1},/area/cadiaoutpost/oa/engineering)
 "qe" = (/obj/effect/floor_decal/turf/metal/five,/obj/machinery/computer{pixel_y = 31},/turf/simulated/floor/holofloor,/area/cadiaoutpost/oa/bridge/hallway)
+"qg" = (/turf/unsimulated/mineral,/area/cadiaoutpost/oa/engineering)
 "qh" = (/obj/effect/floor_decal/turf/plating,/mob/living/simple_animal/hostile/broken_servitor,/turf/simulated/floor/holofloor,/area/cadiaoutpost/oa/caves/undercity)
 "qi" = (/obj/effect/decal/cleanable/cobweb2{dir = 1},/turf/simulated/floor/stone/ancient_stone_floor3,/area/cadiaoutpost/oa/caves/undercity)
 "qj" = (/turf/simulated/wall/stone,/area/cadiaoutpost/new_hive/hive_city)
@@ -765,10 +796,12 @@
 "qH" = (/obj/effect/floor_decal/turf/metal/five,/obj/machinery/door/airlock/highsecurity/imperiumdoor{name = "Imperialis Doorway - Monasterium"},/turf/simulated/floor/holofloor,/area/cadiaoutpost/oa/bridge/hallway)
 "qI" = (/obj/item/flame/candle/church{pixel_y = 4},/obj/item/flame/candle/church{pixel_y = 4; pixel_x = 9},/obj/item/flame/candle/church{pixel_y = 4; pixel_x = -9},/obj/structure/table/woodentable{color = "#36261B"},/turf/simulated/floor/ceramic,/area/cadiaoutpost/oa/service/chapel)
 "qJ" = (/obj/structure/sign/directions/medical{pixel_y = -19},/obj/structure/stairs/north{color = "gray"; dir = 8},/obj/effect/floor_decal/turf/metal/five,/turf/simulated/floor/stone/old2,/area/cadiaoutpost/new_hive/hive_city)
+"qK" = (/obj/structure/bed/chair/stool2,/obj/effect/floor_decal/newcorner/polar,/turf/simulated/floor/tiled/dark,/area/cadiaoutpost/new_hive/hive_city)
 "qL" = (/obj/effect/floor_decal/newcorner/train{dir = 4},/obj/machinery/door/blast/shutters{maxhealth = 3200; id = "Depo"},/turf/simulated/floor/tiled,/area/cadiaoutpost/new_hive/hive_city)
 "qM" = (/obj/machinery/door/unpowered/inn/deadwood{maxhealth = 2000; req_one_access = list(355,268); name = "Bar"},/turf/simulated/floor/stone/ancient_stone_floor3,/area/cadiaoutpost/oa/service/kitchen)
 "qN" = (/obj/effect/floor_decal/newcorner/stone{dir = 8},/obj/effect/floor_decal/newcorner/black{dir = 8},/turf/simulated/floor/ceramic,/area/cadiaoutpost/oa/service/chapel)
 "qO" = (/obj/structure/toilet{dir = 8; icon_state = "toilet00"},/obj/machinery/light/small{dir = 1; icon_state = "bulb1"},/turf/simulated/floor/ceramic/surgery2,/area/cadiaoutpost/new_hive/hive_city)
+"qP" = (/obj/structure/closet,/turf/simulated/floor/tiled/dark,/area/cadiaoutpost/new_hive/hive_city)
 "qQ" = (/obj/effect/decal/cleanable/dirt,/obj/structure/table/graf/butcher_table,/obj/item/reagent_containers/food/snacks/meat/human,/turf/simulated/floor/tiled,/area/cadiaoutpost/oa/caves/dark)
 "qR" = (/obj/machinery/door/blast/shutters/open{id = "gate_vhod1"},/turf/simulated/floor/stone/old2,/area/cadiaoutpost/new_hive/hive_city)
 "qS" = (/obj/machinery/light/small{dir = 8},/turf/simulated/floor/fancyfloor/oldcobble,/area/cadiaoutpost/new_hive/caves)
@@ -776,7 +809,7 @@
 "qU" = (/obj/effect/floor_decal/turf/metal/five,/obj/structure/hivedecor/xenos/barrel/yellow,/turf/simulated/floor/plating,/area/cadiaoutpost/oa/engineering)
 "qV" = (/turf/simulated/shuttle/wall/necron{icon_state = "lawall3"},/area/cadiaoutpost/oa/dungeon1)
 "qW" = (/obj/effect/floor_decal/newcorner/plating{dir = 4},/obj/effect/floor_decal/newcorner/plating,/turf/simulated/floor/darkfloor{dir = 1},/area/cadiaoutpost/oa/engineering)
-"qX" = (/obj/machinery/light/small{dir = 1; icon_state = "bulb1"},/obj/effect/decal/cleanable/dirt,/obj/item/crowbar/red,/obj/item/crowbar/red,/obj/structure/table/rack/dark,/turf/simulated/floor/ship_floor/steel,/area/cadiaoutpost/new_hive/hive_city)
+"qX" = (/obj/machinery/light/small{dir = 1; icon_state = "bulb1"},/obj/item/crowbar/red,/obj/item/crowbar/red,/obj/structure/table/rack/dark,/turf/simulated/floor/ship_floor/steel,/area/cadiaoutpost/new_hive/hive_city)
 "qY" = (/obj/machinery/light/small/red{dir = 1},/obj/structure/hivedecor/xenos/barrel/white,/turf/simulated/floor/tiled{color = "grey"},/area/cadiaoutpost/oa/engineering)
 "qZ" = (/obj/effect/landmark/start/village{name = "Imperial Citizen"},/obj/structure/bed/barrack,/turf/simulated/floor/fancyfloor/oldcobble,/area/cadiaoutpost/new_hive/hive_city)
 "ra" = (/turf/simulated/shuttle/wall/necron{icon_state = "lwall5"},/area/cadiaoutpost/oa/dungeon1)
@@ -846,7 +879,7 @@
 "sq" = (/obj/effect/decal/cleanable/dirt,/obj/effect/floor_decal/industrial/warning{dir = 10},/turf/simulated/floor/ship_floor,/area/cadiaoutpost/oa/service/enforcer)
 "sr" = (/obj/structure/flora/pottedplant/orientaltree,/turf/simulated/floor/fancyfloor/carpet{dir = 10},/area/cadiaoutpost/oa/bridge/offices/planetarygovernor)
 "ss" = (/obj/random/loot/guardgear,/turf/simulated/floor/stone,/area/cadiaoutpost/oa/caves)
-"su" = (/obj/structure/bed/barrack,/obj/effect/landmark/start/imperialguard/commissar,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/ship_floor/steel,/area/cadiaoutpost/new_hive/hive_city)
+"su" = (/obj/structure/coatrack,/turf/simulated/floor/wood,/area/cadiaoutpost/new_hive/hive_city)
 "sv" = (/obj/machinery/light/small{dir = 8},/obj/effect/floor_decal/turf/brick,/turf/simulated/floor/holofloor,/area/cadiaoutpost/new_hive/hive_city)
 "sw" = (/obj/structure/shipdecor{icon_state = "off"; name = "Manufactorium Computer"},/obj/machinery/light/small/red{dir = 8; icon_state = "bulb1"},/turf/simulated/floor/factory_floor{dir = 4},/area/cadiaoutpost/oa/engineering)
 "sx" = (/obj/machinery/computer/guestpass{pixel_y = 21},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled{color = "grey"},/area/cadiaoutpost/oa/engineering)
@@ -895,7 +928,7 @@
 "tq" = (/obj/machinery/light/small{dir = 4},/turf/simulated/floor/stone/ancient_stone_floor3,/area/cadiaoutpost/new_hive/caves)
 "tr" = (/obj/structure/closet/crate,/obj/item/clothing/head/helmet/guardhelmet/enforcer/arbitrator/tzeecult2,/obj/item/clothing/head/helmet/guardhelmet/enforcer/arbitrator/tzeecult1,/obj/item/clothing/head/helmet/nurgcult,/turf/simulated/floor/stone,/area/cadiaoutpost/oa/caves/dark)
 "tt" = (/obj/effect/floor_decal/newcorner/black/quarter{dir = 1},/obj/structure/hivedecor/statue8,/turf/simulated/floor/ceramic,/area/cadiaoutpost/oa/service/chapel)
-"tu" = (/obj/machinery/light/small{dir = 8},/turf/simulated/floor/ship_floor/steel,/area/cadiaoutpost/new_hive/hive_city)
+"tu" = (/obj/machinery/light/small{dir = 8},/obj/structure/bed/chair{dir = 8},/turf/simulated/floor/ship_floor/steel,/area/cadiaoutpost/new_hive/hive_city)
 "tv" = (/obj/effect/decal/cleanable/cobweb2{dir = 4},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/ceramic,/area/cadiaoutpost/oa/security)
 "tw" = (/obj/effect/decal/cleanable/dirt,/obj/effect/floor_decal/industrial/warning,/turf/simulated/floor/ship_floor,/area/cadiaoutpost/oa/service/enforcer)
 "tx" = (/obj/machinery/light/small/red{dir = 1},/obj/effect/floor_decal/industrial/warning/corner{dir = 4},/obj/structure/hivedecor/xenos/barrel/green,/turf/simulated/floor/tiled{color = "grey"},/area/cadiaoutpost/oa/engineering)
@@ -963,6 +996,7 @@
 "uK" = (/turf/simulated/floor/trench,/area/cadiaoutpost/new_hive/caves)
 "uL" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/machinery/light/small{dir = 8},/turf/simulated/floor/tiled/freezer,/area/cadiaoutpost/oa/service/kitchen)
 "uM" = (/obj/structure/bed/chair/wood/fancy{dir = 8},/turf/simulated/floor/fancyfloor/coralg,/area/cadiaoutpost/oa/service/chapel)
+"uN" = (/obj/effect/decal/cleanable/dirt,/obj/machinery/gibber/autogibber{emagged = 1},/turf/simulated/floor/tiled{color = "grey"},/area/cadiaoutpost/oa/supply)
 "uO" = (/obj/effect/floor_decal/spline/fancy/wood/corner{dir = 1},/obj/item/flame/candle/dinner{desc = "A long candle, perfect for setting the mood of an evening meal or longing prayer. Wax burns cleaner than tallow ones, and are sometimes scented."; name = "wax candle"; pixel_x = 15; pixel_y = 5; wax = 40000},/turf/simulated/floor/tiled/dark{color = "grey"},/area/cadiaoutpost/oa/service/chapel)
 "uP" = (/obj/structure/barrel3,/turf/simulated/floor/stone/crafted_floor,/area/cadiaoutpost/new_hive/caves)
 "uQ" = (/obj/machinery/door/airlock/imperiumdoor{req_one_access = list(63,331)},/turf/simulated/floor/stone/old2,/area/cadiaoutpost/new_hive/hive_city)
@@ -996,6 +1030,7 @@
 "vB" = (/obj/structure/flora/grass/both,/turf/simulated/floor/snow,/area/cadiaoutpost/oa/theforest)
 "vC" = (/turf/simulated/shuttle/wall{icon_state = "wall3"; dir = 6; color = "red"},/area/cadiaoutpost/oa/shuttle/roguet)
 "vD" = (/obj/structure/toilet,/obj/structure/warfare/barricade/concrete_barrier{dir = 4},/obj/structure/warfare/barricade/concrete_barrier{dir = 8},/obj/effect/decal/cleanable/poo{pixel_y = -7},/turf/simulated/floor/ceramic/surgery2,/area/cadiaoutpost/new_hive/caves)
+"vE" = (/obj/structure/flora/pottedplant,/turf/simulated/floor/wood,/area/cadiaoutpost/new_hive/hive_city)
 "vF" = (/obj/machinery/light/small/red{dir = 1},/obj/effect/floor_decal/industrial/warning,/turf/simulated/floor/tiled{color = "grey"},/area/cadiaoutpost/oa/engineering)
 "vG" = (/turf/simulated/floor/trench,/area/cadiaoutpost/oa/caves)
 "vH" = (/turf/simulated/floor/fancyfloor/oldcobble,/area/cadiaoutpost/oa/service/chapel)
@@ -1012,6 +1047,7 @@
 "vT" = (/obj/structure/hivedecor/skulls,/turf/simulated/floor/ship_floor/steel,/area/cadiaoutpost/oa/bridge/offices/planetarygovernor)
 "vU" = (/obj/effect/floor_decal/turf/plating,/obj/effect/floor_decal/turf/plating,/obj/structure/anti_tank,/turf/simulated/floor/holofloor,/area/cadiaoutpost/oa/caves/undercity)
 "vV" = (/obj/machinery/light/small,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/ship_floor/steel,/area/cadiaoutpost/new_hive/hive_city)
+"vW" = (/obj/structure/toilet{icon_state = "toilet00"; pixel_y = 8},/turf/simulated/floor/tiled/white,/area/cadiaoutpost/new_hive/hive_city)
 "vX" = (/obj/effect/floor_decal/turf/metal/five,/obj/structure/hivedecor/statue8,/obj/machinery/light/spot{dir = 8; icon_state = "tube1"},/turf/simulated/floor/holofloor,/area/cadiaoutpost/oa/bridge/hallway)
 "vY" = (/obj/structure/table/rack/dark,/obj/item/reagent_containers/food/drinks/glass2/pint,/obj/item/reagent_containers/food/drinks/glass2/pint,/obj/item/reagent_containers/food/drinks/glass2/pint,/obj/item/reagent_containers/food/drinks/glass2/pint,/obj/item/reagent_containers/food/drinks/glass2/pint,/obj/item/reagent_containers/food/drinks/glass2/pint,/obj/item/reagent_containers/food/drinks/glass2/pint,/obj/item/reagent_containers/food/drinks/glass2/pint,/obj/item/reagent_containers/food/drinks/glass2/pint,/obj/item/reagent_containers/food/drinks/glass2/pint,/turf/simulated/floor/stone/ancient_stone_floor3,/area/cadiaoutpost/oa/service/kitchen)
 "vZ" = (/obj/effect/floor_decal/turf/metal/five,/obj/effect/floor_decal/turf/metal/five,/turf/simulated/floor/tiled/dark,/area/cadiaoutpost/oa/shuttle/roguet)
@@ -1036,9 +1072,10 @@
 "wv" = (/obj/machinery/door/airlock/highsecurity/imperiumdoor{use_power = 0},/turf/simulated/floor/ship_floor/steel,/area/cadiaoutpost/new_hive/hive_city)
 "wx" = (/obj/effect/floor_decal/turf/plating,/obj/item/archaeological_find/remains/xeno{color = "grey"},/turf/simulated/floor/holofloor,/area/cadiaoutpost/oa/caves/undercity)
 "wy" = (/obj/structure/toilet{icon_state = "toilet00"; pixel_y = 8},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/ship_floor/steel,/area/cadiaoutpost/new_hive/hive_city)
-"wz" = (/obj/effect/floor_decal/turf/big_cables1{dir = 4},/obj/effect/decal/cleanable/generic,/turf/simulated/floor/darkfloor{dir = 1},/area/cadiaoutpost/oa/engineering)
+"wz" = (/obj/effect/decal/cleanable/generic,/obj/machinery/light/small{dir = 4},/obj/effect/floor_decal/turf/big_cables1,/turf/simulated/floor/darkfloor{dir = 1},/area/cadiaoutpost/oa/engineering)
 "wA" = (/turf/simulated/floor/stone,/area/cadiaoutpost/oa/theforest)
 "wB" = (/obj/machinery/button/remote/blast_door/id_scan{id = "arvusrampdoor"; pixel_y = 5; req_one_access = list(302)},/turf/simulated/shuttle/wall{color = "red"; icon_state = "wall3"},/area/cadiaoutpost/oa/shuttle/roguet)
+"wD" = (/obj/structure/table/graf/reinf_table{icon_state = "table_horizontal2"},/obj/item/device/flashlight/lamp,/turf/simulated/floor/fancyfloor/carpet/middle,/area/cadiaoutpost/new_hive/hive_city)
 "wE" = (/obj/structure/toilet{color = "#FFD700"; desc = "Golden... Throne?"; icon_state = "toilet00"; dir = 4; pixel_y = 5; pixel_x = 5},/obj/effect/floor_decal/turf/checkers,/obj/machinery/light/spot{dir = 8; icon_state = "tube1"},/turf/simulated/floor/ship_floor/steel,/area/cadiaoutpost/oa/bridge/hallway)
 "wF" = (/obj/item/stack/thrones/five,/obj/item/stack/thrones/five,/obj/item/stack/thrones/ten,/obj/item/stack/thrones/five,/obj/structure/closet/crate,/turf/simulated/floor/stone/ancient_stone_floor3,/area/cadiaoutpost/oa/service/kitchen)
 "wH" = (/obj/structure/hivedecor/xenos/barrel/green,/turf/simulated/floor/tiled{color = "grey"},/area/cadiaoutpost/oa/engineering)
@@ -1050,6 +1087,7 @@
 "wO" = (/obj/effect/decal/cleanable/dirt,/obj/effect/bump_teleporter{id = "tech10"; id_target = "tech9"},/obj/structure/stairs/north{color = "gray"; dir = 8},/turf/simulated/floor/plating/reinforced,/area/cadiaoutpost/oa/engineering)
 "wP" = (/obj/structure/table/rack,/obj/item/melee/baton/shockmaul,/obj/item/melee/baton/shockmaul,/obj/effect/decal/cleanable/dirt,/obj/item/grenade/chem_grenade/gas,/obj/item/grenade/chem_grenade/gas,/obj/item/grenade/chem_grenade/gas,/obj/item/grenade/frag,/obj/item/grenade/frag,/obj/item/crowbar/brace_jack,/turf/simulated/floor/ship_floor,/area/cadiaoutpost/oa/service/enforcer)
 "wQ" = (/obj/structure/hivedecor/xenos/terminal,/turf/unsimulated/floor/necron_floor,/area/cadiaoutpost/oa/dungeon1)
+"wR" = (/obj/machinery/door/airlock/cone{maxhealth = 3000; name = "Commissar's Airlock"; req_one_access = list(67,331)},/turf/simulated/floor/ship_floor/steel,/area/cadiaoutpost/new_hive/hive_city)
 "wS" = (/obj/structure/table/graf/reinf_table{icon_state = "table_horizontal2"},/obj/item/archaeological_find/bowl,/obj/item/archaeological_find/bowl,/obj/item/archaeological_find/bowl,/obj/item/archaeological_find/bowl,/obj/item/archaeological_find/bowl,/obj/item/archaeological_find/bowl,/obj/structure/grille/metal_bars,/turf/simulated/floor/stone/ancient_stone_floor3,/area/cadiaoutpost/oa/service/kitchen)
 "wT" = (/turf/simulated/wall/rust,/area/cadiaoutpost/new_hive/caves)
 "wU" = (/obj/structure/table/graf/dirty_table,/obj/item/reagent_containers/food/snacks/meat/human,/turf/simulated/floor/fancyfloor/oldcobble,/area/cadiaoutpost/new_hive/caves)
@@ -1064,11 +1102,11 @@
 "xf" = (/obj/effect/floor_decal/turf/grimy,/obj/effect/floor_decal/turf/big_cables1{dir = 4},/turf/simulated/floor/darkfloor{dir = 1},/area/cadiaoutpost/oa/engineering)
 "xg" = (/turf/simulated/shuttle/wall/necron{icon_state = "lwall1"},/area/cadiaoutpost/oa/dungeon1)
 "xh" = (/turf/unsimulated/wall/fakeglass{dir = 10; icon = 'icons/map_project/windows.dmi'; icon_state = "r_window"},/area/cadiaoutpost/oa/engineering)
-"xi" = (/obj/structure/bed/chair/wood/fancy{dir = 4},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/ship_floor/steel,/area/cadiaoutpost/new_hive/hive_city)
+"xi" = (/turf/simulated/floor/ship_floor/steel,/area/cadiaoutpost/oa/caves)
 "xj" = (/obj/machinery/light/small{dir = 8},/obj/structure/stairs/north{color = "gray"},/turf/simulated/floor/stone/ancient_stone_floor3,/area/cadiaoutpost/new_hive/caves)
 "xk" = (/obj/effect/decal/cleanable/dirt,/obj/effect/floor_decal/turf/big_cables2{dir = 4},/obj/effect/decal/cleanable/cobweb2{dir = 8},/turf/simulated/floor/plating/reinforced,/area/cadiaoutpost/oa/engineering)
 "xl" = (/obj/effect/floor_decal/turf/metal/five,/obj/effect/floor_decal/turf/metal/five,/turf/simulated/floor/holofloor,/area/cadiaoutpost/oa/bridge/hallway)
-"xm" = (/obj/structure/table/graf/reinf_table{icon_state = "table_horizontal2"; dir = 4},/obj/item/reagent_containers/glass/jar,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/ship_floor/steel,/area/cadiaoutpost/new_hive/hive_city)
+"xm" = (/obj/machinery/light/small{dir = 8},/turf/simulated/floor/fancyfloor/carpet/green{dir = 9},/area/cadiaoutpost/new_hive/hive_city)
 "xn" = (/obj/item/flame/candle/church{pixel_y = -16; pixel_x = 12},/obj/item/flame/candle/church{pixel_y = -18; pixel_x = 1},/obj/item/flame/candle/church{pixel_y = -14; pixel_x = -10},/obj/effect/floor_decal/turf/metal/five,/turf/simulated/floor/holofloor,/area/cadiaoutpost/oa/service/chapel/graveyard)
 "xo" = (/obj/structure/cable{icon_state = "0-2"},/obj/machinery/power/smes/buildable,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled{color = "grey"},/area/cadiaoutpost/oa/engineering)
 "xp" = (/obj/effect/floor_decal/newcorner/stone{dir = 4},/obj/effect/floor_decal/newcorner/stone{dir = 4; pixel_y = -5},/turf/simulated/floor/snow,/area/cadiaoutpost/oa/theforest)
@@ -1078,11 +1116,13 @@
 "xt" = (/obj/machinery/light/small,/obj/effect/floor_decal/turf/brick,/turf/simulated/floor/holofloor,/area/cadiaoutpost/new_hive/hive_city)
 "xu" = (/obj/effect/floor_decal/turf/plating,/obj/random/loot/tech1,/turf/simulated/floor/holofloor,/area/cadiaoutpost/oa/caves/undercity)
 "xv" = (/obj/structure/closet/hive/metal,/obj/machinery/light/small{dir = 8},/obj/item/device/radio,/obj/item/device/radio,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/ship_floor,/area/cadiaoutpost/oa/service/enforcer)
+"xw" = (/obj/effect/floor_decal/newcorner/plating,/obj/structure/table/graf/reinf_table{icon_state = "reinf_table5"},/obj/item/screwdriver,/obj/item/wrench{pixel_x = -5; pixel_y = 5},/turf/simulated/floor/darkfloor{dir = 1},/area/cadiaoutpost/oa/engineering)
 "xx" = (/obj/machinery/light/small/red{dir = 8; icon_state = "bulb1"},/turf/simulated/floor/darkfloor{dir = 1},/area/cadiaoutpost/oa/engineering)
 "xy" = (/obj/machinery/light/small{dir = 8},/obj/effect/decal/cleanable/vomit,/turf/simulated/floor/stone/ancient_stone_floor3,/area/cadiaoutpost/new_hive/caves)
 "xz" = (/obj/structure/table/graf/reinf_table{icon_state = "reinf_table3"; dir = 1},/turf/simulated/floor/fancyfloor/coralg,/area/cadiaoutpost/oa/bridge/offices/sistersuperior)
 "xA" = (/obj/effect/floor_decal/turf/grimy,/obj/effect/floor_decal/turf/clockwork,/obj/structure/hivedecor/statue5{icon = 'icons/map_project/pillars.dmi'; icon_state = "1"},/turf/simulated/floor/holofloor,/area/cadiaoutpost/oa/caves/dark)
 "xB" = (/obj/effect/landmark,/turf/simulated/floor/stone/old2,/area/cadiaoutpost/new_hive/hive_city)
+"xC" = (/turf/simulated/floor/tiled/white,/area/cadiaoutpost/new_hive/hive_city)
 "xD" = (/obj/structure/hivedecor/xenos/barrel/red,/turf/simulated/floor/tiled{color = "grey"},/area/cadiaoutpost/oa/engineering)
 "xE" = (/obj/structure/closet,/obj/item/storage/pill_bottle/happy,/turf/simulated/floor/ceramic/surgery2,/area/cadiaoutpost/new_hive/caves)
 "xF" = (/obj/structure/torchwall{pixel_y = 30},/turf/simulated/floor/fancyfloor/oldcobble,/area/cadiaoutpost/oa/theforest)
@@ -1129,7 +1169,7 @@
 "yy" = (/obj/structure/catwalkrust/water,/obj/machinery/door/airlock/glass_cone/outside,/turf/simulated/floor/plating,/area/cadiaoutpost/oa/shuttle/roguet)
 "yz" = (/turf/simulated/wall/stone,/area/cadiaoutpost/oa/caves)
 "yA" = (/obj/structure/sign/imperial{pixel_x = 32},/turf/simulated/floor/stone/old2,/area/cadiaoutpost/new_hive/hive_city)
-"yC" = (/obj/item/reagent_containers/glass/jar,/obj/item/reagent_containers/glass/jar,/obj/item/reagent_containers/glass/jar,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/ship_floor/steel,/area/cadiaoutpost/new_hive/hive_city)
+"yC" = (/obj/structure/filingcabinet/chestdrawer,/turf/simulated/floor/tiled/dark,/area/cadiaoutpost/new_hive/hive_city)
 "yD" = (/obj/effect/floor_decal/turf/metal/five,/obj/machinery/shower{dir = 1; icon_state = "shower"},/turf/simulated/floor/holofloor,/area/cadiaoutpost/oa/service/chapel/chapeloffice)
 "yE" = (/obj/structure/table/steel_reinforced,/obj/item/rnd/biospace5,/obj/item/rnd/biospace5,/turf/unsimulated/floor/necron_floor,/area/cadiaoutpost/oa/dungeon1)
 "yF" = (/obj/structure/table/graf/big_wood_table,/obj/structure/curtain/black,/turf/simulated/floor/fancyfloor/coralg,/area/cadiaoutpost/oa/service/chapel)
@@ -1207,7 +1247,7 @@
 "Ae" = (/obj/structure/reagent_dispensers/coolanttank,/turf/simulated/floor/stone/ancient_stone_floor3,/area/cadiaoutpost/new_hive/caves)
 "Af" = (/mob/living/simple_animal/hostile/flesh/abomination,/turf/simulated/floor/fancyfloor/oldcobble,/area/cadiaoutpost/oa/farm)
 "Ag" = (/obj/structure/shipdecor/warp,/obj/structure/shipdecor/warp{pixel_x = 300},/obj/structure/shipdecor/warp{pixel_x = 200},/obj/structure/shipdecor/warp{pixel_x = 100},/turf/space,/area/space)
-"Ah" = (/obj/structure/table/graf/reinf_table{icon_state = "table_horizontal2"; dir = 1},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/ship_floor/steel,/area/cadiaoutpost/new_hive/hive_city)
+"Ah" = (/obj/effect/decal/cleanable/dirt,/obj/structure/table/graf/reinf_table{icon_state = "table_horizontal2"; dir = 4},/obj/item/reagent_containers/glass/jar,/turf/simulated/floor/ship_floor/steel,/area/cadiaoutpost/new_hive/hive_city)
 "Ak" = (/obj/machinery/light/spot{dir = 4; icon_state = "tube1"},/turf/simulated/floor/fancyfloor/carpet{dir = 4},/area/cadiaoutpost/oa/bridge/hallway)
 "Al" = (/obj/structure/sign/double/impbar2/right{pixel_y = 29},/turf/simulated/floor/stone/ancient_stone_floor3,/area/cadiaoutpost/new_hive/hive_city)
 "Am" = (/obj/machinery/light/small{dir = 8},/turf/simulated/floor/stone/ancient_stone_floor3,/area/cadiaoutpost/new_hive/caves)
@@ -1220,11 +1260,11 @@
 "Au" = (/obj/structure/table/rack,/obj/machinery/light/small/red{dir = 1},/obj/item/stack/material/steel/fifty,/turf/simulated/floor/factory_floor{dir = 4},/area/cadiaoutpost/oa/engineering)
 "Av" = (/obj/effect/floor_decal/turf/metal/five,/obj/structure/table/graf/big_wood_table{dir = 1},/turf/simulated/floor/holofloor,/area/cadiaoutpost/oa/service/chapel/chapeloffice)
 "Aw" = (/obj/structure/sign/directions/medical{pixel_y = -19},/turf/simulated/floor/stone/old2,/area/cadiaoutpost/new_hive/hive_city)
-"Ax" = (/obj/machinery/shower{dir = 4; icon_state = "shower"},/obj/machinery/light/small{dir = 8},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/ship_floor/steel,/area/cadiaoutpost/new_hive/hive_city)
+"Ax" = (/obj/machinery/light/small{dir = 8},/turf/simulated/floor/tiled/dark,/area/cadiaoutpost/new_hive/hive_city)
 "Ay" = (/obj/structure/bed/barrack,/obj/structure/bed/barrack1,/turf/simulated/floor/tiled{color = "grey"},/area/cadiaoutpost/oa/caves/undercity)
 "Az" = (/obj/effect/floor_decal/turf/metal/five,/obj/machinery/door/airlock/hatch/simiel,/turf/simulated/floor/tiled/dark,/area/cadiaoutpost/oa/shuttle/roguet)
 "AA" = (/obj/machinery/chemical_dispenser,/turf/simulated/floor/stone/crafted_floor,/area/cadiaoutpost/new_hive/caves)
-"AB" = (/obj/structure/hivedecor/xenos/processor/console,/obj/effect/floor_decal/turf/big_cables1{dir = 9},/obj/effect/decal/cleanable/dirt,/obj/structure/railing{dir = 1},/turf/simulated/floor/darkfloor{dir = 1},/area/cadiaoutpost/oa/engineering)
+"AB" = (/obj/effect/floor_decal/turf/big_cables1{dir = 9},/obj/effect/decal/cleanable/dirt,/obj/machinery/computer/rdconsole,/turf/simulated/floor/darkfloor{dir = 1},/area/cadiaoutpost/oa/engineering)
 "AC" = (/obj/structure/table/steel_reinforced,/obj/item/fluff_items/artyshell,/turf/simulated/floor/factory_floor{dir = 4},/area/cadiaoutpost/oa/engineering)
 "AD" = (/obj/effect/floor_decal/industrial/warning{dir = 8},/obj/machinery/light/small/red,/turf/simulated/floor/darkfloor{dir = 1},/area/cadiaoutpost/oa/engineering)
 "AE" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/ship_floor/steel,/area/cadiaoutpost/new_hive/hive_city)
@@ -1239,6 +1279,7 @@
 "AO" = (/obj/machinery/light/small,/turf/simulated/floor/stone/ancient_stone_floor3,/area/cadiaoutpost/new_hive/caves)
 "AQ" = (/obj/machinery/conveyor/centcom_auto{dir = 8},/obj/effect/landmark/corpse/pilgrim,/turf/simulated/floor/factory_floor{dir = 1},/area/cadiaoutpost/oa/engineering)
 "AR" = (/obj/structure/closet/hive/metal,/turf/simulated/floor/fancyfloor/oldcobble,/area/cadiaoutpost/new_hive/hive_city)
+"AS" = (/obj/structure/grille,/obj/structure/window_frame,/turf/simulated/floor/darkfloor{dir = 1},/area/cadiaoutpost/oa/engineering)
 "AT" = (/obj/effect/decal/dead/two,/turf/simulated/floor/stone/ancient_stone_floor3,/area/cadiaoutpost/oa/caves/dark)
 "AU" = (/obj/structure/shipdecor{icon_state = "off"; name = "Manufactorium Computer"},/obj/effect/floor_decal/newcorner/reinforced{dir = 8},/turf/simulated/floor/tiled{color = "grey"},/area/cadiaoutpost/oa/engineering)
 "AV" = (/obj/effect/floor_decal/turf/grimy,/obj/effect/floor_decal/turf/clockwork,/turf/simulated/floor/holofloor,/area/cadiaoutpost/oa/caves/dark)
@@ -1295,9 +1336,11 @@
 "BV" = (/obj/item/flame/candle/small{pixel_x = -13; pixel_y = 2},/obj/item/flame/candle/small{pixel_x = -13; pixel_y = -6},/turf/simulated/floor/fancyfloor/coralg,/area/cadiaoutpost/oa/service/chapel)
 "BW" = (/obj/effect/landmark/start/village{name = "Imperial Citizen"},/turf/simulated/floor/fancyfloor/oldcobble,/area/cadiaoutpost/new_hive/hive_city)
 "BX" = (/obj/effect/floor_decal/turf/metal/five,/obj/structure/table/woodentable{color = "#36261B"},/obj/item/paper,/obj/item/paper,/obj/item/paper,/obj/item/paper,/obj/item/paper,/obj/item/paper,/turf/simulated/floor/holofloor,/area/cadiaoutpost/oa/bridge/hallway)
+"BY" = (/turf/simulated/floor/fancyfloor/carpet{dir = 9},/area/cadiaoutpost/new_hive/hive_city)
 "BZ" = (/obj/effect/floor_decal/newcorner/stone{dir = 8},/obj/effect/floor_decal/newcorner/stone{dir = 8; pixel_y = 5},/obj/effect/floor_decal/newcorner/stone{dir = 8; pixel_y = -4},/turf/simulated/floor/snow,/area/cadiaoutpost/oa/farm)
 "Cb" = (/obj/item/gun/projectile/automatic/machinepistol,/turf/simulated/floor/stone/ancient_stone_floor3,/area/cadiaoutpost/new_hive/caves)
 "Cd" = (/obj/effect/floor_decal/newcorner/stone,/obj/effect/floor_decal/newcorner/stone{dir = 1},/turf/simulated/floor/snow,/area/cadiaoutpost/oa/farm)
+"Ce" = (/obj/machinery/shower{dir = 4; icon_state = "shower"},/turf/simulated/floor/tiled/white,/area/cadiaoutpost/new_hive/hive_city)
 "Cf" = (/obj/effect/floor_decal/newcorner/stone,/turf/simulated/floor/snow,/area/cadiaoutpost/oa/theforest)
 "Cg" = (/obj/effect/floor_decal/newcorner/reinforced/corner{dir = 8},/obj/effect/floor_decal/industrial/outline/yellow,/turf/simulated/floor/factory_floor{dir = 4},/area/cadiaoutpost/oa/engineering)
 "Ch" = (/obj/structure/table/graf/polished_table,/obj/random/loot/lightmelee,/turf/simulated/floor/wood,/area/cadiaoutpost/oa/farm)
@@ -1338,6 +1381,7 @@
 "CV" = (/obj/machinery/light/small{dir = 8},/turf/simulated/floor/tiled,/area/cadiaoutpost/new_hive/hive_city)
 "CW" = (/obj/effect/floor_decal/newcorner/stone{dir = 5},/obj/effect/floor_decal/newcorner/stone{dir = 8; pixel_y = -6},/turf/simulated/floor/snow,/area/cadiaoutpost/oa/farm)
 "CY" = (/obj/effect/floor_decal/turf/bar3{dir = 4},/obj/effect/floor_decal/turf/big_cables1{dir = 6},/turf/unsimulated/floor/necron_floor{icon_state = "lofloor"},/area/cadiaoutpost/oa/dungeon1)
+"CZ" = (/obj/machinery/door/airlock/cone{name = "Bathroom"},/turf/simulated/floor/tiled/dark,/area/cadiaoutpost/new_hive/hive_city)
 "Da" = (/obj/effect/floor_decal/turf/cafe2,/obj/item/stool/bar/padded,/turf/simulated/floor/stone/ancient_stone_floor3,/area/cadiaoutpost/oa/maintenance/department/service/bar)
 "Db" = (/obj/machinery/seed_extractor,/obj/item/reagent_containers/glass/bucket,/turf/simulated/floor/stone/ancient_stone_floor3,/area/cadiaoutpost/oa/farm)
 "Dc" = (/obj/structure/shipdecor{icon_state = "off"; name = "Manufactorium Computer"},/turf/simulated/floor/factory_floor{dir = 4},/area/cadiaoutpost/oa/engineering)
@@ -1349,6 +1393,7 @@
 "Di" = (/obj/effect/floor_decal/turf/big_cables1{dir = 9},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/plating/reinforced,/area/cadiaoutpost/oa/engineering)
 "Dj" = (/obj/machinery/shower,/turf/simulated/floor/ceramic/surgery2,/area/cadiaoutpost/new_hive/hive_city)
 "Dk" = (/obj/effect/floor_decal/newcorner/train{dir = 1},/obj/random/loot/badweapon,/turf/simulated/floor/surface_floor,/area/cadiaoutpost/oa/caves)
+"Dl" = (/obj/structure/window_frame,/obj/structure/grille,/turf/simulated/floor/tiled/dark,/area/cadiaoutpost/new_hive/hive_city)
 "Dm" = (/obj/effect/floor_decal/turf/brick,/obj/effect/landmark/start/ministorum/hospitaller,/obj/structure/bed/barrack,/turf/simulated/floor/holofloor,/area/cadiaoutpost/oa/bridge/offices/sisterhospitaller)
 "Do" = (/obj/effect/floor_decal/turf/brick,/obj/item/flame/candle/church{pixel_y = 12; pixel_x = -2},/turf/simulated/floor/holofloor,/area/cadiaoutpost/oa/bridge/offices/sisterhospitaller)
 "Dp" = (/obj/structure/hivedecor/bookcase/huge,/turf/simulated/floor/fancyfloor/coralg,/area/cadiaoutpost/oa/bridge/offices/sistersuperior)
@@ -1368,6 +1413,7 @@
 "DF" = (/obj/machinery/light/small/red{dir = 8; icon_state = "bulb1"},/obj/effect/floor_decal/industrial/warning{dir = 4},/turf/simulated/floor/tiled{color = "grey"},/area/cadiaoutpost/oa/engineering)
 "DH" = (/obj/structure/bed/chair/wood{dir = 1},/turf/simulated/floor/wood,/area/cadiaoutpost/oa/farm)
 "DI" = (/obj/effect/bump_teleporter{id = "h2"; id_target = "h3"},/obj/structure/stairs/north{color = "gray"},/turf/simulated/floor/holofloor,/area/cadiaoutpost/oa/bridge/hallway)
+"DJ" = (/obj/machinery/light/small{dir = 8},/turf/simulated/floor/wood,/area/cadiaoutpost/new_hive/hive_city)
 "DK" = (/turf/simulated/shuttle/wall/necron{icon_state = "lwall14"},/area/cadiaoutpost/oa/dungeon1)
 "DL" = (/obj/item/pickaxe,/obj/structure/table/rack,/obj/item/device/flashlight/lantern,/turf/simulated/floor/tiled,/area/cadiaoutpost/oa/caves/dark)
 "DM" = (/obj/structure/bed/barrack,/obj/structure/bed/barrack1,/obj/effect/landmark/start/village{name = "Imperial Citizen"},/turf/simulated/floor/tiled,/area/cadiaoutpost/new_hive/hive_city)
@@ -1450,6 +1496,7 @@
 "Fq" = (/obj/machinery/door/blast/shutters{id = "shop2"},/obj/structure/grille/metal_bars,/obj/structure/table/graf/reinf_table{icon_state = "table_horizontal2"; dir = 4},/turf/simulated/floor/fancyfloor/oldcobble,/area/cadiaoutpost/new_hive/caves)
 "Fs" = (/obj/structure/hivedecor/xenos/broadcasterbroken{name = "something"; desc = "Something mechanical"},/turf/simulated/floor/tiled{color = "grey"},/area/cadiaoutpost/oa/engineering)
 "Ft" = (/obj/structure/bed/chair/governor_throne,/turf/simulated/floor/ship_floor/steel,/area/cadiaoutpost/oa/bridge/offices/planetarygovernor)
+"Fu" = (/obj/effect/floor_decal/turf/metal/five,/turf/simulated/floor/darkfloor{dir = 1},/area/cadiaoutpost/oa/engineering)
 "Fw" = (/obj/machinery/button/remote/blast_door{pixel_y = 28; pixel_x = 7; id = "trader_1"},/turf/simulated/floor/fancyfloor/oldcobble,/area/cadiaoutpost/new_hive/hive_city)
 "Fx" = (/obj/effect/floor_decal/turf/metal/five,/obj/structure/sign/inkvd{pixel_y = 30},/obj/structure/sign/imperial{pixel_y = -25},/turf/simulated/floor/ship_floor/steel,/area/cadiaoutpost/oa/shuttle/roguet)
 "Fy" = (/obj/structure/bed/barrack,/obj/structure/bed/barrack1,/obj/effect/decal/cleanable/dirt,/obj/effect/landmark/start/imperialguard/sniper,/turf/simulated/floor/ship_floor/steel,/area/cadiaoutpost/new_hive/hive_city)
@@ -1469,9 +1516,11 @@
 "FO" = (/obj/structure/warfare/barricade/concrete_barrier{dir = 8},/obj/structure/warfare/barricade/concrete_barrier,/obj/structure/sewers/wallholebigbrk,/obj/effect/decal/cleanable/urine{pixel_y = 13},/obj/effect/decal/cleanable/poo,/turf/simulated/floor/fancyfloor/oldcobble,/area/cadiaoutpost/new_hive/caves)
 "FP" = (/obj/structure/statue/gallows,/turf/simulated/floor/trenches,/area/cadiaoutpost/new_hive/hive_city)
 "FR" = (/obj/structure/table/rack/dark{pixel_x = -4},/obj/item/gun/energy/las/lasgun,/obj/item/gun/energy/las/lasgun,/obj/item/gun/energy/las/lasgun,/obj/item/gun/energy/las/lasgun,/obj/effect/decal/cleanable/dirt,/obj/item/gun/projectile/automatic/heavystubber,/obj/item/ammo_magazine/box/a556/mg08,/obj/item/ammo_magazine/box/a556/mg08,/obj/item/ammo_magazine/box/a556/mg08,/turf/simulated/floor/ship_floor/steel,/area/cadiaoutpost/new_hive/hive_city)
+"FS" = (/turf/simulated/floor/fancyfloor/carpet/green{dir = 10},/area/cadiaoutpost/new_hive/hive_city)
 "FT" = (/obj/effect/floor_decal/newcorner/train{dir = 8},/turf/simulated/floor/snow,/area/cadiaoutpost/oa/theforest)
 "FU" = (/obj/structure/curtain/medical,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled{color = "grey"},/area/cadiaoutpost/oa/engineering)
 "FV" = (/obj/structure/hivedecor/statue8,/obj/effect/floor_decal/turf/metal/five,/turf/simulated/floor/holofloor,/area/cadiaoutpost/oa/bridge/hallway)
+"FW" = (/obj/structure/table/graf/reinf_table{icon_state = "table_horizontal2"; dir = 4},/obj/item/paper_bin,/obj/machinery/button/remote/blast_door{pixel_y = 27; id = "guardD"},/turf/simulated/floor/ship_floor/steel,/area/cadiaoutpost/new_hive/hive_city)
 "FX" = (/turf/simulated/mineral/random,/area/cadiaoutpost/oa/engineering)
 "FY" = (/obj/item/gun/launcher/rcl_rifle/ork,/obj/structure/table/rack,/obj/item/ammo_casing/rocket,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled,/area/cadiaoutpost/oa/caves/dark)
 "Ga" = (/obj/effect/floor_decal/turf/metal/five,/obj/machinery/light/small/red,/turf/simulated/floor/darkfloor{dir = 1},/area/cadiaoutpost/oa/engineering)
@@ -1484,7 +1533,7 @@
 "Gj" = (/obj/structure/table/graf/reinf_table,/obj/item/gun/energy/las/laspistol,/obj/item/cell/lasgun,/turf/simulated/floor/stone/ancient_stone_floor3,/area/cadiaoutpost/new_hive/caves)
 "Gk" = (/obj/machinery/door/airlock/imperiumdoor{req_one_access = list(63,331)},/turf/simulated/floor/tiled,/area/cadiaoutpost/new_hive/hive_city)
 "Gl" = (/obj/machinery/door/airlock/multi_tile/metal/imperium{name = "Transport Ship Cockpit"; dir = 1},/turf/simulated/floor/stone/ancient_stone_old,/area/cadiaoutpost/new_hive/hive_city)
-"Gm" = (/obj/machinery/gibber/autogibber,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled{color = "grey"},/area/cadiaoutpost/oa/supply)
+"Gm" = (/obj/effect/decal/cleanable/dirt,/obj/machinery/mineral/output,/turf/simulated/floor/tiled{color = "grey"},/area/cadiaoutpost/oa/supply)
 "Gn" = (/obj/structure/closet/hive/metal,/obj/item/device/radio,/obj/item/device/radio,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/ship_floor,/area/cadiaoutpost/oa/service/enforcer)
 "Go" = (/obj/effect/floor_decal/newcorner/stone/corner{dir = 1},/turf/simulated/floor/snow,/area/cadiaoutpost/oa/theforest)
 "Gq" = (/obj/item/broken_bottle,/turf/simulated/floor/stone/crafted_floor,/area/cadiaoutpost/new_hive/caves)
@@ -1502,6 +1551,7 @@
 "GE" = (/obj/structure/torchwall{dir = 4; icon_state = "torchwall0"},/obj/effect/floor_decal/newcorner/reinforced,/turf/simulated/floor/ceramic,/area/cadiaoutpost/oa/service/chapel)
 "GF" = (/obj/effect/floor_decal/turf/brick,/obj/machinery/light/stolb{on = 1; use_power = 0},/turf/simulated/floor/holofloor,/area/cadiaoutpost/new_hive/hive_city)
 "GG" = (/obj/effect/floor_decal/turf/brick,/obj/machinery/door/airlock/highsecurity/imperiumdoor{name = "Governatorial Crypt"},/turf/simulated/floor/holofloor,/area/cadiaoutpost/oa/service/chapel)
+"GH" = (/obj/structure/bed/chair/wood/fancy,/turf/simulated/floor/fancyfloor/carpet{dir = 1},/area/cadiaoutpost/new_hive/hive_city)
 "GI" = (/obj/effect/floor_decal/newcorner/step{dir = 8},/turf/simulated/floor/darkfloor{dir = 1},/area/cadiaoutpost/oa/engineering)
 "GJ" = (/obj/item/flame/candle/church{pixel_y = -14; pixel_x = 14},/obj/structure/warfare/barricade/concrete_barrier{dir = 8; color = "#FFD700"},/turf/simulated/floor/ship_floor/white{color = "#FFD700"},/area/cadiaoutpost/oa/shuttle/roguet)
 "GK" = (/obj/effect/floor_decal/newcorner/train2/corner{dir = 6},/turf/simulated/floor/snow,/area/cadiaoutpost/oa/theforest)
@@ -1541,10 +1591,12 @@
 "Hv" = (/obj/structure/bed/barrack,/obj/structure/bed/barrack1,/obj/effect/landmark/start/imperialguard/guard,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/ship_floor/steel,/area/cadiaoutpost/new_hive/hive_city)
 "Hw" = (/obj/structure/bed{icon = "icons/map_project/furniture_and_decor.dmi"; icon_state = "migbed"},/obj/effect/landmark/start/village,/turf/simulated/floor/wood,/area/cadiaoutpost/oa/farm)
 "Hx" = (/obj/structure/ore_box,/turf/simulated/floor/tiled,/area/cadiaoutpost/oa/caves/dark)
+"Hy" = (/obj/structure/hivedecor/xenos/processor/console,/turf/simulated/floor/darkfloor{dir = 1},/area/cadiaoutpost/oa/engineering)
 "Hz" = (/obj/effect/floor_decal/turf/metal/five,/obj/structure/torchwall{dir = 1; icon_state = "torchwall0"},/turf/simulated/floor/holofloor,/area/cadiaoutpost/oa/service/chapel/chapeloffice)
 "HA" = (/obj/effect/floor_decal/turf/big_cables1{dir = 9},/obj/effect/floor_decal/turf/big_cables1{dir = 5},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/plating/reinforced,/area/cadiaoutpost/oa/engineering)
 "HC" = (/obj/effect/floor_decal/turf/plating,/obj/structure/sewers/wallholebigbrk,/turf/simulated/floor/holofloor,/area/cadiaoutpost/oa/caves/undercity)
 "HD" = (/obj/structure/bed/chair/wood{dir = 8; icon_state = "wooden_chair_preview"},/turf/simulated/floor/wood,/area/cadiaoutpost/oa/farm)
+"HE" = (/turf/simulated/floor/fancyfloor/carpet{dir = 6},/area/cadiaoutpost/new_hive/hive_city)
 "HF" = (/obj/machinery/door/airlock/maintenance,/turf/simulated/floor/factory_floor{dir = 4},/area/cadiaoutpost/oa/engineering)
 "HG" = (/obj/machinery/door/airlock/engineering,/obj/effect/floor_decal/turf/metal/six,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/plating/reinforced,/area/cadiaoutpost/oa/engineering)
 "HH" = (/obj/structure/sign/directions/medical{pixel_y = -19},/turf/simulated/floor/stone/ancient_stone_floor3,/area/cadiaoutpost/new_hive/caves)
@@ -1566,6 +1618,7 @@
 "HY" = (/obj/effect/floor_decal/newcorner/reinforced/corner,/turf/simulated/floor/tiled{color = "grey"},/area/cadiaoutpost/oa/engineering)
 "HZ" = (/obj/structure/cable{icon_state = "2-4"},/obj/structure/cable{icon_state = "1-2"},/obj/structure/cable{icon_state = "4-8"; color = "blue"},/turf/simulated/floor/darkfloor{dir = 1},/area/cadiaoutpost/oa/engineering)
 "Ib" = (/obj/effect/floor_decal/turf/metal/five,/obj/structure/sign/stainedglass3{pixel_y = 32},/obj/item/flame/candle/small{pixel_y = 4},/obj/item/flame/candle/church{pixel_x = -9; pixel_y = 2},/obj/item/flame/candle/church{pixel_x = 8; pixel_y = 6},/turf/simulated/floor/holofloor,/area/cadiaoutpost/oa/service/chapel/chapeloffice)
+"Ic" = (/obj/structure/table/graf/reinf_table{icon_state = "table_horizontal2"},/obj/effect/decal/cleanable/cobweb,/turf/simulated/floor/tiled/dark,/area/cadiaoutpost/new_hive/hive_city)
 "Id" = (/obj/machinery/door/airlock/autoname,/obj/machinery/door/blast/shutters{id = "trader_1"},/turf/simulated/floor/fancyfloor/oldcobble,/area/cadiaoutpost/new_hive/hive_city)
 "Ie" = (/obj/item/flame/candle/church{pixel_y = 8; pixel_x = 1},/turf/simulated/floor/ship_floor/white{color = "#FFD700"},/area/cadiaoutpost/oa/shuttle/roguet)
 "If" = (/obj/effect/decal/cleanable/dirt,/obj/structure/stairs/north{color = "gray"; dir = 8},/obj/effect/bump_teleporter{id = "tech8"; id_target = "tech7"},/turf/simulated/floor/plating/reinforced,/area/cadiaoutpost/oa/engineering)
@@ -1636,14 +1689,16 @@
 "Jx" = (/obj/item/stack/material/cardboard,/turf/simulated/floor/fancyfloor/oldcobble,/area/cadiaoutpost/new_hive/caves)
 "Jy" = (/obj/machinery/shower{dir = 8; icon_state = "shower"},/turf/simulated/floor/ceramic/surgery2,/area/cadiaoutpost/new_hive/hive_city)
 "Jz" = (/obj/effect/floor_decal/turf/plating,/obj/effect/decal/cleanable/generic,/obj/structure/torchwall{dir = 4; icon_state = "torchwall0"},/turf/simulated/floor/holofloor,/area/cadiaoutpost/oa/caves/undercity)
+"JA" = (/obj/structure/closet,/obj/random/smokes,/turf/simulated/floor/ship_floor/steel,/area/cadiaoutpost/new_hive/hive_city)
 "JB" = (/obj/machinery/light/small{dir = 4},/turf/simulated/floor/fancyfloor/oldcobble,/area/cadiaoutpost/new_hive/caves)
 "JC" = (/obj/structure/stairs/north{color = "gray"; dir = 4},/turf/simulated/floor/stone,/area/cadiaoutpost/oa/caves)
 "JD" = (/obj/machinery/light/small/red{dir = 4},/turf/simulated/open,/area/cadiaoutpost/oa/engineering)
-"JE" = (/obj/machinery/r_n_d/protolathe,/obj/effect/decal/cleanable/cobweb2{dir = 4},/obj/effect/decal/cleanable/dirt,/obj/structure/railing{dir = 1},/turf/simulated/floor/darkfloor{dir = 1},/area/cadiaoutpost/oa/engineering)
+"JE" = (/obj/machinery/r_n_d/protolathe,/obj/effect/decal/cleanable/cobweb2{dir = 4},/obj/effect/decal/cleanable/dirt,/obj/item/stack/material/steel/ten,/obj/item/stack/material/glass/ten,/turf/simulated/floor/darkfloor{dir = 1},/area/cadiaoutpost/oa/engineering)
 "JF" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/cobweb2,/obj/effect/floor_decal/turf/big_cables2,/turf/simulated/floor/plating/reinforced,/area/cadiaoutpost/oa/engineering)
 "JG" = (/obj/effect/floor_decal/newcorner/stone{dir = 1},/obj/effect/floor_decal/newcorner/stone{dir = 10},/turf/simulated/floor/snow,/area/cadiaoutpost/oa/farm)
 "JH" = (/obj/effect/floor_decal/newcorner/reinforced{dir = 8},/obj/effect/floor_decal/newcorner/black/corner,/turf/simulated/floor/ceramic,/area/cadiaoutpost/oa/service/chapel)
 "JI" = (/obj/item/flame/candle/church,/turf/simulated/floor/wood,/area/cadiaoutpost/oa/shuttle/roguet)
+"JJ" = (/obj/item/device/flashlight/candelabra{pixel_y = 8; pixel_x = 2},/obj/structure/table/graf/old_table,/turf/simulated/floor/fancyfloor/carpet/green{dir = 6},/area/cadiaoutpost/new_hive/hive_city)
 "JK" = (/obj/structure/table/rack,/obj/random/loot/badweaponlas,/obj/random/loot/randomlasammo,/obj/random/loot/randomlasammo,/turf/simulated/floor/fancyfloor/oldcobble,/area/cadiaoutpost/new_hive/caves)
 "JL" = (/obj/item/flame/candle/church{pixel_y = 4},/obj/item/flame/candle/church{pixel_y = 4; pixel_x = 9},/obj/item/flame/candle/church{pixel_y = 4; pixel_x = -9},/turf/simulated/floor/fancyfloor/coralg,/area/cadiaoutpost/oa/service/chapel/chapeloffice)
 "JM" = (/obj/effect/floor_decal/turf/bar3{dir = 4},/obj/effect/floor_decal/turf/big_cables2,/turf/unsimulated/floor/necron_floor{icon_state = "lofloor"},/area/cadiaoutpost/oa/dungeon1)
@@ -1809,7 +1864,7 @@
 "MX" = (/obj/structure/torchwall/service{dir = 4},/turf/simulated/floor/stone/crafted_floor,/area/cadiaoutpost/new_hive/caves)
 "MY" = (/obj/item/flame/candle/church{pixel_y = 4; pixel_x = -9},/obj/item/flame/candle/church{pixel_y = 4; pixel_x = 9},/obj/item/flame/candle/church{pixel_y = 4},/obj/effect/floor_decal/newcorner/black{dir = 1},/turf/simulated/floor/ceramic,/area/cadiaoutpost/oa/service/chapel)
 "MZ" = (/obj/effect/floor_decal/newcorner/stone{dir = 4},/obj/effect/floor_decal/newcorner/stone{dir = 8},/turf/simulated/floor/snow,/area/cadiaoutpost/oa/farm)
-"Na" = (/obj/item/conveyor_switch_construct{id = "C1"},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled{color = "grey"},/area/cadiaoutpost/oa/supply)
+"Na" = (/obj/effect/decal/cleanable/dirt,/obj/machinery/conveyor_switch{id = "C1"},/turf/simulated/floor/tiled{color = "grey"},/area/cadiaoutpost/oa/supply)
 "Nb" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/wall/concrete,/area/cadiaoutpost/oa/service/enforcer)
 "Nc" = (/obj/machinery/light/small{dir = 1; icon_state = "bulb1"},/turf/simulated/floor/stone/ancient_stone_floor3,/area/cadiaoutpost/oa/service/kitchen)
 "Nd" = (/obj/structure/table/rack/shelf,/obj/item/melee/trench_axe,/turf/simulated/floor/wood,/area/cadiaoutpost/oa/farm)
@@ -1865,7 +1920,7 @@
 "Oh" = (/obj/effect/floor_decal/newcorner/stone/corner{dir = 8},/turf/simulated/floor/snow,/area/cadiaoutpost/oa/farm)
 "Oi" = (/obj/effect/floor_decal/turf/checkers,/obj/machinery/light/spot{dir = 1},/obj/structure/flora/pottedplant{icon = "icons/map_project/furniture_and_decor.dmi"; icon_state = "plant"; dir = 1},/turf/simulated/floor/ship_floor/steel,/area/cadiaoutpost/oa/bridge/hallway)
 "Oj" = (/obj/effect/floor_decal/turf/grimy,/obj/structure/window/reinforced{dir = 1; icon_state = "rwindow"},/obj/machinery/light{dir = 4; icon_state = "tube1"},/obj/effect/floor_decal/turf/big_cables1{dir = 4},/turf/simulated/floor/darkfloor{dir = 1},/area/cadiaoutpost/oa/engineering)
-"Ok" = (/obj/machinery/r_n_d/server,/turf/simulated/floor/darkfloor{dir = 1},/area/cadiaoutpost/oa/engineering)
+"Ok" = (/obj/machinery/r_n_d/server,/obj/effect/floor_decal/turf/big_cables1,/obj/effect/floor_decal/newcorner/plating,/turf/simulated/floor/darkfloor{dir = 1},/area/cadiaoutpost/oa/engineering)
 "Ol" = (/obj/effect/floor_decal/newcorner/stone{dir = 1},/obj/effect/floor_decal/newcorner/stone,/turf/simulated/floor/snow,/area/cadiaoutpost/oa/theforest)
 "Om" = (/turf/simulated/floor/ceramic,/area/cadiaoutpost/oa/service/chapel)
 "On" = (/obj/effect/floor_decal/turf/brick/two,/obj/machinery/light/spot{dir = 4; icon_state = "tube1"},/turf/simulated/floor/plating,/area/cadiaoutpost/oa/bridge/hallway)
@@ -1913,6 +1968,7 @@
 "Pe" = (/obj/item/melee/chain/pcsword/khorneaxe,/turf/simulated/floor/stone,/area/cadiaoutpost/oa/caves)
 "Pf" = (/obj/structure/filingcabinet/wallcabinet{pixel_y = 31},/obj/effect/floor_decal/turf/metal/five,/turf/simulated/floor/holofloor,/area/cadiaoutpost/oa/bridge/hallway)
 "Pg" = (/turf/simulated/floor/fancyfloor/carpet/middle,/area/cadiaoutpost/oa/bridge/offices/planetarygovernor)
+"Ph" = (/obj/structure/bed/chair/wood/fancy/comfy2{dir = 4},/turf/simulated/floor/fancyfloor/carpet/green{dir = 1},/area/cadiaoutpost/new_hive/hive_city)
 "Pi" = (/obj/effect/decal/cleanable/dirt,/obj/effect/floor_decal/industrial/warning{dir = 8},/turf/simulated/floor/ship_floor,/area/cadiaoutpost/oa/service/enforcer)
 "Pj" = (/obj/effect/floor_decal/newcorner/plating{dir = 8; icon_state = "plating"},/obj/effect/floor_decal/newcorner/plating{dir = 1},/turf/simulated/floor/darkfloor{dir = 1},/area/cadiaoutpost/oa/engineering)
 "Pm" = (/obj/structure/table/rack/dark,/obj/item/clothing/mask/gas/commissar,/obj/item/clothing/mask/gas/commissar,/turf/simulated/floor/tiled{color = "grey"},/area/cadiaoutpost/oa/engineering)
@@ -1927,6 +1983,8 @@
 "Pv" = (/obj/structure/cable{icon_state = "4-8"},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled{color = "grey"},/area/cadiaoutpost/oa/engineering)
 "Pw" = (/obj/structure/curtain/open/shower,/obj/structure/toilet{dir = 8; icon_state = "toilet00"},/turf/simulated/floor/ceramic/surgery2,/area/cadiaoutpost/new_hive/hive_city)
 "Px" = (/obj/machinery/light/small{dir = 4},/turf/simulated/floor/stone/ancient_stone_floor3,/area/cadiaoutpost/new_hive/hive_city)
+"Py" = (/obj/machinery/shower{dir = 4; icon_state = "shower"},/turf/simulated/floor/tiled/dark,/area/cadiaoutpost/new_hive/hive_city)
+"Pz" = (/obj/structure/grille/metal_bars,/obj/structure/table/graf/reinf_table{icon_state = "reinf_table4"},/obj/machinery/door/blast/shutters{id = "guardD"; use_power = 0; dir = 4; p_open = 1},/obj/machinery/door/blast/shutters{id = "guardD"; use_power = 0; dir = 4; p_open = 1},/obj/machinery/door/blast/shutters{id = "guardD"; use_power = 0; dir = 4},/turf/simulated/floor/ship_floor/steel,/area/cadiaoutpost/new_hive/hive_city)
 "PA" = (/obj/machinery/door/unpowered/inn/deadwood{maxhealth = 2000; req_one_access = list(355,268); name = "Bar"},/turf/simulated/floor/fancyfloor/oldcobble,/area/cadiaoutpost/new_hive/caves)
 "PB" = (/obj/structure/table/rack/dark,/obj/random/loot/badweaponlas,/obj/random/smokes,/obj/random/smokes,/obj/random/smokes,/obj/random/smokes,/turf/simulated/floor/fancyfloor/oldcobble,/area/cadiaoutpost/new_hive/hive_city)
 "PC" = (/obj/effect/floor_decal/newcorner/black{dir = 4},/turf/simulated/floor/ceramic,/area/cadiaoutpost/oa/service/chapel)
@@ -1944,6 +2002,7 @@
 "PP" = (/obj/effect/floor_decal/turf/metal/five,/turf/simulated/floor/holofloor,/area/cadiaoutpost/oa/service/chapel/graveyard)
 "PQ" = (/obj/machinery/door/airlock/multi_tile/metal/imperium{name = "Abandoned Store"; dir = 2},/turf/simulated/floor/stone/crafted_floor,/area/cadiaoutpost/new_hive/caves)
 "PR" = (/obj/effect/floor_decal/turf/metal/five,/obj/effect/floor_decal/turf/metal/five,/obj/machinery/telecomms/bus/preset_two,/turf/simulated/floor/tiled/dark,/area/cadiaoutpost/oa/shuttle/roguet)
+"PS" = (/obj/machinery/washing_machine,/turf/simulated/floor/tiled/white,/area/cadiaoutpost/new_hive/hive_city)
 "PT" = (/obj/structure/sign/mechanicus{pixel_x = -32},/turf/simulated/floor/stone/ancient_stone_old,/area/cadiaoutpost/new_hive/hive_city)
 "PU" = (/obj/structure/table/steel_reinforced,/obj/item/gun/energy/pulse/ionrifle,/turf/unsimulated/floor/necron_floor,/area/cadiaoutpost/oa/dungeon1)
 "PV" = (/obj/machinery/door/airlock/engineering,/turf/simulated/floor/plating/reinforced,/area/cadiaoutpost/oa/engineering)
@@ -1992,6 +2051,7 @@
 "QM" = (/obj/machinery/light/small{dir = 1; icon_state = "bulb1"},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled{color = "grey"},/area/cadiaoutpost/oa/engineering)
 "QN" = (/obj/effect/floor_decal/turf/metal/five,/obj/structure/table/graf/reinf_table,/obj/item/fluff_items/paperwork,/turf/simulated/floor/tiled/dark,/area/cadiaoutpost/oa/shuttle/roguet)
 "QO" = (/obj/structure/device/piano{icon_state = "piano"; name = "expensive piano"},/turf/simulated/floor/fancyfloor/carpet/middle,/area/cadiaoutpost/oa/bridge/offices/planetarygovernor)
+"QP" = (/turf/simulated/floor/fancyfloor/carpet{dir = 5},/area/cadiaoutpost/new_hive/hive_city)
 "QQ" = (/turf/simulated/wall/concrete,/area/cadiaoutpost/new_hive/hive_city)
 "QR" = (/obj/effect/floor_decal/industrial/warning,/obj/structure/hivedecor/xenos/barrel/red,/turf/simulated/floor/tiled{color = "grey"},/area/cadiaoutpost/oa/engineering)
 "QS" = (/obj/machinery/light/spot{dir = 4; icon_state = "tube1"},/turf/simulated/floor/ship_floor/steel,/area/cadiaoutpost/oa/bridge/hallway)
@@ -2001,6 +2061,7 @@
 "QW" = (/obj/structure/table/woodentable{color = "#36261B"},/obj/item/book/manual/ministorum/mass,/obj/item/book/manual/ministorum/mass,/obj/item/book/manual/ministorum/mass,/turf/simulated/floor/ceramic,/area/cadiaoutpost/oa/service/chapel)
 "QX" = (/turf/simulated/wall/castle,/area/cadiaoutpost/oa/bridge/offices/planetarygovernor)
 "QY" = (/obj/machinery/door/airlock/multi_tile/metal/imperium{name = "Transport Ship Cockpit"; dir = 1},/turf/simulated/floor/stone/ancient_stone_floor3,/area/cadiaoutpost/new_hive/caves)
+"QZ" = (/obj/effect/decal/cleanable/dirt,/obj/machinery/door/airlock/cone{name = "Bathroom"},/turf/simulated/floor/tiled/dark,/area/cadiaoutpost/new_hive/hive_city)
 "Ra" = (/turf/simulated/wall/ancient{color = "grey"},/area/cadiaoutpost/new_hive/caves)
 "Rb" = (/obj/structure/table/graf/reinf_table{icon_state = "reinf_table3"},/obj/effect/floor_decal/turf/cafe2,/turf/simulated/floor/stone/ancient_stone_floor3,/area/cadiaoutpost/oa/maintenance/department/service/bar)
 "Rc" = (/obj/effect/floor_decal/turf/metal/five,/obj/structure/table/woodentable{color = "#36261B"},/obj/item/flame/candle/church{pixel_y = 4; pixel_x = -2},/turf/simulated/floor/holofloor,/area/cadiaoutpost/oa/bridge/hallway)
@@ -2018,13 +2079,15 @@
 "Ro" = (/obj/structure/table/steel_reinforced,/obj/item/bonesetter{icon = 'icons/map_project/port/abductor.dmi'; icon_state = "mind_device_control"},/turf/unsimulated/floor/necron_floor,/area/cadiaoutpost/oa/dungeon1)
 "Rp" = (/obj/structure/statue/column3{color = "#FFD700"; pixel_x = 6},/obj/item/flame/candle/church{pixel_y = -14; pixel_x = -14},/obj/item/flame/candle/small{pixel_y = 8; pixel_x = -7},/obj/item/flame/candle/small{pixel_y = -7; pixel_x = -6},/turf/simulated/floor/wood,/area/cadiaoutpost/oa/shuttle/roguet)
 "Rq" = (/obj/effect/floor_decal/newcorner/black,/turf/simulated/floor/ceramic,/area/cadiaoutpost/oa/service/chapel)
+"Rr" = (/obj/item/paper,/obj/item/pen/reagent{pixel_x = 7; pixel_y = 9},/obj/structure/table/graf/reinf_table{icon_state = "table_horizontal2"; dir = 4},/turf/simulated/floor/fancyfloor/carpet{dir = 4},/area/cadiaoutpost/new_hive/hive_city)
 "Rs" = (/obj/machinery/door/airlock/imperiumdoor,/turf/simulated/floor/fancyfloor/oldcobble,/area/cadiaoutpost/new_hive/caves)
 "Rt" = (/obj/machinery/light/small{dir = 1; icon_state = "bulb1"},/turf/simulated/floor/stone/ancient_stone_old,/area/cadiaoutpost/new_hive/hive_city)
+"Ru" = (/turf/simulated/floor/fancyfloor/carpet{dir = 8},/area/cadiaoutpost/new_hive/hive_city)
 "Rv" = (/obj/structure/closet/hive/metal,/obj/random/loot/randomitemtown,/turf/simulated/floor/stone/ancient_stone_floor3,/area/cadiaoutpost/new_hive/caves)
 "Rw" = (/obj/effect/floor_decal/turf/bar3,/obj/structure/statue/xenotube/off,/turf/unsimulated/floor/necron_floor{icon_state = "ofloor"},/area/cadiaoutpost/oa/dungeon1)
 "Rx" = (/obj/machinery/light/small{dir = 1; icon_state = "bulb1"},/obj/effect/decal/cleanable/vomit,/turf/simulated/floor/fancyfloor/oldcobble,/area/cadiaoutpost/new_hive/caves)
 "Ry" = (/turf/unsimulated/miningtime,/area/cadiaoutpost/oa/caves)
-"Rz" = (/obj/structure/table/graf/reinf_table{icon_state = "table_horizontal2"; dir = 4},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/ship_floor/steel,/area/cadiaoutpost/new_hive/hive_city)
+"Rz" = (/obj/structure/table/rack/shelf,/turf/simulated/floor/wood,/area/cadiaoutpost/new_hive/hive_city)
 "RA" = (/obj/effect/floor_decal/newcorner/stone{dir = 8},/obj/effect/floor_decal/newcorner/stone{dir = 8; pixel_y = 6},/turf/simulated/floor/snow,/area/cadiaoutpost/oa/farm)
 "RB" = (/obj/effect/floor_decal/turf/metal/five,/obj/structure/table/woodentable{color = "#36261B"},/obj/item/flame/candle/church{pixel_y = 4},/obj/item/stack/thrones/ten,/turf/simulated/floor/holofloor,/area/cadiaoutpost/oa/bridge/hallway)
 "RC" = (/obj/machinery/door/airlock/multi_tile/metal/imperium{name = "Transport Ship Cockpit"; dir = 1},/turf/simulated/floor/stone/crafted_floor,/area/cadiaoutpost/new_hive/caves)
@@ -2072,6 +2135,7 @@
 "Su" = (/turf/simulated/floor/stone,/area/cadiaoutpost/oa/caves/undercity)
 "Sv" = (/obj/structure/reagent_dispensers/watertank,/turf/simulated/floor/tiled{color = "grey"},/area/cadiaoutpost/oa/engineering)
 "Sw" = (/obj/effect/water/bottom,/obj/effect/water/top,/obj/machinery/door/airlock/multi_tile/metal/imperium,/turf/simulated/floor/exoplanet/water/shallow/lightless,/area/cadiaoutpost/new_hive/caves)
+"Sx" = (/obj/structure/table/graf/reinf_table{icon_state = "reinf_table4"},/obj/machinery/light/small{dir = 4},/turf/simulated/floor/ship_floor/steel,/area/cadiaoutpost/new_hive/hive_city)
 "Sy" = (/obj/structure/table/rack/dark,/obj/item/reagent_containers/food/drinks/bottle/distillery/ancient_eye,/obj/item/reagent_containers/food/drinks/bottle/distillery/blue_rush,/obj/item/reagent_containers/food/drinks/bottle/distillery/depressing_flash,/obj/item/reagent_containers/food/drinks/bottle/distillery/green_rush,/obj/item/reagent_containers/food/drinks/bottle/distillery/red_score,/obj/item/reagent_containers/food/drinks/bottle/distillery/southern_blood,/obj/item/reagent_containers/food/drinks/bottle/distillery/spirit_bear,/obj/item/reagent_containers/food/drinks/bottle/distillery/thyme_bolt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/freezer,/area/cadiaoutpost/oa/service/kitchen)
 "Sz" = (/obj/structure/toilet{icon_state = "toilet00"; pixel_y = 8},/obj/machinery/light/small{dir = 4},/turf/simulated/floor/ceramic/surgery,/area/cadiaoutpost/new_hive/hive_city)
 "SA" = (/obj/structure/sign/directions/medical{pixel_y = 2; dir = 8; pixel_x = -29},/turf/simulated/floor/fancyfloor/oldcobble,/area/cadiaoutpost/new_hive/hive_city)
@@ -2113,7 +2177,7 @@
 "Tp" = (/obj/effect/floor_decal/turf/metal/five,/obj/structure/table/graf/big_wood_table,/obj/item/flame/candle/church{pixel_x = 8; pixel_y = 6},/turf/simulated/floor/holofloor,/area/cadiaoutpost/oa/service/chapel/chapeloffice)
 "Tq" = (/obj/effect/decal/cleanable/dirt,/obj/structure/closet/lawcloset,/turf/simulated/floor/ship_floor,/area/cadiaoutpost/oa/service/enforcer)
 "Tr" = (/obj/effect/floor_decal/turf/brick,/turf/simulated/floor/stone/ancient_stone_floor3,/area/cadiaoutpost/new_hive/hive_city)
-"Ts" = (/obj/structure/toilet{dir = 8; icon_state = "toilet00"},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/ship_floor/steel,/area/cadiaoutpost/new_hive/hive_city)
+"Ts" = (/obj/structure/toilet{dir = 8; icon_state = "toilet00"},/obj/effect/decal/cleanable/dirt,/obj/machinery/light/small{dir = 4},/turf/simulated/floor/tiled/dark,/area/cadiaoutpost/new_hive/hive_city)
 "Tt" = (/obj/effect/landmark/start/village/roguedoc,/turf/simulated/floor/ceramic/surgery2,/area/cadiaoutpost/new_hive/caves)
 "Tu" = (/obj/structure/table/rack/dark,/obj/item/reagent_containers/food/drinks/bottle/distillery/ancient_eye,/obj/item/reagent_containers/food/drinks/bottle/distillery/blue_rush,/obj/item/reagent_containers/food/drinks/bottle/distillery/depressing_flash,/obj/item/reagent_containers/food/drinks/bottle/distillery/green_rush,/obj/item/reagent_containers/food/drinks/bottle/distillery/red_score,/obj/item/reagent_containers/food/drinks/bottle/distillery/southern_blood,/obj/item/reagent_containers/food/drinks/bottle/distillery/spirit_bear,/obj/item/reagent_containers/food/drinks/bottle/distillery/thyme_bolt,/turf/simulated/floor/fancyfloor/oldcobble,/area/cadiaoutpost/new_hive/caves)
 "Tv" = (/turf/simulated/floor,/area/cadiaoutpost/oa/engineering)
@@ -2199,8 +2263,10 @@
 "Vb" = (/obj/machinery/light/small/red{dir = 4},/turf/simulated/floor/darkfloor{dir = 1},/area/cadiaoutpost/oa/engineering)
 "Vd" = (/obj/structure/table/graf/polished_table,/turf/simulated/floor/wood,/area/cadiaoutpost/oa/farm)
 "Ve" = (/obj/machinery/light,/obj/effect/floor_decal/turf/metal/five,/turf/simulated/floor/tiled/dark,/area/cadiaoutpost/oa/shuttle/roguet)
+"Vf" = (/obj/machinery/light/small{dir = 8},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/tiled/dark,/area/cadiaoutpost/new_hive/hive_city)
 "Vg" = (/obj/structure/closet/cabinet,/obj/item/stack/thrones3/five,/turf/simulated/floor/ceramic,/area/cadiaoutpost/new_hive/hive_city)
 "Vh" = (/obj/effect/decal/cleanable/dirt,/obj/effect/floor_decal/turf/big_cables1{dir = 9},/turf/simulated/floor/plating/reinforced,/area/cadiaoutpost/oa/engineering)
+"Vi" = (/obj/structure/table/graf/reinf_table{icon_state = "reinf_table4"},/obj/item/reagent_containers/food/drinks/coffee,/turf/simulated/floor/ship_floor/steel,/area/cadiaoutpost/new_hive/hive_city)
 "Vj" = (/turf/simulated/floor/fancyfloor/carpet,/area/cadiaoutpost/oa/bridge/hallway)
 "Vk" = (/obj/machinery/shower{dir = 8; icon_state = "shower"},/obj/structure/curtain/open/shower,/turf/simulated/floor/ceramic/surgery2,/area/cadiaoutpost/new_hive/hive_city)
 "Vl" = (/obj/effect/bump_teleporter{id = "Spusk3"; id_target = "Spusk4"},/obj/structure/stairs/north{color = "gray"; dir = 8},/turf/simulated/floor/stone,/area/cadiaoutpost/oa/caves)
@@ -2253,6 +2319,7 @@
 "Wk" = (/turf/simulated/floor/fancyfloor/carpet{dir = 1},/area/cadiaoutpost/oa/bridge/offices/planetarygovernor)
 "Wl" = (/obj/structure/hivedecor/xenos/scrubber{pixel_x = 28},/turf/simulated/floor/tiled{color = "grey"},/area/cadiaoutpost/oa/engineering)
 "Wm" = (/turf/simulated/floor/fancyfloor/carpet{dir = 10},/area/cadiaoutpost/oa/bridge/offices/planetarygovernor)
+"Wo" = (/obj/structure/toilet{dir = 8; icon_state = "toilet00"},/obj/effect/decal/cleanable/dirt,/obj/machinery/light/small{dir = 4},/turf/simulated/floor/ship_floor/steel,/area/cadiaoutpost/new_hive/hive_city)
 "Wp" = (/obj/structure/stairs/north{color = "gray"; dir = 4},/turf/simulated/floor/stone/ancient_stone_old,/area/cadiaoutpost/new_hive/hive_city)
 "Wq" = (/obj/machinery/light/spot{dir = 8; icon_state = "tube1"},/turf/simulated/floor/fancyfloor/carpet{dir = 8},/area/cadiaoutpost/oa/bridge/hallway)
 "Wr" = (/obj/effect/decal/cleanable/cobweb2{dir = 8},/turf/simulated/floor/stone/crafted_floor,/area/cadiaoutpost/new_hive/caves)
@@ -2282,7 +2349,9 @@
 "WR" = (/obj/structure/flora/pottedplant/large,/turf/simulated/floor/fancyfloor/carpet{dir = 5},/area/cadiaoutpost/oa/bridge/offices/planetarygovernor)
 "WS" = (/obj/structure/toilet{color = "#FFD700"; desc = "Golden... Throne?"; icon_state = "toilet00"; dir = 4; pixel_y = 5; pixel_x = 5},/turf/simulated/floor/ceramic/surgery{color = "#FFD700"},/area/cadiaoutpost/oa/shuttle/roguet)
 "WT" = (/obj/effect/floor_decal/newcorner/train,/obj/machinery/light/small{dir = 1; icon_state = "bulb1"},/turf/simulated/floor/stone/ancient_stone_floor3,/area/cadiaoutpost/oa/caves/dark)
+"WU" = (/obj/effect/floor_decal/newcorner/polar{dir = 1},/turf/simulated/floor/tiled/dark,/area/cadiaoutpost/new_hive/hive_city)
 "WV" = (/obj/structure/closet/hive/darkwood,/obj/random/loot/randomitemtown,/turf/simulated/floor/wood,/area/cadiaoutpost/oa/farm)
+"WW" = (/obj/effect/floor_decal/turf/big_cables1{dir = 5},/turf/simulated/floor/darkfloor{dir = 1},/area/cadiaoutpost/oa/engineering)
 "WX" = (/obj/machinery/light/spot{dir = 1},/turf/simulated/floor/fancyfloor/carpet{dir = 5},/area/cadiaoutpost/oa/bridge/offices/planetarygovernor)
 "WY" = (/obj/effect/floor_decal/turf/brick,/obj/effect/landmark/start/ministorum/preacher,/obj/structure/bed/barrack,/turf/simulated/floor/holofloor,/area/cadiaoutpost/oa/service/chapel/chapeloffice)
 "WZ" = (/obj/effect/floor_decal/newcorner/train{dir = 1},/obj/machinery/door/blast/shutters/open{dir = 4},/turf/simulated/floor/stone/ancient_stone_floor3,/area/cadiaoutpost/oa/caves/dark)
@@ -2321,7 +2390,7 @@
 "XI" = (/obj/effect/decal/cleanable/dirt,/obj/structure/bed/chair/holochair,/turf/simulated/floor/ship_floor,/area/cadiaoutpost/oa/service/enforcer)
 "XJ" = (/obj/effect/decal/cleanable/dirt,/obj/machinery/recharger{use_power = 0},/turf/simulated/floor/ship_floor/steel,/area/cadiaoutpost/new_hive/hive_city)
 "XK" = (/obj/effect/floor_decal/turf/metal/five,/obj/structure/statue/column3,/turf/simulated/floor/stone/ancient_stone_floor3,/area/cadiaoutpost/new_hive/hive_city)
-"XL" = (/obj/structure/closet,/obj/effect/decal/cleanable/dirt,/obj/random/smokes,/turf/simulated/floor/ship_floor/steel,/area/cadiaoutpost/new_hive/hive_city)
+"XL" = (/obj/structure/grille/metal_bars,/obj/structure/table/graf/reinf_table{icon_state = "reinf_table5"},/obj/machinery/door/blast/shutters{id = "guardD"; use_power = 0; pixel_x = 0; pixel_y = 0; dir = 4},/obj/machinery/door/blast/shutters{id = "guardD"; use_power = 0; dir = 4},/turf/simulated/floor/ship_floor/steel,/area/cadiaoutpost/new_hive/hive_city)
 "XM" = (/obj/item/reagent_containers/food/snacks/corpsestarch,/obj/structure/closet/hive/metal,/turf/simulated/floor/stone/ancient_stone_floor3,/area/cadiaoutpost/new_hive/caves)
 "XN" = (/obj/structure/table/steel_reinforced,/obj/item/hemostat{icon = 'icons/map_project/port/abductor.dmi'},/turf/unsimulated/floor/necron_floor,/area/cadiaoutpost/oa/dungeon1)
 "XO" = (/obj/effect/decal/cleanable/dirt,/obj/structure/stairs/north{color = "gray"; dir = 8},/obj/effect/bump_teleporter{id = "tech7"; id_target = "tech8"},/turf/simulated/floor/plating/reinforced,/area/cadiaoutpost/oa/engineering)
@@ -2329,7 +2398,7 @@
 "XQ" = (/turf/simulated/floor/ceramic/blackstone,/area/cadiaoutpost/oa/service/chapel)
 "XR" = (/obj/effect/floor_decal/turf/big_cables1{dir = 4},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/plating/reinforced,/area/cadiaoutpost/oa/engineering)
 "XS" = (/obj/machinery/light/small{dir = 1; icon_state = "bulb1"},/turf/simulated/floor/fancyfloor/oldcobble,/area/cadiaoutpost/new_hive/caves)
-"XT" = (/obj/structure/closet,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/ship_floor/steel,/area/cadiaoutpost/new_hive/hive_city)
+"XT" = (/obj/structure/closet,/turf/simulated/floor/ship_floor/steel,/area/cadiaoutpost/new_hive/hive_city)
 "XU" = (/obj/structure/closet/hive/darkwood,/turf/simulated/floor/wood,/area/cadiaoutpost/oa/farm)
 "XV" = (/obj/effect/floor_decal/turf/metal/five,/obj/effect/floor_decal/turf/big_cables1{dir = 4},/obj/structure/window/reinforced{dir = 4; icon_state = "rwindow"},/obj/effect/floor_decal/turf/big_cables1{dir = 10},/turf/simulated/floor/darkfloor{dir = 1},/area/cadiaoutpost/oa/engineering)
 "XW" = (/obj/effect/decal/cleanable/dirt,/obj/effect/floor_decal/turf/big_cables2{dir = 6},/turf/simulated/floor/plating/reinforced,/area/cadiaoutpost/oa/engineering)
@@ -2344,7 +2413,8 @@
 "Yf" = (/obj/structure/barbwire,/turf/simulated/floor/snow,/area/cadiaoutpost/oa/farm)
 "Yg" = (/obj/structure/closet/hive/metal,/obj/random/loot/randomitemtown,/turf/simulated/floor/stone/crafted_floor,/area/cadiaoutpost/new_hive/caves)
 "Yh" = (/obj/effect/floor_decal/turf/plating,/mob/living/simple_animal/hostile/smalldemon/plague,/turf/simulated/floor/holofloor,/area/cadiaoutpost/oa/caves/undercity)
-"Yi" = (/obj/effect/decal/cleanable/dirt,/obj/machinery/button/remote/blast_door{pixel_y = 4; pixel_x = 27; id = "guardV"},/turf/simulated/floor/ship_floor/steel,/area/cadiaoutpost/new_hive/hive_city)
+"Yi" = (/obj/machinery/button/remote/blast_door{pixel_y = 4; pixel_x = 27; id = "guardV"},/turf/simulated/floor/tiled/dark,/area/cadiaoutpost/new_hive/hive_city)
+"Yj" = (/obj/structure/hivedecor/oldclock,/turf/simulated/floor/wood,/area/cadiaoutpost/new_hive/hive_city)
 "Yk" = (/obj/structure/grille/iron_fence,/turf/simulated/floor/factory_floor,/area/cadiaoutpost/oa/service/chapel)
 "Yl" = (/obj/effect/floor_decal/turf/metal/five,/obj/effect/floor_decal/turf/bloodbar,/obj/effect/floor_decal/turf/metal/five,/obj/effect/floor_decal/turf/bloodbar,/turf/simulated/floor/tiled/dark,/area/cadiaoutpost/oa/shuttle/roguet)
 "Ym" = (/obj/effect/decal/cleanable/blood/gibs/xeno,/turf/simulated/floor/stone/ancient_stone_floor3,/area/cadiaoutpost/oa/caves/dark)
@@ -2381,7 +2451,7 @@
 "YR" = (/obj/structure/bed/chair/holochair{dir = 8},/turf/simulated/floor/tiled,/area/cadiaoutpost/new_hive/hive_city)
 "YS" = (/obj/structure/grille,/turf/simulated/floor/snow,/area/cadiaoutpost/oa/farm)
 "YU" = (/obj/structure/statue/prayer,/turf/simulated/floor/stone/ancient_stone_floor3,/area/cadiaoutpost/new_hive/hive_city)
-"YV" = (/obj/structure/table/graf/reinf_table{icon_state = "table_horizontal2"; dir = 4},/obj/item/reagent_containers/food/drinks/coffee,/obj/item/reagent_containers/food/drinks/coffee,/obj/item/reagent_containers/food/drinks/coffee,/obj/item/reagent_containers/food/drinks/coffee,/obj/item/reagent_containers/food/drinks/coffee,/turf/simulated/floor/ship_floor/steel,/area/cadiaoutpost/new_hive/hive_city)
+"YV" = (/obj/structure/table/graf/reinf_table{icon_state = "table_horizontal2"; dir = 4},/turf/simulated/floor/ship_floor/steel,/area/cadiaoutpost/new_hive/hive_city)
 "YW" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/generic,/obj/effect/floor_decal/turf/big_cables1{dir = 4},/turf/simulated/floor/plating/reinforced,/area/cadiaoutpost/oa/engineering)
 "YX" = (/obj/structure/cable{icon_state = "4-8"},/turf/simulated/floor/darkfloor{dir = 1},/area/cadiaoutpost/oa/engineering)
 "YY" = (/obj/machinery/door/airlock/autoname,/obj/structure/curtain/medical,/turf/simulated/floor/ceramic/surgery2,/area/cadiaoutpost/new_hive/hive_city)
@@ -2395,6 +2465,7 @@
 "Zi" = (/obj/effect/floor_decal/turf/metal/metal_wall{dir = 1},/obj/effect/floor_decal/turf/metal/metal_wall{dir = 5; icon_state = "4"},/turf/simulated/wall/ancient,/area/cadiaoutpost/new_hive/caves)
 "Zj" = (/obj/structure/cable{icon_state = "1-2"},/obj/structure/cable{icon_state = "2-8"},/turf/simulated/floor/darkfloor{dir = 1},/area/cadiaoutpost/oa/engineering)
 "Zk" = (/obj/machinery/door/airlock/cone,/turf/simulated/floor,/area/cadiaoutpost/oa/caves)
+"Zl" = (/obj/structure/bookcase,/turf/simulated/floor/wood,/area/cadiaoutpost/new_hive/hive_city)
 "Zm" = (/obj/structure/closet/crate/freezer,/obj/item/reagent_containers/ivbag/blood/OMinus,/obj/item/reagent_containers/ivbag/blood/OMinus,/obj/item/reagent_containers/ivbag/blood/OMinus,/turf/simulated/floor/ceramic/surgery2,/area/cadiaoutpost/new_hive/hive_city)
 "Zn" = (/obj/structure/sink{dir = 4; icon_state = "sink"; pixel_x = 16; color = "grey"},/turf/simulated/floor/ceramic/surgery,/area/cadiaoutpost/new_hive/hive_city)
 "Zo" = (/obj/machinery/light/small{dir = 4},/turf/simulated/floor/fancyfloor/oldcobble,/area/cadiaoutpost/new_hive/hive_city)
@@ -2764,35 +2835,35 @@ dRBGBGBGBGBGBGBGBGqGxxfYctFiFiFictFixhpApApApApAfYzKsEsEsEsEsEsEtYsEsEsEsEsEsEsE
 dRBGBGBGBGBGBGBGBGqGFiHFFiQqQqQqQqFiaWzgzgzgzgzgqpkJFiFiFiFiFiFiFiFiFiFiZvFiFiFiFivzqGDSDSDSDSDSLFDSvIqGqGqGqGXXXXXXXXqGqGXXXXBGXXBGbdPbPbPbPbbdbdbdbdbcbcbdokbcbdbcbcbcbcnfbdYokakaPwbdBGbdbdbdBGBGBGbdbdbdbdbdbcbcbcbdbdBGBGBGBGUlUlUlNPNPveNPNPNPNPNPUlUlUlUlUlUlUlNPNPNPNPUlUlBGBGXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXBGBGBGBGBGEbEbEbEbEbEbEbEbEbvBEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbSDSDSDSDTTggjgggggggHJTTSDSDSDSDSDSDSDSDSDSDSDTTTTTTTTTTSDSDSDSDEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEboKoKvcEbEbEbEbEbEbdR
 dRBGBGBGBGBGBGBGBGqGqGqGFiWbsWJWQqoRfYYtzobqzoYtqGhVrsrsGsrsrskQrsGsrsrsrsrsGsrsrsnEqGIzXfwuDSDSDSDSDSPmqGXXXXXXXXXXXXXXXXXXXXXXXXbdbdPbPbPbPbbdphodbdbdwebdbcbcbdbcbdwebdbdbdOqOqOqOqbdBGBGBGBGBGBGBGBGBGBGBGbdbcbcbcbcbdBGUlUlUlUlNPNPNPNPNPNPNPUlUlUlUlBGBGBGBGBGUlUlNPNPNPNPUlBGBGXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXBGBGBGBGBGBGEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbvBEbEbEbEbEbSDSDSDSDTTTTTTddggggyITTSDSDSDSDLkSDSDSDSDSDSDTTKCTTKCTTSDSDSDSDEbEbEbEbEbEbvBEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEboKvcEbEbEbEbEbEbdR
 dRBGBGBGBGBGBGBGBGBGBGqGoRFiFiFiqGqGqGqGqGqGqGqGqGqGqGqGqGqGqGqGqGqGqGqGqGqGqGqGqGqGqGqGqGqGqGqGqGsIDSsIqGXXXXXXXXXXXXXXXXXXXXXXXXbdxWPbPbPbPbbdbcbcbcbdbcbdbcbcbdbcbdbcbcbcbdYofdOqbobdBGBGBGBGBGBGBGBGBGBGBGbdbdbcbcbcbdUlUlNPRtNPNPNPNPNPUlUlUlUlBGBGBGBGBGBGBGBGBGUlNPNPNPNPUlUlBGXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXBGBGBGBGBGBGEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbSDSDSDSDSDSDTTTTuUTTTTTTSDSDSDSDSDSDSDSDSDSDSDTTuUTTuUTTSDSDSDSDEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbsYEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbvcEbEbEbEbEbEbdR
-dRBGBGBGBGBGBGBGBGBGBGqGqGqGqGqGqGBGHsHsHsHsHsBGBGXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXqGDSDSDSqGXXXXXXXXXXXXXXXXXXXXXXXXbdbdPbPbPbPbbdsCbcbcwebcwebcbcbdbdbdwebdbcbdOqOqOqOqbdBGBGBGBGBGBGBGBGBGBGBGBGbdbcbcbcbcNPNPNPNPNPNPNPUlUlUlBGBGBGBGBGBGBGBGBGBGBGBGUlNPNPNPNPNPUlUlXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXBGBGBGBGBGEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbSDSDSDSDSDSDSDrALIfKzGSWSDSDSDSDSDSDSDSDSDSDcjCxLIsULIsZSDSDSDSDEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbvBEbEbEbEbEbEbEbEbEbEbvcEbEbEbEbEbEbdR
-dRBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGHsHssAIbsAHsHsBGXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXqGgJLTIzqGXXXXXXXXXXXXXXXXXXXXXXXXBGbdPbPbPbPbbdbdbdbdbdbcbdbcbcbdbcbcbcbdbcbdYoOqEHbobdBGBGBGBGBGBGBGBGBGBGBGBGbdbcbcbcinNPNPNPNPUlUlUlUlBGBGBGBGBGBGBGBGBGBGBGBGBGBGUlbdNPNPNPNPQcUlXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXBGBGBGBGBGEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbSDSDSDSDSDSDSDrAhTLIvafKzGSWSDSDSDSZSDSDSDcjCxLILILILIsZSDSDSDSDEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbvBEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbvcEbEbEbEbEbEbdR
-dRBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGHsjqazsAZFISHsBGXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXqGqGqGqGqGXXXXXXXXXXXXXXXXXXXXXXXXBGbdPbPbPbPbbdnfrobcwebcbdbcbcbdsCbcbdbdbcbdbdgNbdbdbdBGBGBGBGBGBGBGBGBGBGBGBGbdTHTHTHbdUlUlUlUlUlBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGUlQcNPNPNPNPUlUlXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXBGBGBGBGEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbSDSDSDSDSDSDSDrALILIAfLILIfKzGSWSDSDSDSDcjCxLILILIbpDdSfSDSDSDSDEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbvcEbEbEbEbEbEbdR
-dRBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGHsAvazsAZFTpHsBGXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXBGbdPbPbPbPbbdbcbcbcbdbcbdokbcbdbcPxbdbcbcbcbcbcrofzbdBGBGBGBGBGBGBGBGBGBGBGbdbdbcbcbcbdBGBGBGBGBGBGBGBGBGBGBGbdbdbdbdbdbdBGBGBGBGBGUlUlUlNPNPNPNPUlXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXBGBGBGBGEbEbEbiFEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbSDSDSDSDSDSDSDOhDdptLILILILILIfKSWSDSDcjCxLILILIHlSfSDSDSDSDSDSDEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbvBEbEbvcEbEbEbEbEbEbdR
-dRBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGHswjsAsAsAohHsBGXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXBGbdPbPbPbPbbdphbdbdbdbcbdbcbcbdphnfbdokbcbdbdwebdbcbdbdBGBGBGBGBGBGBGBGBGBGbdRRbcbcbcbdBGBGBGBGBGBGBGBGBGBGBGbdhIWjAhxmbdBGBGBGBGBGBGBGUlNPNPNPNPUlXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXBGBGBGBGEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbSDSDSDSDSDSDSDSDSDOhDdptLILILILIfKSWcjCxLIvaLIbpSfSDSDSDSDSDSDSDEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbvcEbEbEbEbEbEbdR
-dRBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGHssAsAsAsAsAHsBGXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXBGbdPbPbPbPbbdbdbdNLbdbcbdbcbcbdbdbdbdbcbcbdjzbcbdbcbcbdBGBGBGBGBGBGBGBGBGBGbdbdbcbcbcbdBGBGBGBGBGBGBGBGBGBGBGbdAEAEAEDVbdBGBGBGBGBGBGBGUlUlNPNPNPUlXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXBGBGBGEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbvBEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbSDSZSDSDSDSDSDSDSDSDSDOhDdptLILILIfKCxLILILIbpSfSDSDSZSDSDSDSDSDEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbvBEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbBxEbEbEbEbEbEbEbEbEbEbEbEbvcEbEbEbEbEbEbdR
-dRBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGHsHssAsAsAHsHsBGXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXBGbdPbPbPbPbxWbdbcbcwebcwebcbcwebcbcbcbcbcbdbcPxbdbdbcbdBGBGBGBGBGBGBGBGBGBGBGbdyubcyubdBGBGBGBGBGBGBGBGBGBGBGbdAEAEAEAEbdBGBGBGBGBGBGBGBGUlNPNPNPUlXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXBGBGBGEbEbEbEbEbEbEbEbvBEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbSDSDSDSDSDSDSDSDSDSDSDSDSDOhptLILILILILILIbpSfSDSDSDSDSDSDSDSDSDEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbvBEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbvcEbEbEbEbEbEbdR
-dRBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGHsHssAHsHsBGBGXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXBGbdPbPbPbPbbdbdbcPxbdwebdbcbcbdbdbdbdbcbcbdsCbcphbdbcbdBGBGBGBGBGBGBGBGBGBGBGbdbcbcbcbdBGBGBGBGBGBGBGBGBGBGBGbdAEAEAEAEbdBGBGBGBGBGBGBGBGUlNPNPNPUlXXBGBGBGBGBGBGBGBGBGBGBGBGXXXXXXXXXXXXXXXXXXXXXXBGBGBGBGEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbSDSDSDSDSDSDSDSDSDSDSDSZSDSDOhptLILILILIbpSfSDSDSDSDSDSDSDSDSDSDEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbvBEbEbEbEbEbvcEbEbEbEbEbEbdR
-dRBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGHsLgHsBGBGBGXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXBGbdPbPbPbPbPbbdZfbdbdbcbdbcbcbdBGBGbdbdbcbdbdbdbdbdbcbdBGBGBGBGBGBGBGBGBGBGBGbdbcbcbcbdbdBGBGBGBGBGBGBGBGBGbdbdbdAEAEAEbdBGBGBGBGBGBGBGBGUlNPNPNPUlUlBGBGBGBGBGBGBGBGBGBGBGBGXXXXXXXXXXXXXXXXXXXXXXBGBGBGBGBGEbEbEbEbEbEbEbEbEbEbiFEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbBxEbEbEbEbEbEbEbEbEbSDSDSDTTTTTTTTTTTTSDSDSDSDSDSDOhptvaLIbpSfSDSZSDSDSDLkSDSDSDSDSDEbEbEbEbEbEbsYEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbvcEbEbEbEbEbEbdR
-dRBGBGBGBGBGBGBGBGBGBGBGBGHsHsHsHsHsHsHsmJHsHsHsHsHsHsHsXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXBGbdPbPbPbPbPbbdbdbdbcbcbdjnbcbdBGBGbdbcbcwebcbcnfbdbcbdBGBGBGBGBGBGBGBGBGBGBGbdbcbcbcRRbdbdbdBGbdbdbdBGbdbdbdpPbdAEhIRzbdBGBGBGBGBGBGBGBGUlNPNPNPQcUlBGBGBGBGBGBGBGBGBGBGBGBGXXXXXXXXXXXXXXXXXXXXXXEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbSDTTTTTTggggChKbTTSDSDSDSDSDSDSDrALILIplSDSDSDSDSDSDSDSDSDSDSDSDEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbsYEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbvcEbEbEbEbEbEbdR
-dRBGBGBGBGBGBGBGBGBGHsHsHsHsHSvsZFNfHstXsAtXHsBhZWBysAHsXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXBGbdbdPbPbPbPbbdbcbcbcPxbdbcbcbdBGbdbdbcbdbdokbcbdbdbcbdBGBGBGBGBGBGBGBGBGBGBGbdbcdebcbdbdmlbdbdbdtpbdbdbdEAbdbdbdAEAEDVbdBGBGBGBGBGBGBGBGUlNPNPNPUlUlBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbsYEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbTTTToyTTggggggDHTTSDSDSDSDSDSDSDrALILIplSDSDSDSDSDSDSDSDSDSDSDSDEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEboKvcEbEbEbEbEbEbdR
-dRBGBGBGBGBGBGBGBGBGHsxRsAJnsAOQsAsALgsAsAsALgsAsAsAgkHsXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXbdPbPbPbPbbdvlbcbcbcbdbcbcbdBGbdbcbcbdphbcsCbdbcbcbdBGbdbdbdbdbdbdbdbdbdbdbdiKbdiKbdziAEzibdziAEHvbdziAEUSbdAEAEAEAEbdBGBGBGBGBGBGBGUlUlNPNPNPNPUlBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGEbEbEbEbBxEbEbEbEbEbEbEbEbEbEbEbEbEbBxEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbTTggggTTTTggjgggTTGvSDSDSDSDSDSDrALILIplSDSDSDSDSDSDSDSDSDSDSDSDEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEboKoKvcEbEbEbEbEbEbdR
-dRBGBGBGBGBGBGBGBGBGHsHsyDHssAHzsAylHswjsAohHssAZWHzsAHsXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXbdPbPbPbPbbdbdbcbcphbdbcbcbdBGbdbcbcbdbdbcbcbdbcbdbdBGbdwyDVbdsuAEAEAEAEbdAEAEcPYibdziAEzibdFyAEzibdziAEzibdAEAEAEyCbdBGBGBGBGBGBGBGUlQcNPNPNPNPUlBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbTTgggggguUggggggTTzGBFzGzGzGzGSWrALIvaplSDSDSDSDSDSDSDSDSDSDSDSDEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEboKoKvcEbEbEbEbEbEbdR
-dRBGBGBGBGBGBGBGBGBGBGHsHsHsHsHsHsHsHssAsAsAHsHsHsHsHsHsXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXbdbdPbPbPbPbPbbdbdbdbdbdokbcbdBGbdbcbcbcbdbdbdbdbcbdBGBGbdcpAEsaxeAEAEAEAEaqAEAEAEAEbdziAEHvbdziAEUSbdCBAEHvbdbdffbdbdbdBGBGBGBGBGBGBGUlUlNPNPNPNPUlUlBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGEbEbEbEbEbEbEbsYEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbvBEbEbEbEbEbTTggggggTTTTgggguULILILIdzLILIfKCxLILIplSDSDSDSDSDSDSDSDSDTTTTTTEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbBxEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEboKoKvcEbEbEbEbEbEbdR
-dRBGBGBGBGxSxSxSxSxSBGBGBGBGBGBGBGBGHssAsAsAHsBGBGXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXbdxWPbPbPbPbPbPbPbwebcbcbcbcbdBGbdbdbdbcbcbcbcbcbcbdBGBGbdbdbdbdXTxiSPAEAEbdxeAEAEAEbdUSAEzibdioAEzibdziAEzibdqXAEbdBGBGBGBGBGBGBGBGBGBGUlUlNPNPNPNPUlBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbTTVtggjgggTTNdggTTDdDdDdDdptLILILILILIplSZSDSDSDSDSDSDSDTTTTVtTTEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbvBEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEboKoKvcEbEbEbEbEbEbdR
-dRBGBGBGxSxSpCyFpCxSxSBGBGBGBGBGBGBGHssAsAsAHsBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGbdbdPbPbPbPbPbPbbdbdbdbdbcbcqGqGqGBGbdbdbdbdbdbdbdqGqGqGbdItibbdbdbdbdbdbdbdAEAEAEAEbdbdLObdbdbdLObdbdbdLObdbdAEAEbdbdbdbdbdbdbdBGBGBGBGBGUlNPNPNPNPUlBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbTTTTggggggTTTTTTTTSDSDSDSDOhDdDdptLILIplSDSDSDSDSDSDSDTTTTggggTTEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEboKoKoKvcEbEbEbEbEbEbdR
-dRBGBGBGxScJcJxScJcJxSxSxSBGBGBGBGBGHssAsAsAHsBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGbdPbPbPbPbPbPbxWbdBGbdbcbcfgkMqGqGqGqGqGqGqGqGqGqGeiqGbdAEAEAcAELRSPAEAEbdAEAEAEAEAEAEAEcPAEAEAEAEAEAEAEcPbdAEAEXJbdSrBebWlzbdbdBGBGBGBGUlUlNPNPNPUlUlBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGXXXXXXXXXXXXXXXXXXEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbSDTTTTTTTTTTSDSDSDSDSDSDSDSDSDSDrALILIplSDSDSDSDSDTTTTTTggggggTTEbEbEbEbsYEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEboKoKoKvcEbEbEbEbEbEbdR
-dRBGBGxSxSRfxSxSxSRfxSoIxSxSBGBGBGBGHssAsAsAHsBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGqjbdbdBGbdbdbdbdbdbdbdPbPbPbPbPbbdbdBGbdbcbcbdZIVhMjqbrWMjMjMjMjMjaCZIkMbdbdbdbdxeMSCzAEDVbdxeAEAEAEAEAEAEAEAEAEAEAEAEAEAEAELOAEAEAEYqAEAEAEAEgLbdBGBGBGBGBGUlNPNPNPQcUlBGBGBGBGBGBGBGBGBGBGXXXXXXXXXXXXXXXXXXXXXXXXXXXXEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDrALILIplSDSDSDSDTTTTtITTTTjgkhTTEbEbEbEbEbEbEbEbEbEbEbvBEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEboKoKoKvcEbEbEbEbEbEbdR
-dRBGxSxScJcJcJJVcJcJcJcJcJxSxSBGBGBGHswjsAohHsBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGqjqjqjBGBGBGBGBGBGBGqjqjqjxWbdbdbdPbPbPbPbPbPbPbPbPbPbPbPbbdBGHmIPNvHmHmHmHmHmHmHmHmHmHmHmHmHmZIbdwyDVbdAEAEtjAEAEVHAEAEAEAEAEAEAEAEvVAEAEAEAEvVAEAELOAEAEAEbdFRmTUNCSbdbdBGBGBGBGBGUlNPNPNPUlUlBGBGBGBGBGBGBGBGBGBGXXXXXXXXXXXXXXXXXXXXXXXXXXXXEbEbEbEbvBEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbSDSDSDSDSDSDSDSDSDSDSZSDSDSDSDSDrALILIplcjzGzGzGTTgggggguUggggTTEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEboKoKoKvcEbEbEbEbEbEbdR
-dRBGxSURcJcJcJuMcJuMcJuMcJoIxSBGBGBGHssAsAsAHsBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGqjqjqjqjqjqjGFqjqjqjqjqjqjqjqjqjFaFaPbPbcDPbPbPbPbPbPbPbPbPbPbPbPbPbbdBGHmNvNvNcNvNvNvNvNcNvNvNvNvNcNvHmZIbdcpAEffAEAEAEAEAEbdAEAEvVAEAEbdbdbdbdbdwvbdbdbdbdbdbdbdbdbdbdbdbdbdbdbdBGBGBGBGUlUlUlNPNPNPUlBGBGBGBGBGBGBGBGBGBGBGXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXEbEbEbEbEbEbEbsYEbEbEbvBEbEbEbEbEbvBEbEbEbEbEbEbEbEbEbvBEbEbEbEbEbsYEbEbEbEbSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDrALILIfKCxLILILIuUggjgggTTggggTTEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbvBEbEbEboKoKoKvcEbEbEbEbEbEbdR
-dRBGxScJcJcJcJuMXjxSEiuMcJXjxSBGxSxSHstXsAtXHsBGxSxSxSBGBGBGBGqjqjqjqjqjqjqjqjqjqjqjFaFaFampFaFaFaFaFaFaFaFaFaFaFaFaFaFanocDPbPbPbPbPbPbPbPbPbPbPbPbPbbdHmHmNvNvecAtmIVvecAtmIVvecAtmIVvHmgfbdbdbdbdbdbdbdbdbdbdbdsabdsabdbdBGBGbdJZJZJZbdBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGUlQcNPNPNPNPUlBGBGBGBGBGBGBGBGBGBGBGXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbBcEbEbEbEbEbEbEbEbEbEbEbEbEbEbSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDrALILILILIdzbpDdTThkYCHDTTWVTTTTEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEboKoKoKoKvcEbEbEbEbEbEbdR
-dRxSxSWPaUcJcJuMcJuMcJuMcJcJxSxSxSwdxSxSrixSxSxSxSrvxSxSxSxSqjqjFaFazzFaFaFaFaFaFaFaFaFaFampFaFaFaFanIFaFaFaFaFaFaFaFaFaFacDPbPbbdxWbdPbPbPbPbPbPbPbPbxWHmNvNvNveciYpbVveciYpbVveciYpbVvHmZIZIqGqGBGBGBGBGBGBGbdcpAEAEAETsbdBGBGbdJZJZJZbdBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGUlUlNPNPNPNPUlBGBGBGBGBGBGBGBGBGBGBGXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDmtrALILIbpDdDdSfSDTTTTTTTTTTTTTTSDEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbvBEbEbEbEbEbEbEbEbEbEbEbEbEbvBEbEbEbEbEbEbEbEbEbEbEboKoKoKoKvcEbEbEbEbEbEbdR
-dRxSxqJguVObObObObObObObObglcJKmsXsXtEsXsXsXfGsXsXsXfGsXsXRjFaFaFaFampFaFaFaFaFaFaFaFaFaFampFaFaFaFaFaFaFaFaFaFaFaFaECECECECECbdbdbdbdbdxWPbPbPbPbPbPbPbHmNvNvNvecAtmIVvecAtmIVvecAtmIVvHmHmZIZIqGqGqGqGqGqGBGbdAxAEAEAEDVbdBGbdbdtuJZvLbdbdBGBGBGBGBGBGBGBGUlUlUlUlUlUlUlUlUlNPNPNPNPUlUlUlXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbSDSDSDSDSZSDSDSDSDSDSDSDSDSDSDSDFfLILIplSDSDSDSDSDSDSDSDSDSDSDSDEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEboKoKoKvcEbEbEbEbEbEbdR
-dRxSLsLogGgGgGgGgGgGgGgGgGYFXjxSBmsXYpsXsXsXfGsXsXsXfGsXzlxSsvFaFaFampFaFaFaFaFaFaFaFaFaqjqjqjFaFaECECECECECECECECECECaoHLMaECCQqGBGBGbdbdPbPbPbPbPbPbPbHmulNvNveciYpbVveciYpbVveciYpbVvNvHmqGZIZIZIEZZIIfqGBGbdcpAEAEAETsbdBGbdVEyYJZwhVEbdBGBGBGBGBGBGUlUlUlNPNPRtNPNPNPNPNPNPNPNPNPUlNPUlUlXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXBGEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDrALILIplSDSDSDSZSDSDSDSDSDSDSDSDEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEboKoKoKvcEbEbEbEbEbEbdR
-dRxSgsfynPIoIoIoIoIoIoIoIovwcJKmsXsXBvsXsXsXfGsXsXsXfGsXsXRjFaFaFaFaqjcMqjqjqjqjqjbXqjqjqjBGqjrgFaECzeaenwsPnwECONHLHLHLHLHLECMjqGBGBGBGbdbdPbPbPbPbPbPbHmNvNvNvecAtmIVvecAtmIVvecAtmIVvNtHmqGqGqGqGfMqGqGqGqGbdAxAEAEAEDVbdBGbdmOyYJZwhmObdBGBGBGBGBGUlUlNPNPNPNPNPNPNPGlNPNPNPNPNPNPNPNPNPUlUlUlXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbSDSDSDSDSDSDSDSDSDSDSDLkSDSDSDSDrALILIfKSWSDSDSDSDSDSDSDSDSDSDSDEbEbEbEbEbEbsYEbEbEbEbEbEbEbEbsYEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEboKoKvcEbEbEbEbEbEbdR
-dRxSxSWPaUcJcJuMcJuMcJuMcJcJxSxSxSwdxSxSGGxSxSxSxSrvxSxSxSxSqjqjqjqjqjowBGBGBGBGqjqjqjBGBGBGqjFaFaECaeaeaeaeaeECtCPFPFPFPFGmECgfqGBGBGBGBGbdPbPbPbPbPbPbHmNvNvNveciYpbVveciYpbVveciYpbVvNvHmBGBGBGqGUpZIZIZIqGbdcpAEAEAETsbdBGbdbdJZJZJZbdbdbdbdbdBGBGUlNPNPNPNPNPUlUlUlUlUlNPNPNPNPNPQKNPNPRtNPUlUlUlXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXEbEbEbEbEbEbEbvBEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDrALIvaLIplSDSDSDSDSDSDSDSDSDSDSDEbEbEbEbEbEbEbEbEbEbEbBcEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbsYEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEboKoKvcEbEbEbEbEbEbdR
-dRBGxScJcJcJcJuMXjxSEiuMcJXjxSBGxSxSeAQAPPQAeABGxSxSxSBGBGBGBGBGBGBGBGowBGBGBGBGBGBGBGBGBGBGqjsvFaECECECECaeaeECslHLHLHLHLHLECZIqGBGBGBGBGbdPbPbPbPbPbPbHmNvNvNvecAtmIVvecAtmIVvecAtmIVvNvHmbdbdBGqGSdqGqGooqGbdbdXTAEXLbdbdBGBGbdefiwYVbdCFZsZsbdBGBGUlzmNPNPUlUlUlBGUlQcNPNPNPNPUlUlUlUlNPNPNPNPNPUlUlXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXEbEbEbEbEbEbEbvBEbEbEbEbEbEbEbEbEbEbEbvBEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbSDSDSDSDSDSDSDSDSDSDSDSDSDSDrAvaLILIplSDSDSDSDSDSDSDSDSDSDSDEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbvBEbEbEbEbEbEbEbEbEboKoKvcEbEbEbEbEbEbdR
+dRBGBGBGBGBGBGBGBGBGBGqGqGqGqGqGqGBGHsHsHsHsHsBGBGXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXqGDSDSDSqGXXXXXXXXXXXXXXXXXXXXXXXXbdbdPbPbPbPbbdsCbcbcwebcwebcbcbdbdbdwebdbcbdOqOqOqOqbdBGpPpPpPpPpPpPpPpPpPpPBGbdbcbcbcbcNPNPNPNPNPNPNPUlUlUlBGBGBGBGBGBGBGBGBGBGBGBGUlNPNPNPNPNPUlUlXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXBGBGBGBGBGEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbSDSDSDSDSDSDSDrALIfKzGSWSDSDSDSDSDSDSDSDSDSDcjCxLIsULIsZSDSDSDSDEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbvBEbEbEbEbEbEbEbEbEbEbvcEbEbEbEbEbEbdR
+dRBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGHsHssAIbsAHsHsBGXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXqGgJLTIzqGXXXXXXXXXXXXXXXXXXXXXXXXBGbdPbPbPbPbbdbdbdbdbdbcbdbcbcbdbcbcbcbdbcbdYoOqEHbobdBGpPbdbdbdbdbdbdbdbdpPBGbdbcbcbcinNPNPNPNPUlUlUlUlBGBGBGBGBGBGBGBGBGBGBGBGBGBGUlbdNPNPNPNPQcUlXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXBGBGBGBGBGEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbSDSDSDSDSDSDSDrAhTLIvafKzGSWSDSDSDSZSDSDSDcjCxLILILILIsZSDSDSDSDEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbvBEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbvcEbEbEbEbEbEbdR
+dRBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGHsjqazsAZFISHsBGXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXqGqGqGqGqGXXXXXXXXXXXXXXXXXXXXXXXXBGbdPbPbPbPbbdnfrobcwebcbdbcbcbdsCbcbdbdbcbdbdgNbdbdbdBGpPbdPSvWbdeYhLZlbdpPpPbdTHTHTHbdUlUlUlUlUlBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGUlQcNPNPNPNPUlUlXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXBGBGBGBGEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbSDSDSDSDSDSDSDrALILIAfLILIfKzGSWSDSDSDSDcjCxLILILIbpDdSfSDSDSDSDEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbvcEbEbEbEbEbEbdR
+dRBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGHsAvazsAZFTpHsBGXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXBGbdPbPbPbPbbdbcbcbcbdbcbdokbcbdbcPxbdbcbcbcbcbcrofzbdBGpPbdxCxCgogEgEgEbdpPbdbdbcbcbcbdBGBGBGBGBGBGBGBGBGBGBGbdbdbdbdbdbdknknBGBGBGUlUlUlNPNPNPNPUlXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXBGBGBGBGEbEbEbiFEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbSDSDSDSDSDSDSDOhDdptLILILILILIfKSWSDSDcjCxLILILIHlSfSDSDSDSDSDSDEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbvBEbEbvcEbEbEbEbEbEbdR
+dRBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGHswjsAsAsAohHsBGXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXBGbdPbPbPbPbbdphbdbdbdbcbdbcbcbdphnfbdokbcbdbdwebdbcbdbdpPbdCeeDbdxmPhmKbdpPbdRRbcbcbcbdBGBGBGBGBGBGBGBGBGBGBGbdhIWjAhAEJZxiknBGBGBGBGBGUlNPNPNPNPUlXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXBGBGBGBGEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbSDSDSDSDSDSDSDSDSDOhDdptLILILILIfKSWcjCxLIvaLIbpSfSDSDSDSDSDSDSDEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbvcEbEbEbEbEbEbdR
+dRBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGHssAsAsAsAsAHsBGXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXBGbdPbPbPbPbbdbdbdNLbdbcbdbcbcbdbdbdbdbcbcbdjzbcbdbcbcbdpPbdbJxCbdFSmDJJbdpPbdbdbcbcbcbdBGBGBGBGBGBGBGBGBGBGBGbdJZJZJZJZJZxiknBGBGBGBGBGUlUlNPNPNPUlXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXBGBGBGEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbvBEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbSDSZSDSDSDSDSDSDSDSDSDOhDdptLILILIfKCxLILILIbpSfSDSDSZSDSDSDSDSDEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbvBEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbBxEbEbEbEbEbEbEbEbEbEbEbEbvcEbEbEbEbEbEbdR
+dRBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGHsHssAsAsAHsHsBGXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXBGbdPbPbPbPbxWbdbcbcwebcwebcbcwebcbcbcbcbcbdbcPxbdbdbcbdpPbdbdbdbdwRbdbdbdbdbdbdyubcyubdBGBGBGBGBGBGBGBGBGBGBGbdJZJZJZJZJZxiknBGBGBGBGBGBGUlNPNPNPUlXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXBGBGBGEbEbEbEbEbEbEbEbvBEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbSDSDSDSDSDSDSDSDSDSDSDSDSDOhptLILILILILILIbpSfSDSDSDSDSDSDSDSDSDEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbvBEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbvcEbEbEbEbEbEbdR
+dRBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGHsHssAHsHsBGBGXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXBGbdPbPbPbPbbdbdbcPxbdwebdbcbcbdbdbdbdbcbcbdsCbcphbdbcbdpPbdhLBYGHQPbdIcbLFWbdbdbcbcbcbdBGBGBGBGBGBGBGBGBGBGBGbdJZJZJZJZJZxiknBGBGBGBGBGBGUlNPNPNPUlXXBGBGBGBGBGBGBGBGBGBGBGBGXXXXXXXXXXXXXXXXXXXXXXBGBGBGBGEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbSDSDSDSDSDSDSDSDSDSDSDSZSDSDOhptLILILILIbpSfSDSDSDSDSDSDSDSDSDSDEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbvBEbEbEbEbEbvcEbEbEbEbEbEbdR
+dRBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGHsLgHsBGBGBGXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXBGbdPbPbPbPbPbbdZfbdbdbcbdbcbcbdBGBGbdbdbcbdbdbdbdbdbcbdpPbdsuRuwDRrbdyCnanaPzWUbcbcbcbdbdBGBGBGBGBGBGBGBGBGbdbdbdJZJZJZbdknknBGBGBGBGBGBGUlNPNPNPUlUlBGBGBGBGBGBGBGBGBGBGBGBGXXXXXXXXXXXXXXXXXXXXXXBGBGBGBGBGEbEbEbEbEbEbEbEbEbEbiFEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbBxEbEbEbEbEbEbEbEbEbSDSDSDTTTTTTTTTTTTSDSDSDSDSDSDOhptvaLIbpSfSDSZSDSDSDLkSDSDSDSDSDEbEbEbEbEbEbsYEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbvcEbEbEbEbEbEbdR
+dRBGBGBGBGBGBGBGBGBGBGBGBGHsHsHsHsHsHsHsmJHsHsHsHsHsHsHsXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXBGbdPbPbPbPbPbbdbdbdbcbcbdjnbcbdBGBGbdbcbcwebcbcnfbdbcbdpPbdDJfrlhHEbdomnafhXLqKbcbcbcRRbdbdbdBGbdbdbdBGbdbdbdpPbdJZAEAEbdBGBGBGBGBGBGBGBGUlNPNPNPQcUlBGBGBGBGBGBGBGBGBGBGBGBGXXXXXXXXXXXXXXXXXXXXXXEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbSDTTTTTTggggChKbTTSDSDSDSDSDSDSDrALILIplSDSDSDSDSDSDSDSDSDSDSDSDEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbsYEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbvcEbEbEbEbEbEbdR
+dRBGBGBGBGBGBGBGBGBGHsHsHsHsHSvsZFNfHstXsAtXHsBhZWBysAHsXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXBGbdbdPbPbPbPbbdbcbcbcPxbdbcbcbdBGbdbdbcbdbdokbcbdbdbcbdpPbdvEgEgEYjbdpiqPnabdbdbcdebcbdbdmlbdbdbdtpbdbdbdEAbdbdbdJZJZvLbdBGBGBGBGBGBGBGBGUlNPNPNPUlUlBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbsYEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbTTTToyTTggggggDHTTSDSDSDSDSDSDSDrALILIplSDSDSDSDSDSDSDSDSDSDSDSDEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEboKvcEbEbEbEbEbEbdR
+dRBGBGBGBGBGBGBGBGBGHsxRsAJnsAOQsAsALgsAsAsALgsAsAsAgkHsXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXbdPbPbPbPbbdvlbcbcbcbdbcbcbdBGbdbcbcbdphbcsCbdbcbcbdpPbdbdbdwRbdbdbdDlCZbdbdiKbdiKbdziAEzibdziAEHvbdziAEUSbdJZJZJZAEbdBGBGBGBGBGBGBGUlUlNPNPNPNPUlBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGEbEbEbEbBxEbEbEbEbEbEbEbEbEbEbEbEbEbBxEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbTTggggTTTTggjgggTTGvSDSDSDSDSDSDrALILIplSDSDSDSDSDSDSDSDSDSDSDSDEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEboKoKvcEbEbEbEbEbEbdR
+dRBGBGBGBGBGBGBGBGBGHsHsyDHssAHzsAylHswjsAohHssAZWHzsAHsXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXbdPbPbPbPbbdbdbcbcphbdbcbcbdBGbdbcbcbdbdbcbcbdbcbdbdBGbdRzdmgEsuvEbdnaaqnanaaqmmYibdziAEzibdFyAEzibdziAEzibdJZJZAEJZbdBGBGBGBGBGBGBGUlQcNPNPNPNPUlBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbTTgggggguUggggggTTzGBFzGzGzGzGSWrALIvaplSDSDSDSDSDSDSDSDSDSDSDSDEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEboKoKvcEbEbEbEbEbEbdR
+dRBGBGBGBGBGBGBGBGBGBGHsHsHsHsHsHsHsHssAsAsAHsHsHsHsHsHsXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXbdbdPbPbPbPbPbbdbdbdbdbdokbcbdBGbdbcbcbcbdbdbdbdbcbdBGBGbdRzgEgEgEgEwRnanaaqnaJZJZaqbdziAEHvbdziAEUSbdCBAEHvbdbdffbdbdbdBGBGBGBGBGBGBGUlUlNPNPNPNPUlUlBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGEbEbEbEbEbEbEbsYEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbvBEbEbEbEbEbTTggggggTTTTgggguULILILIdzLILIfKCxLILIplSDSDSDSDSDSDSDSDSDTTTTTTEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbBxEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEboKoKvcEbEbEbEbEbEbdR
+dRBGBGBGBGxSxSxSxSxSBGBGBGBGBGBGBGBGHssAsAsAHsBGBGXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXbdxWPbPbPbPbPbPbPbwebcbcbcbcbdBGbdbdbdbcbcbcbcbcbcbdBGBGbdbdbdbdbdbdbdbdbdbdAxJZJZnabdUSAEzibdioAEzibdziAEzibdqXJZbdBGBGBGBGBGBGBGBGBGBGUlUlNPNPNPNPUlBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbTTVtggjgggTTNdggTTDdDdDdDdptLILILILILIplSZSDSDSDSDSDSDSDTTTTVtTTEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbvBEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEboKoKvcEbEbEbEbEbEbdR
+dRBGBGBGxSxSpCyFpCxSxSBGBGBGBGBGBGBGHssAsAsAHsBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGbdbdPbPbPbPbPbPbbdbdbdbdbcbcqGqGqGBGbdbdbdbdbdbdbdqGqGqGbdItibbdbdbdbdbdbdbdaqAEAEaqbdbdLObdbdbdLObdbdbdLObdbdJZJZbdbdbdbdbdbdbdBGBGBGBGBGUlNPNPNPNPUlBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbTTTTggggggTTTTTTTTSDSDSDSDOhDdDdptLILIplSDSDSDSDSDSDSDTTTTggggTTEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEboKoKoKvcEbEbEbEbEbEbdR
+dRBGBGBGxScJcJxScJcJxSxSxSBGBGBGBGBGHssAsAsAHsBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGbdPbPbPbPbPbPbxWbdBGbdbcbcfgkMqGqGqGqGqGqGqGqGqGqGeiqGbdAEAEAcAELRSPAEAEbdaqAEAEnaaqaqaqcPaqaqaqaqaqaqaqcPbdJZJZXJbdSrBebWlzbdbdBGBGBGBGUlUlNPNPNPUlUlBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGXXXXXXXXXXXXXXXXXXEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbSDTTTTTTTTTTSDSDSDSDSDSDSDSDSDSDrALILIplSDSDSDSDSDTTTTTTggggggTTEbEbEbEbsYEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEboKoKoKvcEbEbEbEbEbEbdR
+dRBGBGxSxSRfxSxSxSRfxSoIxSxSBGBGBGBGHssAsAsAHsBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGqjbdbdBGbdbdbdbdbdbdbdPbPbPbPbPbbdbdBGbdbcbcbdZIVhMjqbrWMjMjMjMjMjaCZIkMbdbdbdbdxeMSCzAEDVbdVfAEAEAEAEAEAEJZAEAEAEAEAEAEAEAELOJZJZJZYqAEAEAEAEgLbdBGBGBGBGBGUlNPNPNPQcUlBGBGBGBGBGBGBGBGBGBGXXXXXXXXXXXXXXXXXXXXXXXXXXXXEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDrALILIplSDSDSDSDTTTTtITTTTjgkhTTEbEbEbEbEbEbEbEbEbEbEbvBEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEboKoKoKvcEbEbEbEbEbEbdR
+dRBGxSxScJcJcJJVcJcJcJcJcJxSxSBGBGBGHswjsAohHsBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGqjqjqjBGBGBGBGBGBGBGqjqjqjxWbdbdbdPbPbPbPbPbPbPbPbPbPbPbPbbdBGHmIPNvHmHmHmHmHmHmHmHmHmHmHmHmHmZIbdwyDVbdAEAEtjAEAEVHaqAEAEAEAEAEAEAEvVAEAEAEAEvVAEAELOJZJZJZbdFRmTUNCSbdbdBGBGBGBGBGUlNPNPNPUlUlBGBGBGBGBGBGBGBGBGBGXXXXXXXXXXXXXXXXXXXXXXXXXXXXEbEbEbEbvBEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbSDSDSDSDSDSDSDSDSDSDSZSDSDSDSDSDrALILIplcjzGzGzGTTgggggguUggggTTEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEboKoKoKvcEbEbEbEbEbEbdR
+dRBGxSURcJcJcJuMcJuMcJuMcJoIxSBGBGBGHssAsAsAHsBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGqjqjqjqjqjqjGFqjqjqjqjqjqjqjqjqjFaFaPbPbcDPbPbPbPbPbPbPbPbPbPbPbPbPbbdBGHmNvNvNcNvNvNvNvNcNvNvNvNvNcNvHmZIbdcpAEffAEAEAEAEAEbdaqAEvVAEAEbdbdbdbdbdwvbdbdbdbdbdbdbdbdbdbdbdbdbdbdbdBGBGBGBGUlUlUlNPNPNPUlBGBGBGBGBGBGBGBGBGBGBGXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXEbEbEbEbEbEbEbsYEbEbEbvBEbEbEbEbEbvBEbEbEbEbEbEbEbEbEbvBEbEbEbEbEbsYEbEbEbEbSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDrALILIfKCxLILILIuUggjgggTTggggTTEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbvBEbEbEboKoKoKvcEbEbEbEbEbEbdR
+dRBGxScJcJcJcJuMXjxSEiuMcJXjxSBGxSxSHstXsAtXHsBGxSxSxSBGBGBGBGqjqjqjqjqjqjqjqjqjqjqjFaFaFampFaFaFaFaFaFaFaFaFaFaFaFaFaFanocDPbPbPbPbPbPbPbPbPbPbPbPbPbbdHmHmNvNvecAtmIVvecAtmIVvecAtmIVvHmgfbdbdbdbdbdbdbdbdbdbdbdsabdbdbdbdBGbdbdJZJZJZbdbdBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGUlQcNPNPNPNPUlBGBGBGBGBGBGBGBGBGBGBGXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbBcEbEbEbEbEbEbEbEbEbEbEbEbEbEbSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDrALILILILIdzbpDdTThkYCHDTTWVTTTTEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEboKoKoKoKvcEbEbEbEbEbEbdR
+dRxSxSWPaUcJcJuMcJuMcJuMcJcJxSxSxSwdxSxSrixSxSxSxSrvxSxSxSxSqjqjFaFazzFaFaFaFaFaFaFaFaFaFampFaFaFaFanIFaFaFaFaFaFaFaFaFaFacDPbPbbdxWbdPbPbPbPbPbPbPbPbxWHmNvNvNveciYpbVveciYpbVveciYpbVvHmZIZIqGqGBGBGBGBGBGBGbdPyJZJZchWobdBGbdViyYJZwhVEbdBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGUlUlNPNPNPNPUlBGBGBGBGBGBGBGBGBGBGBGXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDmtrALILIbpDdDdSfSDTTTTTTTTTTTTTTSDEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbvBEbEbEbEbEbEbEbEbEbEbEbEbEbvBEbEbEbEbEbEbEbEbEbEbEboKoKoKoKvcEbEbEbEbEbEbdR
+dRxSxqJguVObObObObObObObObglcJKmsXsXtEsXsXsXfGsXsXsXfGsXsXRjFaFaFaFampFaFaFaFaFaFaFaFaFaFampFaFaFaFaFaFaFaFaFaFaFaFaECECECECECbdbdbdbdbdxWPbPbPbPbPbPbPbHmNvNvNvecAtmIVvecAtmIVvecAtmIVvHmHmZIZIqGqGqGqGqGqGBGbdAxJZJZbdbdbdBGbdmOtuJZJZpFbdBGBGBGBGBGBGBGBGUlUlUlUlUlUlUlUlUlNPNPNPNPUlUlUlXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbSDSDSDSDSZSDSDSDSDSDSDSDSDSDSDSDFfLILIplSDSDSDSDSDSDSDSDSDSDSDSDEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEboKoKoKvcEbEbEbEbEbEbdR
+dRxSLsLogGgGgGgGgGgGgGgGgGYFXjxSBmsXYpsXsXsXfGsXsXsXfGsXzlxSsvFaFaFampFaFaFaFaFaFaFaFaFaqjqjqjFaFaECECECECECECECECECECaoHLMaECCQqGBGBGbdbdPbPbPbPbPbPbPbHmulNvNveciYpbVveciYpbVveciYpbVvNvHmqGZIZIZIEZZIIfqGBGbdPyJZJZQZTsbdBGbdpIyYJZwhSxbdBGBGBGBGBGBGUlUlUlNPNPRtNPNPNPNPNPNPNPNPNPUlNPUlUlXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXBGEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDrALILIplSDSDSDSZSDSDSDSDSDSDSDSDEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEboKoKoKvcEbEbEbEbEbEbdR
+dRxSgsfynPIoIoIoIoIoIoIoIovwcJKmsXsXBvsXsXsXfGsXsXsXfGsXsXRjFaFaFaFaqjcMqjqjqjqjqjbXqjqjqjBGqjrgFaECzeaenwsPnwECONHLHLHLHLHLECMjqGBGBGBGbdbdPbPbPbPbPbPbHmNvNvNvecAtmIVvecAtmIVvecAtmIVvNtHmqGqGqGqGfMqGqGqGqGbdAxJZJZbdbdbdBGbdaZJZJZwhpFbdBGBGBGBGBGUlUlNPNPNPNPNPNPNPGlNPNPNPNPNPNPNPNPNPUlUlUlXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbSDSDSDSDSDSDSDSDSDSDSDLkSDSDSDSDrALILIfKSWSDSDSDSDSDSDSDSDSDSDSDEbEbEbEbEbEbsYEbEbEbEbEbEbEbEbsYEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEboKoKvcEbEbEbEbEbEbdR
+dRxSxSWPaUcJcJuMcJuMcJuMcJcJxSxSxSwdxSxSGGxSxSxSxSrvxSxSxSxSqjqjqjqjqjowBGBGBGBGqjqjqjBGBGBGqjFaFaECaeaeaeaeaeECtCPFPFpSuNGmECgfqGBGBGBGBGbdPbPbPbPbPbPbHmNvNvNveciYpbVveciYpbVveciYpbVvNvHmBGBGBGqGUpZIZIZIqGbdPyJZJZQZTsbdBGbdbdJZJZJZbdbdbdbdbdBGBGUlNPNPNPNPNPUlUlUlUlUlNPNPNPNPNPQKNPNPRtNPUlUlUlXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXEbEbEbEbEbEbEbvBEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbSDSDSDSDSDSDSDSDSDSDSDSDSDSDSDrALIvaLIplSDSDSDSDSDSDSDSDSDSDSDEbEbEbEbEbEbEbEbEbEbEbBcEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbsYEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEboKoKvcEbEbEbEbEbEbdR
+dRBGxScJcJcJcJuMXjxSEiuMcJXjxSBGxSxSeAQAPPQAeABGxSxSxSBGBGBGBGBGBGBGBGowBGBGBGBGBGBGBGBGBGBGqjsvFaECECECECaeaeECslHLHLHLHLHLECZIqGBGBGBGBGbdPbPbPbPbPbPbHmNvNvNvecAtmIVvecAtmIVvecAtmIVvNvHmbdbdBGqGSdqGqGooqGbdbdXTJAbdbdbdBGBGbdefiwYVbdCFZsZsbdBGBGUlzmNPNPUlUlUlBGUlQcNPNPNPNPUlUlUlUlNPNPNPNPNPUlUlXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXEbEbEbEbEbEbEbvBEbEbEbEbEbEbEbEbEbEbEbvBEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbSDSDSDSDSDSDSDSDSDSDSDSDSDSDrAvaLILIplSDSDSDSDSDSDSDSDSDSDSDEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbvBEbEbEbEbEbEbEbEbEboKoKvcEbEbEbEbEbEbdR
 dRBGxSURcJcJcJuMcJuMcJuMcJoIxSBGBGBGeAPPPPPPeABGBGBGBGBGBGBGBGBGBGBGBGowBGBGBGBGBGBGBGBGBGBGqjFaFaFaECnMECECQJECkUECECHLHLHLECpyqGBGBGBGBGbdPbPbPbPbPbPbHmNvNvNveciYpbVveciYpbVveciYpbVvNvNvbcbdbdbdbdbdSagFqGBGbdbdbdbdbdBGBGBGbdJZJZJZefBjUOWabdBGBGUlNPNPUlUlBGBGBGUlUlNPNPNPNPQcUlbUUlNPNPNPNPNPNPUlUlXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbSDSDSDSDSDSDSDSDSDSDSDSDSDOhptLILIplSDSDSDSDSDSDSDSDSDSDSDEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEboKoKvcEbEbEbEbEbEbdR
-dRBGxSxScJcJcJrRcJcJcJcJcJxSxSBGBGBGeAMiPPgdeABGBGBGBGBGBGBGBGBGBGBGBGowBGBGBGBGBGBGBGBGBGBGqjFaFaFaECHLHLHLHLNaslWCECfqECECECfMqGBGBGBGBGbdPbPbPbPbPbPbHmNvNvNvYJNvNvNvNvYJOGCPNvNvYJNvNvYxbcbcbdElbcphSaZIqGqGqGqGqGqGqGqGBGBGbdLVmxbdbdgCUOBjbdBGUlUlNPNPUlBGBGBGBGUlNPNPNPNPUlUlUlNPUlNPUlUlUlNPNPNPUlUlXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbSDSDSDSDSDSDSDSDSDrAvavaplSDSDSDSDSDSDSDSDSDSDEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbvBEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEboKoKvcEbEbEbEbEbEbdR
+dRBGxSxScJcJcJrRcJcJcJcJcJxSxSBGBGBGeAMiPPgdeABGBGBGBGBGBGBGBGBGBGBGBGowBGBGBGBGBGBGBGBGBGBGqjFaFaFaECHLHLHLHLNaslWCECfqECECECfMqGBGBGBGBGbdPbPbPbPbPbPbHmNvNvNvYJNvNvNvNvYJOGCPNvNvYJNvNvYxbcbcbdElbcphSaZIqGqGqGqGqGqGqGqGBGBGbdLVmxdfbdgCUOBjbdBGUlUlNPNPUlBGBGBGBGUlNPNPNPNPUlUlUlNPUlNPUlUlUlNPNPNPUlUlXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbSDSDSDSDSDSDSDSDSDrAvavaplSDSDSDSDSDSDSDSDSDSDEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbvBEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEboKoKvcEbEbEbEbEbEbdR
 dRBGBGxSxSRfxSxSxSRfxSoIxSxSBGBGBGBGeAPPPPPPeABGBGBGBGBGBGBGBGBGBGBGBGowBGBGBGBGBGBGBGBGBGBGqjqjFaFaEChaHLHLHLHLHLHLHLHLHLFeECVhqGqGqGqGBGbdPbPbPbPbPbPbHmHmqMHmHmwSDDDDhlHmHmHmHmHmHmHmHmHmbcbcbdbdbcbcSaZIZIZIZIoNZIZIieqGBGBGbdbdbdbdBGbdUOUObdBGUlNPNPNPUlBGBGBGUlUlNPNPNPNPUlAHRtNPUlSoUlAHUlNPNPNPNPUlXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbvBEbEbEbEbEbEbEbEbEbEbEbEbEbEbSDSDSDSDSDSDSDSDSDrALILIplSDSDSDSDSDSDSDSDSDSDEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbvBEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEboKoKvcEbEbEbEbEbEbdR
 dRBGBGBGxScJYMExYMcJxSxSxSBGBGBGBGBGeAPPPPPPeABGBGBGBGBGBGBGBGBGBGBGBGowBGBGBGBGBGBGBGBGBGBGBGqjFaFaECHLHLHLczWFHLHXHLHLHLnMECZIZIoNyPqGbdbdPbPbPbPbPbPbxWHmNvNvftNvNvNvNvvYHmSyQoesesHmBGbdbcbcbcbdokbcSaSaqGqGqGqGqGqGieqGBGBGBGBGBGBGBGbdbdbdbdBGUlNPNPNPUlBGBGBGUlNPNPNPNPUlUlNPNPUlUlNPSorXUlNPNPNPrXUlXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbSDSDSDSZSDSDSDSDrALILIplSDSDSDSDSDSDSDSDSDEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEboKoKvcEbEbEbEbEbEbdR
 dRBGBGBGxSxSrRxSrRxSxSBGBGBGeAeAeAeAeAPPPPPPeAeAeAeAeAXXXXXXXXXXXXXXXXowBGBGBGBGBGBGBGBGBGBGBGqjFaFaECbnmvECECECfqECfqECECECECZIqGqGqGqGbdxWPbPbPbPbPbPbbdHmHmNvNvNvNvNqNvwFHmuLacBsBsHmBGbdbdokbcbdphbcbcbdBGBGBGBGBGqGieqGBGBGBGBGBGBGBGBGBGBGBGBGUlNPNPNPUlBGUlUlUlNPNPNPNPUlNPNPNPSoNPbcUlbUUlUlUlNPNPUlXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbBxEbEbEbEbEbEbEbEbEbEbEbEbsYEbEbEbEbEbEbEbEbEbEbSDSDSDSDSDSDSDrALIvaplSDSDSDSDSDSDSDSDEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbsYEbEbEbEbEbEbEbEbEbEbEbEbEbEbEbEboKoKvcEbEbEbEbEbEbdR
@@ -2994,13 +3065,13 @@ XdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXddRdRQXQXQXQX
 XdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXddRdRdRdRdRdRdRXdXdXdXdXdXdXdXdXddRdRdRXxOIDaRhRhRhXxXxdRdRbdbdbddRdRbdbdbcbcbcbdbddRXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXd
 XdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXddRdRXxXxXxXxEdRhRhRhXxdRdRdRbdRRbdbdbdbdbcbcbcbcbcbddRXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXd
 XdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXddRdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRXdXdXdXdXdXddRXxXxEkRhmrDaMNMNMNXxXxbdbdbdbcbcbcGNbcbcbcbcbcbcbddRXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXd
-XdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXddRdRdRdRdRdRdRXddRqGqGqGqGqGqGqGqGqGqGqGqGqGqGqGqGqGqGdRXdXdXdXdXdXddRXxznmEAGCmRhMNkvMNRhzsiRAlbcbcbcbcbdokbcbcbcbcbcbddRXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXd
-XdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXddRqGqGqGqGqGdRXddRqGPjsEsEsEsEsEsEsEsEsEsEsEsEsEsEoDqGdRXdXdXdXdXdXddRXxSFmEmERbDaMNMNMNhXXxokbcbcbcbcbcGNbcbcbcbcbcbcbddRXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXd
-XdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXddRqGJEABpVqGdRXddRqGkJgmrsrsGsrsrsrsrsrsGsrsrsrsfIWxqGdRXdXdXdXdXdXddRXxzURhRhXxEdRhRhRhRhzsbcbcbcbcbcbdbdbdRRbcbcbcRRbddRXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXd
-XdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXddRqGTKFiwzqGdRXddRqGkJvzqtJDfYqtqtqtqtqtfYaDqtqtkJvzqGdRXdXdXdXdXdXddRXxXxRhRhzsRhRhRhRhXxXxbdbdbdRRbdbddRbdbdbcbcbcbdbddRXddRdRdRdRdRdRdRdRdRdRdRdRdRdRXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXd
-XdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXddRqGFiFiOpqGdRXddRqGkJvzqtqtqtqtqtqtqtqtqtqtqtqtkJvzqGdRXdXdXdXdXdXddRdRXxXxXxXxXxRhRhRhXxdRdRdRbdbdbddRdRdRbdbcbcbcbddRdRXddRdwdwdwdwdwdwdwdwdwdwdwdwdRXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXd
-XdXdXdXdXdXdXdXdXdXdXdXddRdRdRdRdRqGOkQIUBqGdRdRdRqGkJvzqtqtqtqtqtqtqtqtqtqtqtqtkJvzqGdRdRdRdRXdXdXdXddRdRdRdRdRXxRhkKXxXxdRXddRdRdRdRdRXddRbdbcbcbcbdbddRXddRdwrEDhdwgpsbDCdwIwySgDdwdRXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXd
-XdXdXdXdXddRdRdRdRdRdRdRdRqGqGqGqGqGqGkqqGqGqGqGqGqGkJvzqtqtqtqtqtqtqtqtqtqtqtqtkJvzqGdRXdXdXdXdXdXdXdXdXdXddRdRXxXxXxXxdRdRXdXdXdXdXdXdXddRbdbcbcbcbcbddRXddRdwZwuIdYsbBwIJdwHQIMfQdwdRXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXd
+XdXdXdXdXdXdXdXdXdXdXdXdXdXdqgqgqgqgqgqgqgqgqgXddRqGqGqGqGqGqGqGqGqGqGqGqGqGqGqGqGqGqGdRXdXdXdXdXdXddRXxznmEAGCmRhMNkvMNRhzsiRAlbcbcbcbcbdokbcbcbcbcbcbddRXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXd
+XdXdXdXdXdXdXdXdXdXdXdXdXdXdqgqGqGqGqGqGqGqGqgXddRqGPjsEsEsEsEsEsEsEsEsEsEsEsEsEsEoDqGdRXdXdXdXdXdXddRXxSFmEmERbDaMNMNMNhXXxokbcbcbcbcbcGNbcbcbcbcbcbcbddRXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXd
+XdXdXdXdXdXdXdXdXdXdXdXdXdXdqgqGHydPJEABpVqGqgXddRqGkJgmrsrsGsrsrsrsrsrsGsrsrsrsfIWxqGdRXdXdXdXdXdXddRXxzURhRhXxEdRhRhRhRhzsbcbcbcbcbcbdbdbdRRbcbcbcRRbddRXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXd
+XdXdXdXdXdXdXdXdXdXdXdXdXdXdqgqGcZFuTKpswzqGqgXddRqGkJvzqtJDfYqtqtqtqtqtfYaDqtqtkJvzqGdRXdXdXdXdXdXddRXxXxRhRhzsRhRhRhRhXxXxbdbdbdRRbdbddRbdbdbcbcbcbdbddRXddRdRdRdRdRdRdRdRdRdRdRdRdRdRXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXd
+XdXdXdXdXdXdXdXdXdXdXdXdXdXdqgqGaPjjiCWWnHqGqgXddRqGkJvzqtqtqtqtqtqtqtqtqtqtqtqtkJvzqGdRXdXdXdXdXdXddRdRXxXxXxXxXxRhRhRhXxdRdRdRbdbdbddRdRdRbdbcbcbcbddRdRXddRdwdwdwdwdwdwdwdwdwdwdwdwdRXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXd
+XdXdXdXdXdXdXdXdXdXdXdXddRdRqgqGxwrsOkQIUBqGqgdRdRqGkJvzqtqtqtqtqtqtqtqtqtqtqtqtkJvzqGdRdRdRdRXdXdXdXddRdRdRdRdRXxRhkKXxXxdRXddRdRdRdRdRXddRbdbcbcbcbdbddRXddRdwrEDhdwgpsbDCdwIwySgDdwdRXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXd
+XdXdXdXdXddRdRdRdRdRdRdRdRqGqGqGASASqGkqqGqGqGqGqGqGkJvzqtqtqtqtqtqtqtqtqtqtqtqtkJvzqGdRXdXdXdXdXdXdXdXdXdXddRdRXxXxXxXxdRdRXdXdXdXdXdXdXddRbdbcbcbcbcbddRXddRdwZwuIdYsbBwIJdwHQIMfQdwdRXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXd
 XdXdXdXdXddRqGqGqGqGdRdRqGqGFdAZTKTKTKFictFiFizHTKTKkJvzqtqtqtqtqtqtqtqtqtqtqtqtkJvzqGdRXdXdXdXdXdXdXdXdXdXdXddRdRdRdRdRdRXdXdXdXdXdXdXdXddRbdbcbcbcbcbddRXddRdwdwdwdwsbBwBwdwyeIMgDdwdRXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXd
 XdXddRdRdRdRqGiHHrqGdRdRqGSeFiFiFiFiFiFiFiFiFiqpFiFikJvzqtJDfYqtqtqtqtqtqtqtqtqtkJvzqGdRXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXddRbdbdbcbcbcbddRdRdRdRdRdRdwdwNNdwdwdwdYdwdwdRXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXd
 XdXddRqGqGqGqGwbwbqGqGqGqGFiFiFiFiqGqGqGqGCOqGqGqGqGJrvzqtqtfYqtqtqtqtqtqtqtqtqtkJvzqGdRXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXddRdRdRdRbdbcbcbcbdbddRXdXdXddRdwsQsbpMdwtvBwBwdwdRXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXdXd
