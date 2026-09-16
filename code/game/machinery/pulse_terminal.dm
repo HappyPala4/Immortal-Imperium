@@ -122,6 +122,9 @@
 				dat += "Card: <FONT COLOR='green'>[C.money]</FONT> | Deposit: <FONT COLOR='green'>[dep]</FONT> thrones<BR>"
 				dat += "<A href='?src=\ref[src];ex_dep=1'>Deposit</A> | "
 				dat += "<A href='?src=\ref[src];ex_wd=1'>Withdraw</A><HR>"
+				if(M.active_event && !M.active_event.resolved)
+					var/emin = max(0, round((M.active_event.spawned_time + M.active_event.resolve_minutes MINUTES - world.time) / 600))
+					dat += "<FONT COLOR='red'><B>Active event: [M.active_event.name]</B> - resolve in [emin] min</FONT><BR>"
 				dat += "<B>Positions:</B><BR>"
 				for(var/datum/market_position/P in M.positions)
 					dat += "<A href='?src=\ref[src];ex_pos=\ref[P]'><B>[P.ticker]</B> [P.name]</A> - [P.current_price()] thrones<BR>"
@@ -156,6 +159,10 @@
 						tdir = "Down"
 						tcol = "#cc0000"
 					dat += "Trend: <FONT COLOR='[tcol]'>[tdir]</FONT> | Momentum: [P.instability + 15]% move chance<BR>"
+					if(P.forced_trend_dir != 0 && world.time < P.forced_trend_until)
+						var/fmins = max(0, round((P.forced_trend_until - world.time) / 600))
+						var/fdir = P.forced_trend_dir > 0 ? "up" : "down"
+						dat += "<FONT COLOR='red'><B>Event pressure:</B> forced [fdir] ([fmins] min left)</FONT><BR>"
 					dat += P.chart_html()
 					dat += "<HR><B>Buy Futures (deposit: [dep] thrones):</B><BR>"
 					dat += "<A href='?src=\ref[src];ex_buy=\ref[P]'>Open Position</A><BR>"
@@ -624,6 +631,10 @@
 	var/withdraw_tax = 0.05			// tax on exchange deposit withdrawals
 	var/treasury = 0
 	var/list/treasury_log = list()
+	var/event_chance = 5			// random encounter roll chance (+5% per miss, reset on success)
+	var/last_event_check = 0
+	var/datum/market_event/active_event = null
+	var/turf/fallback_turf = null
 
 /datum/market/New()
 	initialize_positions()
@@ -664,6 +675,58 @@
 	P.vol_max = 30
 	positions += P
 
+/datum/market/proc/get_position_by_ticker(var/ticker)
+	for(var/datum/market_position/P in positions)
+		if(P.ticker == ticker)
+			return P
+	return null
+
+/datum/market/proc/find_event_landmark(var/slot)
+	var/list/valid = list()
+	for(var/obj/effect/landmark/market_event/L in world)
+		if(L.event_slot == slot)
+			valid += L
+	if(valid.len)
+		return pick(valid)
+	return null
+
+/datum/market/proc/pick_fallback_turf()
+	if(!fallback_turf)
+		for(var/turf/simulated/floor/F in world)
+			fallback_turf = F
+			break
+		if(!fallback_turf)
+			fallback_turf = locate(1, 1, 1)
+	return fallback_turf
+
+/datum/market/proc/roll_event()
+	event_chance = 5
+	var/event_type = pick("pipe", "pump", "convoy")
+	var/typepath = null
+	var/slot = ""
+	var/datum/market_event/E = null
+	var/turf/T = null
+	var/obj/effect/landmark/market_event/L = null
+	switch(event_type)
+		if("pipe")
+			typepath = /datum/market_event/broken_pipe
+			slot = "pipe"
+		if("pump")
+			typepath = /datum/market_event/burning_pump
+			slot = "pump"
+		if("convoy")
+			typepath = /datum/market_event/ambushed_convoy
+			slot = "convoy"
+	L = find_event_landmark(slot)
+	T = L ? get_turf(L) : pick_fallback_turf()
+	E = new typepath()
+	if(E && T)
+		E.market = src
+		active_event = E
+		E.start_event(T)
+		if(!E.resolved)
+			E.announce_start(T)
+
 /datum/market/proc/tick()
 	for(var/datum/market_position/P in positions)
 		P.tick()
@@ -679,7 +742,7 @@
 			qdel(T)
 			for(var/mob/M in world)
 				if(M.ckey == T.ckey)
-					to_chat(M, "<span class='danger'>Ваша сделка сгорела!</span>")
+					to_chat(M, "<span class='danger'>пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ!</span>")
 					break
 	for(var/datum/market_loan/L in loans)
 		if(!L.repaid)
@@ -691,6 +754,18 @@
 					if(M.ckey == L.ckey)
 						to_chat(M, "<span class='danger'>Your account has been BLOCKED until you repay your overdue loan.</span>")
 						break
+	// ---- random events ----
+	if(active_event)
+		if(active_event.resolved)
+			active_event = null
+		else if(world.time >= active_event.spawned_time + (active_event.resolve_minutes MINUTES))
+			active_event.fail()
+	else if(world.time >= last_event_check + 5 MINUTES)
+		last_event_check = world.time
+		if(prob(event_chance))
+			roll_event()
+		else
+			event_chance = min(95, event_chance + 5)
 	addtimer(CALLBACK(src, .proc/tick), 1 MINUTES)
 
 /datum/market_position
@@ -709,6 +784,8 @@
 	var/sell_volume_this_period = 0	// thrones of positions closed this period
 	var/vol_base = 100				// reference volume for movement scaling
 	var/trend = 0			// 1 = rising, -1 = falling, 0 = flat (momentum)
+	var/forced_trend_dir = 0	// event-driven forced trend (-1 or 1)
+	var/forced_trend_until = 0	// world.time when the forced trend ends
 
 /datum/market_position/proc/current_price()
 	return max(1, round(validity * current_points / initial_points))
@@ -733,23 +810,34 @@
 	var/open = current_points
 	var/net = buy_volume_this_period - sell_volume_this_period
 	var/direction = 0
-	if(net > 0)
-		trend = 1
-		direction = 1
-	else if(net < 0)
-		trend = -1
-		direction = -1
-	else if(trend != 0)
-		direction = trend
+	if(forced_trend_dir != 0 && world.time < forced_trend_until)
+		trend = forced_trend_dir
+		direction = forced_trend_dir
+	else
+		if(forced_trend_dir != 0)
+			forced_trend_dir = 0
+			forced_trend_until = 0
+			trend = 0
+		if(net > 0)
+			trend = 1
+			direction = 1
+		else if(net < 0)
+			trend = -1
+			direction = -1
+		else if(trend != 0)
+			direction = trend
 	var/move_chance = instability
 	if(trend != 0)
 		move_chance += 15
+	if(forced_trend_dir != 0)
+		move_chance = 100
 	if(direction != 0 && prob(move_chance))
 		var/delta = rand(vol_min, vol_max)
-		var/net_abs = abs(net)
-		if(net_abs > 0)
-			var/scale = clamp(net_abs / vol_base, 0.25, 3)
-			delta = max(1, round(delta * scale))
+		if(forced_trend_dir == 0)
+			var/net_abs = abs(net)
+			if(net_abs > 0)
+				var/scale = clamp(net_abs / vol_base, 0.25, 3)
+				delta = max(1, round(delta * scale))
 		current_points = clamp(current_points + direction * delta, max(1, round(initial_points / 5)), initial_points * 5)
 	candles += list(list(open, current_points, max(open, current_points), min(open, current_points)))
 	while(candles.len > 30)
@@ -758,6 +846,10 @@
 	sells_this_period = 0
 	buy_volume_this_period = 0
 	sell_volume_this_period = 0
+
+/datum/market_position/proc/force_trend(var/dir, var/minutes)
+	forced_trend_dir = dir
+	forced_trend_until = world.time + (minutes MINUTES)
 
 /datum/market_position/proc/chart_html()
 	if(!candles.len)
