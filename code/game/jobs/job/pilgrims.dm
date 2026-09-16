@@ -1176,8 +1176,6 @@ Pilgrim Fate System
 		H.warfare_language_shit(LANGUAGE_LOW_GOTHIC)
 		to_chat(H, "<span class='notice'><b><font size=3>You're the biggest, baddest muscle on Messina. Protect the Underboss and his buddy the ROGUE TRADER!</font></b></span>")
 
-
-
 /*
 //loadouts below here
 /decl/hierarchy/outfit/job/penitent

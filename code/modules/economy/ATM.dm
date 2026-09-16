@@ -3,7 +3,7 @@
 #define TRANSFER_FUNDS 2
 #define VIEW_TRANSACTION_LOGS 3
 
-/obj/item/card/id/var/money = 2000
+/obj/item/card/id/var/money = 0
 
 /obj/machinery/atm
 	name = "Automatic Teller Machine"

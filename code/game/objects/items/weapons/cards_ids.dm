@@ -198,6 +198,7 @@ var/const/NO_EMAG_ACT = -50
 		dat += text("Rank: []</A><BR>\n", military_rank ? military_rank.name : "\[UNSET\]")
 
 	dat += text("Assignment: []</A><BR>\n", assignment)
+	dat += text("Account: [] thrones<BR>\n", money)
 	dat += text("Fingerprint: []</A><BR>\n", fingerprint_hash)
 	dat += text("Blood Type: []<BR>\n", blood_type)
 	dat += text("DNA Hash: []<BR><BR>\n", dna_hash)
