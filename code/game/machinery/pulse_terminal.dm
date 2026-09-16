@@ -520,9 +520,6 @@
 
 /obj/machinery/pulse_terminal/proc/get_author(var/obj/item/card/id/C)
 	var/name = logged_name ? logged_name : (C ? C.registered_name : "Unknown")
-	var/ass = C ? C.assignment : ""
-	if(ass)
-		return "[name] ([ass])"
 	return name
 
 /obj/machinery/pulse_terminal/proc/get_pulse_channels()
@@ -682,7 +679,7 @@
 			qdel(T)
 			for(var/mob/M in world)
 				if(M.ckey == T.ckey)
-					to_chat(M, "<span class='danger'>Your [pos.ticker] trade was burned! Your deposit is lost.</span>")
+					to_chat(M, "<span class='danger'>Ваша сделка сгорела!</span>")
 					break
 	for(var/datum/market_loan/L in loans)
 		if(!L.repaid)
