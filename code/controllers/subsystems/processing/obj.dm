@@ -1,3 +1,4 @@
 PROCESSING_SUBSYSTEM_DEF(obj)
 	name = "Objs"
 	priority = SS_PRIORITY_OBJECTS
+	wait = 1 SECONDS

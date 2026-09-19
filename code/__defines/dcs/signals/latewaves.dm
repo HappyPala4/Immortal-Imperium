@@ -1,0 +1,1 @@
+#define COMSIG_LATEWAVES_UPDATED "comsig_latewaves_updated"

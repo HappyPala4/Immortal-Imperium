@@ -2,7 +2,7 @@
 	name = "Operating Table"
 	desc = "Used for advanced medical procedures."
 	icon = 'icons/obj/surgery.dmi'
-	icon_state = "table2-idle"
+	icon_state = "surgery_table_new"
 	density = 1
 	anchored = 1.0
 	use_power = 1

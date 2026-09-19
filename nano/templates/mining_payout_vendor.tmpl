@@ -1,0 +1,41 @@
+<h2>Mining payout vendor</h2>
+<div class='item'>
+	<div class='itemLabel'>Vendor funds:</div>
+	<div class='itemContent'>{{:data.vendor_funds}} Thrones</div>
+	<div class='itemLabel'>Your balance:</div>
+	<div class='itemContent'>{{:data.personal_balance}} Thrones</div>
+</div>
+
+<h2>Configured materials</h2>
+<div class='item'>
+{{for data.items}}
+	<table width='100%' class='item'>
+		<tr>
+			<td valign='top' width='65%'>
+				{{if value.icon}}<img src='data:image/png;base64,{{:value.icon}}' width='32' height='32' valign='middle'>{{/if}}
+				<b>{{:value.name}}</b><br>
+				Price per item: {{:value.price}} Thrones<br>
+				{{if value.unlimited}}Remaining quantity: unlimited{{else}}Remaining quantity: {{:value.remaining}} of {{:value.quota}}{{/if}}
+			</td>
+			{{if data.can_configure}}
+			<td align='right' valign='top' style='white-space: nowrap'>
+				{{:helper.link('Set quantity', 'pencil', {"set_quota": 1, "item": value.item_key})}}
+				{{:helper.link('+1', 'plus', {"quota_up": 1, "item": value.item_key})}}
+				{{:helper.link('-1', 'minus', {"quota_down": 1, "item": value.item_key})}}
+				{{:helper.link('Set price', 'money', {"set_price": 1, "item": value.item_key})}}
+				{{:helper.link('Remove item', 'trash', {"remove_item": 1, "item": value.item_key})}}
+			</td>
+			{{/if}}
+		</tr>
+	</table>
+{{empty}}
+	No materials configured.
+{{/for}}
+</div>
+
+{{if data.can_configure}}
+<h2>Mechanicus controls</h2>
+<div class='item'>
+	{{:helper.link('Withdraw Thrones', 'download', {"withdraw": 1})}}
+</div>
+{{/if}}
