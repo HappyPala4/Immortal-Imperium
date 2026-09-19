@@ -74,6 +74,8 @@
 				dat += "<A href='?src=\ref[src];mfo=1'>MFO</A> - loans and transfers<BR>"
 				if(is_treasury_access(C))
 					dat += "<A href='?src=\ref[src];treasury=1'>Kazna</A> - treasury<BR>"
+				if(is_debtor_access(C))
+					dat += "<A href='?src=\ref[src];debtors=1'>Debtors</A> - overdue loan borrowers<BR>"
 				dat += "<BR><A href='?src=\ref[src];rename=1'>Change nickname</A> (currently: [logged_name])"
 				dat += "<BR><A href='?src=\ref[src];logout=1'>Log out</A>"
 				dat += get_extra_menu_links()
@@ -158,7 +160,7 @@
 					else if(P.trend < 0)
 						tdir = "Down"
 						tcol = "#cc0000"
-					dat += "Trend: <FONT COLOR='[tcol]'>[tdir]</FONT> | Momentum: [P.instability + 15]% move chance<BR>"
+					dat += "Trend: <FONT COLOR='[tcol]'>[tdir]</FONT><BR>"
 					if(P.forced_trend_dir != 0 && world.time < P.forced_trend_until)
 						var/fmins = max(0, round((P.forced_trend_until - world.time) / 600))
 						var/fdir = P.forced_trend_dir > 0 ? "up" : "down"
@@ -179,7 +181,7 @@
 				var/blocked = (ck in M.blocked_accounts)
 				dat += "<B>MFO</B> - microfinance<HR>"
 				if(blocked)
-					dat += "<FONT COLOR='red'><B>ACCOUNT BLOCKED.</B></FONT> Repay your overdue loan to unlock.<BR><HR>"
+					dat += "<FONT COLOR='red'><B>ACCOUNT BLOCKED.</B></FONT> Repay your overdue loan to unlock. Insert thrones into the terminal - they will go straight to your debt.<BR><HR>"
 				dat += "<B>Take a Loan:</B><BR>"
 				dat += "<A href='?src=\ref[src];loan_term=5'>5 min (5%)</A> | "
 				dat += "<A href='?src=\ref[src];loan_term=10'>10 min (7%)</A> | "
@@ -218,6 +220,21 @@
 					dat += "<A href='?src=\ref[src];setScreen=[0]'>Back</A>"
 				else
 					dat += "<I>Access denied. Governor or Heir ID required.</I><BR>"
+					dat += "<A href='?src=\ref[src];setScreen=[0]'>Back</A>"
+			if(11)
+				if(is_debtor_access(C))
+					var/datum/market/M = get_market()
+					dat += "<B>Debtors</B> - overdue loan borrowers<HR>"
+					var/found = FALSE
+					for(var/datum/market_loan/L in M.loans)
+						if(!L.repaid && L.expired)
+							found = TRUE
+							dat += "[L.borrower_name] owes <FONT COLOR='red'>[L.total_owed]</FONT> thrones (borrowed [L.amount], [L.interest_rate*100]%)<BR>"
+					if(!found)
+						dat += "<I>No overdue debtors.</I><BR>"
+					dat += "<HR><A href='?src=\ref[src];setScreen=[0]'>Back</A>"
+				else
+					dat += "<I>Access denied. Governor, Arbitrator or Enforcer ID required.</I><BR>"
 					dat += "<A href='?src=\ref[src];setScreen=[0]'>Back</A>"
 			else
 				dat += get_extra_screen()
@@ -292,6 +309,8 @@
 		screen = 9
 	else if(href_list["treasury"])
 		screen = 10
+	else if(href_list["debtors"])
+		screen = 11
 	else if(href_list["ex_dep"])
 		if(C)
 			var/datum/market/M = get_market()
@@ -525,6 +544,41 @@
 		return 1
 	return 0
 
+/obj/machinery/pulse_terminal/proc/is_debtor_access(var/obj/item/card/id/C)
+	if(!istype(C))
+		return 0
+	var/a = lowertext(C.assignment)
+	if(findtext(a, "governor") || findtext(a, "arbiter") || findtext(a, "arbitrator") || findtext(a, "enforcer") || findtext(a, "commissar"))
+		return 1
+	return 0
+
+/obj/machinery/pulse_terminal/proc/apply_loan_payment(var/obj/item/card/id/C, var/amount)
+	var/datum/market/M = get_market()
+	var/ck = ckey(C.registered_name)
+	var/applied = 0
+	if(ck in M.blocked_accounts)
+		for(var/datum/market_loan/L in M.loans)
+			if(L.ckey == ck && !L.repaid)
+				var/pay = min(amount, L.total_owed)
+				L.total_owed -= pay
+				amount -= pay
+				applied += pay
+				if(L.total_owed <= 0)
+					L.repaid = TRUE
+					var/interest = round(L.amount * L.interest_rate)
+					M.treasury += interest
+					M.treasury_log += "[logged_name]: overdue loan interest [interest] ([L.interest_rate*100]%)"
+				if(amount <= 0)
+					break
+		var/still_owes = FALSE
+		for(var/datum/market_loan/OL in M.loans)
+			if(OL.ckey == ck && !OL.repaid)
+				still_owes = TRUE
+				break
+		if(!still_owes)
+			M.blocked_accounts -= ck
+	return applied
+
 /obj/machinery/pulse_terminal/proc/get_author(var/obj/item/card/id/C)
 	var/name = logged_name ? logged_name : (C ? C.registered_name : "Unknown")
 	return name
@@ -571,10 +625,18 @@
 	S.amount -= 1
 	var/deposited = value - round(value * GLOB.tax_rate, 1)
 	var/tax = round(value * GLOB.tax_rate, 1)
-	C.money += deposited
-	GLOB.thrones += tax
-	playsound(src, 'sound/effects/coin_ins.ogg', 50, 0, -1)
-	visible_message("[user] inserts a coin into [src]. [deposited] thrones added ([tax] in taxes).")
+	var/applied = apply_loan_payment(C, value)
+	if(applied > 0)
+		playsound(src, 'sound/effects/coin_ins.ogg', 50, 0, -1)
+		visible_message("[user] inserts a coin into [src]. [applied] thrones went toward the overdue loan (no tax).")
+		var/datum/market/M = get_market()
+		if(!(ckey(C.registered_name) in M.blocked_accounts))
+			to_chat(user, "<span class='notice'>Your account is no longer blocked.</span>")
+	else
+		C.money += deposited
+		GLOB.thrones += tax
+		playsound(src, 'sound/effects/coin_ins.ogg', 50, 0, -1)
+		visible_message("[user] inserts a coin into [src]. [deposited] thrones added ([tax] in taxes).")
 	if(S.amount <= 0)
 		qdel(S)
 	else
@@ -826,19 +888,30 @@
 			direction = -1
 		else if(trend != 0)
 			direction = trend
-	var/move_chance = instability
+	var/move_chance = round(instability * 0.8)
 	if(trend != 0)
 		move_chance += 15
 	if(forced_trend_dir != 0)
 		move_chance = 100
+	else
+		var/datum/market/M = get_market()
+		var/active = 0
+		for(var/datum/market_trade/T in M.trades)
+			if(T.position == src)
+				active++
+		move_chance += active * 2
+		move_chance = min(90, move_chance)
 	if(direction != 0 && prob(move_chance))
-		var/delta = rand(vol_min, vol_max)
-		if(forced_trend_dir == 0)
-			var/net_abs = abs(net)
-			if(net_abs > 0)
-				var/scale = clamp(net_abs / vol_base, 0.25, 3)
-				delta = max(1, round(delta * scale))
-		current_points = clamp(current_points + direction * delta, max(1, round(initial_points / 5)), initial_points * 5)
+		if(forced_trend_dir == 0 && prob(10))
+			direction = 0
+		else
+			var/delta = rand(vol_min, vol_max)
+			if(forced_trend_dir == 0)
+				var/net_abs = abs(net)
+				if(net_abs > 0)
+					var/scale = clamp(net_abs / vol_base, 0.25, 3)
+					delta = max(1, round(delta * scale))
+			current_points = clamp(current_points + direction * delta, max(1, round(initial_points / 5)), initial_points * 5)
 	candles += list(list(open, current_points, max(open, current_points), min(open, current_points)))
 	while(candles.len > 30)
 		candles.Cut(1, 2)

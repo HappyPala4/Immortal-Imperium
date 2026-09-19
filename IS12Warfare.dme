@@ -1087,6 +1087,7 @@
 #include "code\game\verbs\ignore.dm"
 #include "code\game\verbs\ooc.dm"
 #include "code\game\verbs\who.dm"
+#include "code\game\gamemodes\warfare\daynight.dm"
 #include "code\js\byjax.dm"
 #include "code\js\menus.dm"
 #include "code\module\mob\living\carbon\human\species\tyranids.dm"
