@@ -17,3 +17,6 @@
 	anchored = 1.0
 	New()
 		icon_state = "blank"
+
+/obj/machinery/mineral/output/rejected
+	name = "Rejected output area"

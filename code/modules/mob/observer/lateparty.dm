@@ -1,6 +1,6 @@
 // Wel Ard's whacky late party system, look to admin verbs for tools that play around with this namely generate party and another party
 //This is the current slightly improved version of the observer file variant, much mo flexible. It is a clown world system but it just works.
-/mob/observer/ghost/verb/latepartynew()
+/*/mob/observer/ghost/verb/latepartynew()
 	set category = "Ghost"
 	set name = "Late Party"
 	set desc= "Join a randomized late party picked from a list!"
@@ -90,7 +90,7 @@
 		to_chat(src,"<span class='warning'><b><font size=3>You leave the queue for the late party!</b></font size=3>")
 		GLOB.daparty -= usr.key
 		src.say("I'm leaving the party [GLOB.daparty.len]/[GLOB.partysize] are ready!")
-		return
+		return*/
 
 
 

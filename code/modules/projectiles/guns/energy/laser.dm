@@ -778,24 +778,49 @@ obj/item/gun/energy/las/hotshot/bloodpact
 	var/plasma_overheat = 1 // Keeping track on how overheated the gun is
 	var/plasma_overheat_decay = 2 // The cooling of the gun per tick
 	var/plasma_overheat_max = 200 // When the gun exploads
-	Fire(atom/target, mob/living/user)
-		if(plasma_overheat >= 50)
-			to_chat(user, "<span class='warning'><b><font size=3>THE BARREL STARTS TO GLOW.</font></b></span>")
-		if(plasma_overheat >= 90)
-			to_chat(user, "<span class='warning'><b><font size=3>OVERHEAT WARNING.</font></b></span>")
-		if(plasma_overheat >= 150)
-			to_chat(user, "<span class='warning'><b><font size=3>CATASTROPHIC FAILURE IMMINENT.</font></b></span>")
-		..()
-		plasma_overheat += 30 // adding 30 heat for every pulling of the trigger (learn not to spam the fucking gun)
-	Process()
-		..()
-		if(plasma_overheat >= 0)
-			plasma_overheat -= plasma_overheat_decay // so the gun actually cools down
-		else
-			plasma_overheat = 0 // keepin the gun overheat above -1
-			return
-		if(plasma_overheat > plasma_overheat_max)
-			explosion(src.loc, -1, -1, 3, 3) // explodes u, dealing a lot of damage, still (a little) chance to survive
+	var/plasma_overheat_overlay_state
+	var/image/plasma_overheat_overlay
+	var/overheat_icon = FALSE
+
+/obj/item/gun/energy/pulse/plasma/New()
+	..()
+	if(plasma_overheat_overlay_state)
+		plasma_overheat_overlay = image('icons/obj/weapons/gun/overlay_guns.dmi', plasma_overheat_overlay_state)
+
+/obj/item/gun/energy/pulse/plasma/proc/update_overheat_overlay()
+	if(!plasma_overheat_overlay)
+		return
+	if(plasma_overheat >= 50)
+		if(!overheat_icon)
+			LAZYADD(overlays, plasma_overheat_overlay)
+			overheat_icon = TRUE
+	else if(overheat_icon)
+		overlays.Cut()
+		overheat_icon = FALSE
+
+/obj/item/gun/energy/pulse/plasma/Fire(atom/target, mob/living/user)
+	if(plasma_overheat >= 50)
+		to_chat(user, "<span class='warning'><b><font size=3>THE BARREL STARTS TO GLOW.</font></b></span>")
+	if(plasma_overheat >= 90)
+		to_chat(user, "<span class='warning'><b><font size=3>OVERHEAT WARNING.</font></b></span>")
+	if(plasma_overheat >= 150)
+		to_chat(user, "<span class='warning'><b><font size=3>CATASTROPHIC FAILURE IMMINENT.</font></b></span>")
+	return ..()
+
+/obj/item/gun/energy/pulse/plasma/handle_post_fire(mob/user, atom/target, pointblank, reflex)
+	plasma_overheat += 30
+	update_overheat_overlay()
+	return ..()
+
+/obj/item/gun/energy/pulse/plasma/Process()
+	. = ..()
+	if(plasma_overheat > 0)
+		plasma_overheat -= plasma_overheat_decay // so the gun actually cools down
+	else
+		plasma_overheat = 0 // keepin the gun overheat above -1
+	update_overheat_overlay()
+	if(plasma_overheat > plasma_overheat_max)
+		explosion(src.loc, -1, -1, 3, 3) // explodes u, dealing a lot of damage, still (a little) chance to survive
 	//firemodes = list(
 		//list(mode_name="semi-charge", burst=1, fire_delay=19, burst_accuracy=null, dispersion=null, automatic = 0),
 		//list(mode_name="overcharge", burst=1, fire_delay=19, burst_accuracy=null, dispersion=null, automatic = 0, projectile_type=/obj/item/projectile/energy/pulse/pulserifle, charge_cost=150),
@@ -807,6 +832,7 @@ obj/item/gun/energy/las/hotshot/bloodpact
 	icon = 'icons/obj/weapons/gun/energy.dmi'
 	icon_state = "prifle"
 	item_state = "plasmarifle"
+	plasma_overheat_overlay_state = "plasmagun_overlay"
 	slot_flags = SLOT_BACK|SLOT_S_STORE
 	w_class = ITEM_SIZE_HUGE
 	force = 12
@@ -854,6 +880,7 @@ obj/item/gun/energy/las/hotshot/bloodpact
 	icon = 'icons/obj/weapons/gun/energy.dmi'
 	icon_state = "ppistol"
 	item_state = "plasmapistol"
+	plasma_overheat_overlay_state = "plasmapistol_overlay"
 	slot_flags = SLOT_BACK|SLOT_S_STORE|SLOT_BELT
 	w_class = ITEM_SIZE_LARGE
 	force = 10

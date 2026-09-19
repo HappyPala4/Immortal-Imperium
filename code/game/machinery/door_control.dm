@@ -181,6 +181,16 @@
 	trigger(user)
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 
+/obj/machinery/button/remote/blast_door/lever/one_use
+	var/used = FALSE
+
+/obj/machinery/button/remote/blast_door/lever/one_use/attack_hand(mob/user)
+	if(used)
+		to_chat(user, SPAN_DANGER("[src] заел"))
+		return
+	. = ..()
+	used = TRUE
+
 
 /obj/machinery/button/remote/blast_door/id_scan
 	name = "ID lock"

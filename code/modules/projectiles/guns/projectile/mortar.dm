@@ -11,7 +11,7 @@
 	name = "HE Mortar Shell"
 	icon = 'icons/obj/items/mortars.dmi'
 	icon_state = "he_mortar"
-	mortar_type = "frag"
+	mortar_type = "shrapnel"
 
 /obj/item/mortar_shell/flare
 	name = "Red Illumination Mortar Shell"

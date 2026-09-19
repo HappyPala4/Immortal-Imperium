@@ -196,6 +196,20 @@
 		AttemptLateSpawn(job, client.prefs.spawnpoint)
 		return
 
+	if(href_list["LateWave"])
+		var/wave_id = text2num(href_list["LateWave"])
+		var/role_id = href_list["LateWaveRole"]
+
+		if(!wave_id || !role_id)
+			return
+
+		if(SSlatewaves.join_wave(src, wave_id, role_id))
+			return
+
+		to_chat(src, "<span class='warning'>This role is no longer available.</span>")
+		LateChoices()
+		return
+
 	if(href_list["privacy_poll"])
 		establish_db_connection()
 		if(!dbcon.IsConnected())
@@ -503,6 +517,47 @@
 				else
 					dat += "<tr><td><a href='byond://?src=\ref[src];SelectedJob=[job.title]'>[job.title]</a></td><td>[job.current_positions]</td><td>(Active: [active])</td></tr>"
 		dat += "</table>"
+		dat += "</fieldset><br>"
+
+	var/list/latewave_data = SSlatewaves.get_lobby_data()
+	if(LAZYLEN(latewave_data))
+		dat += "<fieldset style='border: 2px solid #b36bff; display: inline; text-align: left; margin-top: 5px;'>"
+		dat += "<legend align='center' style='color: #b36bff; font-weight: bold;'>Late Waves</legend>"
+
+		for(var/list/wave_data in latewave_data)
+			var/wave_id = wave_data["id"]
+			var/wave_name = wave_data["name"]
+			var/wave_desc = wave_data["description"]
+			var/list/roles = wave_data["roles"]
+
+			dat += "<div style='font-weight: bold; color: #b36bff; border-bottom: 1px solid #b36bff; margin-bottom: 3px; padding-bottom: 2px;'>"
+			dat += "[wave_name]"
+			dat += "</div>"
+
+			if(wave_desc)
+				dat += "<div style='font-size: 10px; color: #aaa; margin-bottom: 5px; max-width: 250px;'>"
+				dat += "[wave_desc]"
+				dat += "</div>"
+
+			dat += "<table style='margin-bottom: 8px;'>"
+
+			for(var/list/role_data in roles)
+				var/role_id = role_data["id"]
+				var/role_name = role_data["name"]
+				var/remaining_slots = role_data["remaining_slots"]
+				var/available = role_data["available"]
+
+				dat += "<tr>"
+				if(available)
+					dat += "<td><a href='byond://?src=\ref[src];LateWave=[wave_id];LateWaveRole=[role_id]'>[role_name]</a></td>"
+					dat += "<td style='padding-left: 10px; text-align: right; font-weight: bold;'>[remaining_slots]</td>"
+				else
+					dat += "<td><span style='text-decoration: line-through; color: #666;'>[role_name]</span></td>"
+					dat += "<td style='padding-left: 10px; text-align: right; color: #666;'>(0)</td>"
+				dat += "</tr>"
+
+			dat += "</table>"
+
 		dat += "</fieldset><br>"
 
 	dat += "</center>"

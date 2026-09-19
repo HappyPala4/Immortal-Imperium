@@ -4,9 +4,13 @@
 	name = "patient monitoring console"
 	density = 1
 	anchored = 1.0
-	icon_keyboard = "med_key"
+	//icon_keyboard = "computah"
 	icon_screen = "crew"
+	light_color = "#00b000"
 	circuit = /obj/item/circuitboard/operating
+	icon = 'icons/obj/surgery.dmi'
+	icon_state = "computah"
+	density = TRUE
 	var/mob/living/carbon/human/victim = null
 	var/obj/machinery/optable/table = null
 
