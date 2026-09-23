@@ -16,6 +16,7 @@
 #define SS_PRIORITY_AIR             80	// ZAS processing.
 #define SS_PRIORITY_AO              65	// Ambien occlusion shit
 #define SS_PRIORITY_EVENT           20	// Event processing and queue handling.
+#define SS_PRIORITY_DAYNIGHT        20
 #define SS_PRIORITY_ALARMS          20  // Alarm processing.
 #define SS_PRIORITY_AIRFLOW         15	// Object movement from ZAS airflow.
 
