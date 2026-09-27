@@ -42,8 +42,4 @@
 	/datum/job/penitent,
 	/datum/job/citizen,
 	/datum/job/roguedoc,
-
-	//Хуйня для работы консоли по покупке наемников
-	/datum/job/ig/whiteshield,
-	/datum/job/janissary
 	)

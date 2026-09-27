@@ -13,7 +13,7 @@
 	icon = 'icons/obj/machines/ludkamachines.dmi'
 	icon_state = "baseterminal_off"
 	anchored = 1
-	density = 1
+	density = 0
 	use_power = 0
 	layer = ABOVE_WINDOW_LAYER
 	var/logged_name = ""	//Nickname used when posting

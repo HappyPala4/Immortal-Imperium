@@ -219,6 +219,9 @@ GLOBAL_LIST_INIT(latewave_available, list(
 	roles = list(
 		/datum/latewave_role/ork = 5
 	)
+	equipment = list(
+		/obj/item/grenade/smokebomb = 5,
+	)
 
 
 /datum/latewave/tau
@@ -229,6 +232,10 @@ GLOBAL_LIST_INIT(latewave_available, list(
 	roles = list(
 		/datum/latewave_role/tau = 5
 	)
+	equipment = list(
+		/obj/item/grenade/smokebomb = 5,
+		/obj/item/grenade/frag = 3
+	)
 
 
 /datum/latewave/kroot
@@ -238,6 +245,10 @@ GLOBAL_LIST_INIT(latewave_available, list(
 	Предположительно вторжение противника"
 	roles = list(
 		/datum/latewave_role/kroot = 5
+	)
+	equipment = list(
+		/obj/item/grenade/smokebomb = 5,
+		/obj/item/grenade/frag = 3
 	)
 
 
@@ -263,7 +274,8 @@ GLOBAL_LIST_INIT(latewave_available, list(
 		/obj/item/mortar_shell/gas = 3,
 		/obj/item/mortar_shell/frag = 5,
 		/obj/item/mortar_shell/smoke = 2,
-		/obj/item/device/binoculars = 1
+		/obj/item/device/binoculars = 1,
+		/obj/item/grenade/smokebomb = 5
 	)
 
 

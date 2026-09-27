@@ -159,6 +159,7 @@ Works together with spawning an observer, noted above.
 		if(zoomed)//So ghosts aren't stuck looking forward.
 			do_zoom()
 		hide_fullscreens()
+		SEND_SIGNAL(src, COMSIG_LIVING_GHOSTED)
 		var/mob/observer/ghost/ghost = new(src)	//Transfer safety to observer spawning proc.
 		ghost.can_reenter_corpse = can_reenter_corpse
 		ghost.timeofdeath = src.stat == DEAD ? src.timeofdeath : world.time
