@@ -8,7 +8,7 @@
 SUBSYSTEM_DEF(daynight)
 	name = "Day night"
 	wait = 0.5 SECONDS
-	var/list/dayparts = list(new NIGHT_TIME, new DUSK_TIME, new DAY_TIME, new DAWN_TIME)
+	var/list/dayparts = list(new DUSK_TIME, new DAY_TIME, new DAWN_TIME, new NIGHT_TIME)
 	var/datum/daytime/current
 	var/cycle_length
 	var/cycle_time

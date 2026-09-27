@@ -40,9 +40,11 @@
 
 /datum/component/player_audio/RegisterWithParent()
 	RegisterSignal(parent, COMSIG_MOB_COMBAT_TOGGLED, PROC_REF(on_combat_toggled))
+	RegisterSignal(parent, COMSIG_LIVING_GHOSTED, PROC_REF(pause))
 
 /datum/component/player_audio/UnregisterFromParent()
 	UnregisterSignal(parent, COMSIG_MOB_COMBAT_TOGGLED)
+	RegisterSignal(parent, COMSIG_LIVING_GHOSTED)
 
 /datum/component/player_audio/Destroy()
 	SSplayer_audio.unregister_component(src)
